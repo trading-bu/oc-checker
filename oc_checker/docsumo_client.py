@@ -48,9 +48,8 @@ def list_recent_documents(limit: int = 50) -> list[dict]:
         f"?api_key={_api_key()}"
         f"&doc_type_id={_doc_type_id()}"
         f"&limit={limit}"
-        f"&status=processed,review,auto_processed"
     )
-    req = urllib.request.Request(url)
+    req = urllib.request.Request(url, headers={"Authorization": f"apikey {_api_key()}"})
     with urllib.request.urlopen(req, timeout=30) as resp:
         result = json.loads(resp.read())
 
