@@ -38,25 +38,29 @@ def _doc_type_id() -> str:
 
 # ── List documents ────────────────────────────────────────────────
 
-def list_recent_documents(limit: int = 50) -> list[dict]:
+def list_recent_documents(limit: int = 20) -> list[dict]:
     """
     List recently processed documents for the OC doc type.
     Returns list of {id, title, status, created_at} dicts.
+
+    Docsumo API: GET /api/v1/eevee/apikey/documents/all/
+    Auth: apikey header
+    Max limit: 20
     """
     url = (
-        f"{DOCSUMO_BASE_URL}/list/"
-        f"?api_key={_api_key()}"
-        f"&doc_type_id={_doc_type_id()}"
-        f"&limit={limit}"
+        f"{DOCSUMO_BASE_URL}/documents/all/"
+        f"?doc_type={_doc_type_id()}"
+        f"&status=processed"
+        f"&limit={min(limit, 20)}"
+        f"&sort_by=created_date.desc"
     )
-    req = urllib.request.Request(url, headers={"Authorization": f"apikey {_api_key()}"})
+    req = urllib.request.Request(url, headers={"apikey": _api_key()})
     with urllib.request.urlopen(req, timeout=30) as resp:
         result = json.loads(resp.read())
 
-    # Handle different response shapes across Docsumo API versions
     data = result.get("data", result)
     if isinstance(data, dict):
-        docs = data.get("data") or data.get("documents") or data.get("list") or []
+        docs = data.get("documents") or data.get("data") or data.get("list") or []
     elif isinstance(data, list):
         docs = data
     else:
@@ -78,8 +82,8 @@ def list_recent_documents(limit: int = 50) -> list[dict]:
 
 def fetch_document_data(doc_id: str) -> dict:
     """Fetch the extracted fields for a specific document."""
-    url = f"{DOCSUMO_BASE_URL}/{doc_id}/data/?api_key={_api_key()}"
-    req = urllib.request.Request(url)
+    url = f"{DOCSUMO_BASE_URL}/{doc_id}/data/"
+    req = urllib.request.Request(url, headers={"apikey": _api_key()})
     with urllib.request.urlopen(req, timeout=30) as resp:
         result = json.loads(resp.read())
     raw = result.get("data", result)
