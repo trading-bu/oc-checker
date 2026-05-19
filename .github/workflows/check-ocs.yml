@@ -1,0 +1,47 @@
+name: OC Checker
+
+on:
+  # Run automatically Mon–Fri at 9:00am Berlin time (UTC+2 in summer)
+  schedule:
+    - cron: '0 7 * * 1-5'
+  # Also allow manual trigger from GitHub Actions UI
+  workflow_dispatch:
+
+jobs:
+  check-ocs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit processed_ocs.json back to repo
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run OC checker
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          DOCSUMO_API_KEY:             ${{ secrets.DOCSUMO_API_KEY }}
+          DOCSUMO_DOC_TYPE_ID:         ${{ secrets.DOCSUMO_DOC_TYPE_ID }}
+          ODOO_URL:                    ${{ secrets.ODOO_URL }}
+          ODOO_DB:                     ${{ secrets.ODOO_DB }}
+          ODOO_USERNAME:               ${{ secrets.ODOO_USERNAME }}
+          ODOO_API_KEY:                ${{ secrets.ODOO_API_KEY }}
+          SLACK_WEBHOOK_URL:           ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: python oc_checker/run_oc_check.py
+
+      - name: Commit updated processed_ocs.json
+        if: always()
+        run: |
+          git config user.name  "OC Checker Bot"
+          git config user.email "oc-checker@vanillasteel.com"
+          git add processed_ocs.json
+          git diff --cached --quiet || git commit -m "chore: update processed OCs log [skip ci]"
+          git push

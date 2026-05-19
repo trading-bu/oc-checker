@@ -1,0 +1,1 @@
+# No external dependencies needed — only stdlib (urllib, json, xmlrpc)
