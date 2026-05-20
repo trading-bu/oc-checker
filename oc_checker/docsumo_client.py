@@ -50,7 +50,7 @@ def list_recent_documents(limit: int = 20) -> list[dict]:
     url = (
         f"{DOCSUMO_BASE_URL}/documents/all/"
         f"?doc_type={_doc_type_id()}"
-        f"&status=processed"
+        f"&status=reviewing"
         f"&limit={min(limit, 20)}"
         f"&sort_by=created_date.desc"
     )
@@ -82,14 +82,11 @@ def list_recent_documents(limit: int = 20) -> list[dict]:
 
 def fetch_document_data(doc_id: str) -> dict:
     """Fetch the extracted fields for a specific document."""
-    url = f"{DOCSUMO_BASE_URL}/{doc_id}/data/"
+    url = f"{DOCSUMO_BASE_URL}/data/simplified/{doc_id}/"
     req = urllib.request.Request(url, headers={"apikey": _api_key()})
     with urllib.request.urlopen(req, timeout=30) as resp:
         result = json.loads(resp.read())
-    raw = result.get("data", result)
-    if "data" in raw and isinstance(raw["data"], dict):
-        raw = raw["data"]
-    return raw
+    return result.get("data", result)
 
 
 # ── Field helpers ─────────────────────────────────────────────────
