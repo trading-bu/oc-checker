@@ -1,10 +1,11 @@
 name: OC Checker
 
 on:
-  # Run automatically Mon–Fri at 9:00am Berlin time (UTC+2 in summer)
+  # Run every 3 hours during office hours Mon–Fri (8:30, 11:30, 14:30, 17:30 CEST / UTC+2)
+  # In winter (CET / UTC+1) these fire 1 hour earlier local time — adjust if needed
   schedule:
-    - cron: '0 7 * * 1-5'
-  # Also allow manual trigger from GitHub Actions UI
+    - cron: '30 6,9,12,15 * * 1-5'
+  # Also keep manual trigger for ad-hoc runs
   workflow_dispatch:
 
 jobs:
@@ -15,10 +16,10 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.6.0
         with:
           python-version: '3.11'
 
