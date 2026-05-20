@@ -110,8 +110,8 @@ def _parse_quality_grade(ol):
     return final_q, final_g
 
 def _match_po(ol, po_lines):
-    vs = _norm(ol.get("vs_article_id") or "").upper()
-    sup = _norm(ol.get("supplier_article_id") or "")
+    vs = _norm(ol.get("vs_article_id") or ol.get("vs_article") or "").upper()
+    sup = _norm(ol.get("supplier_article_id") or ol.get("supplier_article") or "")
     if vs:
         for pl in po_lines:
             if _norm(pl.get("vs_article") or "").upper() == vs:
@@ -124,8 +124,12 @@ def _match_po(ol, po_lines):
                 return pl
     return None
 
-def _match_so(ol, so_lines):
-    vs = _norm(ol.get("vs_article_id") or "").upper()
+def _match_so(ol, so_lines, vs_hint=None):
+    """Match OC line to SO line. vs_hint is the VS article from the matched PO line."""
+    # Prefer PO line hint (most reliable cross-reference)
+    vs = _norm(vs_hint or "").upper()
+    if not vs:
+        vs = _norm(ol.get("vs_article_id") or ol.get("vs_article") or "").upper()
     if vs and so_lines:
         for sl in so_lines:
             if _norm(sl.get("vs_article") or "").upper() == vs:
@@ -149,7 +153,7 @@ def _compare_line(ol, pl, sl, tol):
 
     vs_id    = _vs_id(ol) or (pl and _vs_id(pl)) or "?"
     odoo_unit = (pl.get("product_uom_id") or ["", ""])[1] if pl and pl.get("product_uom_id") else ""
-    oc_unit   = ol.get("quantity_unit") or ""
+    oc_unit   = ol.get("quantity_unit") or ol.get("unit") or ""
 
     oc_quality, oc_grade_clean = _parse_quality_grade(ol)
 
@@ -228,7 +232,8 @@ def _compare_line(ol, pl, sl, tol):
         elif not o:
             _add(key, "mismatch", "not specified", c or "not specified")
         elif not c:
-            _add(key, "mismatch", o, "not specified")
+            # OC doesn't provide this field — can't verify, skip
+            _add(key, "skip", o, "not in OC")
         else:
             ov = _word_overlap(o, c)
             _add(key, "match" if (ov is not None and ov >= min_overlap) else "mismatch", o, c)
@@ -240,7 +245,8 @@ def _compare_line(ol, pl, sl, tol):
         elif not o:
             _add("quality_choice", "mismatch", "not specified", c)
         elif not c:
-            _add("quality_choice", "mismatch", o, "not specified")
+            # OC doesn't provide quality separately — skip
+            _add("quality_choice", "skip", o, "not in OC")
         else:
             on = _QUALITY_NORM.get(_norm(o), o)
             cn = _QUALITY_NORM.get(_norm(c), c)
@@ -267,7 +273,8 @@ def _compare_line(ol, pl, sl, tol):
         elif o_f is None:
             _add(key, "mismatch", "not specified", str(int(round(c_f))))
         elif c_f is None:
-            _add(key, "mismatch", str(int(round(o_f))), "not specified")
+            # OC doesn't provide this field — skip
+            _add(key, "skip", str(int(round(o_f))), "not in OC")
         else:
             st = "match" if int(round(o_f)) == int(round(c_f)) else "mismatch"
             _add(key, st, str(int(round(o_f))), str(int(round(c_f))))
@@ -333,7 +340,9 @@ def _compare_line(ol, pl, sl, tol):
     _ts_field()
     _desc_field()
 
-    score = sum(1 for f in field_results if f["status"] == "match")
+    verified   = [f for f in field_results if f["status"] != "skip"]
+    score = sum(1 for f in verified if f["status"] == "match")
+    total_verified = len(verified)
     mismatches = [{"field": f["label"], "odoo": f["odoo"], "oc": f["oc"]}
                   for f in field_results if f["status"] == "mismatch"]
     matches    = [{"field": f["label"], "value": f["odoo"]}
@@ -342,7 +351,7 @@ def _compare_line(ol, pl, sl, tol):
     return {
         "vs_id":      vs_id,
         "score":      score,
-        "total":      TOTAL_FIELDS,
+        "total":      total_verified,
         "fields":     field_results,
         "mismatches": mismatches,
         "matches":    matches,
@@ -352,7 +361,7 @@ def _compare_line(ol, pl, sl, tol):
 
 def compare(oc_data, po_data, po_lines, so_data, so_lines, config):
     tol      = config.get("comparison", {})
-    oc_lines = oc_data.get("line_items", [])
+    oc_lines = oc_data.get("lines") or oc_data.get("line_items", [])
     po_name  = po_data.get("name", "?")
     so_name  = so_data["name"] if so_data else "—"
     supplier = (po_data.get("partner_id") or ["", "Unknown"])[1]
@@ -376,7 +385,8 @@ def compare(oc_data, po_data, po_lines, so_data, so_lines, config):
             try: used_po.add(po_lines.index(pl))
             except ValueError: pass
 
-        sl = _match_so(ol, so_lines) if so_lines else None
+        pl_vs = pl.get("vs_article", "") if pl else ""
+        sl = _match_so(ol, so_lines, vs_hint=pl_vs) if so_lines else None
         if sl is None and so_lines:
             for j, c in enumerate(so_lines):
                 if j not in used_so:
@@ -388,7 +398,8 @@ def compare(oc_data, po_data, po_lines, so_data, so_lines, config):
             except ValueError: pass
 
         r = _compare_line(ol, pl, sl, tol)
-        r["oc_ref"] = oc_data.get("supplier_reference") or oc_data.get("po_reference") or "?"
+        r["oc_ref"] = (oc_data.get("supplier_reference") or oc_data.get("po_reference")
+                       or oc_data.get("supplier_order_num") or oc_data.get("po_number") or "?")
         line_results.append(r)
 
         lbl = r["vs_id"]

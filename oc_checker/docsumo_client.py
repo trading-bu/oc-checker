@@ -1,60 +1,48 @@
 """
 Docsumo API client for Vanilla Steel OC checker.
-
-Since OC PDFs are already being pushed into Docsumo automatically,
-this module only needs to:
-  1. List recently processed documents for the OC doc type
-  2. Fetch extracted data for each document
-
-No PDF uploading needed.
-
 Environment variables:
-  DOCSUMO_API_KEY      — Docsumo API key
-  DOCSUMO_DOC_TYPE_ID  — others__vNgOt
+  DOCSUMO_API_KEY      -- Docsumo API key
+  DOCSUMO_DOC_TYPE_ID  -- others__vNgOt
 """
 
 import os
 import json
 import urllib.request
-from datetime import datetime, timezone
-
 
 DOCSUMO_BASE_URL = "https://app.docsumo.com/api/v1/eevee/apikey"
 
+# Cloudflare blocks Python's default user-agent -- use a browser UA
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Accept": "application/json",
+    "Accept-Language": "en-US,en;q=0.9",
+}
 
-def _api_key() -> str:
+
+def _api_key():
     key = os.environ.get("DOCSUMO_API_KEY", "")
     if not key:
         raise RuntimeError("DOCSUMO_API_KEY environment variable not set.")
     return key
 
 
-def _doc_type_id() -> str:
+def _doc_type_id():
     dt = os.environ.get("DOCSUMO_DOC_TYPE_ID", "")
     if not dt:
         raise RuntimeError("DOCSUMO_DOC_TYPE_ID environment variable not set.")
     return dt
 
 
-# ── List documents ────────────────────────────────────────────────
-
-def list_recent_documents(limit: int = 20) -> list[dict]:
-    """
-    List recently processed documents for the OC doc type.
-    Returns list of {id, title, status, created_at} dicts.
-
-    Docsumo API: GET /api/v1/eevee/apikey/documents/all/
-    Auth: apikey header
-    Max limit: 20
-    """
+def list_recent_documents(limit=20):
+    """List recently processed OC documents. Returns [{id, title, status, created_at}]."""
     url = (
-        f"{DOCSUMO_BASE_URL}/documents/all/"
-        f"?doc_type={_doc_type_id()}"
-        f"&status=reviewing"
-        f"&limit={min(limit, 20)}"
-        f"&sort_by=created_date.desc"
+        DOCSUMO_BASE_URL + "/documents/all/"
+        + "?doc_type=" + _doc_type_id()
+        + "&status=reviewing"
+        + "&limit=" + str(min(limit, 20))
+        + "&sort_by=created_date.desc"
     )
-    req = urllib.request.Request(url, headers={"apikey": _api_key()})
+    req = urllib.request.Request(url, headers={**HEADERS, "apikey": _api_key()})
     with urllib.request.urlopen(req, timeout=30) as resp:
         result = json.loads(resp.read())
 
@@ -78,20 +66,16 @@ def list_recent_documents(limit: int = 20) -> list[dict]:
     ]
 
 
-# ── Fetch extracted data ──────────────────────────────────────────
-
-def fetch_document_data(doc_id: str) -> dict:
+def fetch_document_data(doc_id):
     """Fetch the extracted fields for a specific document."""
-    url = f"{DOCSUMO_BASE_URL}/data/simplified/{doc_id}/"
-    req = urllib.request.Request(url, headers={"apikey": _api_key()})
+    url = DOCSUMO_BASE_URL + "/data/simplified/" + doc_id + "/"
+    req = urllib.request.Request(url, headers={**HEADERS, "apikey": _api_key()})
     with urllib.request.urlopen(req, timeout=30) as resp:
         result = json.loads(resp.read())
     return result.get("data", result)
 
 
-# ── Field helpers ─────────────────────────────────────────────────
-
-def _val(section: dict, field: str, default=None):
+def _val(section, field, default=None):
     entry = section.get(field, {})
     if isinstance(entry, dict):
         v = entry.get("value")
@@ -99,7 +83,7 @@ def _val(section: dict, field: str, default=None):
     return entry if entry is not None else default
 
 
-def _to_float(v) -> float | None:
+def _to_float(v):
     if v is None:
         return None
     try:
@@ -108,16 +92,10 @@ def _to_float(v) -> float | None:
         return None
 
 
-# ── Line item parser ──────────────────────────────────────────────
-
-def _parse_lines(raw: dict) -> list[dict]:
-    """
-    Parse Table → Line Items from Docsumo response.
-    Structure: {"Table": {"Line Items": [[{row}, {row}], ...]}}
-    """
+def _parse_lines(raw):
+    """Parse Table -> Line Items from Docsumo response."""
     table = raw.get("Table", {})
     line_items_raw = table.get("Line Items", [])
-
     rows = []
     for item in line_items_raw:
         if isinstance(item, list):
@@ -133,7 +111,6 @@ def _parse_lines(raw: dict) -> list[dict]:
         price = _to_float(_val(row, "Item price per ton"))
         if qty is None and price is None:
             continue
-
         lines.append({
             "vs_article":       _val(row, "Item ID"),
             "supplier_article": _val(row, "Item ID"),
@@ -151,13 +128,10 @@ def _parse_lines(raw: dict) -> list[dict]:
     return lines
 
 
-# ── Parse a full document into our OC format ─────────────────────
-
-def parse_oc_data(raw: dict, doc_id: str = "") -> dict:
+def parse_oc_data(raw, doc_id=""):
     """Convert Docsumo raw JSON into our standard OC dict."""
     basic  = raw.get("Basic Information", {})
     seller = raw.get("Seller Information", {})
-
     return {
         "po_number":          _val(basic,  "VS Order Number"),
         "supplier_order_num": _val(basic,  "Supplier Order Number"),
@@ -169,17 +143,14 @@ def parse_oc_data(raw: dict, doc_id: str = "") -> dict:
     }
 
 
-# ── Quick test ────────────────────────────────────────────────────
-
 if __name__ == "__main__":
     print("Fetching recent documents...")
     docs = list_recent_documents(limit=5)
-    print(f"Found {len(docs)} document(s):")
+    print("Found %d document(s):" % len(docs))
     for d in docs:
-        print(f"  {d['id']} | {d['title']} | {d['status']} | {d['created_at']}")
-
+        print("  %s | %s | %s | %s" % (d["id"], d["title"], d["status"], d["created_at"]))
     if docs:
-        print(f"\nFetching data for first document: {docs[0]['id']}")
-        raw  = fetch_document_data(docs[0]["id"])
-        oc   = parse_oc_data(raw, docs[0]["id"])
+        print("\nFetching data for first document: %s" % docs[0]["id"])
+        raw = fetch_document_data(docs[0]["id"])
+        oc  = parse_oc_data(raw, docs[0]["id"])
         print(json.dumps(oc, indent=2, default=str))

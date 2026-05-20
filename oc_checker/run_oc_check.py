@@ -109,9 +109,15 @@ def process_one(doc: dict, odoo_cfg: dict, slack_webhook: str) -> bool:
         print(f"  Linked SO: {so['name']}")
 
     # 4. Compare and post to Slack
-    result = compare_fields.compare(oc_data, po, po_lines, so, so_lines)
-    post_slack.post(slack_webhook, result, filename)
-    print(f"  Slack: {'✅ MATCH' if result['overall_match'] else '❌ MISMATCH'}")
+    default_cfg = {"comparison": {
+            "quantity_tolerance_pct": 0.5, "price_tolerance_pct": 1.0,
+            "total_tolerance_pct": 2.0, "thickness_tolerance_mm": 0.05,
+            "width_tolerance_mm": 5.0, "length_tolerance_mm": 10.0,
+            "tensile_strength_tolerance": 0.0,
+        }}
+    result = compare_fields.compare(oc_data, po, po_lines, so, so_lines, default_cfg)
+    post_slack.post_oc_result(slack_webhook, result, filename)
+    print(f"  Slack: {'✅ MATCH' if result['is_match'] else '❌ MISMATCH'}")
     return True
 
 
