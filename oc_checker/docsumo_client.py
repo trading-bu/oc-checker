@@ -137,6 +137,13 @@ def parse_oc_data(raw, doc_id=""):
         "supplier_order_num": _val(basic,  "Supplier Order Number"),
         "supplier_name":      _val(seller, "Company Name"),
         "total_amount":       _to_float(_val(basic, "Net Amount")),
+        "gross_amount":       _to_float(_val(basic, "Gross Amount")),
+        "vat_amount":         _to_float(_val(basic, "VAT Amount")),
+        "vat_pct":            _val(basic,  "VAT Percentage"),          # e.g. "19%"
+        "incoterm":           _val(basic,  "Incoterm"),                 # e.g. "FCA"
+        "payment_terms":      _val(basic,  "Payment Terms"),
+        "pickup_address":     _val(basic,  "Supplier Pick up address"),
+        "confirmation_date":  _val(basic,  "Order Date"),
         "currency":           "EUR",
         "lines":              _parse_lines(raw),
         "_docsumo_id":        doc_id,

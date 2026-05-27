@@ -2,7 +2,7 @@
 Odoo XML-RPC client for Vanilla Steel.
 
 IMPORTANT: This instance uses XML-RPC (/xmlrpc/2/).
-JSON-RPC (/web/dataset/call_kw) returns 503 — do not use it.
+JSON-RPC (/web/dataset/call_kw) returns 503 -- do not use it.
 
 Odoo version: 19 Enterprise
 Instance:     https://erp.ops.vanillasteel.com
@@ -16,7 +16,7 @@ import sys
 import os
 
 
-# ── Connection ────────────────────────────────────────────────
+# -- Connection ----------------------------------------------------------------
 
 def connect(url, db, login, api_key):
     """Authenticate and return (uid, models_proxy)."""
@@ -51,11 +51,11 @@ def read_record(models, db, uid, api_key, model, ids, fields):
     )
 
 
-# ── PO matching ───────────────────────────────────────────────
+# -- PO matching ---------------------------------------------------------------
 
 def normalize_po_digits(raw):
     """Strip non-digit characters, preserve leading zeros.
-    e.g. 'P01423' → '01423', 'PO-1423' → '1423', 'P 01423' → '01423'
+    e.g. 'P01423' -> '01423', 'PO-1423' -> '1423', 'P 01423' -> '01423'
     """
     digits = re.sub(r'\D', '', str(raw))
     return digits
@@ -76,7 +76,8 @@ def find_purchase_orders(models, db, uid, api_key, po_digits, supplier_name=None
             ["state", "in", ["purchase", "done", "to approve"]]
         ],
         ["id", "name", "partner_id", "amount_total", "currency_id",
-         "date_order", "date_planned", "order_line"],
+         "date_order", "date_planned", "order_line",
+         "incoterm_id", "payment_term_id"],
         limit=10
     )
 
@@ -137,7 +138,8 @@ def get_linked_sale_order(models, db, uid, api_key, po_lines):
         models, db, uid, api_key,
         "sale.order",
         [so_id],
-        ["id", "name", "partner_id", "amount_total", "currency_id", "state", "order_line"]
+        ["id", "name", "partner_id", "amount_total", "currency_id", "state", "order_line",
+         "incoterm", "payment_term_id", "partner_shipping_id"]
     )
     return so_records[0] if so_records else None
 
@@ -150,7 +152,7 @@ def get_so_lines(models, db, uid, api_key, so_id):
     All 13 comparison fields:
       form, choice (quality), grade, finish, coating,
       product_uom_qty (actual qty), no_of_items,
-      price_unit (sale price — purchase price is on PO line),
+      price_unit (sale price -- purchase price is on PO line),
       thickness, width, length, tensile_strength, name (description)
     """
     return search_read(
@@ -160,7 +162,7 @@ def get_so_lines(models, db, uid, api_key, so_id):
         [
             "id", "name", "product_id",
             "product_uom_qty", "price_unit", "price_subtotal",
-            # VS steel-specific fields — all 13 comparison fields
+            # VS steel-specific fields -- all 13 comparison fields
             "form",
             "choice",
             "grade",
@@ -177,7 +179,25 @@ def get_so_lines(models, db, uid, api_key, so_id):
     )
 
 
-# ── Config ────────────────────────────────────────────────────
+def get_shipping_address(models, db, uid, api_key, partner_id):
+    """Fetch shipping address for a partner ID."""
+    if not partner_id:
+        return None
+    pid = partner_id[0] if isinstance(partner_id, (list, tuple)) else partner_id
+    records = read_record(models, db, uid, api_key,
+        "res.partner", [pid],
+        ["name", "street", "city", "zip", "country_id"])
+    if not records:
+        return None
+    r = records[0]
+    parts = [r.get("name",""), r.get("street",""), r.get("zip",""), r.get("city","")]
+    country = r.get("country_id")
+    if country:
+        parts.append(country[1] if isinstance(country,(list,tuple)) else str(country))
+    return ", ".join(p for p in parts if p)
+
+
+# -- Config --------------------------------------------------------------------
 
 def load_config(config_path=None):
     if config_path is None:
@@ -189,7 +209,7 @@ def load_config(config_path=None):
     return cfg
 
 
-# ── Quick test ────────────────────────────────────────────────
+# -- Quick test ----------------------------------------------------------------
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -200,7 +220,7 @@ if __name__ == "__main__":
     o = cfg["odoo"]
     print(f"Connecting to {o['url']} ...")
     uid, models = connect(o["url"], o["database"], o["username"], o["api_key"])
-    print(f"✓ Authenticated (uid={uid})")
+    print(f"Authenticated (uid={uid})")
 
     digits = normalize_po_digits(sys.argv[1])
     print(f"\nSearching POs with digits: {digits}")
@@ -211,18 +231,30 @@ if __name__ == "__main__":
         sys.exit(0)
 
     for po in pos:
-        print(f"\n  PO: {po['name']} | Supplier: {po['partner_id'][1]} | Total: {po['amount_total']}")
+        name = po["name"]
+        partner = po["partner_id"][1] if po["partner_id"] else "?"
+        total = po["amount_total"]
+        print(f"\n  PO: {name} | Supplier: {partner} | Total: {total}")
         lines = get_po_lines(models, o["database"], uid, o["api_key"], po["id"])
         for l in lines:
-            print(f"    Line: {l['name'][:70]}")
+            lname = l["name"][:70]
+            print(f"    Line: {lname}")
             print(f"      Qty: {l['product_qty']}  Price: {l['price_unit']}")
-            print(f"      vs_article: {l.get('vs_article') or '—'}  aoo_fast_number: {l.get('aoo_fast_number') or '—'}")
+            vs = l.get("vs_article") or "---"
+            aoo = l.get("aoo_fast_number") or "---"
+            print(f"      vs_article: {vs}  aoo_fast_number: {aoo}")
 
         so = get_linked_sale_order(models, o["database"], uid, o["api_key"], lines)
         if so:
-            print(f"\n  Linked SO: {so['name']} | Buyer: {so['partner_id'][1]}")
+            so_name = so["name"]
+            buyer = so["partner_id"][1] if so["partner_id"] else "?"
+            print(f"\n  Linked SO: {so_name} | Buyer: {buyer}")
             so_lines = get_so_lines(models, o["database"], uid, o["api_key"], so["id"])
             for sl in so_lines:
-                print(f"    SO Line: grade={sl.get('grade') or '—'} coating={sl.get('coating') or '—'} "
-                      f"thick={sl.get('thickness') or '—'} width={sl.get('width') or '—'} "
-                       f"qty={sl.get('product_uom_qty')} vs_article={sl.get('vs_article') or '—'}")
+                grade = sl.get("grade") or "---"
+                coating = sl.get("coating") or "---"
+                thick = sl.get("thickness") or "---"
+                width = sl.get("width") or "---"
+                qty = sl.get("product_uom_qty")
+                vs_art = sl.get("vs_article") or "---"
+                print(f"    SO Line: grade={grade} coating={coating} thick={thick} width={width} qty={qty} vs_article={vs_art}")

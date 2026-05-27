@@ -108,6 +108,14 @@ def process_one(doc: dict, odoo_cfg: dict, slack_webhook: str) -> bool:
         so_lines = odoo_client.get_so_lines(models, o["database"], uid, o["api_key"], so["id"])
         print(f"  Linked SO: {so['name']}")
 
+    # Fetch SO shipping address for Flag A comparison
+    shipping_address = None
+    if so and so.get("partner_shipping_id"):
+        shipping_address = odoo_client.get_shipping_address(
+            models, o["database"], uid, o["api_key"],
+            so["partner_shipping_id"]
+        )
+
     # 4. Compare and post to Slack
     default_cfg = {"comparison": {
             "quantity_tolerance_pct": 0.5, "price_tolerance_pct": 1.0,
@@ -115,7 +123,8 @@ def process_one(doc: dict, odoo_cfg: dict, slack_webhook: str) -> bool:
             "width_tolerance_mm": 5.0, "length_tolerance_mm": 10.0,
             "tensile_strength_tolerance": 0.0,
         }}
-    result = compare_fields.compare(oc_data, po, po_lines, so, so_lines, default_cfg)
+    result = compare_fields.compare(oc_data, po, po_lines, so, so_lines, default_cfg,
+                                     odoo_shipping_address=shipping_address)
     post_slack.post_oc_result(slack_webhook, result, filename)
     print(f"  Slack: {'✅ MATCH' if result['is_match'] else '❌ MISMATCH'}")
     return True
@@ -150,21 +159,4 @@ def main():
 
     if not new_docs:
         print("Nothing new. Done.")
-        sys.exit(0)
-
-    any_error = False
-    for doc in new_docs:
-        ok = process_one(doc, odoo_cfg, slack_webhook)
-        processed_ids.add(doc["id"])
-        if not ok:
-            any_error = True
-
-    save_processed(processed_ids)
-    print(f"\nDone. Processed {len(new_docs)} document(s).")
-
-    if any_error:
-        sys.exit(1)
-
-
-if __name__ == "__main__":
-    main()
+        sys.exi

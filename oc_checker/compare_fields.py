@@ -1,442 +1,396 @@
 """
-Compare OC data against PO + SO data from Vanilla Steel Odoo.
+OC vs Odoo field comparison — Vanilla Steel.
 
-13 fields per VS article line item (denominator always 13):
-  1. Form              -> SO: form
-  2. Quality Choice    -> SO: choice  (cross-matched from OC grade)
-  3. Grade             -> SO: grade
-  4. Finish            -> SO: finish
-  5. Coating           -> SO: coating
-  6. Actual Qty        -> PO: product_qty
-  7. # of Items        -> SO: no_of_items
-  8. Purchase Price    -> PO: price_unit
-  9. Thickness         -> SO: thickness
-  10. Width            -> SO: width
-  11. Length           -> SO: length
-  12. Tensile Strength -> SO: tensile_strength
-  13. Description      -> PO: name
+Implements the OC Analysis Instructions v1.1:
+  Part 1 — 13 parameter check per line item
+  Part 2 — Commercial flags (incoterms, payment terms, VAT, pickup address)
 """
-import json, re, sys
 
-TOTAL_FIELDS = 13
+import re
 
-FIELD_LABELS = {
-    "form": "Form", "quality_choice": "Quality Choice", "grade": "Grade",
-    "finish": "Finish", "coating": "Coating", "qty": "Actual Qty",
-    "no_of_items": "# of Items", "price": "Actual Purchase Unit Price",
-    "thickness": "Thickness", "width": "Width", "length": "Length",
-    "tensile_strength": "Tensile Strength", "description": "Description",
-}
 
-_QUALITY_NORM = {
-    "prime": "Prime", "1st": "1st", "first": "1st", "first choice": "1st",
-    "first quality": "1st", "2nd": "2nd", "second": "2nd",
-    "second choice": "2nd", "second quality": "2nd", "2. wahl": "2nd",
-    "3rd": "3rd", "third": "3rd", "third choice": "3rd",
-    "4th": "4th", "fourth": "4th",
-}
-_MT_NAMES = {"mt", "t", "ton", "tonne", "tonnen", "to"}
-_KG_NAMES = {"kg", "kgs", "kilogram", "kilogramm"}
+# ── Helpers ──────────────────────────────────────────────────────────────────
+
+def _norm(v):
+    return str(v).strip() if v not in (None, "", False) else ""
 
 
 def _to_float(v):
-    try:
-        return float(v)
-    except (TypeError, ValueError):
+    if v is None:
         return None
+    try:
+        s = str(v).replace(",", "").replace(" ", "")
+        return float(s)
+    except (ValueError, TypeError):
+        return None
+
 
 def _pct_diff(a, b):
-    a, b = _to_float(a), _to_float(b)
-    if a is None or b is None or a == 0:
-        return None
-    return abs(a - b) / abs(a) * 100
-
-def _abs_diff(a, b):
-    a, b = _to_float(a), _to_float(b)
-    if a is None or b is None:
-        return None
-    return abs(a - b)
-
-def _norm(s):
-    return re.sub(r"\s+", " ", str(s or "").strip().lower())
-
-def _word_overlap(a, b):
-    a, b = _norm(a), _norm(b)
     if not a or not b:
         return None
-    aw = set(re.split(r"[\s\-/]+", a))
-    bw = set(re.split(r"[\s\-/]+", b))
-    return len(aw & bw) / len(aw) * 100 if aw else 0.0
+    return abs(a - b) / b * 100
 
-def _strip_prefix(grade):
-    if not grade:
-        return grade
-    for p in ("MAGNELIS-", "GALV-", "ALUZINC-", "HDG-"):
-        if str(grade).upper().startswith(p):
-            return grade[len(p):]
-    return grade
 
-def _unit_factor(u):
-    u = _norm(u)
-    if u in _MT_NAMES: return 1.0
-    if u in _KG_NAMES: return 0.001
-    return None
-
-def _norm_qty_price(oc_qty, oc_price, oc_unit, odoo_unit):
-    of, df = _unit_factor(oc_unit), _unit_factor(odoo_unit)
-    if of is None or df is None or of == df:
-        return oc_qty, oc_price
-    qty_mt = float(oc_qty) * of
-    price_mt = float(oc_price) / of
-    return qty_mt / df, price_mt * df
-
-def _parse_quality_grade(ol):
-    raw_q = _norm(ol.get("quality_choice") or ol.get("quality") or "")
-    raw_g = _norm(ol.get("grade") or "")
-    oc_quality = _QUALITY_NORM.get(raw_q) if raw_q else None
-    qfg = None
-    g_rem = ol.get("grade") or ""
-    for key in sorted(_QUALITY_NORM, key=len, reverse=True):
-        if key in raw_g:
-            qfg = _QUALITY_NORM[key]
-            g_rem = re.sub(re.escape(key), "", raw_g, flags=re.IGNORECASE)
-            g_rem = re.sub(r"[\s\-]+", " ", g_rem).strip()
-            break
-    final_q = oc_quality or qfg or None
-    if qfg and not oc_quality:
-        final_g = g_rem if g_rem else None
-    else:
-        final_g = (ol.get("grade") or "").strip() or None
-    return final_q, final_g
-
-def _match_po(ol, po_lines):
-    vs = _norm(ol.get("vs_article_id") or ol.get("vs_article") or "").upper()
-    sup = _norm(ol.get("supplier_article_id") or ol.get("supplier_article") or "")
-    if vs:
-        for pl in po_lines:
-            if _norm(pl.get("vs_article") or "").upper() == vs:
-                return pl
-    if sup:
-        for pl in po_lines:
-            if _norm(pl.get("original_supplier_article") or "") == sup:
-                return pl
-            if _norm(pl.get("aoo_fast_number") or "") == sup:
-                return pl
-    return None
-
-def _match_so(ol, so_lines, vs_hint=None):
-    """Match OC line to SO line. vs_hint is the VS article from the matched PO line."""
-    # Prefer PO line hint (most reliable cross-reference)
-    vs = _norm(vs_hint or "").upper()
-    if not vs:
-        vs = _norm(ol.get("vs_article_id") or ol.get("vs_article") or "").upper()
-    if vs and so_lines:
-        for sl in so_lines:
-            if _norm(sl.get("vs_article") or "").upper() == vs:
-                return sl
-    return None
-
-def _vs_id(obj):
-    for k in ("vs_article_id", "vs_article"):
-        v = obj.get(k)
-        if v:
-            return str(v).strip().upper()
-    return ""
-
-def _compare_line(ol, pl, sl, tol):
-    qty_tol   = tol.get("quantity_tolerance_pct", 0.5)
-    price_tol = tol.get("price_tolerance_pct", 1.0)
-    thick_tol = tol.get("thickness_tolerance_mm", 0.05)
-    width_tol = tol.get("width_tolerance_mm", 5.0)
-    len_tol   = tol.get("length_tolerance_mm", 10.0)
-    ts_tol    = tol.get("tensile_strength_tolerance", 0.0)
-
-    vs_id    = _vs_id(ol) or (pl and _vs_id(pl)) or "?"
-    odoo_unit = (pl.get("product_uom_id") or ["", ""])[1] if pl and pl.get("product_uom_id") else ""
-    oc_unit   = ol.get("quantity_unit") or ol.get("unit") or ""
-
-    oc_quality, oc_grade_clean = _parse_quality_grade(ol)
-
-    # Parse dims from OC dimensions string
-    oc_dims = ol.get("dimensions") or ""
-    oc_thick_p = oc_wide_p = None
-    m = re.search(r"(\d+\.?\d*)\s*[xX×]\s*(\d+\.?\d*)", oc_dims)
+def _split_grade_coating(grade_str):
+    """
+    Split 'DX51D+Z275' into ('DX51D', 'Z275').
+    Returns (grade, coating_suffix) or (grade_str, None).
+    Coating prefixes: Z, ZM, ZF, ZA, AZ, AS, AL, GI
+    """
+    if not grade_str:
+        return grade_str, None
+    m = re.match(r'^(.+?)\+((ZM|ZF|ZA|AZ|ZE|AS|AL|GI|Z)\d*[A-Z]?\d*)\s*$',
+                 grade_str.strip(), re.IGNORECASE)
     if m:
-        oc_thick_p, oc_wide_p = float(m.group(1)), float(m.group(2))
+        return m.group(1).strip(), m.group(2).strip()
+    return grade_str, None
 
-    def _dim(key, fallback):
-        v = ol.get(key)
-        return _to_float(v) if v is not None else fallback
 
-    oc_thick  = _dim("thickness", oc_thick_p)
-    oc_width  = _dim("width", oc_wide_p)
-    oc_length = _to_float(ol.get("length"))
+# ── Line matching ─────────────────────────────────────────────────────────────
 
-    # Odoo values
-    def _so(k, default=""):
-        return (sl.get(k) or default) if sl else default
+def _norm_article(v):
+    return re.sub(r'[\s\-_]', '', _norm(v)).upper()
 
-    odoo = {
-        "form":             (_so("form") or "").strip(),
-        "quality_choice":   (_so("choice") or "").strip(),
-        "grade":            _strip_prefix((_so("grade") or "").strip()),
-        "finish":           (_so("finish") or "").strip(),
-        "coating":          (_so("coating") or "").strip(),
-        "qty":              _to_float(pl.get("product_qty")) if pl else None,
-        "no_of_items":      _to_float(_so("no_of_items", None)),
-        "price":            _to_float(pl.get("price_unit")) if pl else None,
-        "thickness":        _to_float(_so("thickness", None)),
-        "width":            _to_float(_so("width", None)),
-        "length":           _to_float(_so("length", None)),
-        "tensile_strength": (_so("tensile_strength") or "").strip(),
-        "description":      (pl.get("name") or "").strip() if pl else "",
+
+def _match_po_line(oc_line, po_lines):
+    """Match OC line to PO line by supplier article number."""
+    oc_sup = _norm_article(oc_line.get("supplier_article") or oc_line.get("vs_article") or "")
+    if not oc_sup:
+        return None
+    for pl in po_lines:
+        if _norm_article(pl.get("original_supplier_article") or "") == oc_sup:
+            return pl
+        if _norm_article(pl.get("vs_article") or "") == oc_sup:
+            return pl
+    return None
+
+
+def _match_so_line(so_lines, vs_hint):
+    """Match SO line by VS article ID hint from PO line."""
+    if not so_lines or not vs_hint:
+        return None
+    hint = _norm_article(vs_hint)
+    for sl in so_lines:
+        if _norm_article(sl.get("vs_article") or "") == hint:
+            return sl
+    return None
+
+
+# ── OC structure detection ────────────────────────────────────────────────────
+
+def _detect_pattern(oc_lines, po_lines):
+    """
+    Pattern A: 1-to-1 match (normal)
+    Pattern B: OC has fewer lines (supplier combined some)
+    Pattern C: OC has 1 line representing total PO weight
+    """
+    oc_count = len(oc_lines)
+    po_count = len(po_lines)
+
+    if oc_count == 0 or po_count == 0:
+        return "A"
+
+    if oc_count >= po_count:
+        return "A"
+
+    # Check Pattern C: 1 OC line, weight ≈ sum of PO lines
+    if oc_count == 1:
+        oc_qty = _to_float(oc_lines[0].get("quantity"))
+        po_total = sum(_to_float(pl.get("product_qty") or 0) or 0 for pl in po_lines)
+        if oc_qty and po_total:
+            diff_pct = abs(oc_qty - po_total) / po_total * 100 if po_total else 100
+            if diff_pct <= 0.5:
+                return "C"
+
+    return "B"
+
+
+# ── Individual field comparisons ──────────────────────────────────────────────
+
+def _field(key, label, status, odoo_val, oc_val=None, note=None):
+    return {
+        "key":    key,
+        "label":  label,
+        "status": status,      # "match" | "mismatch" | "skip" | "na"
+        "odoo":   str(odoo_val) if odoo_val not in (None, "", False) else "—",
+        "oc":     str(oc_val)   if oc_val   not in (None, "", False) else "—",
+        "note":   note or "",
     }
 
-    # Normalize qty/price
-    nq = np_ = None
-    if ol.get("quantity") is not None and ol.get("unit_price") is not None and odoo_unit:
-        nq, np_ = _norm_qty_price(ol["quantity"], ol["unit_price"], oc_unit, odoo_unit)
+
+def _compare_numeric(key, label, odoo_val, oc_val, tolerance_pct=None, tolerance_abs=None):
+    o = _to_float(odoo_val)
+    c = _to_float(oc_val)
+    if c is None:
+        return _field(key, label, "skip", o, None)
+    if o is None:
+        return _field(key, label, "skip", None, c)
+    if tolerance_abs is not None:
+        ok = abs(o - c) <= tolerance_abs
+    elif tolerance_pct is not None:
+        ok = (_pct_diff(o, c) or 0) <= tolerance_pct
     else:
-        nq  = _to_float(ol.get("quantity"))
-        np_ = _to_float(ol.get("unit_price"))
+        ok = abs(o - c) < 1e-9
+    return _field(key, label, "match" if ok else "mismatch", o, c)
 
-    oc = {
-        "form":             (ol.get("form") or "").strip(),
-        "quality_choice":   oc_quality or "",
-        "grade":            _strip_prefix(oc_grade_clean) if oc_grade_clean else "",
-        "finish":           (ol.get("finish") or "").strip(),
-        "coating":          (ol.get("coating") or "").strip(),
-        "qty":              nq,
-        "no_of_items":      _to_float(ol.get("no_of_items")),
-        "price":            np_,
-        "thickness":        oc_thick,
-        "width":            oc_width,
-        "length":           oc_length,
-        "tensile_strength": (ol.get("tensile_strength") or "").strip(),
-        "description":      (ol.get("description") or "").strip(),
-    }
 
-    field_results = []
+def _compare_text(key, label, odoo_val, oc_val):
+    o = _norm(odoo_val)
+    c = _norm(oc_val)
+    if not c:
+        return _field(key, label, "skip", o or "—", None)
+    if not o:
+        return _field(key, label, "skip", "—", c)
+    ok = o.lower() == c.lower()
+    return _field(key, label, "match" if ok else "mismatch", o, c)
 
-    def _add(key, status, o_disp, c_disp):
-        field_results.append({"key": key, "label": FIELD_LABELS[key],
-                               "status": status, "odoo": o_disp, "oc": c_disp})
 
-    def _both_empty(a, b):
-        return not a and not b
+# ── Per-line comparison ───────────────────────────────────────────────────────
 
-    def _text_field(key, min_overlap):
-        o, c = str(odoo[key] or ""), str(oc[key] or "")
-        if _both_empty(o, c):
-            _add(key, "match", "—", "—")
-        elif not o:
-            _add(key, "mismatch", "not specified", c or "not specified")
-        elif not c:
-            # OC doesn't provide this field — can't verify, skip
-            _add(key, "skip", o, "not in OC")
-        else:
-            ov = _word_overlap(o, c)
-            _add(key, "match" if (ov is not None and ov >= min_overlap) else "mismatch", o, c)
+def _compare_line(oc_line, po_line, so_line, cfg):
+    comp = cfg.get("comparison", {})
+    results = []
 
-    def _quality_field():
-        o, c = str(odoo["quality_choice"] or ""), str(oc["quality_choice"] or "")
-        if _both_empty(o, c):
-            _add("quality_choice", "match", "—", "—")
-        elif not o:
-            _add("quality_choice", "mismatch", "not specified", c)
-        elif not c:
-            # OC doesn't provide quality separately — skip
-            _add("quality_choice", "skip", o, "not in OC")
-        else:
-            on = _QUALITY_NORM.get(_norm(o), o)
-            cn = _QUALITY_NORM.get(_norm(c), c)
-            st = "match" if on.lower() == cn.lower() else "mismatch"
-            _add("quality_choice", st, o, c)
+    # Resolve values: SO fields take precedence for spec fields; PO for price/qty
+    def so(field):
+        return so_line.get(field) if so_line else None
 
-    def _num_field(key, tolerance, unit_str="", is_pct=False):
-        o_f, c_f = odoo[key], oc[key]
-        if o_f is None and c_f is None:
-            _add(key, "match", "—", "—")
-        elif o_f is None:
-            _add(key, "mismatch", "not specified", f"{c_f:g}{unit_str}")
-        elif c_f is None:
-            _add(key, "mismatch", f"{o_f:g}{unit_str}", "not specified")
-        else:
-            diff = _pct_diff(o_f, c_f) if is_pct else _abs_diff(o_f, c_f)
-            st = "match" if (diff is not None and diff <= tolerance) else "mismatch"
-            _add(key, st, f"{o_f:g}{unit_str}", f"{c_f:g}{unit_str}")
+    # 1. FORM
+    oc_form = _norm(oc_line.get("form"))
+    odoo_form = _norm(so("form"))
+    if not oc_form:
+        results.append(_field("form", "Form", "skip", odoo_form or "—", None))
+    else:
+        ok = oc_form.lower() == odoo_form.lower() if odoo_form else False
+        results.append(_field("form", "Form", "match" if ok else "mismatch", odoo_form or "—", oc_form))
 
-    def _int_field(key):
-        o_f, c_f = odoo[key], oc[key]
-        if o_f is None and c_f is None:
-            _add(key, "match", "—", "—")
-        elif o_f is None:
-            _add(key, "mismatch", "not specified", str(int(round(c_f))))
-        elif c_f is None:
-            # OC doesn't provide this field — skip
-            _add(key, "skip", str(int(round(o_f))), "not in OC")
-        else:
-            st = "match" if int(round(o_f)) == int(round(c_f)) else "mismatch"
-            _add(key, st, str(int(round(o_f))), str(int(round(c_f))))
+    # 2. QUALITY CHOICE
+    oc_q = _norm(oc_line.get("quality_choice"))
+    odoo_q = _norm(so("choice"))
+    if not oc_q:
+        results.append(_field("quality_choice", "Quality Choice", "skip", odoo_q or "—", None))
+    else:
+        ok = oc_q.lower() == odoo_q.lower() if odoo_q else False
+        results.append(_field("quality_choice", "Quality Choice", "match" if ok else "mismatch", odoo_q or "—", oc_q))
 
-    def _price_field():
-        o_f, c_f = odoo["price"], oc["price"]
-        if o_f is None and c_f is None:
-            _add("price", "match", "—", "—")
-        elif o_f is None:
-            _add("price", "mismatch", "not specified", f"{c_f:,.2f}")
-        elif c_f is None:
-            _add("price", "mismatch", f"{o_f:,.2f}", "not specified")
-        else:
-            diff = _pct_diff(o_f, c_f)
-            st = "match" if (diff is not None and diff <= price_tol) else "mismatch"
-            _add("price", st, f"{o_f:,.2f}", f"{c_f:,.2f}")
+    # 3. GRADE (handle combined grade+coating strings like DX51D+Z275)
+    oc_grade_raw = _norm(oc_line.get("grade"))
+    oc_grade, oc_coating_from_grade = _split_grade_coating(oc_grade_raw)
+    odoo_grade = _norm(so("grade") or (po_line.get("name","") if po_line else ""))
+    note = f"[OC: {oc_grade_raw} — coating suffix stripped]" if oc_coating_from_grade else ""
+    if not oc_grade:
+        results.append(_field("grade", "Grade", "skip", odoo_grade or "—", None))
+    else:
+        ok = oc_grade.lower() == odoo_grade.lower() if odoo_grade else False
+        results.append(_field("grade", "Grade", "match" if ok else "mismatch", odoo_grade or "—", oc_grade, note))
 
-    def _ts_field():
-        o, c = str(odoo["tensile_strength"] or ""), str(oc["tensile_strength"] or "")
-        if _both_empty(o, c):
-            _add("tensile_strength", "match", "—", "—")
-        elif not o:
-            _add("tensile_strength", "mismatch", "not specified", c)
-        elif not c:
-            _add("tensile_strength", "mismatch", o, "not specified")
-        else:
-            o_f, c_f = _to_float(o), _to_float(c)
-            if o_f is not None and c_f is not None:
-                diff = _abs_diff(o_f, c_f)
-                st = "match" if (diff is not None and diff <= ts_tol) else "mismatch"
-            else:
-                ov = _word_overlap(o, c)
-                st = "match" if (ov is not None and ov >= 80) else "mismatch"
-            _add("tensile_strength", st, o, c)
+    # 4. FINISH
+    oc_finish = _norm(oc_line.get("finish"))
+    odoo_finish = _norm(so("finish"))
+    if not oc_finish:
+        results.append(_field("finish", "Finish", "skip", odoo_finish or "—", None))
+    else:
+        ok = oc_finish.lower() == odoo_finish.lower() if odoo_finish else False
+        results.append(_field("finish", "Finish", "match" if ok else "mismatch", odoo_finish or "—", oc_finish))
 
-    def _desc_field():
-        o = str(odoo["description"] or "")
-        c = str(oc["description"] or "")
-        od = (o[:80] + "…") if len(o) > 80 else o
-        cd = (c[:80] + "…") if len(c) > 80 else c
-        if _both_empty(o, c):
-            _add("description", "match", "—", "—")
-        elif not o:
-            _add("description", "mismatch", "not specified", cd)
-        elif not c:
-            _add("description", "mismatch", od, "not specified")
-        else:
-            ov = _word_overlap(o, c)
-            st = "match" if (ov is not None and ov >= 30) else "mismatch"
-            _add("description", st, od, cd)
+    # 5. COATING (use extracted coating OR coating suffix from grade string)
+    oc_coating = _norm(oc_line.get("coating")) or oc_coating_from_grade or ""
+    odoo_coating = _norm(so("coating"))
+    if not oc_coating:
+        results.append(_field("coating", "Coating", "skip", odoo_coating or "—", None))
+    else:
+        ok = oc_coating.lower() == odoo_coating.lower() if odoo_coating else False
+        results.append(_field("coating", "Coating", "match" if ok else "mismatch", odoo_coating or "—", oc_coating))
 
-    _text_field("form", 50)
-    _quality_field()
-    _text_field("grade", 50)
-    _text_field("finish", 40)
-    _text_field("coating", 40)
-    _num_field("qty", qty_tol, f" {odoo_unit}", is_pct=True)
-    _int_field("no_of_items")
-    _price_field()
-    _num_field("thickness", thick_tol, " mm")
-    _num_field("width", width_tol, " mm")
-    _num_field("length", len_tol, " mm")
-    _ts_field()
-    _desc_field()
+    # 6. QUANTITY
+    odoo_qty = po_line.get("product_qty") if po_line else None
+    oc_qty = oc_line.get("quantity")
+    results.append(_compare_numeric("qty", "Quantity", odoo_qty, oc_qty,
+                                    tolerance_pct=comp.get("quantity_tolerance_pct", 0.5)))
 
-    verified   = [f for f in field_results if f["status"] != "skip"]
+    # 7. NUMBER OF ITEMS
+    odoo_items = so("no_of_items")
+    oc_items = oc_line.get("no_of_items")
+    if oc_items is None:
+        results.append(_field("no_of_items", "# of Items", "skip", odoo_items or "—", None))
+    else:
+        ok = int(_to_float(odoo_items) or 0) == int(_to_float(oc_items) or 0) if odoo_items else False
+        results.append(_field("no_of_items", "# of Items", "match" if ok else "mismatch",
+                               odoo_items or "—", oc_items))
+
+    # 8. UNIT PRICE (from PO line)
+    odoo_price = po_line.get("price_unit") if po_line else None
+    oc_price = oc_line.get("unit_price")
+    results.append(_compare_numeric("price", "Unit Price", odoo_price, oc_price,
+                                    tolerance_pct=comp.get("price_tolerance_pct", 1.0)))
+
+    # 9. THICKNESS
+    odoo_thick = so("thickness")
+    oc_thick = oc_line.get("thickness")
+    results.append(_compare_numeric("thickness", "Thickness", odoo_thick, oc_thick,
+                                    tolerance_abs=comp.get("thickness_tolerance_mm", 0.05)))
+
+    # 10. WIDTH
+    odoo_width = so("width")
+    oc_width = oc_line.get("width")
+    results.append(_compare_numeric("width", "Width", odoo_width, oc_width,
+                                    tolerance_abs=comp.get("width_tolerance_mm", 5.0)))
+
+    # 11. LENGTH (N/A for coils)
+    oc_form_lower = (oc_form or _norm(so("form") or "")).lower()
+    is_coil = any(w in oc_form_lower for w in ["coil","bund","coils","spule","rolle","bobine","breitband","vzc","spaltband"])
+    if is_coil:
+        results.append(_field("length", "Length", "na", "N/A (coil)", "N/A (coil)"))
+    else:
+        odoo_len = so("length")
+        oc_len = oc_line.get("length")
+        results.append(_compare_numeric("length", "Length", odoo_len, oc_len,
+                                        tolerance_abs=comp.get("length_tolerance_mm", 10.0)))
+
+    # 12. TENSILE STRENGTH
+    odoo_ts = so("tensile_strength")
+    oc_ts = oc_line.get("tensile_strength")
+    if oc_ts is None:
+        results.append(_field("tensile_strength", "Tensile Strength", "skip", odoo_ts or "—", None))
+    else:
+        results.append(_compare_numeric("tensile_strength", "Tensile Strength", odoo_ts, oc_ts,
+                                        tolerance_abs=comp.get("tensile_strength_tolerance", 0.0)))
+
+    # Sort: mismatches first, then matches, then skip, then na
+    order = {"mismatch": 0, "match": 1, "skip": 2, "na": 3}
+    results.sort(key=lambda f: order.get(f["status"], 9))
+
+    mismatches = sum(1 for f in results if f["status"] == "mismatch")
+    verified = [f for f in results if f["status"] not in ("skip", "na")]
     score = sum(1 for f in verified if f["status"] == "match")
-    total_verified = len(verified)
-    mismatches = [{"field": f["label"], "odoo": f["odoo"], "oc": f["oc"]}
-                  for f in field_results if f["status"] == "mismatch"]
-    matches    = [{"field": f["label"], "value": f["odoo"]}
-                  for f in field_results if f["status"] == "match" and f["odoo"] != "—"]
 
     return {
-        "vs_id":      vs_id,
-        "score":      score,
-        "total":      total_verified,
-        "fields":     field_results,
+        "fields":    results,
         "mismatches": mismatches,
-        "matches":    matches,
-        "oc_ref":     "",
+        "score":     score,
+        "total":     len(verified),
     }
 
 
-def compare(oc_data, po_data, po_lines, so_data, so_lines, config):
-    tol      = config.get("comparison", {})
+# ── Part 2: Commercial flags ──────────────────────────────────────────────────
+
+def _build_flags(oc_data, po_data, so_data, odoo_shipping_address):
+    flags = []
+
+    # Flag A — Pickup address
+    oc_addr = _norm(oc_data.get("pickup_address"))
+    if oc_addr:
+        odoo_addr = _norm(odoo_shipping_address or "")
+        same = oc_addr.lower() == odoo_addr.lower() if odoo_addr else False
+        flags.append({
+            "type":    "pickup_address",
+            "icon":    "📍",
+            "label":   "Pickup Address",
+            "oc":      oc_addr,
+            "odoo":    odoo_addr or "—",
+            "warning": not same,
+        })
+
+    # Flag C — Incoterms (only if mismatch)
+    oc_inco = _norm(oc_data.get("incoterm"))
+    po_inco = ""
+    if po_data and po_data.get("incoterm_id"):
+        po_inco = po_data["incoterm_id"][1] if isinstance(po_data["incoterm_id"], (list, tuple)) else str(po_data["incoterm_id"])
+    if oc_inco and po_inco:
+        # Extract just the code (first word) for comparison
+        oc_code = oc_inco.split()[0].upper()
+        po_code = po_inco.split()[0].upper()
+        if oc_code != po_code:
+            flags.append({
+                "type":    "incoterms",
+                "icon":    "⚠️",
+                "label":   "Incoterms MISMATCH",
+                "oc":      oc_inco,
+                "odoo":    po_inco,
+                "warning": True,
+            })
+
+    # Flag D — Payment terms (only if mismatch)
+    oc_pay = _norm(oc_data.get("payment_terms"))
+    po_pay = ""
+    if po_data and po_data.get("payment_term_id"):
+        po_pay = po_data["payment_term_id"][1] if isinstance(po_data["payment_term_id"], (list, tuple)) else str(po_data["payment_term_id"])
+    if oc_pay and po_pay:
+        if oc_pay.lower() != po_pay.lower():
+            flags.append({
+                "type":    "payment_terms",
+                "icon":    "⚠️",
+                "label":   "Payment Terms MISMATCH",
+                "oc":      oc_pay,
+                "odoo":    po_pay,
+                "warning": True,
+            })
+
+    # Flag F — VAT (always show if present)
+    vat_pct = _norm(oc_data.get("vat_pct"))
+    net = _to_float(oc_data.get("total_amount"))
+    gross = _to_float(oc_data.get("gross_amount"))
+    if vat_pct and (net or gross):
+        flags.append({
+            "type":  "vat",
+            "icon":  "🧾",
+            "label": "VAT",
+            "vat_pct": vat_pct,
+            "net":   net,
+            "gross": gross,
+            "warning": False,
+        })
+
+    return flags
+
+
+# ── Main compare entry point ──────────────────────────────────────────────────
+
+def compare(oc_data, po_data, po_lines, so_data, so_lines, config,
+            odoo_shipping_address=None):
+    """
+    Compare OC data against Odoo PO/SO.
+    Returns result dict consumed by post_slack.post_oc_result().
+    """
     oc_lines = oc_data.get("lines") or oc_data.get("line_items", [])
-    po_name  = po_data.get("name", "?")
-    so_name  = so_data["name"] if so_data else "—"
-    supplier = (po_data.get("partner_id") or ["", "Unknown"])[1]
-    buyer    = (so_data.get("partner_id") or ["—", "—"])[1] if so_data else "—"
+    pattern  = _detect_pattern(oc_lines, po_lines)
 
-    line_results   = []
-    all_matches    = []
-    all_mismatches = []
-    used_po = set()
-    used_so = set()
+    line_results = []
+    total_mismatches = 0
 
-    for i, ol in enumerate(oc_lines):
-        pl = _match_po(ol, po_lines)
-        if pl is None:
-            for j, c in enumerate(po_lines):
-                if j not in used_po:
-                    pl = c
-                    used_po.add(j)
-                    break
-        else:
-            try: used_po.add(po_lines.index(pl))
-            except ValueError: pass
+    if pattern in ("B", "C"):
+        # Cannot do per-line spec comparison — just record pattern
+        line_results = []
+    else:
+        for ol in oc_lines:
+            pl = _match_po_line(ol, po_lines)
+            pl_vs = pl.get("vs_article", "") if pl else ""
+            sl = _match_so_line(so_lines, pl_vs) if so_lines else None
 
-        pl_vs = pl.get("vs_article", "") if pl else ""
-        sl = _match_so(ol, so_lines, vs_hint=pl_vs) if so_lines else None
-        if sl is None and so_lines:
-            for j, c in enumerate(so_lines):
-                if j not in used_so:
-                    sl = c
-                    used_so.add(j)
-                    break
-        elif sl is not None:
-            try: used_so.add(so_lines.index(sl))
-            except ValueError: pass
+            vs_id = pl_vs or _norm(ol.get("vs_article") or ol.get("supplier_article") or "?")
+            lr = _compare_line(ol, pl, sl, config)
+            lr["vs_id"] = vs_id
+            lr["oc_line"] = ol
+            total_mismatches += lr["mismatches"]
+            line_results.append(lr)
 
-        r = _compare_line(ol, pl, sl, tol)
-        r["oc_ref"] = (oc_data.get("supplier_reference") or oc_data.get("po_reference")
-                       or oc_data.get("supplier_order_num") or oc_data.get("po_number") or "?")
-        line_results.append(r)
+    # Part 2 flags
+    flags = _build_flags(oc_data, po_data, so_data, odoo_shipping_address)
 
-        lbl = r["vs_id"]
-        for m in r["matches"]:
-            all_matches.append({"field": f"{lbl} — {m['field']}", "value": m["value"]})
-        for m in r["mismatches"]:
-            all_mismatches.append({"field": f"{lbl} — {m['field']}", "odoo": m["odoo"], "oc": m["oc"]})
-
-    is_match = len(all_mismatches) == 0
-    status   = "match" if is_match else ("partial" if all_matches else "mismatch")
+    is_match = (total_mismatches == 0 and pattern == "A")
 
     return {
-        "line_results": line_results,
-        "is_match":     is_match,
-        "status":       status,
-        "matches":      all_matches,
-        "mismatches":   all_mismatches,
-        "po_name":      po_name,
-        "so_name":      so_name,
-        "supplier":     supplier,
-        "buyer":        buyer,
+        "po_name":        po_data.get("name", "?") if po_data else "?",
+        "so_name":        so_data.get("name", "—") if so_data else "—",
+        "supplier":       (po_data["partner_id"][1] if po_data and po_data.get("partner_id") else
+                           oc_data.get("supplier_name", "?")),
+        "buyer":          (so_data["partner_id"][1] if so_data and so_data.get("partner_id") else "—"),
+        "oc_ref":         oc_data.get("supplier_order_num", "—"),
+        "confirmation_date": oc_data.get("confirmation_date", "—"),
+        "is_match":       is_match,
+        "total_mismatches": total_mismatches,
+        "pattern":        pattern,
+        "line_results":   line_results,
+        "flags":          flags,
+        "oc_data":        oc_data,
     }
-
-
-if __name__ == "__main__":
-    if len(sys.argv) < 4:
-        print("Usage: python compare_fields.py oc.json po.json po_lines.json [so.json so_lines.json config.json]")
-        sys.exit(1)
-    with open(sys.argv[1]) as f: oc  = json.load(f)
-    with open(sys.argv[2]) as f: po  = json.load(f)
-    with open(sys.argv[3]) as f: pol = json.load(f)
-    so, sol, cfg = {}, [], {}
-    if len(sys.argv) > 4:
-        with open(sys.argv[4]) as f: so  = json.load(f)
-    if len(sys.argv) > 5:
-        with open(sys.argv[5]) as f: sol = json.load(f)
-    if len(sys.argv) > 6:
-        with open(sys.argv[6]) as f: cfg = json.load(f)
-    result = compare(oc, po, pol, so, sol, cfg)
-    print(json.dumps(result, indent=2, ensure_ascii=False))
