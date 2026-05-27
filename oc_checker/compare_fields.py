@@ -65,6 +65,16 @@ def _match_po_line(oc_line, po_lines):
     return None
 
 
+def _is_positional_id(oc_lines):
+    """Return True if all OC line IDs are just sequential integers (1,2,3…) — no real article codes."""
+    ids = [str(ol.get("supplier_article") or ol.get("vs_article") or "").strip() for ol in oc_lines]
+    try:
+        nums = [int(x) for x in ids if x]
+        return nums == list(range(1, len(nums)+1))
+    except (ValueError, TypeError):
+        return False
+
+
 def _match_so_line(so_lines, vs_hint):
     """Match SO line by VS article ID hint from PO line."""
     if not so_lines or not vs_hint:
@@ -362,8 +372,15 @@ def compare(oc_data, po_data, po_lines, so_data, so_lines, config,
         # Cannot do per-line spec comparison — just record pattern
         line_results = []
     else:
-        for ol in oc_lines:
-            pl = _match_po_line(ol, po_lines)
+        # Use positional matching if OC lines have no real article IDs (e.g. 1, 2, 3)
+        use_positional = _is_positional_id(oc_lines) or not any(
+            _match_po_line(ol, po_lines) for ol in oc_lines
+        )
+        for idx, ol in enumerate(oc_lines):
+            if use_positional:
+                pl = po_lines[idx] if idx < len(po_lines) else None
+            else:
+                pl = _match_po_line(ol, po_lines)
             pl_vs = pl.get("vs_article", "") if pl else ""
             sl = _match_so_line(so_lines, pl_vs) if so_lines else None
 
