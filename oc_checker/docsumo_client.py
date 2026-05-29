@@ -39,7 +39,7 @@ def list_recent_documents(limit=20):
         DOCSUMO_BASE_URL + "/documents/all/"
         + "?doc_type=" + _doc_type_id()
         + "&status=reviewing"
-        + "&limit=" + str(min(limit, 20))
+        + "&limit=" + str(min(limit, 50))
         + "&sort_by=created_date.desc"
     )
     req = urllib.request.Request(url, headers={**HEADERS, "apikey": _api_key()})

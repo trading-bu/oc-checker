@@ -159,4 +159,16 @@ def main():
 
     if not new_docs:
         print("Nothing new. Done.")
-        sys.exi
+        sys.exit(0)
+
+    for doc in new_docs:
+        success = process_one(doc, odoo_cfg, slack_webhook)
+        if success:
+            processed_ids.add(doc["id"])
+            save_processed(processed_ids)  # save after each success so a crash mid-run doesn't lose progress
+
+    print("\nAll done.")
+
+
+if __name__ == "__main__":
+    main()
