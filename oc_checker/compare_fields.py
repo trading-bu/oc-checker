@@ -39,7 +39,8 @@ def _split_grade_coating(grade_str):
     """
     if not grade_str:
         return grade_str, None
-    m = re.match(r'^(.+?)\+((ZM|ZF|ZA|AZ|ZE|AS|AL|GI|Z)\d*[A-Z]?\d*)\s*$',
+    # Handle coatings like Z275, ZE75/75AO, AS120, ZM310, AZ150, GI50/50
+    m = re.match(r'^(.+?)\+((ZM|ZF|ZA|AZ|ZE|AS|AL|GI|Z)[\d/A-Za-z]*)\s*$',
                  grade_str.strip(), re.IGNORECASE)
     if m:
         return m.group(1).strip(), m.group(2).strip()
