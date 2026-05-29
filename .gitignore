@@ -1,0 +1,7 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Local config with credentials — never commit
+oc_checker/config.json
