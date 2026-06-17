@@ -124,6 +124,7 @@ def _parse_lines(raw):
             "width":            _to_float(_val(row, "Width")),
             "length":           _to_float(_val(row, "Length")),
             "coating":          _val(row, "Coating"),
+            "coil_number":      _val(row, "Coil Number"),
         })
     return lines
 

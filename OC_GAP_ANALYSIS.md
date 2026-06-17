@@ -932,19 +932,758 @@ Other notable details:
 
 ---
 
-## PRIORITY ORDER FOR IMPLEMENTATION (updated — all 7 OCs)
+---
 
-| Priority | Field/Fix | Why urgent |
-|---|---|---|
-| 1 | VS Order Number (fix all locations + no-hallucination) | Wrong PO match = wrong everything |
-| 2 | Payment Terms (expand German variants) | Missed in 3 of 7 OCs tested |
-| 3 | Coating (add GI, fix spaced codes, no-plus) | Wrong or missing coating in 4 of 7 OCs |
-| 4 | Quality Choice (new field) | Missed in 4 of 7 OCs — commercially critical |
-| 5 | VAT/Gross (no calculation) | Wrong invoice amount in 2 of 7 OCs |
-| 6 | Supplier Notes (new field — invoicing trigger, storage fee, reservation) | Invoicing trigger/storage fee = direct cost risk |
-| 7 | Tariff/CN Code (new field — include Nimexe) | Required for customs in all cross-border OCs |
-| 8 | Consignee Address (fix prompt) | Wrong for CIP/CPT deliveries |
-| 9 | Delivery Date (new field) | Missed in most OCs |
-| 10 | Tensile Strength at line item level | Useful for spec verification |
-| 11 | Product Form (new field) | Useful but lower risk |
-| 12 | Finish (new field) | Derivable from grade/coating in most cases |
+---
+
+# OCs 8–9 — ADDITIONAL SUPPLIERS (Round 3)
+
+---
+
+# OC 8 — ESB European Steel Business (ESBD 4744001 / P01778)
+
+## A — Ground truth from PDF
+
+| Field | Value |
+|---|---|
+| VS PO Number | P01778 (in "Ihr Zeichen: P01778") |
+| OC Reference | ESBD 4744001 |
+| Date | 21.05.2026 |
+| Supplier | European Steel Business Deutschland GmbH, Moers |
+| Incoterms | FCA Verkauf |
+| Payment Terms | Vorkasse, Zahlung sofort [Prepayment, immediately] |
+| Total amount | Not stated (no grand total line in OC) |
+| VAT | Not stated |
+| Pickup address | thyssenkrupp Materials Processing Europe GmbH, Kötitzerstr. 110, 01445 Radebeul (explicitly labeled "Abholadresse") |
+| Delivery | 29/05/2026 per line |
+
+**5 line items — all Spaltband (Slit Coil), Feuerverzinkt:**
+
+| Pos | Grade | Coating | Thick | Width | Qty (t) | Price €/t |
+|---|---|---|---|---|---|---|
+| 1 | DX54D | GI40/40 | 1.70 | 70.0 | 0.690 | 425 |
+| 2 | DX53D | Z100 | 1.60 | 65.0 | 0.722 | 425 |
+| 3 | DX52D | AS120 | 1.70 | 290.0 | 1.020 | 425 |
+| 4 | DX52D | AS120 | 1.70 | 290.0 | 1.498 | 425 |
+| 5 | DX52D | AS120 | 1.70 | 300.0 | 0.940 | 425 |
+
+Note: Pos 4 has **no description header** — it is a continuation of Pos 3's spec (same grade/coating, different weight). The spec is implied from context, not repeated.
+
+## B — What Docsumo extracted
+
+```json
+{
+  "po_number": "PO1778",  ❌  should be "P01778" — digit 0 misread as letter O
+  "supplier_order_num": "ESBD4744001",  ✅
+  "supplier_name": "European Steel Business Deutschland GmbH",  ✅
+  "total_amount": null,  ✅  (not in OC — correct)
+  "vat_pct": "19%",  ❌  NOT stated in OC — fabricated
+  "incoterm": "FCA Verkauf",  ✅
+  "payment_terms": "Vorkasse, Zahlung sofort",  ✅
+  "pickup_address": "thyssenkrupp ... Radebeul",  ✅  (Abholadresse correctly extracted)
+  "lines": [
+    Pos 1: grade=DX54D ✅, coating=GI40/40 ✅, thick=1.7 ✅, width=70 ✅, qty=0.69 ✅
+    Pos 2: grade=DX53D ✅, coating=Z100 ✅, thick=1.6 ✅, width=65 ✅, qty=0.722 ✅
+    Pos 3: grade=DX52D ✅, coating=AS120 ✅, thick=1.7 ✅, width=290 ✅, qty=1.02 ✅
+    Pos 4: grade=null ❌, coating=null ❌, description=null ❌  (continuation line — no header)
+    Pos 5: grade=DX52D ✅, coating=AS120 ✅, thick=1.7 ✅, width=300 ✅, qty=0.94 ✅
+  ]
+}
+```
+
+## C — Gaps for OC 8
+
+| # | Field | What OC says | What Docsumo got | Severity |
+|---|---|---|---|---|
+| G1 | **PO number digit/letter confusion** | P01778 (P + digit 0) | "PO1778" (P + letter O) | 🔴 CRITICAL — wrong PO searched in Odoo |
+| G2 | **VAT fabricated** | Not stated in OC | "19%" — invented | 🟠 HIGH |
+| G3 | **Continuation line (no description)** | Pos 4 = same spec as Pos 3 | grade=null, coating=null | 🟠 HIGH — qty matched, but spec fields blank |
+| G4 | **Form** | "Spaltband" = Slit Coil | Not extracted | 🟠 HIGH |
+| G5 | **Delivery Date** | 29/05/2026 per line | Not extracted | 🟠 HIGH |
+
+**Positive findings:** GI40/40, Z100, AS120 coatings all extracted correctly ✅. Abholadresse (pickup address) correctly captured ✅.
+
+---
+
+# OC 9 — GW Stahlservice (AB 93926 / P01777)
+
+## A — Ground truth from PDF
+
+| Field | Value |
+|---|---|
+| VS PO Number | P01777 |
+| OC Reference | 93926 |
+| Date | 22.05.2026 |
+| Supplier | GW Stahlservice GmbH & Co.KG, Plettenberg |
+| Incoterms | Ab Werk [EXW] |
+| Payment Terms | am 15. des der Lieferung folgenden Monats netto [15th of month following delivery, net] |
+| Net Total | €16,452.80 |
+| VAT | 19% → €3,126.03 → Gross €19,578.83 |
+| Delivery | KW 21/2026 u.ü.V. [Week 21/2026, subject to usual reservation] |
+| Pickup address | Supplier's works: Industriestr. 2, 58840 Plettenberg (correct for EXW) |
+| Ship-to stated | Vanilla Steel GmbH, Schönhauser Allee 36, 10435 Berlin |
+
+**3 line items — all Breitband (Hot Rolled Coil), geölt (oiled):**
+
+| Pos | Grade | Coating | Thick | Width | Qty (kg) | Price €/t |
+|---|---|---|---|---|---|---|
+| 1 | DX54D+AS120 | AS120 | 0.900 | 1120.0 | 11,378 | 650 |
+| 2 | DX54D+AS60 | AS60 | 0.900 | **1480.0** (page 2!) | 10,755 | 650 |
+| 3 | DX54D+AS120 | AS120 | 0.900 | 1370.0 | 3,179 | 650 |
+
+Note: Width for Pos 2 (1480mm) appears on page 2 after a page break. Pos 3 has no position number in Docsumo (row split across pages).
+
+## B — What Docsumo extracted
+
+```json
+{
+  "po_number": "P01777",  ✅
+  "supplier_order_num": "93926",  ✅
+  "total_amount": 16452.8,  ✅
+  "vat_amount": 3126.03,  ✅
+  "vat_pct": "19%",  ✅
+  "incoterm": "Ab Werk",  ✅
+  "payment_terms": null,  ❌  "am 15. des der Lieferung folgenden Monats netto" MISSED
+  "pickup_address": "Industriestr. 2 58840 Plettenberg",  ✅  (correct for EXW)
+  "lines": [
+    Pos 1: grade=DX54D ✅, coating=AS120 ✅, thick=0.9 ✅, width=1120 ✅, qty=11.378 ✅
+    Pos 2: grade=DX54D ✅, coating=AS60 ✅, thick=0.9 ✅, width=null ❌ (1480 on page 2), qty=10.755 ✅
+    Pos 3: grade=DX54D ✅, coating=AS120 ✅, thick=0.9 ✅, width=1370 ✅, qty=3.179 ✅
+    vs_article: "1", "2", null — row numbers, not article IDs
+  ]
+}
+```
+
+## C — Gaps for OC 9
+
+| # | Field | What OC says | What Docsumo got | Severity |
+|---|---|---|---|---|
+| G1 | **Width across page boundary** | Pos 2: 1480mm (on page 2) | null | 🔴 CRITICAL — recurring issue |
+| G2 | **Payment Terms** | "am 15. des der Lieferung folgenden Monats netto" | null | 🔴 CRITICAL |
+| G3 | **Item ID** | Sequential row numbers (1, 2) | "1", "2" treated as article IDs | 🟠 HIGH — triggers wrong Odoo match |
+| G4 | **Form** | "Breitband" = Hot Rolled Coil | Not extracted | 🟠 HIGH |
+| G5 | **Delivery Date** | KW 21/2026 | Not extracted | 🟠 HIGH |
+| G6 | **Delivery reservation** | "u.ü.V." [unter üblichem Vorbehalt = subject to usual reservation] | Not extracted | 🟠 HIGH |
+| G7 | **Supplier Notes** | "Das Material ist bei Eingang zu prüfen", "Reklamation von angearbeitetem Material abgelehnt" | Not extracted | 🟠 HIGH |
+
+---
+
+---
+
+# UPDATED MASTER GAPS SUMMARY (all 9 OCs)
+
+| Gap | Seen in | Severity | Fix |
+|---|---|---|---|
+| PO number P0 → PO (digit/letter confusion) | OC8 | 🔴 CRITICAL | Prompt fix |
+| PO number hallucination (blank field) | OC1 | 🔴 CRITICAL | Prompt fix |
+| PO number in unlabeled/wrong field | OC7, OC5 | 🔴 CRITICAL | Prompt fix |
+| Width across page boundary | OC9, OC7 | 🔴 CRITICAL | Structural limit |
+| Payment Terms (German variants) | OC2, OC5, OC6, OC9 | 🔴 CRITICAL | Prompt fix |
+| Quality Choice (IIa / Second Choice / 2A) | OC1, OC3, OC6, OC7 | 🔴 CRITICAL | New field |
+| VAT fabricated when not stated | OC2, OC3, OC8 | 🔴 CRITICAL | Prompt fix |
+| Coating GI format (GI50/50, GI40/40) | OC4, OC5 | 🟠 HIGH — WORKING in OC8 ✅ | Monitor |
+| Coating spaced codes (ZMAC, ZMACO) | OC1 | 🔴 CRITICAL | Prompt fix |
+| Continuation lines (no description repeated) | OC8 | 🟠 HIGH | Structural limit |
+| Item ID — row numbers extracted as IDs | OC9, OC3 | 🟠 HIGH | Prompt fix |
+| Form (Spaltband, Breitband, HR Coil) | OC1, OC3, OC6, OC8, OC9 | 🟠 HIGH | New field |
+| Delivery Date | OC1, OC3, OC6, OC7, OC8, OC9 | 🟠 HIGH | New field |
+| Tariff/CN Code | OC3, OC7 | 🔴 CRITICAL | New field |
+| Supplier Notes / key conditions | OC1, OC2, OC5, OC7, OC9 | 🟠 HIGH | New field |
+| Tensile Strength in description | OC7 | 🟠 HIGH | New field |
+| Consignee address vs manufacturer | OC3 | 🔴 CRITICAL | Prompt fix |
+
+---
+
+## UPDATED PROMPT FIX: VS Order Number (add digit/letter disambiguation)
+
+**New problem from OC8**: "P01778" was read as "PO1778" — the digit zero after P was misread as the letter O.
+
+**Final prompt for "VS Order Number":**
+> Extract the Vanilla Steel purchase order number. The format is ALWAYS the letter P followed by 5 digits — for example P01740, P01755, P01778. The character after P is always the digit zero (0), never the letter O.
+> Look everywhere in the document: 'Ihre Bestellung', 'Ihre Bestell-Nr.', 'Bestellnummer', 'Referenznummer', 'Ihr Zeichen', 'Your order no.', "Buyer's order", 'PO', 'Order no.', delivery address blocks.
+> If you see PO1778 or PO1777 etc., correct it to P01778 / P01777 — the O is always a digit zero.
+> CRITICAL: Only extract a COMPLETE number (P + 5 digits). If you see only "P-" with nothing after it, output nothing.
+
+---
+
+## UPDATED PROMPT FIX: Payment Terms (add 15th-of-month format)
+
+**New problem from OC9**: "am 15. des der Lieferung folgenden Monats netto" not recognised.
+
+**Final prompt for "Payment Terms":**
+> Extract payment terms. Look for: 'Zahlungsbedingung', 'Zahlung:', 'Zahlungsziel', 'Payment terms', 'Payment'.
+> Common values:
+> - 'Vorkasse' / 'Vorkasse ohne Abzug' / 'Zahlung sofort' = Prepayment
+> - '30 Tage netto' / '30 Tage nach Rechnungsdatum netto' = 30 days net
+> - '30 DAYS FROM INVOICE DATE' = 30 days net from invoice
+> - 'innerhalb von 30 Tagen ohne Abzug' = 30 days net, no discount
+> - 'am 15. des der Lieferung folgenden Monats netto' = 15th of month following delivery
+> - '14 Tage 2% Skonto, 30 Tage netto' = 2% discount 14 days, 30 days net
+> Return the value as it appears in the document.
+
+---
+
+## UPDATED PROMPT FIX: Product Form (add Breitband)
+
+**New problem from OC8 and OC9**: "Breitband" (hot-rolled wide strip/coil) not in the form field.
+
+**Final prompt for "Product Form":**
+> Extract the physical form/shape of the product. Look for:
+> - 'Spaltband', 'Spaltbänder', 'slit strip', 'Slit Coils' → Slit Coil
+> - 'Breitband' → Hot Rolled Coil (wide strip)
+> - 'Coil', 'Coils', 'Bund', 'Bänder', 'Breitband', 'VZC', 'Bandbund', 'HOT ROLLED STEEL COILS' → Coil
+> - 'Blech', 'Bleche', 'Tafel', 'Sheet', 'Sheets', 'Feinblech' → Sheet
+> - 'Platte', 'Plate', 'Grobblech' → Plate
+> Only state a form if explicitly mentioned. If not stated, leave blank.
+
+---
+
+## NOTE: Structural limits (cannot be fixed by prompt alone)
+
+Two issues require Docsumo platform improvements, not just prompt changes:
+
+**1. Width across page boundary** — When a line item's spec is split across two pages (e.g. Pos 2 description on page 1, width on page 2), Docsumo loses the association. Seen in OC7 (GW Stahlservice first run, width=null for 1480mm) and OC9. This requires multi-page context awareness in Docsumo's table extraction.
+**Workaround**: Train Docsumo by manually correcting these values in the review UI so the model learns the pattern.
+
+**2. Continuation lines without description** — When a supplier lists multiple coils of the same spec without repeating the grade/coating header (ESB Pos 4), Docsumo cannot infer the spec from context.
+**Workaround**: Manually correct in Docsumo review UI. Consider asking ESB to repeat the spec on each line.
+
+---
+
+## PRIORITY ORDER FOR IMPLEMENTATION (final — all 9 OCs)
+
+---
+
+---
+
+# OCs 10–11 — ADDITIONAL SUPPLIERS (Round 4)
+
+---
+
+# OC 10 — EMW Stahl Service (2000049586 / P01786)
+
+## A — Ground truth from PDF
+
+| Field | Value |
+|---|---|
+| VS PO Number | P01786 (in "Referenznummer: P01786") |
+| OC Reference | 2000049586 |
+| Date | 01.06.2026 |
+| Supplier | EMW Stahl Service GmbH, Neunkirchen |
+| Incoterms | FCA Siegen Weidenau |
+| Payment Terms | innerhalb von 30 Tagen ohne Abzug [30 days net] |
+| Net Total | €12,402.03 |
+| VAT | 19% → €2,356.39 → Gross €14,758.42 |
+| Delivery | W 23.2026 [Week 23/2026] |
+| Supplier article | 18504964 (in "Material:" field) |
+| Grade | CR460LA |
+| Coating | GI50/50 U O (hot-dip galvanized, oiled) |
+| Dimensions | 1.73mm × 1193mm |
+| Qty | 11.494 t |
+| No coil number in this OC |
+
+## B — What Docsumo extracted
+
+```json
+{
+  "po_number": "P01786",  ✅  (Referenznummer correctly read — prompt handling improving)
+  "payment_terms": "innerhalb von 30 Tagen ohne Abzug",  ✅  (prompt fix working)
+  "incoterm": "FCA Siegen Weidenau",  ✅  (location captured)
+  "total_amount": 12402.03,  ✅
+  "vat_amount": 2356.39,  ✅
+  "gross_amount": 14758.42,  ✅
+  "pickup_address": "Pfannenbergstraße 1 D-57290 Neunkirchen",  ✅  (supplier address, correct for FCA)
+  "lines": [{
+    "vs_article": null,  ❌  (no VS article in OC — correct to be null)
+    "supplier_article": null,  ❌  "18504964" in "Material:" field — missed again
+    "grade": "CR460LA",  ✅
+    "coating": "GI50/50",  ✅
+    "thickness": 1.73,  ✅
+    "width": 1193.0,  ✅
+    "quantity": 11.494,  ✅
+  }]
+}
+```
+
+## C — Gaps for OC 10
+
+| # | Field | What OC says | What Docsumo got | Severity |
+|---|---|---|---|---|
+| G1 | **Supplier Article ("Material:" field)** | 18504964 | null | 🟠 HIGH — same issue as P01752 |
+| G2 | **Delivery Date** | W 23.2026 | Not extracted | 🟠 HIGH |
+
+**✅ Improvements confirmed**: Payment Terms ("innerhalb von 30 Tagen ohne Abzug") now extracted correctly. PO from "Referenznummer:" field now works. GI50/50 coating extracted correctly.
+
+---
+
+# OC 11 — Knappstein STAHLSERVICE (146190 / P01750) — Scanned PDF, re-upload
+
+## B — What Docsumo extracted (OCR)
+
+```json
+{
+  "po_number": "P01750",  ✅
+  "payment_terms": "Vorkasse",  ✅
+  "pickup_address": "Bürger & Althoff GmbH & Co. KG, Hafenstraße 10, 45881 Gelsenkirchen",  ✅  (forwarder address)
+  "coating": "GI50/50",  ✅
+  "grade": "CR380LA",  ✅
+  "thickness": 3.0,  ✅
+  "width": 1430.0,  ✅
+  "quantity": 12.13,  ✅
+  "length": 610.0  ❌  610mm is the Ring Inner Diameter (RID), NOT the length
+}
+```
+
+## C — New gap: RID confused with Length
+
+| # | Field | What OC says | What Docsumo got | Severity |
+|---|---|---|---|---|
+| G1 | **Ring Inner Diameter extracted as Length** | "Ringinnendurchmesser 610 mm" = RID | length=610.0 | 🔴 CRITICAL — causes false mismatch vs Odoo |
+
+The Length field prompt needs to explicitly exclude ring/coil dimension values (RID, Ringinnendurchmesser, Ringaussendurchmesser) which appear in nearly every coil OC.
+
+---
+
+## UPDATED PROMPT FIX: Length (exclude coil ring dimensions)
+
+**New problem from OC11**: Knappstein shows "Ringinnendurchmesser 610 mm" (Ring Inner Diameter) which Docsumo mistakenly extracted as Length = 610.
+
+**Final prompt for "Length":**
+> Extract the material length in mm. This applies only to sheets, plates, and cut-to-length products.
+> For coils/coil products: length is NOT APPLICABLE — do not extract any value.
+> IMPORTANT — do NOT extract any of the following as Length:
+> - Ring Inner Diameter (Ringinnendurchmesser, RID, inner diameter, ID)
+> - Ring Outer Diameter (Ringaussendurchmesser, RAD, outer diameter, OD)
+> - Coil inner/outer diameter values (typically 508mm, 610mm, 750mm)
+> Only extract Length if the product is explicitly a sheet, plate, or strip cut to a specific length (mm).
+> If not stated or if product is a coil: leave blank.
+
+---
+
+## NEW FIELD: Coil Number
+
+**What it is**: The unique identifier assigned to a specific physical coil by the mill. Critical for traceability and quality documentation.
+
+**Where to add**: Line Items table → new column "Coil Number"
+**Type**: String
+
+**Prompt:**
+> Extract the coil identification number for this line item. Look for:
+> - English: 'Coil Number', 'Coil No.', 'Coil #', 'Coil ID', 'Bundle No.'
+> - German: 'Bundnummer', 'Coilnummer', 'Coil-Nr.', 'Bundle-Nr.', 'Charge-Nr.'
+> - In product descriptions: 'COIL NUMBER 12192-031' → 12192-031
+> - After 'Heat No.', 'Schmelze-Nr.' for heat/melt traceability numbers
+> This is typically an alphanumeric code like '12192-031', '88478-110', 'C123456'.
+> Do NOT extract ring dimensions (RID, RAD, Ringinnendurchmesser) as coil numbers.
+> If not stated in OC: leave blank.
+
+**Code changes made** (already applied):
+- `docsumo_client.py`: `_parse_lines()` now reads `"coil_number": _val(row, "Coil Number")`
+- `post_slack.py`: line item header now shows `| Coil: {number}` when present
+
+**Slack display example:**
+```
+*VSI-17889753* -- DX51D -- 3.00×1509mm -- 27.112t  |  Coil: 12192-031
+```
+
+---
+
+## UPDATED MASTER GAPS SUMMARY (all 11 OCs)
+
+| Gap | Seen in | Severity | Fix |
+|---|---|---|---|
+| PO number P0 → PO (digit/letter) | OC8 | 🔴 CRITICAL | Prompt fix |
+| PO number hallucination | OC1 | 🔴 CRITICAL | Prompt fix |
+| PO number in unlabeled/wrong field | OC5, OC7 | 🔴 CRITICAL | Prompt fix — ✅ working in OC10 |
+| Width across page boundary | OC9, OC7 | 🔴 CRITICAL | Structural limit |
+| RID confused with Length | OC11 | 🔴 CRITICAL | Prompt fix |
+| Payment Terms (German variants) | OC2, OC5, OC6, OC9 | 🔴 CRITICAL | Prompt fix — ✅ working in OC10 |
+| Quality Choice (IIa / 2nd choice) | OC1, OC3, OC6, OC7 | 🔴 CRITICAL | New field |
+| VAT fabricated when not stated | OC2, OC3, OC8 | 🔴 CRITICAL | Prompt fix |
+| Coating spaced codes (ZMAC) | OC1 | 🔴 CRITICAL | Prompt fix |
+| Supplier article in "Material:" field | OC5, OC10 | 🟠 HIGH | Prompt fix |
+| Continuation lines no description | OC8 | 🟠 HIGH | Structural limit |
+| Item ID row numbers as article IDs | OC3, OC9 | 🟠 HIGH | Prompt fix |
+| Form (Spaltband, Breitband) | OC1, OC3, OC6, OC8, OC9 | 🟠 HIGH | New field |
+| Delivery Date | OC1, OC3, OC6–OC11 | 🟠 HIGH | New field |
+| Tariff/CN Code | OC3, OC7 | 🔴 CRITICAL | New field |
+| Coil Number | OC3 (SSAB) | 🟡 MEDIUM | New field — ✅ code added |
+| Supplier Notes / conditions | OC1, OC2, OC5, OC7, OC9 | 🟠 HIGH | New field |
+| Tensile Strength in description | OC7 | 🟠 HIGH | New field |
+| Consignee address vs manufacturer | OC3 | 🔴 CRITICAL | Prompt fix |
+
+---
+
+## PRIORITY ORDER FOR IMPLEMENTATION (final — all 11 OCs)
+
+| Priority | Field/Fix | Seen in | Why urgent |
+|---|---|---|---|
+| 1 | VS Order Number (P0/PO fix + all field labels) | OC1, OC5, OC7, OC8 | Wrong PO = wrong everything |
+| 2 | Length (exclude RID/coil ring dimensions) | OC11 | False length mismatches |
+| 3 | VAT/Gross (never calculate) | OC2, OC3, OC8 | Fabricated values mislead trader |
+| 4 | Quality Choice (new field) | OC1, OC3, OC6, OC7 | IIa/2nd choice commercially critical |
+| 5 | Coating (spaced codes ZMAC/ZMACO) | OC1 | Wrong coating = wrong spec match |
+| 6 | Coil Number (new field) | OC3 | ✅ Code already updated |
+| 7 | Tariff/CN Code (new field, incl. Nimexe) | OC3, OC7 | Customs requirement |
+| 8 | Delivery Date (new field) | OC1, OC3, OC6–OC11 | Missed in 8 of 11 OCs |
+| 9 | Item ID (exclude sequential row numbers) | OC3, OC9 | Wrong Odoo line matching |
+| 10 | Supplier article in "Material:" field | OC5, OC10 | EMW line matching |
+| 11 | Supplier Notes (new field) | OC1, OC2, OC5, OC7, OC9 | Storage/billing risk |
+| 12 | Product Form (Spaltband, Breitband) | OC1, OC3, OC6, OC8, OC9 | Spec verification |
+| 13 | Consignee Address (CIP/CPT) | OC3 | Wrong address |
+| 14 | Tensile Strength at line item level | OC7 | Lower frequency |
+
+---
+
+---
+
+---
+
+# OCs 12–14 — ADDITIONAL SUPPLIERS (Round 5)
+
+**New supplier**: thyssenkrupp Materials Hungary Zrt., 9011 Győr, Gerda utca 3.  
+**PO**: P01807 (all three OCs confirm the same VS PO, split by product type)  
+**OC dates**: 17.06.2026  
+**Key differences from all previous OCs**: English-language, SAP-generated, Hungarian company. Three separate OC reference numbers for one PO. Dimensions encoded as "N × W" (pieces × width), not standalone widths. European number format for quantities (period = thousands). No grand total / VAT section.
+
+---
+
+# OC 12 — thyssenkrupp Materials Hungary (84916029 / P01807)
+
+## A — Ground truth from PDF
+
+| Field | Value |
+|---|---|
+| VS PO Number | P01807 (label: "Your order no. P01807 of 15.06.2026") |
+| OC Reference | 84916029 |
+| Date | 17.06.2026 |
+| Supplier | thyssenkrupp Materials Hungary Zrt., 9011 Győr |
+| Incoterms | Free Carrier Győr (= FCA Győr) |
+| Payment Terms | Within 30 Days Net |
+| Total amount | **Not stated** — no grand total line in OC |
+| VAT | **Not stated** |
+| Delivery | 30.06.2026 — labeled "Delivery date with reservation" |
+| Mode | Delivery by Truck |
+
+**1 line item:**
+
+| Item | Material | Grade string | N×W | Coil numbers | Qty (KG) | Price | Thick | CN Code | RID |
+|---|---|---|---|---|---|---|---|---|---|
+| 0010 | 50100220 | DC04 A m O | 3 × 141 | R90R904131, R90R904132 | 1.280 | 500,00/1.000 KG | 3.00mm | 72112330 | 508mm |
+
+**Dimension decoding "3 × 141":** 3 = slit pieces; 141 = width per piece in mm. Width for Odoo = **141mm**. No. of items = **3**.
+
+**Grade string "DC04 A m O":** Grade = DC04. "A m O" = surface class A, matte, oiled — surface treatment suffix, NOT part of the grade designation.
+
+**Quantity format "1.280 KG":** European thousands notation — 1.280 = 1,280 kg = 1.280 tonnes (period is thousands separator, not decimal). Docsumo will likely output 1.28 as a float, which happens to be correct in tonnes.
+
+**Price format "500,00 per 1.000 KG":** Comma = decimal, period = thousands → 500.00 EUR per 1,000 kg = 500 EUR/t.
+
+## B — What Docsumo will likely extract
+
+| Field | Expected output | Correct value | Status |
+|---|---|---|---|
+| po_number | "P01807" | P01807 | ✅ ("Your order no." in prompt) |
+| supplier_order_num | "84916029" | 84916029 | ✅ |
+| total_amount | null | null (not in OC) | ✅ (existing fix) |
+| vat_amount | null | null | ✅ |
+| incoterm | "Free Carrier Győr" | FCA Győr | ✅ |
+| payment_terms | null | "Within 30 Days Net" | ❌ English format not in prompt |
+| width | "3", "141", or "3 × 141" | 141 | ❓ unpredictable |
+| grade | "DC04 A m O" | DC04 | ❌ surface suffix included |
+| coating | null | null (DC04 uncoated) | ✅ |
+| thickness | 3.0 | 3.00 | ✅ |
+| quantity | 1.28 | 1.28 t | ✅ (coincidental) |
+| unit_price | 500 | 500 | ✅ |
+| length | null | null | ✅ (RID is explicitly labeled "Ring inside diameter") |
+| tariff_code | null | 72112330 | ❌ field not yet in Docsumo |
+| coil_number | "R90R904131" | R90R904131 | ❓ R90R format not previously tested |
+
+## C — Gaps for OC 12
+
+| # | Field | What OC says | Expected Docsumo | Severity |
+|---|---|---|---|---|
+| G1 | **Width ("N × W" format)** | "3 × 141" → 141mm | Might extract "3", "141", or full string | 🔴 CRITICAL |
+| G2 | **Grade suffix "A m O"** | DC04 only | "DC04 A m O" including surface code | 🔴 CRITICAL — mismatch vs Odoo |
+| G3 | **Payment Terms (English)** | "Within 30 Days Net" | null | 🔴 CRITICAL |
+| G4 | **Tariff/CN Code** | 72112330 | null (field not yet implemented) | 🔴 CRITICAL |
+| G5 | **No. of items from N** | 3 slit pieces | Not extracted | 🟠 HIGH |
+| G6 | **Coil number (R90R format)** | R90R904131, R90R904132 | Unknown — R90R not previously tested | 🟡 MEDIUM |
+
+---
+
+# OC 13 — thyssenkrupp Materials Hungary (84916030 / P01807)
+
+## A — Ground truth from PDF
+
+**4 line items:**
+
+| Item | Material | Grade string | N×W | Coil number(s) | Qty (KG) | Thick | CN Code | RID |
+|---|---|---|---|---|---|---|---|---|
+| 0010 | 51100331 | S315MC g O | 2 × 420 | Z90R903740 | 4.132 | 2.00mm | 72111900 | — |
+| 0020 | 51100342 | S355MC g O | 2 × 140 | R90R904235 | 1.300 | 2.00mm | 72111900 | 508mm |
+| 0030 | 51100355 | S355MC g O | 4 × 250 | R90R903564, R90R903569 | 2.534 | 4.00mm | 72111900 | 508mm |
+| 0040 | 51100355 | S355MC g O | 4 × 120 | R90R904038 | 1.090 | 4.00mm | 72111900 | 508mm |
+
+All items: 500 EUR/t. No total amount or VAT.
+
+**Item 0010 anomaly**: "Your article: Z90R903740" — Z90R903740 is a coil number, NOT a VS article ID. Docsumo must not extract this as vs_article.
+
+**Grade string suffix "g O"**: Appears on every item. "g O" = pickled (gebeizt) and oiled (geölt). NOT part of the grade. Grade = S315MC or S355MC only.
+
+## B — What Docsumo will likely extract (per item)
+
+| Item | vs_article (expected) | Grade (expected) | Width (expected) |
+|---|---|---|---|
+| 0010 | "Z90R903740" ❌ (coil number) | "S315MC g O" ❌ | "2", "420", or full string |
+| 0020 | null ✅ | "S355MC g O" ❌ | unpredictable |
+| 0030 | null ✅ | "S355MC g O" ❌ | unpredictable |
+| 0040 | null ✅ | "S355MC g O" ❌ | unpredictable |
+
+## C — Gaps for OC 13
+
+| # | Field | What OC says | Expected Docsumo | Severity |
+|---|---|---|---|---|
+| G1 | **Width ("N × W" format)** | 420, 140, 250, 120mm | Might extract N or full string | 🔴 CRITICAL |
+| G2 | **Grade suffix "g O"** | S315MC, S355MC only | "S315MC g O" / "S355MC g O" | 🔴 CRITICAL |
+| G3 | **"Your article" = coil number** | Z90R903740 is coil ID | vs_article = "Z90R903740" | 🔴 CRITICAL — wrong Odoo lookup |
+| G4 | **Payment Terms** | "Within 30 Days Net" | null | 🔴 CRITICAL |
+| G5 | **Tariff/CN Code** | 72111900 all items | null | 🔴 CRITICAL |
+| G6 | **No. of items from N** | 2, 2, 4, 4 | Not extracted | 🟠 HIGH |
+| G7 | **Supplier article (SAP code)** | 51100331, 51100342, etc. | Not extracted | 🟠 HIGH |
+| G8 | **Multiple coils per line (item 0030)** | R90R903564 + R90R903569 | Only one captured in Coil Number field | 🟡 MEDIUM |
+
+---
+
+# OC 14 — thyssenkrupp Materials Hungary (84916031 / P01807)
+
+## A — Ground truth from PDF
+
+**6 line items (hot-dip galvanized coils):**
+
+| Item | Material | Grade+Coating+Finish | N×W | Qty (KG) | Thick | CN Code | RID |
+|---|---|---|---|---|---|---|---|
+| 0010 | 52101848 | DX51D+Z 140 MACU | 3 × 166 | 1.586 | 3.00mm | 72123000 | 500mm |
+| 0020 | 52102571 | HX260LAD+ZA 130 MC_O | 2 × 150 | 4.354 | 2.00mm | 72123000 | 508mm |
+| 0030 | 52105558 | HX260LAD+Z 100 MB_O | 3 × 200 | 1.930 | 3.00mm | 72123000 | 508mm |
+| 0040 | 52105558 | HX260LAD+Z 100 MB_O | 3 × 180 | 1.724 | 3.00mm | 72123000 | 508mm |
+| 0050 | 52106788 | DX51D+Z 200 MACU | 3 × 116 | 2.618 | 3.00mm | 72123000 | 500mm |
+| 0060 | 52109262 | HX260LAD+ZA 130 _C_O | 2 × 139 | 2.350 | 2.00mm | 72123000 | 508mm |
+
+All: 500 EUR/t. No total or VAT.
+
+**Grade+Coating+Finish decoding:**
+- "DX51D+Z 140 MACU" → Grade=DX51D, Coating=Z140, Finish=MACU (matte, chem. passivated, unoiled)
+- "HX260LAD+ZA 130 MC_O" → Grade=HX260LAD, Coating=ZA130, Finish=MC_O (matte, chem., oiled)
+- "HX260LAD+Z 100 MB_O" → Grade=HX260LAD, Coating=Z100, Finish=MB_O
+- "HX260LAD+ZA 130 _C_O" → Grade=HX260LAD, Coating=ZA130, Finish=_C_O
+
+**Critical difference vs all other suppliers**: Coating written as "+Z 140" (space before weight), not "+Z140". Existing Coating prompt handles "+Z275" (no space) but will truncate "+Z 140" at the space → extracts "Z" instead of "Z140".
+
+**Coil numbers:**
+- Items 0020 (4 coils) and 0050 (2 coils) have multiple coil numbers per line.
+- F900-prefix coils (F900258989, F900186174, F900186175) — new format not in previous OCs.
+
+## B — What Docsumo will likely extract
+
+| Item | Grade (expected) | Coating (expected) | Width (expected) |
+|---|---|---|---|
+| 0010 | "DX51D+Z 140 MACU" or "DX51D" | "Z" (truncated at space) | "3" or "166" or "3 × 166" |
+| 0020 | "HX260LAD+ZA 130 MC_O" or "HX260LAD" | "ZA" (truncated) | unpredictable |
+| 0030 | "HX260LAD+Z 100 MB_O" or "HX260LAD" | "Z" (truncated) | unpredictable |
+| 0040 | same as 0030 | "Z" (truncated) | unpredictable |
+| 0050 | "DX51D+Z 200 MACU" or "DX51D" | "Z" (truncated) | unpredictable |
+| 0060 | "HX260LAD+ZA 130 _C_O" | "ZA" (truncated) | unpredictable |
+
+## C — Gaps for OC 14
+
+| # | Field | What OC says | Expected Docsumo | Severity |
+|---|---|---|---|---|
+| G1 | **Coating "+Z 140" (space before weight)** | Z140, ZA130, Z100, Z200 | "Z" or "ZA" — truncated at space | 🔴 CRITICAL |
+| G2 | **Grade includes "+Z 140 MACU"** | DX51D, HX260LAD only | Whole string with coating+finish | 🔴 CRITICAL |
+| G3 | **Width ("N × W" format)** | 166, 150, 200, 180, 116, 139mm | N or full string likely | 🔴 CRITICAL |
+| G4 | **Tariff/CN Code** | 72123000 all items | null | 🔴 CRITICAL |
+| G5 | **Payment Terms** | "Within 30 Days Net" | null | 🔴 CRITICAL |
+| G6 | **Finish codes (MACU, MC_O, MB_O, _C_O)** | No dedicated Docsumo field | Not extracted to any field | 🟠 HIGH |
+| G7 | **No. of items from N** | 3, 2, 3, 3, 3, 2 | Not extracted | 🟠 HIGH |
+| G8 | **Multiple coils per line (items 0020, 0050)** | 4 and 2 coil numbers | Coil Number captures only 1 | 🟡 MEDIUM |
+| G9 | **Coil numbers F900 prefix** | F900258989, F900186174, F900186175 | F900 format not previously tested | 🟡 MEDIUM |
+
+---
+
+---
+
+# NEW FORMAT ISSUES — thyssenkrupp Materials Hungary (OCs 12–14)
+
+Five entirely new format patterns, all requiring prompt and/or code changes.
+
+---
+
+## ISSUE T1: "N × W" Dimension Format — Width + No. of Items (CRITICAL)
+
+**What it is**: Dimensions written as "2 × 420" meaning [N slit pieces] × [W mm width per piece]. Width for Odoo comparison = W (second number). No previous supplier has used this encoding.
+
+**Docsumo prompt fix for Width field:**
+> The width may be a standalone number (e.g. "1509 mm") OR the second number in a "count × width" pattern: "2 × 420" → width = 420mm, "3 × 141" → width = 141mm, "4 × 250" → width = 250mm.
+> When you see "N × W" or "N x W" format, extract ONLY the second number (W) as the width in mm. Do NOT extract the first number (N = number of pieces/coils).
+> Leave blank only if no width appears at all.
+
+**Docsumo prompt fix for No. of Items field:**
+> Extract the number of physical pieces, coils, or items for this line.
+> It may appear as a dedicated field ('Stückzahl', 'pcs', 'Anzahl') or as the first number in a "N × W" dimension string: "2 × 420" → N = 2 pieces, "3 × 166" → N = 3 pieces.
+> In "N × W" format, N is the smaller number appearing first; W (width in mm) appears after the × symbol.
+> If not stated, leave blank.
+
+**compare_fields.py note**: If Docsumo correctly extracts width as 141, 420, etc., no code change needed. If it sends "3 × 141" as a string, add parsing in `docsumo_client.py`'s `_parse_lines()` to detect and split "N × W" patterns.
+
+---
+
+## ISSUE T2: Grade String Includes Surface Treatment Suffix (CRITICAL)
+
+**What it is**: Surface treatment codes appended to the grade with a space:
+- "DC04 A m O" → grade = **DC04** ("A m O" = surface class A, matte, oiled)
+- "S315MC g O" → grade = **S315MC** ("g O" = pickled, oiled)
+- "S355MC g O" → grade = **S355MC**
+
+These suffixes are NOT part of the EN steel grade. Including them causes false grade mismatches against Odoo.
+
+**Docsumo prompt addition for Grade field:**
+> Some suppliers (notably thyssenkrupp Hungary) append surface treatment codes after a space following the grade designation. Do NOT include these in the grade field:
+> - "DC04 A m O" → grade = DC04 (ignore "A m O" = surface class/matte/oiled)
+> - "S315MC g O" → grade = S315MC (ignore "g O" = pickled/oiled suffix)
+> - "S355MC g U" → grade = S355MC (ignore "g U" = pickled/unoiled)
+> Stop extracting the grade at any of these known suffixes: "g O", "g U", "g U O", "A m O", "A b O", "A b U", "MACU", "MC_O", "MB_O", "_C_O".
+> Also stop at "+" which starts the coating notation (e.g. "HX260LAD+ZA 130 MC_O" → grade = HX260LAD).
+
+**compare_fields.py code fix** (add to `_normalize_grade()` or `_split_grade_coating()`):
+```python
+_TK_SURFACE_SUFFIXES = re.compile(
+    r'\s+(g\s*[OoUu]|A\s+[mb]\s*[OoUu]|MACU|MC_O|MB_O|_C_O|_B_O)\s*$',
+    re.IGNORECASE
+)
+
+def _strip_tk_surface_suffix(grade_str):
+    """Remove thyssenkrupp Hungary surface treatment suffixes from grade string."""
+    if not grade_str:
+        return grade_str
+    return _TK_SURFACE_SUFFIXES.sub('', grade_str).strip()
+```
+Apply this in `compare_fields.py` when normalizing the OC-side grade before comparison.
+
+---
+
+## ISSUE T3: Coating with Space Between Type and Weight (CRITICAL)
+
+**What it is**: thyssenkrupp Hungary writes "+Z 140" (space between "Z" and "140"). All previous suppliers use "+Z275" or similar (no space). The existing Coating prompt will truncate at the space → "Z" instead of "Z140".
+
+Examples: "+Z 140 MACU" → Z140, "+ZA 130 MC_O" → ZA130, "+Z 100 MB_O" → Z100, "+Z 200 MACU" → Z200.
+
+**Docsumo prompt addition for Coating field:**
+> Note: some suppliers (notably thyssenkrupp Hungary) write a space between the coating type letters and the coating weight number: "+Z 140" means Z140, "+ZA 130" means ZA130. Remove the space and concatenate — do not stop extraction at this space.
+> The finish code that follows (MACU, MC_O, MB_O, _C_O) is NOT part of the coating. Stop extraction at the finish code.
+> Examples:
+> - "DX51D+Z 140 MACU" → coating = Z140 (MACU is the finish, not part of coating)
+> - "HX260LAD+ZA 130 MC_O" → coating = ZA130 (MC_O is the finish)
+> - "HX260LAD+Z 100 MB_O" → coating = Z100
+
+**compare_fields.py code fix** (add to `_normalize_coating()`):
+```python
+_TK_FINISH_CODES = re.compile(
+    r'\s+(MACU|MC_O|MB_O|_C_O|_B_O|MA_O|_A_O)\s*$',
+    re.IGNORECASE
+)
+
+def _normalize_coating(coating_str):
+    if not coating_str:
+        return coating_str
+    coating_str = _TK_FINISH_CODES.sub('', coating_str).strip()  # strip finish code
+    coating_str = re.sub(r'([A-Za-z]+)\s+(\d+)', r'\1\2', coating_str)  # "Z 140" → "Z140"
+    return coating_str.upper().strip()
+```
+
+---
+
+## ISSUE T4: Payment Terms "Within 30 Days Net" (English variant)
+
+**What it is**: "Terms of payment: Within 30 Days Net" — English phrasing used for the first time. Existing prompt has "30 DAYS FROM INVOICE DATE" as the only English form.
+
+**Payment Terms prompt addition:**
+> - 'Within 30 Days Net' / 'Within 30 days' → 30 days net
+
+---
+
+## ISSUE T5: "Your article" = Supplier Coil Number (not VS article ID)
+
+**What it is**: OC 84916030 item 0010 shows "Your article: Z90R903740". Z90R903740 is thyssenkrupp's own coil number, not a VS article ID. If Docsumo captures this as vs_article, the Odoo lookup will fail.
+
+**Item ID / VS Article prompt addition:**
+> Important: Some thyssenkrupp Hungary OC items include "Your article:" followed by their coil number (formats: R90R..., Z90R..., F900...). These are supplier coil IDs — NOT VS article numbers. Do not extract them as the item/article reference. VS article IDs follow the pattern VSI-XXXXXXXX (e.g. VSI-17892446) or are assigned by Vanilla Steel — they do not start with R90R, Z90R, or F900.
+
+---
+
+## ISSUE T6: SAP Material Code as Supplier Article Number
+
+**What it is**: Each line item shows an 8-digit SAP material code as the first word of the description: "51100331 Hot-rolled coils" → supplier article = 51100331. Same pattern as EMW Stahl's "Material: 18504713" but here it is unlabeled, inline with the product description.
+
+**Supplier Article prompt addition:**
+> In thyssenkrupp Materials Hungary OCs, the supplier's article number is the 8-digit SAP material code shown at the start of the item description line — e.g. "51100331 Hot-rolled coils" → supplier article = 51100331. It appears without a label, as the first word of the description.
+
+---
+
+---
+
+# UPDATED MASTER GAPS SUMMARY (all 14 OCs)
+
+| Gap | Seen in | Severity | Fix |
+|---|---|---|---|
+| PO number P0 → PO (digit/letter) | OC8 | 🔴 CRITICAL | Prompt fix |
+| PO number hallucination | OC1 | 🔴 CRITICAL | Prompt fix |
+| PO number in unlabeled/wrong field | OC5, OC7 | 🔴 CRITICAL | Prompt fix — ✅ working in OC10 |
+| Width across page boundary | OC9, OC7 | 🔴 CRITICAL | Structural limit |
+| RID confused with Length | OC11 | 🔴 CRITICAL | Prompt fix |
+| **"N × W" → extract W as width** | **OC12, OC13, OC14** | 🔴 CRITICAL | Prompt fix — Width field |
+| **Grade suffix "g O" / "A m O" in grade string** | **OC12, OC13** | 🔴 CRITICAL | Prompt fix + code fix |
+| **Coating "+Z 140" (space before weight)** | **OC14** | 🔴 CRITICAL | Prompt fix + code fix |
+| **Payment Terms "Within 30 Days Net"** | **OC12, OC13, OC14** | 🔴 CRITICAL | Prompt fix |
+| **"Your article" = coil number (not VS ID)** | **OC13 item 0010** | 🔴 CRITICAL | Prompt fix |
+| Payment Terms (German variants) | OC2, OC5, OC6, OC9 | 🔴 CRITICAL | Prompt fix — ✅ working in OC10 |
+| Quality Choice (IIa / 2nd choice) | OC1, OC3, OC6, OC7 | 🔴 CRITICAL | New field |
+| VAT fabricated when not stated | OC2, OC3, OC8 | 🔴 CRITICAL | Prompt fix |
+| Coating spaced codes (ZMAC) | OC1 | 🔴 CRITICAL | Prompt fix |
+| Consignee address vs manufacturer | OC3 | 🔴 CRITICAL | Prompt fix |
+| Tariff/CN Code | OC3, OC7, OC12, OC13, OC14 | 🔴 CRITICAL | New field (now 5 OCs) |
+| **SAP material code as supplier article** | **OC12–14** (also OC5, OC10) | 🟠 HIGH | Prompt fix |
+| **Finish codes MACU/MC_O/MB_O** | **OC14** | 🟠 HIGH | Supplier Notes or new field |
+| **No. of items from N in "N × W"** | **OC12, OC13, OC14** | 🟠 HIGH | Prompt fix |
+| Continuation lines no description | OC8 | 🟠 HIGH | Structural limit |
+| Item ID row numbers as article IDs | OC3, OC9 | 🟠 HIGH | Prompt fix |
+| Form (Spaltband, Breitband, HR Coil) | OC1, OC3, OC6, OC8, OC9 | 🟠 HIGH | New field |
+| Delivery Date | OC1, OC3, OC6–OC14 | 🟠 HIGH | New field |
+| Supplier Notes / key conditions | OC1, OC2, OC5, OC7, OC9 | 🟠 HIGH | New field |
+| Tensile Strength in description | OC7 | 🟠 HIGH | New field |
+
+---
+
+## UPDATED PRIORITY ORDER FOR IMPLEMENTATION (all 14 OCs)
+
+| Priority | Field/Fix | Now seen in | Why urgent |
+|---|---|---|---|
+| 1 | VS Order Number (final prompt) | OC1, OC5, OC7, OC8 | Wrong PO = wrong everything |
+| 2 | Length (exclude RID) | OC11 | False length mismatches |
+| 3 | VAT/Gross (never calculate) | OC2, OC3, OC8 | Fabricated values |
+| 4 | **Width: "N × W" → extract W only** | **OC12, OC13, OC14** | Wrong width for 3 new OCs |
+| 5 | **Grade: strip "g O" / "A m O" suffixes** | **OC12, OC13** | Grade mismatch in Odoo |
+| 6 | **Coating: handle "+Z 140" with space** | **OC14** | Wrong coating for galvanized |
+| 7 | **Payment Terms: add "Within 30 Days Net"** | **OC12, OC13, OC14** | Can't check payment terms |
+| 8 | Quality Choice (new field) | OC1, OC3, OC6, OC7 | IIa/2nd choice critical |
+| 9 | **Item ID: "Your article" may be coil, not VS ID** | **OC13** | Wrong Odoo line matching |
+| 10 | Coating (spaced codes ZMAC/ZMACO) | OC1 | Wrong coating |
+| 11 | Coil Number (code already done) | OC3, OC12–14 | ✅ Code updated |
+| 12 | Tariff/CN Code (new field) | OC3, OC7, OC12–14 | Customs, now 5 OCs |
+| 13 | Delivery Date (new field) | OC1, OC3, OC6–OC14 | Delivery tracking |
+| 14 | **Supplier Article: SAP 8-digit inline** | **OC5, OC10, OC12–14** | EMW + TK Hungary line matching |
+| 15 | Supplier Notes (new field) | OC1, OC2, OC5, OC7, OC9 | Storage/billing risk |
+| 16 | Product Form (Spaltband, Breitband) | OC1, OC3, OC6, OC8, OC9 | Spec verification |
+| 17 | **No. of Items from N in "N × W"** | **OC12–14** | Less critical than width |
+| 18 | Consignee Address (CIP/CPT) | OC3 | Address check |
+| 19 | Tensile Strength at line level | OC7 | Lower frequency |
