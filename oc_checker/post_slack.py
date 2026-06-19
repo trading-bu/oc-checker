@@ -165,23 +165,42 @@ def post_oc_result(webhook_url, result, filename):
     return post(webhook_url, {"text": text})
 
 
-def post_po_status_update(webhook_url, po_name, po_log):
+def post_via_api(token, channel, text, thread_ts=None):
     """
-    Post the full status of a PO as a single Slack message.
+    Post a message via the Slack Web API (chat.postMessage).
 
-    Reads from the persistent po_oc_log entry built up across runs:
-      - confirmed items  → compact one-liner (full detail if any mismatches)
-      - mismatch items   → full field detail so trader knows what to fix
-      - pending items    → ⏳ "OC not yet received"
+    Returns (ok: bool, ts: str|None) — ts is the message timestamp,
+    which can be used as thread_ts for replies.
+    """
+    payload = {"channel": channel, "text": text}
+    if thread_ts:
+        payload["thread_ts"] = thread_ts
+    data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(
+        "https://slack.com/api/chat.postMessage",
+        data=data,
+        headers={
+            "Content-Type":  "application/json",
+            "Authorization": "Bearer %s" % token,
+        },
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            body = json.loads(resp.read().decode())
+            if body.get("ok"):
+                return True, body.get("ts")
+            print("Slack API error: %s" % body.get("error"), file=sys.stderr)
+            return False, None
+    except Exception as e:
+        print("Slack API post failed: %s" % e, file=sys.stderr)
+        return False, None
 
-    Message progresses naturally:
-      Day 1: ⏳ 3/10 confirmed — 7 still pending
-      Day 2: ⏳ 6/10 confirmed — 4 still pending
-      Day 3: ✅ All 10 confirmed — open SO and send
 
-    Args:
-        po_name  — e.g. "P01807"
-        po_log   — the state["po_oc_log"][po_name] dict
+def build_po_status_text(po_name, po_log):
+    """
+    Build the full PO status message text — same content as post_po_status_update
+    but returns the string instead of posting it.
     """
     line_items    = po_log.get("line_items", {})
     so_name       = po_log.get("so_name", "—")
@@ -225,7 +244,6 @@ def post_po_status_update(webhook_url, po_name, po_log):
     lines.append("*PART 1 -- PARAMETER CHECK*")
     lines.append(SEP)
 
-    # Sort: mismatches first, then confirmed, then pending
     def _sort_key(item):
         return {"mismatch": 0, "confirmed": 1, "pending": 2}.get(item[1].get("status", "pending"), 9)
 
@@ -237,7 +255,6 @@ def post_po_status_update(webhook_url, po_name, po_log):
             lines.append(":hourglass_flowing_sand: *%s*   _— OC not yet received_" % vs_id)
             continue
 
-        # confirmed or mismatch
         oc_ref      = entry.get("oc_ref", "?")
         conf_date   = entry.get("date", "")
         oc_line     = entry.get("oc_line", {})
@@ -252,27 +269,25 @@ def post_po_status_update(webhook_url, po_name, po_log):
         qty      = oc_line.get("quantity", "")
         coil_num = oc_line.get("coil_number", "")
 
-        grade_str = ("  " + grade)              if grade             else ""
-        dim_str   = ("  %sx%smm" % (thick, width)) if thick and width else ""
-        qty_str   = ("  %st" % qty)             if qty               else ""
-        coil_str  = ("  |  Coil: %s" % coil_num) if coil_num         else ""
+        grade_str = ("  " + grade)                 if grade             else ""
+        dim_str   = ("  %sx%smm" % (thick, width)) if thick and width   else ""
+        qty_str   = ("  %st" % qty)                if qty               else ""
+        coil_str  = ("  |  Coil: %s" % coil_num)  if coil_num          else ""
         meta      = "  _(OC %s · %s)_" % (oc_ref, conf_date) if conf_date else "  _(OC %s)_" % oc_ref
 
         lines.append("")
         if mismatches == 0:
-            # Compact one-liner for clean confirmed items
             lines.append(":white_check_mark: *%s*%s%s%s%s%s   %d/%d ✅" % (
                 vs_id, grade_str, dim_str, qty_str, coil_str, meta, score, total_flds))
         else:
-            # Full detail for mismatched items so trader knows what to fix
             lines.append(":x: *%s*%s%s%s%s%s" % (
                 vs_id, grade_str, dim_str, qty_str, coil_str, meta))
             for f in field_res:
-                label  = f["label"]
+                label   = f["label"]
                 fstatus = f["status"]
-                odoo_v = f["odoo"]
-                oc_v   = f["oc"]
-                note   = f.get("note", "")
+                odoo_v  = f["odoo"]
+                oc_v    = f["oc"]
+                note    = f.get("note", "")
                 if fstatus == "mismatch":
                     lines.append("   :x: *%s*: Odoo `%s`  !=  OC `%s`" % (label, odoo_v, oc_v))
                 elif fstatus == "match":
@@ -340,8 +355,28 @@ def post_po_status_update(webhook_url, po_name, po_log):
             n_conf, total, n_pending))
     else:
         lines.append(":x: Fix %d mismatch(es) in Odoo before sending SO `%s`." % (n_mismatch, so_name))
+    return "\n".join(lines).strip()
 
-    text = "\n".join(lines).strip()
+
+def post_po_status_update(webhook_url, po_name, po_log):
+    """
+    Post the full status of a PO as a single Slack message.
+
+    Reads from the persistent po_oc_log entry built up across runs:
+      - confirmed items  \u2192 compact one-liner (full detail if any mismatches)
+      - mismatch items   \u2192 full field detail so trader knows what to fix
+      - pending items    \u2192 \u23f3 "OC not yet received"
+
+    Message progresses naturally:
+      Day 1: \u23f3 3/10 confirmed \u2014 7 still pending
+      Day 2: \u23f3 6/10 confirmed \u2014 4 still pending
+      Day 3: \u2705 All 10 confirmed \u2014 open SO and send
+
+    Args:
+        po_name  \u2014 e.g. "P01807"
+        po_log   \u2014 the state["po_oc_log"][po_name] dict
+    """
+    text = build_po_status_text(po_name, po_log)
     return post(webhook_url, {"text": text})
 
 

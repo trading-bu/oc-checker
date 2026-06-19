@@ -341,6 +341,13 @@ def main():
         print("ERROR: SLACK_WEBHOOK_URL not set.")
         sys.exit(1)
 
+    slack_bot_token = os.environ.get("SLACK_BOT_TOKEN", "")
+    slack_channel   = os.environ.get("SLACK_CHANNEL_ID", "")
+
+    if not slack_bot_token or not slack_channel:
+        print("ERROR: SLACK_BOT_TOKEN and SLACK_CHANNEL_ID must be set.")
+        sys.exit(1)
+
     state         = load_state()
     processed_ids = get_processed_ids(state)
     print(f"Already processed: {len(processed_ids)} document(s)")
@@ -387,9 +394,20 @@ def main():
             save_state(state)
 
             # Post Slack now — one message per arriving OC, always showing
-            # the full picture: confirmed items + items still waiting on OC
-            po_log = state["po_oc_log"][po_name]
-            post_slack.post_po_status_update(slack_webhook, po_name, po_log)
+            # the full picture: confirmed items + items still waiting on OC.
+            # First post for a PO creates a top-level message; subsequent posts
+            # (new OC files for the same PO) reply in that thread.
+            po_log    = state["po_oc_log"][po_name]
+            thread_ts = po_log.get("slack_ts")
+            text      = post_slack.build_po_status_text(po_name, po_log)
+
+            ok, ts = post_slack.post_via_api(
+                slack_bot_token, slack_channel, text, thread_ts=thread_ts)
+
+            if ok and not thread_ts and ts:
+                # First post — save the ts so future updates thread under it
+                state["po_oc_log"][po_name]["slack_ts"] = ts
+                save_state(state)
 
     save_state(state)
     print("\nAll done.")
