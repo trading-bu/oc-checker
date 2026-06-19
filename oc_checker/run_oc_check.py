@@ -179,8 +179,12 @@ def update_po_log_with_result(state: dict, po_name: str, result: dict,
             if not vs_id:
                 continue
             if vs_id not in po_entry["line_items"]:
-                # VSI ID from OC that wasn't in the initial Odoo snapshot — add it
-                po_entry["line_items"][vs_id] = {"status": "pending"}
+                # This ID wasn't seeded from Odoo — likely a matching failure
+                # (e.g. vs_id='?' or a supplier coil/article code that Odoo
+                # doesn't know about). Skip it to avoid ghost entries in the log.
+                print(f"  Skipping unrecognized ID '{vs_id}' "
+                      f"(not in Odoo PO log — likely a matching failure)")
+                continue
 
             mismatches = lr.get("mismatches", 0)
             po_entry["line_items"][vs_id] = {
