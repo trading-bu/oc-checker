@@ -41,8 +41,10 @@
     "5dcd6a3be229448e834a6120e0d4f1d6",
     "6477d091a28846c2bb668cc34f9d7f8b",
     "6598ee19b5854f38bfe7318905c8250f",
+    "6ced3e2183704376b0596df2c86e8f8b",
     "6df6700754f24f9783cfffece9a336ed",
     "6e34100c8d014b21bf4328db864c4ff8",
+    "6ee68d096c72423991e27ceb5abd015a",
     "71bd9cb043314974a81e1c75ef13911a",
     "781d413a48c24302bd80c56981902728",
     "78afd66e286840f99c5403961ea4023c",
@@ -71,6 +73,7 @@
     "a90d788c29b14169baa3bb436a5eade8",
     "aaf0384cead04cad98981905668d19d3",
     "ab82f31d60fc46f1a5a01d7d9a7a1752",
+    "acde1cf37cdf49c6922fb1615e37d984",
     "b43a91fa654947dea375a6c967502230",
     "b690c15203114f6d8fa1ac8adad0b477",
     "be5f9d3b31494a0c86952e027fa7a340",
@@ -96,6 +99,67 @@
     "ee59544d37a942988092f7e86dea21ff",
     "efc3fa10cc4446fda88df6ae62859077",
     "f2af23a5c49d4bc79ca3bc6480dcf2df",
-    "f39cac2337a247d39f3729878206d8fa"
-  ]
+    "f39cac2337a247d39f3729878206d8fa",
+    "ff4d131efb664cc5b2d158c23219dbdf"
+  ],
+  "po_oc_log": {
+    "P01797": {
+      "so_name": "S01491",
+      "supplier": "Martin Korreck",
+      "buyer": "Arnd Seelmann",
+      "initialized": "2026-06-19",
+      "last_updated": "2026-06-19",
+      "line_items": {
+        "VSI-17900519": {
+          "status": "pending"
+        },
+        "VSI-17900520": {
+          "status": "pending"
+        },
+        "VSI-17900521": {
+          "status": "pending"
+        },
+        "VSI-17900522": {
+          "status": "pending"
+        },
+        "VSI-17900524": {
+          "status": "pending"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Hagen",
+          "odoo": "Arnd Seelmann, Germany",
+          "warning": true
+        },
+        {
+          "type": "incoterms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Incoterms MISMATCH",
+          "oc": "FCA Hagen",
+          "odoo": "[FCA] FREE CARRIER",
+          "warning": true
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "Innerhalb 30 Tagen ohne Abzug",
+          "odoo": "30 Days",
+          "warning": true
+        }
+      ],
+      "pattern_b_ocs": [
+        {
+          "oc_ref": "212432",
+          "filename": "2026-06-11_bilstein-kaltband.de_Auftragsbest?tigung_212432.pdf",
+          "date": "2026-06-19",
+          "pattern": "B"
+        }
+      ]
+    }
+  }
 }
