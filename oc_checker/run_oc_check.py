@@ -358,16 +358,16 @@ def main():
         sys.exit(0)
 
     # ------------------------------------------------------------------
-    # Process each new OC — seed and update the per-PO line-item log
+    # Process each new OC.  Post a Slack message immediately after each
+    # one so every arriving PDF produces its own status update showing
+    # the cumulative picture for that PO (confirmed so far + still pending).
     # ------------------------------------------------------------------
-    pos_with_activity = set()   # POs that had at least one new OC this run
-
     for doc in new_docs:
         success, result, filename, po_lines, so_data, po_data = process_one(
             doc, odoo_cfg, slack_webhook)
 
-        # Mark processed immediately — if the run crashes after this point the
-        # doc is skipped next time, which is safe (state is already saved).
+        # Mark processed immediately — crash-safe: if the run dies here the
+        # doc is skipped next time rather than double-processed.
         state = mark_processed(state, doc["id"])
         save_state(state)
 
@@ -382,15 +382,10 @@ def main():
             state = update_po_log_with_result(state, po_name, result, filename)
             save_state(state)
 
-            pos_with_activity.add(po_name)
-
-    # ------------------------------------------------------------------
-    # Post ONE Slack message per PO — always the full picture:
-    # confirmed items with OC details + still-pending items with ⏳
-    # ------------------------------------------------------------------
-    for po_name in sorted(pos_with_activity):
-        po_log = state["po_oc_log"][po_name]
-        post_slack.post_po_status_update(slack_webhook, po_name, po_log)
+            # Post Slack now — one message per arriving OC, always showing
+            # the full picture: confirmed items + items still waiting on OC
+            po_log = state["po_oc_log"][po_name]
+            post_slack.post_po_status_update(slack_webhook, po_name, po_log)
 
     save_state(state)
     print("\nAll done.")

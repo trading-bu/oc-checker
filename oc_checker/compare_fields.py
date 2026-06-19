@@ -366,11 +366,21 @@ def compare(oc_data, po_data, po_lines, so_data, so_lines, config,
     oc_lines = oc_data.get("lines") or oc_data.get("line_items", [])
     pattern  = _detect_pattern(oc_lines, po_lines)
 
+    # Pattern B fires when the OC has fewer lines than the PO. But this also
+    # happens legitimately when a supplier sends one OC file per item (e.g.
+    # Bilstein: 5 separate OC PDFs each with 1 line, for a 5-line PO).
+    # Before giving up on per-line comparison, check whether the OC lines can
+    # be matched to specific PO lines by supplier article number. If yes,
+    # treat as Pattern A so each matched VSI ID gets confirmed in the log.
+    if pattern == "B":
+        if any(_match_po_line(ol, po_lines) for ol in oc_lines):
+            pattern = "A"
+
     line_results = []
     total_mismatches = 0
 
     if pattern in ("B", "C"):
-        # Cannot do per-line spec comparison — just record pattern
+        # Genuine aggregation — cannot do per-line spec comparison
         line_results = []
     else:
         # Use positional matching if OC lines have no real article IDs (e.g. 1, 2, 3)
