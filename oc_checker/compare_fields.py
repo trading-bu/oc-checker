@@ -247,27 +247,71 @@ def _compare_line(oc_line, po_line, so_line, cfg, skip_qty=False, group_note=Non
         ok = oc_form.lower() == odoo_form.lower() if odoo_form else False
         results.append(_field("form", "Form", "match" if ok else "mismatch", odoo_form or "—", oc_form))
 
-    # 2. QUALITY CHOICE
-    oc_q = _norm(oc_line.get("quality_choice"))
-    odoo_q = _norm(so("choice"))
-    if not oc_q:
-        results.append(_field("quality_choice", "Quality Choice", "skip", odoo_q or "—", None))
-    else:
-        ok = oc_q.lower() == odoo_q.lower() if odoo_q else False
-        results.append(_field("quality_choice", "Quality Choice", "match" if ok else "mismatch", odoo_q or "—", oc_q))
+    # 2–3, 5. QUALITY CHOICE / GRADE / COATING — cross-field aware
+    #
+    # Odoo stores grade, coating, and choice as three separate fields.
+    # Supplier OCs often put any of these values in any field — e.g. the
+    # grade value might appear in the quality_choice column, the coating
+    # might be embedded in the grade string (DX51D+Z275), or the choice
+    # label might end up in the grade field.
+    #
+    # Strategy: build a pool of all non-empty OC spec values and, for each
+    # Odoo value, first check the corresponding OC field (direct match), then
+    # fall back to the pool (cross-field match).  A cross-field match is still
+    # counted as confirmed — the supplier DID confirm the right value, just in
+    # the wrong column.
 
-    # 3. GRADE (handle combined grade+coating strings like DX51D+Z275)
-    oc_grade_raw = _norm(oc_line.get("grade"))
+    oc_grade_raw         = _norm(oc_line.get("grade"))
     oc_grade, oc_coating_from_grade = _split_grade_coating(oc_grade_raw)
-    odoo_grade = _norm(so("grade") or (po_line.get("name","") if po_line else ""))
-    note = f"[OC: {oc_grade_raw} — coating suffix stripped]" if oc_coating_from_grade else ""
-    if not oc_grade:
-        results.append(_field("grade", "Grade", "skip", odoo_grade or "—", None))
-    else:
-        ok = oc_grade.lower() == odoo_grade.lower() if odoo_grade else False
-        results.append(_field("grade", "Grade", "match" if ok else "mismatch", odoo_grade or "—", oc_grade, note))
+    oc_coating           = _norm(oc_line.get("coating")) or oc_coating_from_grade or ""
+    oc_q                 = _norm(oc_line.get("quality_choice"))
 
-    # 4. FINISH
+    odoo_grade   = _norm(so("grade") or (po_line.get("name","") if po_line else ""))
+    odoo_coating = _norm(so("coating"))
+    odoo_q       = _norm(so("choice"))
+
+    # OC spec pool: normalised-lower value → field name it came from (first wins)
+    _oc_spec = {}
+    for _fn, _fv in [("grade", oc_grade), ("coating", oc_coating), ("quality_choice", oc_q)]:
+        if _fv:
+            _oc_spec.setdefault(_fv.lower(), _fn)
+
+    def _spec_field(key, label, odoo_val, oc_primary, primary_name, extra_note=""):
+        """
+        Compare one spec field with cross-field fallback.
+        odoo_val     — what Odoo has
+        oc_primary   — what the OC put in the corresponding field
+        primary_name — display name of that OC field (for notes)
+        """
+        if not odoo_val:
+            return _field(key, label, "skip", "—", oc_primary or None)
+        if not _oc_spec:                          # OC sent no spec at all
+            return _field(key, label, "skip", odoo_val, None)
+        odoo_norm = odoo_val.lower()
+        if not oc_primary:                        # primary OC field empty
+            if odoo_norm in _oc_spec:
+                found = _oc_spec[odoo_norm]
+                note = f"cross-field: found in OC {found}"
+                if extra_note:
+                    note = extra_note + "; " + note
+                return _field(key, label, "match", odoo_val, odoo_val, note)
+            return _field(key, label, "skip", odoo_val, None)
+        if oc_primary.lower() == odoo_norm:       # direct match
+            return _field(key, label, "match", odoo_val, oc_primary, extra_note)
+        if odoo_norm in _oc_spec:                 # cross-field match
+            found = _oc_spec[odoo_norm]
+            note = f"cross-field: found in OC {found} (OC {primary_name}: {oc_primary})"
+            if extra_note:
+                note = extra_note + "; " + note
+            return _field(key, label, "match", odoo_val, odoo_val, note)
+        return _field(key, label, "mismatch", odoo_val, oc_primary, extra_note)
+
+    strip_note = f"OC grade field: '{oc_grade_raw}' — coating suffix stripped" if oc_coating_from_grade else ""
+    results.append(_spec_field("grade",          "Grade",          odoo_grade,   oc_grade,   "grade",          strip_note))
+    results.append(_spec_field("quality_choice", "Quality Choice", odoo_q,       oc_q,       "quality_choice"))
+    results.append(_spec_field("coating",        "Coating",        odoo_coating, oc_coating, "coating"))
+
+    # 4. FINISH (not part of cross-field spec pool — different semantics)
     oc_finish = _norm(oc_line.get("finish"))
     odoo_finish = _norm(so("finish"))
     if not oc_finish:
@@ -275,22 +319,6 @@ def _compare_line(oc_line, po_line, so_line, cfg, skip_qty=False, group_note=Non
     else:
         ok = oc_finish.lower() == odoo_finish.lower() if odoo_finish else False
         results.append(_field("finish", "Finish", "match" if ok else "mismatch", odoo_finish or "—", oc_finish))
-
-    # 5. COATING (use extracted coating OR coating suffix from grade string)
-    oc_coating   = _norm(oc_line.get("coating")) or oc_coating_from_grade or ""
-    odoo_coating = _norm(so("coating"))
-    if not oc_coating:
-        results.append(_field("coating", "Coating", "skip", odoo_coating or "—", None))
-    elif not odoo_coating:
-        # OC has coating info but Odoo's coating field is empty.
-        # For galvanized steel, Odoo stores this in the 'finish' field (e.g. "Galfan (+ZA)"),
-        # not the coating field.  Don't flag as mismatch — skip with a note.
-        results.append(_field("coating", "Coating", "skip", "—", oc_coating,
-                               "OC specifies coating; Odoo coating field empty (check finish field)"))
-    else:
-        ok = oc_coating.lower() == odoo_coating.lower()
-        results.append(_field("coating", "Coating", "match" if ok else "mismatch",
-                               odoo_coating, oc_coating))
 
     # 6. QUANTITY
     odoo_qty = po_line.get("product_qty") if po_line else None
