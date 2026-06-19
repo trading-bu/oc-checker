@@ -26,6 +26,7 @@
     "885f094165ea4d61a15951f7ab5ff453",
     "8e4185fe99ca4753a89201ddc2b98b18",
     "9338c83492734363aa3aa3f096a85b91",
+    "9a5d7c96310c464b81f989818c77dc7d",
     "9c747382a3d640f18264ab35137f3b5d",
     "a1e87a7e5e554300a29c55107af4dd36",
     "a23c3a2687fa46a4b422ee8ae04b9daa",
@@ -7151,6 +7152,529 @@
           "icon": "\u26a0\ufe0f",
           "label": "Payment Terms MISMATCH",
           "oc": "Vorkasse, Zahlung sofort",
+          "odoo": "30 Days",
+          "warning": true
+        }
+      ]
+    },
+    "P01755": {
+      "so_name": "S01464",
+      "supplier": "Joonas Suomela",
+      "buyer": "Bartosz Sagalara",
+      "initialized": "2026-06-19",
+      "last_updated": "2026-06-19",
+      "line_items": {
+        "VSI-17890309": {
+          "status": "confirmed",
+          "oc_ref": "85531(01)",
+          "filename": "TILKKURA_85531_01_P01755_20260515_075720.pdf",
+          "date": "2026-06-19",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "SECOND CHOICE COILS 3,00 X 1509,0 MM HOT ROLLED STEEL COILS HOT ROLLED SECOND CHOICE COILS",
+            "quantity": 27.112,
+            "unit": "MT",
+            "unit_price": 600.0,
+            "total_price": 16267.2,
+            "grade": null,
+            "thickness": 3.0,
+            "width": 1509.0,
+            "length": null,
+            "coating": null,
+            "coil_number": null
+          },
+          "fields": [
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "27.112",
+              "oc": "27.112",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "600.0",
+              "oc": "600.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "3.0",
+              "oc": "3.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1509.0",
+              "oc": "1509.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "skip",
+              "odoo": "S235J2C",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "412.00",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 4,
+          "mismatches": 0
+        },
+        "VSI-17890328": {
+          "status": "confirmed",
+          "oc_ref": "85531(01)",
+          "filename": "TILKKURA_85531_01_P01755_20260515_075720.pdf",
+          "date": "2026-06-19",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "SECOND CHOICE COILS 3,98 X 1507,0 MM HOT ROLLED STEEL COILS HOT ROLLED SECOND CHOICE COILS",
+            "quantity": 23.51,
+            "unit": "MT",
+            "unit_price": 615.0,
+            "total_price": 14458.65,
+            "grade": null,
+            "thickness": 3.98,
+            "width": 1507.0,
+            "length": null,
+            "coating": null,
+            "coil_number": null
+          },
+          "fields": [
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "23.51",
+              "oc": "23.51",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "615.0",
+              "oc": "615.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "3.98",
+              "oc": "3.98",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1507.0",
+              "oc": "1507.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "skip",
+              "odoo": "S355J2C",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "538.00",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 4,
+          "mismatches": 0
+        },
+        "VSI-17890341": {
+          "status": "confirmed",
+          "oc_ref": "85531(01)",
+          "filename": "TILKKURA_85531_01_P01755_20260515_075720.pdf",
+          "date": "2026-06-19",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "SECOND CHOICE COILS 4,98 X 1510,0 MM HOT ROLLED STEEL COILS HOT ROLLED SECOND CHOICE COILS",
+            "quantity": 11.72,
+            "unit": "MT",
+            "unit_price": 610.0,
+            "total_price": 7149.2,
+            "grade": null,
+            "thickness": 4.98,
+            "width": 1510.0,
+            "length": null,
+            "coating": null,
+            "coil_number": null
+          },
+          "fields": [
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "11.72",
+              "oc": "11.72",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "610.0",
+              "oc": "610.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "4.98",
+              "oc": "4.98",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1510.0",
+              "oc": "1510.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "skip",
+              "odoo": "S355K2",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "538.00",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 4,
+          "mismatches": 0
+        },
+        "VSI-17890342": {
+          "status": "mismatch",
+          "oc_ref": "85531(01)",
+          "filename": "TILKKURA_85531_01_P01755_20260515_075720.pdf",
+          "date": "2026-06-19",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "COILS 4.98 X 1510.0 MM",
+            "quantity": 12.499,
+            "unit": "MT",
+            "unit_price": 610.0,
+            "total_price": 7624.39,
+            "grade": "SECOND CHOICE",
+            "thickness": null,
+            "width": null,
+            "length": null,
+            "coating": null,
+            "coil_number": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "S355K2",
+              "oc": "SECOND CHOICE",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "12.499",
+              "oc": "12.499",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "610.0",
+              "oc": "610.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "skip",
+              "odoo": "4.98",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "skip",
+              "odoo": "1510.0",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "535.00",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 2,
+          "total": 3,
+          "mismatches": 1
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "H & S STEEL SP. Z O.O. MACHNACZ 81 87-880 BRZESC KUJAWSKI POLAND",
+          "odoo": "Bartosz Sagalara, Poland",
+          "warning": true
+        },
+        {
+          "type": "incoterms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Incoterms MISMATCH",
+          "oc": "CIP (INCOTERMS 2020)",
+          "odoo": "[CPT] CARRIAGE PAID TO",
+          "warning": true
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "30 DAYS FROM INVOICE DATE",
           "odoo": "30 Days",
           "warning": true
         }
