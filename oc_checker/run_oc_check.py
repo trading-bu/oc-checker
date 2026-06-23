@@ -406,10 +406,15 @@ def main():
                 thread_ts = po_log.get("slack_ts")
                 ok, ts = post_slack.post_via_api(
                     slack_bot_token, slack_channel, text, thread_ts=thread_ts)
-                if ok and not thread_ts and ts:
-                    # First post — save ts so future updates thread under it
-                    state["po_oc_log"][po_name]["slack_ts"] = ts
-                    save_state(state)
+                if ok:
+                    if not thread_ts and ts:
+                        # First post — save ts so future updates thread under it
+                        state["po_oc_log"][po_name]["slack_ts"] = ts
+                        save_state(state)
+                else:
+                    # API failed — fall back to webhook so message still gets through
+                    print(f"  Slack API failed for {po_name}, falling back to webhook")
+                    post_slack.post_po_status_update(slack_webhook, po_name, po_log)
             else:
                 post_slack.post_po_status_update(slack_webhook, po_name, po_log)
 

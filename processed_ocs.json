@@ -3,24 +3,17 @@
     "00fdbeb5b6204f0e8cf522a54b3d76f4",
     "08e2e6265a9641aba6bc302da2ff1aa8",
     "0a6186fd190a4a708b503acb9b35674d",
-    "109f4a3b526e4c94959d27098f52397b",
     "10c3515786af47f4bb8f06de53ac7300",
     "13b447bd99b64bc08923963c85b7034f",
-    "13c9d34ae7614759b85338de08f8f9cf",
     "14752774939d412f93e8e619c26163d4",
     "1e48d000a96f4eeba51683deb0926e07",
-    "244f1402fb084b718459a2a6139414ff",
     "36d0f4d11f0c416dacf4b87b10498813",
-    "36f6d8d2538b46f4ae6aab20a096bfd5",
     "39a8ac8ca7c94438a1fa49e976ea962e",
     "3f2e55a6da844f008affee949667f242",
-    "3fc5fe5c79a542e4adbc8f67e6d0e903",
     "4183463988c445e885c9587b7b76cbfb",
-    "428b7babc6744c3dbccd95464cb3f8a8",
     "49927a42d7cb49958743908b2570dc23",
     "4b2e8a0d1a944d48a2a1b774cd168774",
     "4f23832ea4444e15a2e5c94f15ea9a72",
-    "501c377c0d5a494093158c80b2d0d3ef",
     "59e0b23752264bc9be30ce05d6402643",
     "5dcd6a3be229448e834a6120e0d4f1d6",
     "6df6700754f24f9783cfffece9a336ed",
@@ -31,41 +24,20 @@
     "840b931230074ea2b6f33eeb350173b8",
     "84b420b1d3604946ae34afb041f5b0ef",
     "885f094165ea4d61a15951f7ab5ff453",
-    "8955ac630ef9492986c249f0c9e5bf48",
     "8e4185fe99ca4753a89201ddc2b98b18",
-    "922d9a284a474971b5f139047e8b3d7f",
     "9338c83492734363aa3aa3f096a85b91",
-    "9a5d7c96310c464b81f989818c77dc7d",
-    "9a9f2c5dd030473ab6971d8c35100182",
-    "9c43ba4c0e544ad28461091e4235fbff",
     "9c747382a3d640f18264ab35137f3b5d",
     "a1e87a7e5e554300a29c55107af4dd36",
     "a23c3a2687fa46a4b422ee8ae04b9daa",
     "a8b8144ac9944086a77ea829f93143e8",
     "a90d788c29b14169baa3bb436a5eade8",
     "ab82f31d60fc46f1a5a01d7d9a7a1752",
-    "b2a667f8baf2437c863724dfc7b66e65",
     "b690c15203114f6d8fa1ac8adad0b477",
     "be5f9d3b31494a0c86952e027fa7a340",
     "c95bb706e1ee4b2eb36f73631d9d38ff",
-    "c9da8fa140ad40678f7abeeced2a7e19",
-    "caedf126b6c04fdea8cd3e97150958e2",
     "cb4b2deea80c416d93cd1bc168c2d015",
     "cb9c099316154bdb9cfc7e31ea3fc174",
-    "ccd64532d64b4df1bea024956442651c",
-    "d16a082f97884ffdb50ff4c5c72fc72c",
-    "d262a5a8f3834ef4979c01d0bf7fcdd2",
-    "d7ab32a0e1ef40d5b6c695d4f341de8e",
-    "ded8b353d4fa4b83ac4035aa78440545",
-    "df83d9fb6d0b4532a7efae161d70e209",
-    "e4d0a630cadd405d854faf956c1b7952",
-    "ea84bf719ff5447a8ddc46ebb756b581",
-    "ee59544d37a942988092f7e86dea21ff",
-    "efc3fa10cc4446fda88df6ae62859077",
-    "f2af23a5c49d4bc79ca3bc6480dcf2df",
-    "f39cac2337a247d39f3729878206d8fa",
-    "fab397547941437989f8256c6bb47a55",
-    "ff4d131efb664cc5b2d158c23219dbdf"
+    "ccd64532d64b4df1bea024956442651c"
   ],
   "po_oc_log": {
     "P01791": {
@@ -141,7 +113,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -149,7 +121,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -157,15 +129,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -173,15 +145,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -247,7 +219,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -255,7 +227,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -263,15 +235,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -279,7 +251,7 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -287,7 +259,7 @@
               "label": "Thickness",
               "status": "skip",
               "odoo": "1.5",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -295,15 +267,15 @@
               "label": "Width",
               "status": "skip",
               "odoo": "1062.0",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -385,7 +357,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -393,7 +365,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -401,15 +373,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -417,15 +389,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -507,7 +479,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -515,7 +487,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -523,15 +495,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -539,15 +511,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -629,7 +601,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -637,7 +609,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -645,15 +617,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -661,15 +633,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -689,7 +661,7 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
           "oc": "Josef Wiechers GmbH Bremerhaven Str. 10, 47229 Duisburg",
           "odoo": "Dominik Bonk, Germany",
@@ -697,7 +669,7 @@
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "CPT",
           "odoo": "[FCA] FREE CARRIER",
@@ -705,7 +677,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "Vorkasse",
           "odoo": "Immediate Payment",
@@ -713,7 +685,7 @@
         },
         {
           "type": "vat",
-          "icon": "\ud83e\uddfe",
+          "icon": "🧾",
           "label": "VAT",
           "vat_pct": "19%",
           "net": 185.0268,
@@ -732,7 +704,7 @@
         "VSI-17907943": {
           "status": "confirmed",
           "oc_ref": "212615",
-          "filename": "Auftragsbest\u00e4tigung_212615.pdf",
+          "filename": "Auftragsbestätigung_212615.pdf",
           "date": "2026-06-19",
           "oc_line": {
             "vs_article": "VSI-17907943",
@@ -787,7 +759,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -795,7 +767,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -803,15 +775,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Drawn / Soft (+LC)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -819,7 +791,7 @@
               "label": "Quantity",
               "status": "skip",
               "odoo": "3.774",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -827,15 +799,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "2",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -854,7 +826,7 @@
         "VSI-17907946": {
           "status": "confirmed",
           "oc_ref": "212617",
-          "filename": "Auftragsbest\u00e4tigung_212617.pdf",
+          "filename": "Auftragsbestätigung_212617.pdf",
           "date": "2026-06-19",
           "oc_line": {
             "vs_article": "VSI-17907946",
@@ -917,7 +889,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -925,7 +897,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -933,15 +905,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Drawn / Soft (+LC)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -949,15 +921,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -977,7 +949,7 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
           "oc": "Hagen",
           "odoo": "Tekin Recber, Germany",
@@ -985,7 +957,7 @@
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "FCA Hagen",
           "odoo": "[FCA] FREE CARRIER",
@@ -993,7 +965,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "Innerhalb 30 Tagen ohne Abzug",
           "odoo": "30 Days",
@@ -1011,12 +983,12 @@
         "VSI-17907945": {
           "status": "mismatch",
           "oc_ref": "212618",
-          "filename": "Auftragsbest\u00e4tigung_212618.pdf",
+          "filename": "Auftragsbestätigung_212618.pdf",
           "date": "2026-06-19",
           "oc_line": {
             "vs_article": "VSI-17907945",
             "supplier_article": "VSI-17907945",
-            "description": "Slit Coils 2nd Choice Cold Rolled ZE600 Beschreibung : Supplier Finish - K too thin / zu d\u00fcnn | 0.0 | -0001131440",
+            "description": "Slit Coils 2nd Choice Cold Rolled ZE600 Beschreibung : Supplier Finish - K too thin / zu dünn | 0.0 | -0001131440",
             "quantity": 0.003,
             "unit": "MT",
             "unit_price": 380.0,
@@ -1074,7 +1046,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1082,14 +1054,14 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
+              "odoo": "—",
               "oc": "ZE600",
               "note": ""
             },
@@ -1098,7 +1070,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1106,15 +1078,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1134,7 +1106,7 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
           "oc": "Hagen",
           "odoo": "Volker Wolff, Germany",
@@ -1142,7 +1114,7 @@
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "FCA Hagen",
           "odoo": "[FCA] FREE CARRIER",
@@ -1150,7 +1122,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "Innerhalb 30 Tagen ohne Abzug",
           "odoo": "30 Days",
@@ -1168,7 +1140,7 @@
         "VSI-17900527": {
           "status": "confirmed",
           "oc_ref": "212480",
-          "filename": "Auftragsbest\u00e4tigung_212480.pdf",
+          "filename": "Auftragsbestätigung_212480.pdf",
           "date": "2026-06-19",
           "oc_line": {
             "vs_article": "VSI-17900527",
@@ -1231,7 +1203,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1239,7 +1211,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1247,15 +1219,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Drawn / Soft (+LC)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1263,15 +1235,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "2",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1291,7 +1263,7 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
           "oc": "Hagen",
           "odoo": "Volker Wolff, Germany",
@@ -1299,7 +1271,7 @@
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "FCA Hagen",
           "odoo": "[FCA] FREE CARRIER",
@@ -1307,7 +1279,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "Innerhalb 30 Tagen ohne Abzug",
           "odoo": "30 Days",
@@ -1388,7 +1360,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1396,15 +1368,15 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1412,7 +1384,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1420,15 +1392,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1448,15 +1420,15 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
-          "oc": "Vanilla Steel GmbH Sch\u00f6nhauser Allee 36 36 10435 Berlin",
+          "oc": "Vanilla Steel GmbH Schönhauser Allee 36 36 10435 Berlin",
           "odoo": "Olaf Jahn, Germany",
           "warning": true
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "FCA Hagen",
           "odoo": "[FCA] FREE CARRIER",
@@ -1464,7 +1436,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "Innerhalb 30 Tagen ohne Abzug",
           "odoo": "30 Days",
@@ -1482,12 +1454,12 @@
         "VSI-17900519": {
           "status": "confirmed",
           "oc_ref": "212432",
-          "filename": "Auftragsbest\u00e4tigung_212432.pdf",
+          "filename": "Auftragsbestätigung_212432.pdf",
           "date": "2026-06-19",
           "oc_line": {
             "vs_article": "VSI-17900519",
             "supplier_article": "VSI-17900519",
-            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) DC04 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Longitudinal tear / L\u00e4ngsrisse - 0001131356 -0001131357 -0001131358 -0001131359",
+            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) DC04 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Longitudinal tear / Längsrisse - 0001131356 -0001131357 -0001131358 -0001131359",
             "quantity": 4.8,
             "unit": "MT",
             "unit_price": 380.0,
@@ -1545,7 +1517,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1553,15 +1525,15 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1569,7 +1541,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Drawn / Soft (+LC)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1577,15 +1549,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "4",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1609,7 +1581,7 @@
           "oc_line": {
             "vs_article": "VSI-17900520",
             "supplier_article": "VSI-17900520",
-            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) DC04 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Longitudinal tear / L\u00e4ngsrisse - 0001131360 -0001131361 -0001131362 -0001131363",
+            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) DC04 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Longitudinal tear / Längsrisse - 0001131360 -0001131361 -0001131362 -0001131363",
             "quantity": 4.8,
             "unit": "MT",
             "unit_price": 380.0,
@@ -1667,7 +1639,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1675,15 +1647,15 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1691,7 +1663,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Drawn / Soft (+LC)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1699,15 +1671,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "4",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1726,12 +1698,12 @@
         "VSI-17900521": {
           "status": "confirmed",
           "oc_ref": "212435",
-          "filename": "Auftragsbest\u00e4tigung_212435.pdf",
+          "filename": "Auftragsbestätigung_212435.pdf",
           "date": "2026-06-19",
           "oc_line": {
             "vs_article": "VSI-17900521",
             "supplier_article": "VSI-17900521",
-            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) DC04 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Longitudinal tear / L\u00e4ngsrisse - 0001131370 -0001131371",
+            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) DC04 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Longitudinal tear / Längsrisse - 0001131370 -0001131371",
             "quantity": 2.44,
             "unit": "MT",
             "unit_price": 380.0,
@@ -1789,7 +1761,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1797,7 +1769,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1805,15 +1777,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Drawn / Soft (+LC)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1821,15 +1793,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "2",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1848,12 +1820,12 @@
         "VSI-17900522": {
           "status": "confirmed",
           "oc_ref": "212436",
-          "filename": "Auftragsbest\u00e4tigung_212436.pdf",
+          "filename": "Auftragsbestätigung_212436.pdf",
           "date": "2026-06-19",
           "oc_line": {
             "vs_article": "VSI-17900522",
             "supplier_article": "VSI-17900522",
-            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) DC04 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Longitudinal tear / L\u00e4ngsrisse - 0001131400 -0001131401",
+            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) DC04 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Longitudinal tear / Längsrisse - 0001131400 -0001131401",
             "quantity": null,
             "unit": "MT",
             "unit_price": 380.0,
@@ -1903,7 +1875,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1911,7 +1883,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1919,15 +1891,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Drawn / Soft (+LC)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1935,7 +1907,7 @@
               "label": "Quantity",
               "status": "skip",
               "odoo": "2.4",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1943,15 +1915,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "2",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -1970,7 +1942,7 @@
         "VSI-17900524": {
           "status": "confirmed",
           "oc_ref": "212438",
-          "filename": "Auftragsbest\u00e4tigung_212438.pdf",
+          "filename": "Auftragsbestätigung_212438.pdf",
           "date": "2026-06-19",
           "oc_line": {
             "vs_article": "VSI-17900524",
@@ -2033,7 +2005,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2041,15 +2013,15 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2057,7 +2029,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2065,15 +2037,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "2",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2093,7 +2065,7 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
           "oc": "FCA Hagen",
           "odoo": "Arnd Seelmann, Germany",
@@ -2101,7 +2073,7 @@
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "FCA Hagen",
           "odoo": "[FCA] FREE CARRIER",
@@ -2109,7 +2081,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "Innerhalb 30 Tagen ohne Abzug",
           "odoo": "30 Days",
@@ -2127,12 +2099,12 @@
         "VSI-17900525": {
           "status": "confirmed",
           "oc_ref": "212441",
-          "filename": "Auftragsbest\u00e4tigung_212441.pdf",
+          "filename": "Auftragsbestätigung_212441.pdf",
           "date": "2026-06-19",
           "oc_line": {
             "vs_article": "VSI-17900525",
             "supplier_article": "VSI-17900525",
-            "description": "Coils 2nd Choice Cold Drawn / Soft (+LC) DC03 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Roller prints / iron prints / Walzenabdr\u00fccke / Eisenabdr\u00fccke / MOD.SUPERMOD. -0001131411 -0001131412",
+            "description": "Coils 2nd Choice Cold Drawn / Soft (+LC) DC03 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Roller prints / iron prints / Walzenabdrücke / Eisenabdrücke / MOD.SUPERMOD. -0001131411 -0001131412",
             "quantity": 8.01,
             "unit": "MT",
             "unit_price": 375.0,
@@ -2190,7 +2162,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2198,7 +2170,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2206,15 +2178,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Drawn / Soft (+LC)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2222,15 +2194,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "2",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2250,7 +2222,7 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
           "oc": "Hagen",
           "odoo": "David Villalon, Spain",
@@ -2258,7 +2230,7 @@
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "FCA Hagen",
           "odoo": "[FCA] FREE CARRIER",
@@ -2266,7 +2238,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "Innerhalb 30 Tagen ohne Abzug",
           "odoo": "30 Days",
@@ -2347,7 +2319,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2355,7 +2327,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2363,15 +2335,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2379,15 +2351,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2469,7 +2441,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2477,7 +2449,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2485,15 +2457,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2501,15 +2473,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2591,7 +2563,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2599,7 +2571,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2607,15 +2579,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2623,15 +2595,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2651,7 +2623,7 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
           "oc": "Weidenau",
           "odoo": "Dominik Bonk, Germany",
@@ -2659,7 +2631,7 @@
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "FCA Neunkirchen",
           "odoo": "[FCA] FREE CARRIER",
@@ -2667,7 +2639,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "innerhalb von 30 Tagen ohne Abzug",
           "odoo": "30 Days",
@@ -2693,7 +2665,7 @@
           "oc_line": {
             "vs_article": "VSI-17898521",
             "supplier_article": "VSI-17898521",
-            "description": "Slit Coils 2nd Choice Cold Rolled C75S Beschreibung : Supplier Finish - Cold Rolled (+CR) WBD : thickness of thickness / profile / WBD : Dickenparallelit\u00e4t / -profil | -0001131335",
+            "description": "Slit Coils 2nd Choice Cold Rolled C75S Beschreibung : Supplier Finish - Cold Rolled (+CR) WBD : thickness of thickness / profile / WBD : Dickenparallelität / -profil | -0001131335",
             "quantity": 3.319,
             "unit": "MT",
             "unit_price": 385.0,
@@ -2751,7 +2723,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2759,7 +2731,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2767,15 +2739,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2783,15 +2755,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2811,7 +2783,7 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
           "oc": "Hagen",
           "odoo": "Tekin Recber, Germany",
@@ -2819,7 +2791,7 @@
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "FCA Hagen",
           "odoo": "[FCA] FREE CARRIER",
@@ -2827,7 +2799,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "Innerhalb 30 Tagen ohne Abzug",
           "odoo": "30 Days",
@@ -2916,7 +2888,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2924,7 +2896,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2932,7 +2904,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot-dip Galvanized (+Z/+GI)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2940,7 +2912,7 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2948,7 +2920,7 @@
               "label": "Tensile Strength",
               "status": "skip",
               "odoo": "528.00",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -2968,15 +2940,15 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
-          "oc": "B\u00fcrger & Althoff GmbH & Co. KG Hafenstra\u00dfe 10, 45881 Gelsenkirchen",
+          "oc": "Bürger & Althoff GmbH & Co. KG Hafenstraße 10, 45881 Gelsenkirchen",
           "odoo": "Jan Juhnke, Germany",
           "warning": true
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "FCA",
           "odoo": "[FCA] FREE CARRIER",
@@ -2984,7 +2956,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "Vorkasse",
           "odoo": "30 Days",
@@ -2992,7 +2964,7 @@
         },
         {
           "type": "vat",
-          "icon": "\ud83e\uddfe",
+          "icon": "🧾",
           "label": "VAT",
           "vat_pct": "19%",
           "net": 10116.42,
@@ -3082,7 +3054,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3090,7 +3062,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3098,7 +3070,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot-dip Galvanized (+Z/+GI)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3106,15 +3078,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3134,15 +3106,15 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
-          "oc": "Pfannenbergstra\u00dfe 1 D-57290 Neunkirchen",
+          "oc": "Pfannenbergstraße 1 D-57290 Neunkirchen",
           "odoo": "Tomas Povolny, Czech Republic",
           "warning": true
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "FCA Siegen Weidenau",
           "odoo": "[FCA] FREE CARRIER",
@@ -3150,7 +3122,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "innerhalb von 30 Tagen ohne Abzug",
           "odoo": "30 Days",
@@ -3158,7 +3130,7 @@
         },
         {
           "type": "vat",
-          "icon": "\ud83e\uddfe",
+          "icon": "🧾",
           "label": "VAT",
           "vat_pct": "19%",
           "net": 12402.03,
@@ -3232,7 +3204,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3240,7 +3212,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3248,7 +3220,7 @@
               "label": "Grade",
               "status": "skip",
               "odoo": "S275JR",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3256,15 +3228,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3272,7 +3244,7 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3280,7 +3252,7 @@
               "label": "Tensile Strength",
               "status": "skip",
               "odoo": "441.00",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3354,7 +3326,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3362,7 +3334,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3370,7 +3342,7 @@
               "label": "Grade",
               "status": "skip",
               "odoo": "S275J2C",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3378,15 +3350,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3394,7 +3366,7 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3402,7 +3374,7 @@
               "label": "Tensile Strength",
               "status": "skip",
               "odoo": "458.00",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3476,7 +3448,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3484,7 +3456,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3492,7 +3464,7 @@
               "label": "Grade",
               "status": "skip",
               "odoo": "S440",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3500,15 +3472,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3516,7 +3488,7 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3524,7 +3496,7 @@
               "label": "Tensile Strength",
               "status": "skip",
               "odoo": "592.00",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3544,7 +3516,7 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
           "oc": "PW NOMA UL IGOLOMSKA 30 31-988 KRAKOW POLAND POLAND",
           "odoo": "Bartosz Sagalara, Poland",
@@ -3552,7 +3524,7 @@
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "CIP (INCOTERMS 2020) KRAKOW VIA SZCZECIN",
           "odoo": "[CPT] CARRIAGE PAID TO",
@@ -3560,7 +3532,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "ADVANCE PAYMENT 100% ADVANCE PAYMENT",
           "odoo": "30 Days",
@@ -3633,7 +3605,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3641,7 +3613,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3649,7 +3621,7 @@
               "label": "Grade",
               "status": "skip",
               "odoo": "S315MC",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3657,15 +3629,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3673,7 +3645,7 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3681,7 +3653,7 @@
               "label": "Tensile Strength",
               "status": "skip",
               "odoo": "506.00",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3755,7 +3727,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3763,7 +3735,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3771,7 +3743,7 @@
               "label": "Grade",
               "status": "skip",
               "odoo": "S355J0W",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3779,15 +3751,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3795,7 +3767,7 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3803,7 +3775,7 @@
               "label": "Tensile Strength",
               "status": "skip",
               "odoo": "594.00",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3877,7 +3849,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3885,7 +3857,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3893,7 +3865,7 @@
               "label": "Grade",
               "status": "skip",
               "odoo": "S355MC",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3901,15 +3873,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3917,7 +3889,7 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3925,7 +3897,7 @@
               "label": "Tensile Strength",
               "status": "skip",
               "odoo": "470.00",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3991,7 +3963,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -3999,7 +3971,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4007,7 +3979,7 @@
               "label": "Grade",
               "status": "skip",
               "odoo": "S355J2H",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4015,15 +3987,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot Rolled",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4031,7 +4003,7 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4039,7 +4011,7 @@
               "label": "Width",
               "status": "skip",
               "odoo": "1538.0",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4047,7 +4019,7 @@
               "label": "Tensile Strength",
               "status": "skip",
               "odoo": "531.00",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4067,7 +4039,7 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
           "oc": "METALTRADE INTERNATIONAL CALEA PRUTULUI STREET 230 800205 GALATI ROMANIA ROMANIA",
           "odoo": "Nicolae Ismana, Romania",
@@ -4075,7 +4047,7 @@
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "CIP (INCOTERMS 2020) GALATI VIA SZCZECIN",
           "odoo": "[CPT] CARRIAGE PAID TO",
@@ -4083,7 +4055,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "ADVANCE PAYMENT 100% ADVANCE PAYMENT",
           "odoo": "30 Days",
@@ -4106,7 +4078,7 @@
           "oc_line": {
             "vs_article": "VSI-17893355",
             "supplier_article": "VSI-17893355",
-            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) C60S Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) too thin / zu d\u00fcnn | -0001131206 0001131207 0001131208 0001131209",
+            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) C60S Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) too thin / zu dünn | -0001131206 0001131207 0001131208 0001131209",
             "quantity": null,
             "unit": "MT",
             "unit_price": 380.0,
@@ -4156,7 +4128,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4164,15 +4136,15 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4180,7 +4152,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Drawn / Soft (+LC)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4188,7 +4160,7 @@
               "label": "Quantity",
               "status": "skip",
               "odoo": "4.116",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4196,15 +4168,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "4",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4224,7 +4196,7 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
           "oc": "Hagen",
           "odoo": "Tekin Recber, Germany",
@@ -4232,7 +4204,7 @@
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "FCA Hagen",
           "odoo": "[FCA] FREE CARRIER",
@@ -4240,7 +4212,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "Innerhalb 30 Tagen ohne Abzug",
           "odoo": "30 Days",
@@ -4248,7 +4220,7 @@
         },
         {
           "type": "vat",
-          "icon": "\ud83e\uddfe",
+          "icon": "🧾",
           "label": "VAT",
           "vat_pct": "19%",
           "net": 1.56408,
@@ -4272,7 +4244,7 @@
           "oc_line": {
             "vs_article": "VSI-17893335",
             "supplier_article": "VSI-17893335",
-            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) DC04 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Roller prints / iron prints / Walzenabdr\u00fccke / Eisenabdr\u00fccke | -0001130001",
+            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) DC04 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Roller prints / iron prints / Walzenabdrücke / Eisenabdrücke | -0001130001",
             "quantity": 10.086,
             "unit": "MT",
             "unit_price": 400.0,
@@ -4330,7 +4302,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4338,7 +4310,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4346,15 +4318,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Drawn / Soft (+LC)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4362,15 +4334,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4452,7 +4424,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4460,7 +4432,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4468,15 +4440,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Drawn / Soft (+LC)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4484,15 +4456,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "4",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4574,7 +4546,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4582,15 +4554,15 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4598,7 +4570,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Drawn / Soft (+LC)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4606,15 +4578,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4696,7 +4668,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4704,7 +4676,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4712,15 +4684,15 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Drawn / Soft (+LC)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4728,15 +4700,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "6",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4756,7 +4728,7 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
           "oc": "Hagen",
           "odoo": "Volker Wolff, Germany",
@@ -4764,7 +4736,7 @@
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "FCA Hagen",
           "odoo": "[FCA] FREE CARRIER",
@@ -4772,7 +4744,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "Innerhalb 30 Tagen ohne Abzug",
           "odoo": "30 Days",
@@ -4780,7 +4752,7 @@
         },
         {
           "type": "vat",
-          "icon": "\ud83e\uddfe",
+          "icon": "🧾",
           "label": "VAT",
           "vat_pct": "19%",
           "net": 7106.76,
@@ -4862,7 +4834,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4870,15 +4842,15 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4886,7 +4858,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Drawn / Soft (+LC)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4894,15 +4866,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4921,7 +4893,7 @@
         "VSI-17893356": {
           "status": "confirmed",
           "oc_ref": "212204",
-          "filename": "Auftragsbest\u00e4tigung_212204.pdf",
+          "filename": "Auftragsbestätigung_212204.pdf",
           "date": "2026-06-19",
           "oc_line": {
             "vs_article": "VSI-17893356",
@@ -4984,7 +4956,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -4992,15 +4964,15 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "2nd",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "coating",
               "label": "Coating",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5008,7 +4980,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Cold Drawn / Soft (+LC)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5016,15 +4988,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5044,7 +5016,7 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
           "oc": "Hagen",
           "odoo": "Olaf Jahn, Germany",
@@ -5052,7 +5024,7 @@
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "FCA Hagen",
           "odoo": "[FCA] FREE CARRIER",
@@ -5060,7 +5032,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "Innerhalb 30 Tagen ohne Abzug",
           "odoo": "30 Days",
@@ -5068,7 +5040,7 @@
         },
         {
           "type": "vat",
-          "icon": "\ud83e\uddfe",
+          "icon": "🧾",
           "label": "VAT",
           "vat_pct": "19%",
           "net": 592.0,
@@ -5092,7 +5064,7 @@
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
-            "description": "Spaltband Feuerverzinkt in der G\u00fcte DX52D nach EN10346/EN10143, C, MA, AS120, bes\u00e4umt",
+            "description": "Spaltband Feuerverzinkt in der Güte DX52D nach EN10346/EN10143, C, MA, AS120, besäumt",
             "quantity": 1.244,
             "unit": "MT",
             "unit_price": 425.0,
@@ -5158,7 +5130,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5166,7 +5138,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5174,7 +5146,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Aluminized (+AS/+AL)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5182,15 +5154,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5214,7 +5186,7 @@
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
-            "description": "Spaltband Feuerverzinkt in der G\u00fcte DX52D nach EN10346/EN10143, C, MA, AS120, bes\u00e4umt",
+            "description": "Spaltband Feuerverzinkt in der Güte DX52D nach EN10346/EN10143, C, MA, AS120, besäumt",
             "quantity": 1.442,
             "unit": "MT",
             "unit_price": 425.0,
@@ -5280,7 +5252,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5288,7 +5260,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5296,7 +5268,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Aluminized (+AS/+AL)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5304,15 +5276,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5336,7 +5308,7 @@
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
-            "description": "Spaltband Feuerverzinkt in der G\u00fcte DX52D nach EN10346/EN10143, C, MA, AS120, bes\u00e4umt",
+            "description": "Spaltband Feuerverzinkt in der Güte DX52D nach EN10346/EN10143, C, MA, AS120, besäumt",
             "quantity": 1.212,
             "unit": "MT",
             "unit_price": 425.0,
@@ -5402,7 +5374,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5410,7 +5382,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5418,7 +5390,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Aluminized (+AS/+AL)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5426,15 +5398,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5458,7 +5430,7 @@
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
-            "description": "Spaltband Feuerverzinkt in der G\u00fcte DX52D nach EN10346/EN10143, C, MA, AS120, bes\u00e4umt",
+            "description": "Spaltband Feuerverzinkt in der Güte DX52D nach EN10346/EN10143, C, MA, AS120, besäumt",
             "quantity": 2.006,
             "unit": "MT",
             "unit_price": 425.0,
@@ -5524,7 +5496,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5532,7 +5504,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5540,7 +5512,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Aluminized (+AS/+AL)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5548,15 +5520,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5576,15 +5548,15 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
-          "oc": "thyssenkrupp Materials Processing Europe GmbH K\u00f6titzerstr. 110 01445 RADEBEUL Deutschland",
+          "oc": "thyssenkrupp Materials Processing Europe GmbH Kötitzerstr. 110 01445 RADEBEUL Deutschland",
           "odoo": "Sylvia Richter, Germany",
           "warning": true
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "FCA Verkauf",
           "odoo": "[FCA] FREE CARRIER",
@@ -5592,7 +5564,7 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "Vorkasse, Zahlung sofort",
           "odoo": "7 Days",
@@ -5615,7 +5587,7 @@
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
-            "description": "Spaltband Feuerverzinkt in der G\u00fcte DX54D nach EN10346/EN10143, C, MA, GI40/40, bes\u00e4umt",
+            "description": "Spaltband Feuerverzinkt in der Güte DX54D nach EN10346/EN10143, C, MA, GI40/40, besäumt",
             "quantity": 0.69,
             "unit": "MT",
             "unit_price": 425.0,
@@ -5681,7 +5653,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5689,7 +5661,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5697,7 +5669,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot-dip Galvanized (+Z/+GI)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5705,15 +5677,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "2",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5737,7 +5709,7 @@
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
-            "description": "Spaltband Feuerverzinkt in der G\u00fcte DX53D nach EN10346/EN10143, C, MA, Z100, bes\u00e4umt",
+            "description": "Spaltband Feuerverzinkt in der Güte DX53D nach EN10346/EN10143, C, MA, Z100, besäumt",
             "quantity": 0.722,
             "unit": "MT",
             "unit_price": 425.0,
@@ -5803,7 +5775,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5811,7 +5783,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5819,7 +5791,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Hot-dip Galvanized (+Z/+GI)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5827,15 +5799,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5859,7 +5831,7 @@
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
-            "description": "Spaltband Feuerverzinkt in der G\u00fcte DX52D nach EN10346/EN10143, C, MA, AS120, bes\u00e4umt",
+            "description": "Spaltband Feuerverzinkt in der Güte DX52D nach EN10346/EN10143, C, MA, AS120, besäumt",
             "quantity": 1.02,
             "unit": "MT",
             "unit_price": 425.0,
@@ -5925,7 +5897,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5933,7 +5905,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5941,7 +5913,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Aluminized (+AS/+AL)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -5949,15 +5921,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -6031,7 +6003,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -6039,7 +6011,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -6047,7 +6019,7 @@
               "label": "Grade",
               "status": "skip",
               "odoo": "DX52D",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -6055,7 +6027,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Aluminized (+AS/+AL)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -6063,7 +6035,7 @@
               "label": "Coating",
               "status": "skip",
               "odoo": "AS120",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -6071,15 +6043,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -6103,7 +6075,7 @@
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
-            "description": "Spaltband Feuerverzinkt in der G\u00fcte DX52D nach EN10346/EN10143, C, MA, AS120, bes\u00e4umt",
+            "description": "Spaltband Feuerverzinkt in der Güte DX52D nach EN10346/EN10143, C, MA, AS120, besäumt",
             "quantity": 0.94,
             "unit": "MT",
             "unit_price": 425.0,
@@ -6169,7 +6141,7 @@
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -6177,7 +6149,7 @@
               "label": "Quality Choice",
               "status": "skip",
               "odoo": "1st",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -6185,7 +6157,7 @@
               "label": "Finish",
               "status": "skip",
               "odoo": "Aluminized (+AS/+AL)",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
@@ -6193,15 +6165,15 @@
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
-              "oc": "\u2014",
+              "oc": "—",
               "note": ""
             },
             {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
+              "odoo": "—",
+              "oc": "—",
               "note": ""
             },
             {
@@ -6221,15 +6193,15 @@
       "flags": [
         {
           "type": "pickup_address",
-          "icon": "\ud83d\udccd",
+          "icon": "📍",
           "label": "Pickup Address",
-          "oc": "thyssenkrupp Materials Processing Europe GmbH K\u00f6titzerstr. 110 01445 RADEBEUL Deutschland",
+          "oc": "thyssenkrupp Materials Processing Europe GmbH Kötitzerstr. 110 01445 RADEBEUL Deutschland",
           "odoo": "Sylvia Richter, Germany",
           "warning": true
         },
         {
           "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Incoterms MISMATCH",
           "oc": "FCA Verkauf",
           "odoo": "[FCA] FREE CARRIER",
@@ -6237,2696 +6209,11 @@
         },
         {
           "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "label": "Payment Terms MISMATCH",
           "oc": "Vorkasse, Zahlung sofort",
           "odoo": "30 Days",
           "warning": true
-        }
-      ]
-    },
-    "P01807": {
-      "so_name": "S01498",
-      "supplier": "Andrea Nagy",
-      "buyer": "Pedro Bilbao Mendizabal",
-      "initialized": "2026-06-19",
-      "last_updated": "2026-06-19",
-      "line_items": {
-        "VSI-17903414": {
-          "status": "pending"
-        },
-        "VSI-17903415": {
-          "status": "pending"
-        },
-        "VSI-17903433": {
-          "status": "pending"
-        },
-        "VSI-17903435": {
-          "status": "pending"
-        },
-        "VSI-17903444": {
-          "status": "pending"
-        },
-        "VSI-17903445": {
-          "status": "pending"
-        },
-        "VSI-17903447": {
-          "status": "pending"
-        },
-        "VSI-17903508": {
-          "status": "confirmed",
-          "oc_ref": "84916031",
-          "filename": "2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_3..pdf",
-          "date": "2026-06-19",
-          "oc_line": {
-            "vs_article": "F900258989",
-            "supplier_article": "F900258989",
-            "description": "Hot dip galvanized coils Steel grade DX51D+Z 140 MACU chem. passivated, unoiled EN 10346 3 x 166 F900258989 nominal thick 3,00 mm Commodity Code : 72123000 Ring inside diameter 500 mm",
-            "quantity": 1.586,
-            "unit": "MT",
-            "unit_price": 500.0,
-            "total_price": 793.0,
-            "grade": "DX51D",
-            "thickness": 3.0,
-            "width": 166.0,
-            "length": null,
-            "coating": "Z140MACU",
-            "coil_number": "F900258989"
-          },
-          "fields": [
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "match",
-              "odoo": "DX51D",
-              "oc": "DX51D",
-              "note": ""
-            },
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "match",
-              "odoo": "1.586",
-              "oc": "1.586",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "500.0",
-              "oc": "500.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "3.0",
-              "oc": "3.0",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "166.0",
-              "oc": "166.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Slit Coils",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "1st",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "Z140MACU",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Hot-dip Galvanized (+Z/+GI)",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "1",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "na",
-              "odoo": "N/A (coil)",
-              "oc": "N/A (coil)",
-              "note": ""
-            }
-          ],
-          "score": 5,
-          "total": 5,
-          "mismatches": 0
-        },
-        "VSI-17903512": {
-          "status": "confirmed",
-          "oc_ref": "84916031",
-          "filename": "2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_3..pdf",
-          "date": "2026-06-19",
-          "oc_line": {
-            "vs_article": "R90R904232 R90R904233 R90R904230",
-            "supplier_article": "R90R904232 R90R904233 R90R904230",
-            "description": "Hot dip galvanized coils Steel grade HX260LAD+ZA 130 MC_O oiled EN 10346 2 x 150 R90R904232 R90R904233 R90R904230",
-            "quantity": 4.354,
-            "unit": "MT",
-            "unit_price": 500.0,
-            "total_price": 2177.0,
-            "grade": "HX260LAD",
-            "thickness": 2.0,
-            "width": 150.0,
-            "length": null,
-            "coating": "ZA130MC_O",
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "match",
-              "odoo": "HX260LAD",
-              "oc": "HX260LAD",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "500.0",
-              "oc": "500.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "2.0",
-              "oc": "2.0",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "150.0",
-              "oc": "150.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Slit Coils",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "1st",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "ZA130MC_O",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Galfan (+ZA)",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "skip",
-              "odoo": "1.448",
-              "oc": "4.354",
-              "note": "Part of 3-coil group \u00b7 OC total 4.354 MT"
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "1",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "na",
-              "odoo": "N/A (coil)",
-              "oc": "N/A (coil)",
-              "note": ""
-            }
-          ],
-          "score": 4,
-          "total": 4,
-          "mismatches": 0
-        },
-        "VSI-17903513": {
-          "status": "confirmed",
-          "oc_ref": "84916031",
-          "filename": "2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_3..pdf",
-          "date": "2026-06-19",
-          "oc_line": {
-            "vs_article": "R90R904232 R90R904233 R90R904230",
-            "supplier_article": "R90R904232 R90R904233 R90R904230",
-            "description": "Hot dip galvanized coils Steel grade HX260LAD+ZA 130 MC_O oiled EN 10346 2 x 150 R90R904232 R90R904233 R90R904230",
-            "quantity": 4.354,
-            "unit": "MT",
-            "unit_price": 500.0,
-            "total_price": 2177.0,
-            "grade": "HX260LAD",
-            "thickness": 2.0,
-            "width": 150.0,
-            "length": null,
-            "coating": "ZA130MC_O",
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "match",
-              "odoo": "HX260LAD",
-              "oc": "HX260LAD",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "500.0",
-              "oc": "500.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "2.0",
-              "oc": "2.0",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "150.0",
-              "oc": "150.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Slit Coils",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "1st",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "ZA130MC_O",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Galfan (+ZA)",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "skip",
-              "odoo": "1.472",
-              "oc": "4.354",
-              "note": "Part of 3-coil group \u00b7 OC total 4.354 MT"
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "1",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "na",
-              "odoo": "N/A (coil)",
-              "oc": "N/A (coil)",
-              "note": ""
-            }
-          ],
-          "score": 4,
-          "total": 4,
-          "mismatches": 0
-        },
-        "VSI-17903514": {
-          "status": "confirmed",
-          "oc_ref": "84916031",
-          "filename": "2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_3..pdf",
-          "date": "2026-06-19",
-          "oc_line": {
-            "vs_article": "R90R904232 R90R904233 R90R904230",
-            "supplier_article": "R90R904232 R90R904233 R90R904230",
-            "description": "Hot dip galvanized coils Steel grade HX260LAD+ZA 130 MC_O oiled EN 10346 2 x 150 R90R904232 R90R904233 R90R904230",
-            "quantity": 4.354,
-            "unit": "MT",
-            "unit_price": 500.0,
-            "total_price": 2177.0,
-            "grade": "HX260LAD",
-            "thickness": 2.0,
-            "width": 150.0,
-            "length": null,
-            "coating": "ZA130MC_O",
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "match",
-              "odoo": "HX260LAD",
-              "oc": "HX260LAD",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "500.0",
-              "oc": "500.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "2.0",
-              "oc": "2.0",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "150.0",
-              "oc": "150.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Slit Coils",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "1st",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "ZA130MC_O",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Galfan (+ZA)",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "skip",
-              "odoo": "0.698",
-              "oc": "4.354",
-              "note": "Part of 3-coil group \u00b7 OC total 4.354 MT"
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "1",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "na",
-              "odoo": "N/A (coil)",
-              "oc": "N/A (coil)",
-              "note": ""
-            }
-          ],
-          "score": 4,
-          "total": 4,
-          "mismatches": 0
-        },
-        "VSI-17903515": {
-          "status": "pending"
-        },
-        "VSI-17903534": {
-          "status": "pending"
-        },
-        "VSI-17903535": {
-          "status": "pending"
-        },
-        "VSI-17903546": {
-          "status": "pending"
-        },
-        "VSI-17903547": {
-          "status": "pending"
-        },
-        "VSI-17903562": {
-          "status": "pending"
-        }
-      },
-      "flags": [
-        {
-          "type": "pickup_address",
-          "icon": "\ud83d\udccd",
-          "label": "Pickup Address",
-          "oc": "9011 Gy\u0151r, Gerda utca 3.",
-          "odoo": "Pedro Bilbao Mendizabal, Spain",
-          "warning": true
-        },
-        {
-          "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
-          "label": "Incoterms MISMATCH",
-          "oc": "Free Carrier Gy\u0151r",
-          "odoo": "[EXW] EX WORKS",
-          "warning": true
-        },
-        {
-          "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
-          "label": "Payment Terms MISMATCH",
-          "oc": "Within 30 Days Net",
-          "odoo": "Immediate Payment",
-          "warning": true
-        }
-      ]
-    },
-    "P01755": {
-      "so_name": "S01464",
-      "supplier": "Joonas Suomela",
-      "buyer": "Bartosz Sagalara",
-      "initialized": "2026-06-19",
-      "last_updated": "2026-06-19",
-      "line_items": {
-        "VSI-17890309": {
-          "status": "confirmed",
-          "oc_ref": "85531(01)",
-          "filename": "TILKKURA_85531_01_P01755_20260515_075720.pdf",
-          "date": "2026-06-19",
-          "oc_line": {
-            "vs_article": null,
-            "supplier_article": null,
-            "description": "SECOND CHOICE COILS 3,00 X 1509,0 MM HOT ROLLED STEEL COILS HOT ROLLED SECOND CHOICE COILS",
-            "quantity": 27.112,
-            "unit": "MT",
-            "unit_price": 600.0,
-            "total_price": 16267.2,
-            "grade": null,
-            "thickness": 3.0,
-            "width": 1509.0,
-            "length": null,
-            "coating": null,
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "match",
-              "odoo": "27.112",
-              "oc": "27.112",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "600.0",
-              "oc": "600.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "3.0",
-              "oc": "3.0",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "1509.0",
-              "oc": "1509.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Coils",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "skip",
-              "odoo": "S235J2C",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Hot Rolled",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "1",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "412.00",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "na",
-              "odoo": "N/A (coil)",
-              "oc": "N/A (coil)",
-              "note": ""
-            }
-          ],
-          "score": 4,
-          "total": 4,
-          "mismatches": 0
-        },
-        "VSI-17890328": {
-          "status": "confirmed",
-          "oc_ref": "85531(01)",
-          "filename": "TILKKURA_85531_01_P01755_20260515_075720.pdf",
-          "date": "2026-06-19",
-          "oc_line": {
-            "vs_article": null,
-            "supplier_article": null,
-            "description": "SECOND CHOICE COILS 3,98 X 1507,0 MM HOT ROLLED STEEL COILS HOT ROLLED SECOND CHOICE COILS",
-            "quantity": 23.51,
-            "unit": "MT",
-            "unit_price": 615.0,
-            "total_price": 14458.65,
-            "grade": null,
-            "thickness": 3.98,
-            "width": 1507.0,
-            "length": null,
-            "coating": null,
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "match",
-              "odoo": "23.51",
-              "oc": "23.51",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "615.0",
-              "oc": "615.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "3.98",
-              "oc": "3.98",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "1507.0",
-              "oc": "1507.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Coils",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "skip",
-              "odoo": "S355J2C",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Hot Rolled",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "1",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "538.00",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "na",
-              "odoo": "N/A (coil)",
-              "oc": "N/A (coil)",
-              "note": ""
-            }
-          ],
-          "score": 4,
-          "total": 4,
-          "mismatches": 0
-        },
-        "VSI-17890341": {
-          "status": "confirmed",
-          "oc_ref": "85531(01)",
-          "filename": "TILKKURA_85531_01_P01755_20260515_075720.pdf",
-          "date": "2026-06-19",
-          "oc_line": {
-            "vs_article": null,
-            "supplier_article": null,
-            "description": "SECOND CHOICE COILS 4,98 X 1510,0 MM HOT ROLLED STEEL COILS HOT ROLLED SECOND CHOICE COILS",
-            "quantity": 11.72,
-            "unit": "MT",
-            "unit_price": 610.0,
-            "total_price": 7149.2,
-            "grade": null,
-            "thickness": 4.98,
-            "width": 1510.0,
-            "length": null,
-            "coating": null,
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "match",
-              "odoo": "11.72",
-              "oc": "11.72",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "610.0",
-              "oc": "610.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "4.98",
-              "oc": "4.98",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "1510.0",
-              "oc": "1510.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Coils",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "skip",
-              "odoo": "S355K2",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Hot Rolled",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "1",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "538.00",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "na",
-              "odoo": "N/A (coil)",
-              "oc": "N/A (coil)",
-              "note": ""
-            }
-          ],
-          "score": 4,
-          "total": 4,
-          "mismatches": 0
-        },
-        "VSI-17890342": {
-          "status": "mismatch",
-          "oc_ref": "85531(01)",
-          "filename": "TILKKURA_85531_01_P01755_20260515_075720.pdf",
-          "date": "2026-06-19",
-          "oc_line": {
-            "vs_article": null,
-            "supplier_article": null,
-            "description": "COILS 4.98 X 1510.0 MM",
-            "quantity": 12.499,
-            "unit": "MT",
-            "unit_price": 610.0,
-            "total_price": 7624.39,
-            "grade": "SECOND CHOICE",
-            "thickness": null,
-            "width": null,
-            "length": null,
-            "coating": null,
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "mismatch",
-              "odoo": "S355K2",
-              "oc": "SECOND CHOICE",
-              "note": ""
-            },
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "match",
-              "odoo": "12.499",
-              "oc": "12.499",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "610.0",
-              "oc": "610.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Coils",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Hot Rolled",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "1",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "skip",
-              "odoo": "4.98",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "skip",
-              "odoo": "1510.0",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "535.00",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "na",
-              "odoo": "N/A (coil)",
-              "oc": "N/A (coil)",
-              "note": ""
-            }
-          ],
-          "score": 2,
-          "total": 3,
-          "mismatches": 1
-        }
-      },
-      "flags": [
-        {
-          "type": "pickup_address",
-          "icon": "\ud83d\udccd",
-          "label": "Pickup Address",
-          "oc": "H & S STEEL SP. Z O.O. MACHNACZ 81 87-880 BRZESC KUJAWSKI POLAND",
-          "odoo": "Bartosz Sagalara, Poland",
-          "warning": true
-        },
-        {
-          "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
-          "label": "Incoterms MISMATCH",
-          "oc": "CIP (INCOTERMS 2020)",
-          "odoo": "[CPT] CARRIAGE PAID TO",
-          "warning": true
-        },
-        {
-          "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
-          "label": "Payment Terms MISMATCH",
-          "oc": "30 DAYS FROM INVOICE DATE",
-          "odoo": "30 Days",
-          "warning": true
-        }
-      ]
-    },
-    "P01821": {
-      "so_name": "S01506",
-      "supplier": "Andr\u00e9 Nath",
-      "buyer": "Tekin Recber",
-      "initialized": "2026-06-22",
-      "last_updated": "2026-06-22",
-      "line_items": {
-        "VSI-17907967": {
-          "status": "confirmed",
-          "oc_ref": null,
-          "filename": "2026-06-22_risse-wilke.de_Bestellung - P01821.pdf",
-          "date": "2026-06-22",
-          "oc_line": {
-            "vs_article": "VSI-17907967",
-            "supplier_article": "VSI-17907967",
-            "description": "Sheets 2nd Choice Quenched and Tempered (+QT) 75Cr1",
-            "quantity": 0.402,
-            "unit": "MT",
-            "unit_price": 560.0,
-            "total_price": 225.12,
-            "grade": "75Cr1",
-            "thickness": 3.0,
-            "width": 425.0,
-            "length": 1230.0,
-            "coating": null,
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "match",
-              "odoo": "75Cr1",
-              "oc": "75Cr1",
-              "note": ""
-            },
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "match",
-              "odoo": "0.402",
-              "oc": "0.402",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "560.0",
-              "oc": "560.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "3.0",
-              "oc": "3.0",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "425.0",
-              "oc": "425.0",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "match",
-              "odoo": "1230.0",
-              "oc": "1230.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Sheets",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Quenched and Tempered (+QT)",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "1",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            }
-          ],
-          "score": 6,
-          "total": 6,
-          "mismatches": 0
-        },
-        "VSI-17907968": {
-          "status": "confirmed",
-          "oc_ref": null,
-          "filename": "2026-06-22_risse-wilke.de_Bestellung - P01821.pdf",
-          "date": "2026-06-22",
-          "oc_line": {
-            "vs_article": "VSI-17907968",
-            "supplier_article": "VSI-17907968",
-            "description": "Sheets 2nd Choice Quenched and Tempered (+QT) 75Cr1",
-            "quantity": 0.252,
-            "unit": "MT",
-            "unit_price": 560.0,
-            "total_price": 141.12,
-            "grade": "75Cr1",
-            "thickness": 3.0,
-            "width": 610.0,
-            "length": 1000.0,
-            "coating": null,
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "match",
-              "odoo": "75Cr1",
-              "oc": "75Cr1",
-              "note": ""
-            },
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "match",
-              "odoo": "0.252",
-              "oc": "0.252",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "560.0",
-              "oc": "560.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "3.0",
-              "oc": "3.0",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "610.0",
-              "oc": "610.0",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "match",
-              "odoo": "1000.0",
-              "oc": "1000.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Sheets",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Quenched and Tempered (+QT)",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "1",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            }
-          ],
-          "score": 6,
-          "total": 6,
-          "mismatches": 0
-        },
-        "VSI-17907974": {
-          "status": "confirmed",
-          "oc_ref": null,
-          "filename": "2026-06-22_risse-wilke.de_Bestellung - P01821.pdf",
-          "date": "2026-06-22",
-          "oc_line": {
-            "vs_article": "VSI-17907974",
-            "supplier_article": "VSI-17907974",
-            "description": "Sheets 2nd Choice Quenched and Tempered (+QT) 75Cr1",
-            "quantity": 1.31,
-            "unit": "MT",
-            "unit_price": 560.0,
-            "total_price": 733.6,
-            "grade": "75Cr1",
-            "thickness": 2.8,
-            "width": 460.0,
-            "length": 1000.0,
-            "coating": null,
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "match",
-              "odoo": "75Cr1",
-              "oc": "75Cr1",
-              "note": ""
-            },
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "match",
-              "odoo": "1.31",
-              "oc": "1.31",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "560.0",
-              "oc": "560.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "2.8",
-              "oc": "2.8",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "460.0",
-              "oc": "460.0",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "match",
-              "odoo": "1000.0",
-              "oc": "1000.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Sheets",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Quenched and Tempered (+QT)",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "1",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            }
-          ],
-          "score": 6,
-          "total": 6,
-          "mismatches": 0
-        },
-        "VSI-17907981": {
-          "status": "confirmed",
-          "oc_ref": null,
-          "filename": "2026-06-22_risse-wilke.de_Bestellung - P01821.pdf",
-          "date": "2026-06-22",
-          "oc_line": {
-            "vs_article": "VSI-17907981",
-            "supplier_article": "VSI-17907981",
-            "description": "Sheets 2nd Choice Quenched and Tempered (+QT) C60S",
-            "quantity": 0.608,
-            "unit": "MT",
-            "unit_price": 560.0,
-            "total_price": 340.48,
-            "grade": "C60S",
-            "thickness": 3.0,
-            "width": 460.0,
-            "length": 1000.0,
-            "coating": null,
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "match",
-              "odoo": "C60S",
-              "oc": "C60S",
-              "note": ""
-            },
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "match",
-              "odoo": "0.608",
-              "oc": "0.608",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "560.0",
-              "oc": "560.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "3.0",
-              "oc": "3.0",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "460.0",
-              "oc": "460.0",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "match",
-              "odoo": "1000.0",
-              "oc": "1000.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Sheets",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Quenched and Tempered (+QT)",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "1",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            }
-          ],
-          "score": 6,
-          "total": 6,
-          "mismatches": 0
-        }
-      },
-      "flags": [
-        {
-          "type": "pickup_address",
-          "icon": "\ud83d\udccd",
-          "label": "Pickup Address",
-          "oc": "Stenglingser Weg 46, Iserlohn, 58642, Deutschland",
-          "odoo": "Tekin Recber, Germany",
-          "warning": true
-        },
-        {
-          "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
-          "label": "Incoterms MISMATCH",
-          "oc": "FCA",
-          "odoo": "[FCA] FREE CARRIER",
-          "warning": true
-        },
-        {
-          "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
-          "label": "Payment Terms MISMATCH",
-          "oc": "30 Tage",
-          "odoo": "30 Days",
-          "warning": true
-        }
-      ],
-      "pattern_b_ocs": [
-        {
-          "oc_ref": "6300167921",
-          "filename": "2026-06-22_risse-wilke.de_Auftragsbest?tigung 6300167921, P01821, Vanilla Steel GmbH, 2026.06.19.pdf",
-          "date": "2026-06-22",
-          "pattern": "C"
-        }
-      ]
-    },
-    "P01814": {
-      "so_name": "S01502",
-      "supplier": "Manuela H\u00e4uptle",
-      "buyer": "Andreas Scheuchenpflug",
-      "initialized": "2026-06-22",
-      "last_updated": "2026-06-22",
-      "line_items": {
-        "VSI-17908309": {
-          "status": "confirmed",
-          "oc_ref": null,
-          "filename": "2026-06-17_vanillasteel.com_Purchase Order - P01814.pdf",
-          "date": "2026-06-22",
-          "oc_line": {
-            "vs_article": "VSI-17908309",
-            "supplier_article": "VSI-17908309",
-            "description": "Sheets 2nd Choice Hot-dip Galvanized (+Z/+GI) DX51D Z275 Oberfl\u00e4chentyp : Minimized spangle, conventional surface (MA) Description : White rust",
-            "quantity": 1.426,
-            "unit": "MT",
-            "unit_price": 500.0,
-            "total_price": 713.0,
-            "grade": "DX51D",
-            "thickness": 3.0,
-            "width": 1600.0,
-            "length": 3000.0,
-            "coating": "Z275",
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "match",
-              "odoo": "DX51D",
-              "oc": "DX51D",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "match",
-              "odoo": "Z275",
-              "oc": "Z275",
-              "note": ""
-            },
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "match",
-              "odoo": "1.426",
-              "oc": "1.426",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "500.0",
-              "oc": "500.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "3.0",
-              "oc": "3.0",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "1600.0",
-              "oc": "1600.0",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "match",
-              "odoo": "3000.0",
-              "oc": "3000.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Sheets",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Hot-dip Galvanized (+Z/+GI)",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "12",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            }
-          ],
-          "score": 7,
-          "total": 7,
-          "mismatches": 0
-        },
-        "VSI-17908310": {
-          "status": "confirmed",
-          "oc_ref": null,
-          "filename": "2026-06-17_vanillasteel.com_Purchase Order - P01814.pdf",
-          "date": "2026-06-22",
-          "oc_line": {
-            "vs_article": "VSI-17908310",
-            "supplier_article": "VSI-17908310",
-            "description": "Sheets 2nd Choice Hot-dip Galvanized (+Z/+GI) DX51D Z275 Oberfl\u00e4chentyp : Minimized spangle, conventional surface (MA) Description : White rust",
-            "quantity": 1.845,
-            "unit": "MT",
-            "unit_price": 500.0,
-            "total_price": 922.5,
-            "grade": "DX51D",
-            "thickness": 4.0,
-            "width": 1000.0,
-            "length": 2000.0,
-            "coating": "Z275",
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "match",
-              "odoo": "DX51D",
-              "oc": "DX51D",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "match",
-              "odoo": "Z275",
-              "oc": "Z275",
-              "note": ""
-            },
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "match",
-              "odoo": "1.845",
-              "oc": "1.845",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "500.0",
-              "oc": "500.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "4.0",
-              "oc": "4.0",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "1000.0",
-              "oc": "1000.0",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "match",
-              "odoo": "2000.0",
-              "oc": "2000.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Sheets",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Hot-dip Galvanized (+Z/+GI)",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "29",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            }
-          ],
-          "score": 7,
-          "total": 7,
-          "mismatches": 0
-        },
-        "VSI-17908311": {
-          "status": "confirmed",
-          "oc_ref": null,
-          "filename": "2026-06-17_vanillasteel.com_Purchase Order - P01814.pdf",
-          "date": "2026-06-22",
-          "oc_line": {
-            "vs_article": "VSI-17908311",
-            "supplier_article": "VSI-17908311",
-            "description": "Sheets 2nd Choice Hot-dip Galvanized (+Z/+GI) DX51D Z275 Oberfl\u00e4chentyp : Minimized spangle, conventional surface (MA) Description : White rust",
-            "quantity": 10.79,
-            "unit": "MT",
-            "unit_price": 500.0,
-            "total_price": 5395.0,
-            "grade": "DX51D",
-            "thickness": 4.0,
-            "width": 1250.0,
-            "length": 2500.0,
-            "coating": "Z275",
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "match",
-              "odoo": "DX51D",
-              "oc": "DX51D",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "match",
-              "odoo": "Z275",
-              "oc": "Z275",
-              "note": ""
-            },
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "match",
-              "odoo": "10.79",
-              "oc": "10.79",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "500.0",
-              "oc": "500.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "4.0",
-              "oc": "4.0",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "1250.0",
-              "oc": "1250.0",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "match",
-              "odoo": "2500.0",
-              "oc": "2500.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Sheets",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Hot-dip Galvanized (+Z/+GI)",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "107",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            }
-          ],
-          "score": 7,
-          "total": 7,
-          "mismatches": 0
-        },
-        "VSI-17908312": {
-          "status": "confirmed",
-          "oc_ref": null,
-          "filename": "2026-06-17_vanillasteel.com_Purchase Order - P01814.pdf",
-          "date": "2026-06-22",
-          "oc_line": {
-            "vs_article": "VSI-17908312",
-            "supplier_article": "VSI-17908312",
-            "description": "Sheets 2nd Choice Hot-dip Galvanized (+Z/+GI) DX51D Z275 Oberfl\u00e4chentyp : Minimized spangle, conventional surface (MA) Description : White rust",
-            "quantity": 2.392,
-            "unit": "MT",
-            "unit_price": 500.0,
-            "total_price": 1196.0,
-            "grade": "DX51D",
-            "thickness": 5.0,
-            "width": 1250.0,
-            "length": 2500.0,
-            "coating": "Z275",
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "match",
-              "odoo": "DX51D",
-              "oc": "DX51D",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "match",
-              "odoo": "Z275",
-              "oc": "Z275",
-              "note": ""
-            },
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "match",
-              "odoo": "2.392",
-              "oc": "2.392",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "500.0",
-              "oc": "500.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "5.0",
-              "oc": "5.0",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "1250.0",
-              "oc": "1250.0",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "match",
-              "odoo": "2500.0",
-              "oc": "2500.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Sheets",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Hot-dip Galvanized (+Z/+GI)",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "19",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            }
-          ],
-          "score": 7,
-          "total": 7,
-          "mismatches": 0
-        },
-        "VSI-17908313": {
-          "status": "confirmed",
-          "oc_ref": null,
-          "filename": "2026-06-17_vanillasteel.com_Purchase Order - P01814.pdf",
-          "date": "2026-06-22",
-          "oc_line": {
-            "vs_article": "VSI-17908313",
-            "supplier_article": "VSI-17908313",
-            "description": "Sheets 2nd Choice Hot-dip Galvanized (+Z/+GI) DX51D Z275 Oberfl\u00e4chentyp : Minimized spangle, conventional surface (MA) Description : White rust",
-            "quantity": 4.754,
-            "unit": "MT",
-            "unit_price": 500.0,
-            "total_price": 2377.0,
-            "grade": "DX51D",
-            "thickness": 5.0,
-            "width": 1500.0,
-            "length": 3000.0,
-            "coating": "Z275",
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "match",
-              "odoo": "DX51D",
-              "oc": "DX51D",
-              "note": ""
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "match",
-              "odoo": "Z275",
-              "oc": "Z275",
-              "note": ""
-            },
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "match",
-              "odoo": "4.754",
-              "oc": "4.754",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "500.0",
-              "oc": "500.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "5.0",
-              "oc": "5.0",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "1500.0",
-              "oc": "1500.0",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "match",
-              "odoo": "3000.0",
-              "oc": "3000.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Sheets",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Hot-dip Galvanized (+Z/+GI)",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "26",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            }
-          ],
-          "score": 7,
-          "total": 7,
-          "mismatches": 0
-        }
-      },
-      "flags": [
-        {
-          "type": "pickup_address",
-          "icon": "\ud83d\udccd",
-          "label": "Pickup Address",
-          "oc": "Hohnerstrasse 5-11, 89079 Ulm",
-          "odoo": "Andreas Scheuchenpflug, Austria",
-          "warning": true
-        },
-        {
-          "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
-          "label": "Incoterms MISMATCH",
-          "oc": "FCA Frei Frachtf\u00fchrer ulm",
-          "odoo": "[FCA] FREE CARRIER",
-          "warning": true
-        },
-        {
-          "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
-          "label": "Payment Terms MISMATCH",
-          "oc": "Innerhalb 30 Tagen ohne Abzug",
-          "odoo": "30 Days",
-          "warning": true
-        },
-        {
-          "type": "vat",
-          "icon": "\ud83e\uddfe",
-          "label": "VAT",
-          "vat_pct": "19%",
-          "net": 10.29989,
-          "gross": 12.25687,
-          "warning": false
-        }
-      ]
-    },
-    "P01820": {
-      "so_name": "S01505",
-      "supplier": "Maximillian Dincic",
-      "buyer": "Thomas Andersson",
-      "initialized": "2026-06-22",
-      "last_updated": "2026-06-22",
-      "line_items": {
-        "VSI-17909964": {
-          "status": "mismatch",
-          "oc_ref": "107386",
-          "filename": "2026-06-22_dd-stahlhandel.de_AB_107386.pdf",
-          "date": "2026-06-22",
-          "oc_line": {
-            "vs_article": null,
-            "supplier_article": null,
-            "description": "Trocken !! Toleranzen nach EN !! Verpackung : stehend, Wei\u00dfrost, wie vorab per Fotos angeboten !! mechanische Vorgaben chemische Vorgaben",
-            "quantity": 19.6,
-            "unit": "MT",
-            "unit_price": 690.0,
-            "total_price": 13524.0,
-            "grade": "DX51D",
-            "thickness": 0.25,
-            "width": null,
-            "length": null,
-            "coating": "Z275MAC",
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "mismatch",
-              "odoo": "Z275",
-              "oc": "Z275MAC",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "mismatch",
-              "odoo": "1.0",
-              "oc": "0.25",
-              "note": ""
-            },
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "match",
-              "odoo": "DX51D",
-              "oc": "DX51D",
-              "note": ""
-            },
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "match",
-              "odoo": "19.6",
-              "oc": "19.6",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "690.0",
-              "oc": "690.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Coils",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Hot-dip Galvanized (+Z/+GI)",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "1",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "skip",
-              "odoo": "1250.0",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "na",
-              "odoo": "N/A (coil)",
-              "oc": "N/A (coil)",
-              "note": ""
-            }
-          ],
-          "score": 3,
-          "total": 5,
-          "mismatches": 2
-        },
-        "VSI-17909965": {
-          "status": "mismatch",
-          "oc_ref": "107386",
-          "filename": "2026-06-22_dd-stahlhandel.de_AB_107386.pdf",
-          "date": "2026-06-22",
-          "oc_line": {
-            "vs_article": null,
-            "supplier_article": null,
-            "description": "Trocken !! Toleranzen nach EN !! Verpackung : stehend, Wei\u00dfrost, wie vorab per Fotos angeboten !! mechanische Vorgaben chemische Vorgaben",
-            "quantity": 14.88,
-            "unit": "MT",
-            "unit_price": 690.0,
-            "total_price": 10267.2,
-            "grade": "DX51D",
-            "thickness": 0.25,
-            "width": null,
-            "length": null,
-            "coating": "Z275MAC",
-            "coil_number": null
-          },
-          "fields": [
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "mismatch",
-              "odoo": "Z275",
-              "oc": "Z275MAC",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "mismatch",
-              "odoo": "1.0",
-              "oc": "0.25",
-              "note": ""
-            },
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "match",
-              "odoo": "DX51D",
-              "oc": "DX51D",
-              "note": ""
-            },
-            {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "match",
-              "odoo": "14.88",
-              "oc": "14.88",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "690.0",
-              "oc": "690.0",
-              "note": ""
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Coils",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Hot-dip Galvanized (+Z/+GI)",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "1",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "skip",
-              "odoo": "1250.0",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "na",
-              "odoo": "N/A (coil)",
-              "oc": "N/A (coil)",
-              "note": ""
-            }
-          ],
-          "score": 3,
-          "total": 5,
-          "mismatches": 2
-        }
-      },
-      "flags": [
-        {
-          "type": "pickup_address",
-          "icon": "\ud83d\udccd",
-          "label": "Pickup Address",
-          "oc": "Rhenus Port Logistics Rhein-Ruhr GmbH Spiekerstra\u00dfe 7 58135 Hagen",
-          "odoo": "Thomas Andersson, Sweden",
-          "warning": true
-        },
-        {
-          "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
-          "label": "Incoterms MISMATCH",
-          "oc": "FCA",
-          "odoo": "[FCA] FREE CARRIER",
-          "warning": true
-        },
-        {
-          "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
-          "label": "Payment Terms MISMATCH",
-          "oc": "30 Tage netto",
-          "odoo": "30 Days",
-          "warning": true
-        }
-      ]
-    },
-    "P01812": {
-      "so_name": "S01501",
-      "supplier": "Isabelle Laurence",
-      "buyer": "Mirko John",
-      "initialized": "2026-06-22",
-      "last_updated": "2026-06-22",
-      "line_items": {
-        "VSI-17910008": {
-          "status": "pending"
-        },
-        "VSI-17910033": {
-          "status": "pending"
-        },
-        "VSI-17910039": {
-          "status": "pending"
-        },
-        "VSI-17910051": {
-          "status": "pending"
-        },
-        "VSI-17910013": {
-          "status": "pending"
-        },
-        "VSI-17910014": {
-          "status": "pending"
-        },
-        "VSI-17910019": {
-          "status": "pending"
-        },
-        "VSI-17910020": {
-          "status": "pending"
-        },
-        "VSI-17910021": {
-          "status": "pending"
-        },
-        "VSI-17910022": {
-          "status": "pending"
-        },
-        "VSI-17910029": {
-          "status": "pending"
-        }
-      },
-      "flags": [
-        {
-          "type": "pickup_address",
-          "icon": "\ud83d\udccd",
-          "label": "Pickup Address",
-          "oc": "8, rue de la Ferme Saint-Ladre, F-95470 FOSSES",
-          "odoo": "Mirko John, Germany",
-          "warning": true
-        },
-        {
-          "type": "incoterms",
-          "icon": "\u26a0\ufe0f",
-          "label": "Incoterms MISMATCH",
-          "oc": "FCA FOSSES",
-          "odoo": "[FCA] FREE CARRIER",
-          "warning": true
-        },
-        {
-          "type": "payment_terms",
-          "icon": "\u26a0\ufe0f",
-          "label": "Payment Terms MISMATCH",
-          "oc": "Zahlbar sofort ohne Abzug",
-          "odoo": "Immediate Payment",
-          "warning": true
-        }
-      ],
-      "pattern_b_ocs": [
-        {
-          "oc_ref": "84916383",
-          "filename": "2026-06-22_thyssenkrupp-materials.com_84916383 Vanilla Steel.pdf",
-          "date": "2026-06-22",
-          "pattern": "B"
-        },
-        {
-          "oc_ref": "84916384",
-          "filename": "2026-06-22_thyssenkrupp-materials.com_84916384 Vanilla Steel.pdf",
-          "date": "2026-06-22",
-          "pattern": "B"
-        },
-        {
-          "oc_ref": "84916382",
-          "filename": "2026-06-22_thyssenkrupp-materials.com_84916382 Vanilla Steel.pdf",
-          "date": "2026-06-22",
-          "pattern": "B"
-        },
-        {
-          "oc_ref": "84916388",
-          "filename": "2026-06-22_thyssenkrupp-materials.com_84916388 Vanilla Steel.pdf",
-          "date": "2026-06-22",
-          "pattern": "B"
-        },
-        {
-          "oc_ref": "84916386",
-          "filename": "2026-06-22_thyssenkrupp-materials.com_84916386 Vanilla Steel.pdf",
-          "date": "2026-06-22",
-          "pattern": "B"
-        },
-        {
-          "oc_ref": "84916389",
-          "filename": "2026-06-22_thyssenkrupp-materials.com_84916389 Vanilla Steel.pdf",
-          "date": "2026-06-22",
-          "pattern": "B"
-        },
-        {
-          "oc_ref": "84916390",
-          "filename": "2026-06-22_thyssenkrupp-materials.com_84916390 Vanilla Steel.pdf",
-          "date": "2026-06-22",
-          "pattern": "B"
-        },
-        {
-          "oc_ref": "84916391",
-          "filename": "2026-06-22_thyssenkrupp-materials.com_84916391 Vanilla Steel.pdf",
-          "date": "2026-06-22",
-          "pattern": "B"
-        },
-        {
-          "oc_ref": "84916392",
-          "filename": "2026-06-22_thyssenkrupp-materials.com_84916392 Vanilla Steel.pdf",
-          "date": "2026-06-22",
-          "pattern": "B"
-        },
-        {
-          "oc_ref": "84916385",
-          "filename": "2026-06-22_thyssenkrupp-materials.com_84916385 Vanilla Steel.pdf",
-          "date": "2026-06-22",
-          "pattern": "B"
-        },
-        {
-          "oc_ref": "84916387",
-          "filename": "2026-06-22_thyssenkrupp-materials.com_84916387 Vanilla Steel.pdf",
-          "date": "2026-06-22",
-          "pattern": "B"
         }
       ]
     }
