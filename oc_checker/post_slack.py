@@ -165,6 +165,51 @@ def post_oc_result(webhook_url, result, filename):
     return post(webhook_url, {"text": text})
 
 
+def _slack_api_call(token, endpoint, payload):
+    """Make a Slack Web API call. Returns the parsed JSON response body."""
+    import urllib.request as _ur
+    body = json.dumps(payload).encode("utf-8")
+    req = _ur.Request(
+        "https://slack.com/api/%s" % endpoint,
+        data=body,
+        headers={"Content-Type": "application/json", "Authorization": "Bearer %s" % token},
+        method="POST",
+    )
+    with _ur.urlopen(req, timeout=10) as resp:
+        return json.loads(resp.read().decode())
+
+
+def check_slack_auth(token, channel):
+    """
+    Validate bot token + channel at startup.
+    Prints a clear diagnostic line visible in CI logs.
+    Returns True if OK.
+    """
+    try:
+        body = _slack_api_call(token, "auth.test", {})
+        if not body.get("ok"):
+            print("SLACK AUTH FAILED: %s  (check SLACK_BOT_TOKEN starts with xoxb-)" % body.get("error"))
+            return False
+        print("Slack auth OK: bot=%s workspace=%s" % (body.get("user"), body.get("team")))
+    except Exception as e:
+        print("SLACK AUTH ERROR: %s" % e)
+        return False
+    try:
+        body2 = _slack_api_call(token, "conversations.info", {"channel": channel})
+        if not body2.get("ok"):
+            print("SLACK CHANNEL ERROR: %s  (check SLACK_CHANNEL_ID='%s')" % (body2.get("error"), channel))
+            return False
+        ch = body2.get("channel", {})
+        in_ch = ch.get("is_member", False)
+        print("Slack channel OK: #%s  bot_is_member=%s" % (ch.get("name"), in_ch))
+        if not in_ch:
+            print("  ACTION NEEDED: run /invite @<botname> in the Slack channel")
+    except Exception as e:
+        print("SLACK CHANNEL CHECK ERROR: %s" % e)
+        return False
+    return True
+
+
 def post_via_api(token, channel, text, thread_ts=None):
     """
     Post a message via the Slack Web API (chat.postMessage).
@@ -175,23 +220,13 @@ def post_via_api(token, channel, text, thread_ts=None):
     payload = {"channel": channel, "text": text}
     if thread_ts:
         payload["thread_ts"] = thread_ts
-    data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(
-        "https://slack.com/api/chat.postMessage",
-        data=data,
-        headers={
-            "Content-Type":  "application/json",
-            "Authorization": "Bearer %s" % token,
-        },
-        method="POST",
-    )
     try:
-        with urllib.request.urlopen(req, timeout=10) as resp:
-            body = json.loads(resp.read().decode())
-            if body.get("ok"):
-                return True, body.get("ts")
-            print("Slack API error: %s" % body.get("error"), file=sys.stderr)
-            return False, None
+        body = _slack_api_call(token, "chat.postMessage", payload)
+        if body.get("ok"):
+            return True, body.get("ts")
+        print("Slack API error: %s | channel=%s thread_ts=%s" % (
+            body.get("error"), channel, thread_ts), file=sys.stderr)
+        return False, None
     except Exception as e:
         print("Slack API post failed: %s" % e, file=sys.stderr)
         return False, None

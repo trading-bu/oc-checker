@@ -345,7 +345,8 @@ def main():
     slack_channel   = os.environ.get("SLACK_CHANNEL_ID", "")
 
     if slack_bot_token and slack_channel:
-        print("Slack: using Bot API (threading enabled)")
+        print("Slack: using Bot API (threading enabled) — running auth check...")
+        post_slack.check_slack_auth(slack_bot_token, slack_channel)
     else:
         print("Slack: SLACK_BOT_TOKEN/SLACK_CHANNEL_ID not set — falling back to webhook (no threading)")
 
