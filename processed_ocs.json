@@ -18,6 +18,7 @@
     "3531f20f9a6e4d749b0d6ce9f62cc6e9",
     "36d0f4d11f0c416dacf4b87b10498813",
     "36f6d8d2538b46f4ae6aab20a096bfd5",
+    "37222624d0834e4cb523eac5ae3a780e",
     "38ca6f66596a46a4a70b614193479caa",
     "39a8ac8ca7c94438a1fa49e976ea962e",
     "3a612e58b8d64165ba44b80ab52b76fc",
@@ -3225,27 +3226,27 @@
       "supplier": "Joonas Suomela",
       "buyer": "Bartosz Sagalara",
       "initialized": "2026-06-19",
-      "last_updated": "2026-06-19",
+      "last_updated": "2026-06-25",
       "line_items": {
         "VSI-17890424": {
           "status": "confirmed",
-          "oc_ref": "85554(01)",
-          "filename": "2026-06-01_ssab.com_TILKKURA_85554_01_P01757_20260601_084043.pdf",
-          "date": "2026-06-19",
+          "oc_ref": "85554",
+          "filename": "2026-06-05_ssab.com_Material certificate, A85554-001, 20260605.pdf",
+          "date": "2026-06-25",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
-            "description": "SECOND CHOICE COILS HOT ROLLED STEEL COILS HOT ROLLED SECOND CHOICE COILS",
+            "description": "SECOND CHOICE COILS HOT ROLLED STEEL COILS",
             "quantity": 25.86,
             "unit": "MT",
-            "unit_price": 610.0,
-            "total_price": 15774.6,
+            "unit_price": null,
+            "total_price": 0.0,
             "grade": null,
             "thickness": 15.06,
             "width": 1507.0,
             "length": null,
             "coating": null,
-            "coil_number": null
+            "coil_number": "11347"
           },
           "fields": [
             {
@@ -3254,14 +3255,6 @@
               "status": "match",
               "odoo": "25.86",
               "oc": "25.86",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "610.0",
-              "oc": "610.0",
               "note": ""
             },
             {
@@ -3289,14 +3282,6 @@
               "note": ""
             },
             {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
               "key": "grade",
               "label": "Grade",
               "status": "skip",
@@ -3305,10 +3290,10 @@
               "note": ""
             },
             {
-              "key": "finish",
-              "label": "Finish",
+              "key": "quality_choice",
+              "label": "Quality Choice",
               "status": "skip",
-              "odoo": "Hot Rolled",
+              "odoo": "2nd",
               "oc": "\u2014",
               "note": ""
             },
@@ -3321,10 +3306,26 @@
               "note": ""
             },
             {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
               "key": "no_of_items",
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "skip",
+              "odoo": "610.0",
               "oc": "\u2014",
               "note": ""
             },
@@ -3345,29 +3346,29 @@
               "note": ""
             }
           ],
-          "score": 4,
-          "total": 4,
+          "score": 3,
+          "total": 3,
           "mismatches": 0
         },
         "VSI-17890425": {
           "status": "confirmed",
-          "oc_ref": "85554(01)",
-          "filename": "2026-06-01_ssab.com_TILKKURA_85554_01_P01757_20260601_084043.pdf",
-          "date": "2026-06-19",
+          "oc_ref": "85554",
+          "filename": "2026-06-05_ssab.com_Material certificate, A85554-001, 20260605.pdf",
+          "date": "2026-06-25",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
-            "description": "SECOND CHOICE COILS HOT ROLLED STEEL COILS HOT ROLLED SECOND CHOICE COILS",
+            "description": "SECOND CHOICE COILS HOT ROLLED STEEL COILS",
             "quantity": 27.16,
             "unit": "MT",
-            "unit_price": 580.0,
-            "total_price": 15752.8,
+            "unit_price": null,
+            "total_price": 0.0,
             "grade": null,
             "thickness": 15.21,
             "width": 1492.0,
             "length": null,
             "coating": null,
-            "coil_number": null
+            "coil_number": "87798"
           },
           "fields": [
             {
@@ -3376,14 +3377,6 @@
               "status": "match",
               "odoo": "27.16",
               "oc": "27.16",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "580.0",
-              "oc": "580.0",
               "note": ""
             },
             {
@@ -3411,14 +3404,6 @@
               "note": ""
             },
             {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
               "key": "grade",
               "label": "Grade",
               "status": "skip",
@@ -3427,10 +3412,10 @@
               "note": ""
             },
             {
-              "key": "finish",
-              "label": "Finish",
+              "key": "quality_choice",
+              "label": "Quality Choice",
               "status": "skip",
-              "odoo": "Hot Rolled",
+              "odoo": "2nd",
               "oc": "\u2014",
               "note": ""
             },
@@ -3443,10 +3428,26 @@
               "note": ""
             },
             {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
               "key": "no_of_items",
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "skip",
+              "odoo": "580.0",
               "oc": "\u2014",
               "note": ""
             },
@@ -3467,29 +3468,29 @@
               "note": ""
             }
           ],
-          "score": 4,
-          "total": 4,
+          "score": 3,
+          "total": 3,
           "mismatches": 0
         },
         "VSI-17890426": {
           "status": "confirmed",
-          "oc_ref": "85554(01)",
-          "filename": "2026-06-01_ssab.com_TILKKURA_85554_01_P01757_20260601_084043.pdf",
-          "date": "2026-06-19",
+          "oc_ref": "85554",
+          "filename": "2026-06-05_ssab.com_Material certificate, A85554-001, 20260605.pdf",
+          "date": "2026-06-25",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
-            "description": "SECOND CHOICE COILS HOT ROLLED STEEL COILS HOT ROLLED SECOND CHOICE COILS",
+            "description": "SECOND CHOICE COILS HOT ROLLED STEEL COILS",
             "quantity": 28.56,
             "unit": "MT",
-            "unit_price": 580.0,
-            "total_price": 16564.8,
+            "unit_price": null,
+            "total_price": 0.0,
             "grade": null,
             "thickness": 15.3,
             "width": 1527.0,
             "length": null,
             "coating": null,
-            "coil_number": null
+            "coil_number": "13772"
           },
           "fields": [
             {
@@ -3498,14 +3499,6 @@
               "status": "match",
               "odoo": "28.56",
               "oc": "28.56",
-              "note": ""
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "580.0",
-              "oc": "580.0",
               "note": ""
             },
             {
@@ -3533,14 +3526,6 @@
               "note": ""
             },
             {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "2nd",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
               "key": "grade",
               "label": "Grade",
               "status": "skip",
@@ -3549,10 +3534,10 @@
               "note": ""
             },
             {
-              "key": "finish",
-              "label": "Finish",
+              "key": "quality_choice",
+              "label": "Quality Choice",
               "status": "skip",
-              "odoo": "Hot Rolled",
+              "odoo": "2nd",
               "oc": "\u2014",
               "note": ""
             },
@@ -3565,10 +3550,26 @@
               "note": ""
             },
             {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
               "key": "no_of_items",
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "skip",
+              "odoo": "580.0",
               "oc": "\u2014",
               "note": ""
             },
@@ -3589,8 +3590,8 @@
               "note": ""
             }
           ],
-          "score": 4,
-          "total": 4,
+          "score": 3,
+          "total": 3,
           "mismatches": 0
         }
       },
@@ -3619,7 +3620,8 @@
           "odoo": "30 Days",
           "warning": true
         }
-      ]
+      ],
+      "slack_ts": "1782408590.622239"
     },
     "P01758": {
       "so_name": "S01467",
