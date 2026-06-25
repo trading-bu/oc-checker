@@ -39,6 +39,7 @@
     "5f8f825b2bf54a509258d24327b9bcc2",
     "607ba07f61d7433483df149979ae9a74",
     "609b1000e7d4453588757ba4e083bc90",
+    "65af152fe4db48bd90ef6b9ddf0cf9c6",
     "6df6700754f24f9783cfffece9a336ed",
     "71a6ede380744a7191dbfc4e21aa7fe0",
     "71bd9cb043314974a81e1c75ef13911a",
@@ -11271,6 +11272,164 @@
         }
       ],
       "slack_ts": "1782314333.338199"
+    },
+    "P01827": {
+      "so_name": "S01511",
+      "supplier": "Pasqual Dibelius",
+      "buyer": "Dominik Bonk",
+      "initialized": "2026-06-25",
+      "last_updated": "2026-06-25",
+      "line_items": {
+        "VSI-17911922": {
+          "status": "confirmed",
+          "oc_ref": "2000052765",
+          "filename": "2026-06-25_schaefer-werke.de_Auftrag 2000052765 23.06.2026.pdf",
+          "date": "2026-06-25",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Breitband 2,00 mm X 1.500,00 mm S500MC GB O",
+            "quantity": 26.977,
+            "unit": "MT",
+            "unit_price": 899.0,
+            "total_price": 24252.32,
+            "grade": "S500MC",
+            "thickness": 2.0,
+            "width": 1500.0,
+            "length": null,
+            "coating": null,
+            "coil_number": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S500MC",
+              "oc": "S500MC",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "26.977",
+              "oc": "26.977",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "899.0",
+              "oc": "899.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.0",
+              "oc": "2.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 5,
+          "mismatches": 0
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Pfannenbergstra\u00dfe 1 D-57290 Neunkirchen",
+          "odoo": "Dominik Bonk, Germany",
+          "warning": true
+        },
+        {
+          "type": "incoterms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Incoterms MISMATCH",
+          "oc": "FCA Neunkirchen",
+          "odoo": "[FCA] FREE CARRIER",
+          "warning": true
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "innerhalb von 30 Tagen ohne Abzug",
+          "odoo": "30 Days",
+          "warning": true
+        }
+      ],
+      "slack_ts": "1782401003.385059"
     }
   }
 }
