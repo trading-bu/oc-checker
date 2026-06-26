@@ -7,14 +7,17 @@
     "0a6186fd190a4a708b503acb9b35674d",
     "109f4a3b526e4c94959d27098f52397b",
     "10c3515786af47f4bb8f06de53ac7300",
+    "124bbb84278b4ef8a76652d16614dfcc",
     "13b447bd99b64bc08923963c85b7034f",
     "13c9d34ae7614759b85338de08f8f9cf",
     "14752774939d412f93e8e619c26163d4",
+    "1984e604f62a4717b2609f0632355c57",
     "1e48d000a96f4eeba51683deb0926e07",
     "21aead0809a54d66a881bb3add081762",
     "244f1402fb084b718459a2a6139414ff",
     "25160f06206042c0acd6f9abe39ef025",
     "2746aae562eb41559aa64ea8647b5f0b",
+    "2ecadbcd9b4041d69079353f6b0dbedc",
     "3531f20f9a6e4d749b0d6ce9f62cc6e9",
     "36d0f4d11f0c416dacf4b87b10498813",
     "36f6d8d2538b46f4ae6aab20a096bfd5",
@@ -27,14 +30,18 @@
     "3d4b00301a214719a8a55813d9951ffb",
     "3f2e55a6da844f008affee949667f242",
     "3fc5fe5c79a542e4adbc8f67e6d0e903",
+    "4030adb59ee84d70b43d7528d4fccd81",
     "4183463988c445e885c9587b7b76cbfb",
     "428b7babc6744c3dbccd95464cb3f8a8",
     "42ce5e9aba6a470e91ba7aec9ca9ab25",
+    "469eef253294496585340ccd110e3046",
     "49927a42d7cb49958743908b2570dc23",
     "4b2e8a0d1a944d48a2a1b774cd168774",
+    "4d9fbfba440e4d9895a70be4fdd673a6",
     "4e506cd23ae24c238ff38451c6590395",
     "4f23832ea4444e15a2e5c94f15ea9a72",
     "501c377c0d5a494093158c80b2d0d3ef",
+    "58fe640b7e834eb6b7b01f00e504cd59",
     "59e0b23752264bc9be30ce05d6402643",
     "5dcd6a3be229448e834a6120e0d4f1d6",
     "5f8f825b2bf54a509258d24327b9bcc2",
@@ -53,11 +60,15 @@
     "81de3484ac6f42dcbcbd083c12baa6c5",
     "840b931230074ea2b6f33eeb350173b8",
     "84b420b1d3604946ae34afb041f5b0ef",
+    "861544f00b63488197a8494ada43f3f7",
     "8652fc692ecc44ed8710bee799545104",
     "87754dfcb466403c8bb466217ab5b389",
+    "879a1d23d36e4290a5a71600c83060cd",
     "885f094165ea4d61a15951f7ab5ff453",
     "8955ac630ef9492986c249f0c9e5bf48",
+    "8dc421f91344417c9d8f64ed8f6eea4e",
     "8e4185fe99ca4753a89201ddc2b98b18",
+    "8edde3cbb8e34b73b7547c56c3dacc3a",
     "8fd84af4b8c046cb891898bd7c69b18b",
     "922d9a284a474971b5f139047e8b3d7f",
     "9338c83492734363aa3aa3f096a85b91",
@@ -65,6 +76,7 @@
     "9b3e0fa55725414ba145b7f26b2a3ad1",
     "9c43ba4c0e544ad28461091e4235fbff",
     "9c747382a3d640f18264ab35137f3b5d",
+    "a1af1202faff4c068bb44b6c5e7de0e0",
     "a1e87a7e5e554300a29c55107af4dd36",
     "a23c3a2687fa46a4b422ee8ae04b9daa",
     "a8b8144ac9944086a77ea829f93143e8",
@@ -72,7 +84,10 @@
     "ab82f31d60fc46f1a5a01d7d9a7a1752",
     "b2a667f8baf2437c863724dfc7b66e65",
     "b690c15203114f6d8fa1ac8adad0b477",
+    "b916b5e7dcbb420ea72b246bfa47c933",
+    "bcb879094ec145a8b93f9e19c3e03962",
     "be5f9d3b31494a0c86952e027fa7a340",
+    "c1e7fd2d56e34990a6907b31213d0add",
     "c7a19ddca4e941c9930ee421c54e95fa",
     "c95bb706e1ee4b2eb36f73631d9d38ff",
     "c9da8fa140ad40678f7abeeced2a7e19",
@@ -81,15 +96,20 @@
     "cb0b5ebf02f24dcab9fa00626334d4a2",
     "cb4b2deea80c416d93cd1bc168c2d015",
     "cb9c099316154bdb9cfc7e31ea3fc174",
+    "cbbc7065a223496089106603834e73fa",
     "ccd64532d64b4df1bea024956442651c",
     "cdeff52afdc144898379e9e1b79aa741",
+    "cefca7bbdf0f40658db5d7927a4ad950",
     "d54d406de11148328d00fc912ce160ed",
     "d7ab32a0e1ef40d5b6c695d4f341de8e",
     "db99297c0ab44ae49b635aa382a92840",
+    "de7a2d5c9ba1453a9043a9fa48d255a2",
     "df83d9fb6d0b4532a7efae161d70e209",
+    "dfa02ac15a9a43ab8223c220aa054829",
     "e3905524e5cd4936a721c4c6d588c5cf",
     "f2339b2a2490462d94e49fa5632696bb",
     "f31ec11c8330490a8a29169458406d7e",
+    "f9449d2cc890490ba839bcf7fe97f951",
     "fb18b9923a51432caf8f520ad36b61cc",
     "fb92eed4e1da4c32b3a94dced394d930",
     "fe6852395f2c440f899a621653ff70b4"
@@ -100,13 +120,13 @@
       "supplier": "Jens Raupach",
       "buyer": "Dominik Bonk",
       "initialized": "2026-06-19",
-      "last_updated": "2026-06-24",
+      "last_updated": "2026-06-26",
       "line_items": {
         "VSI-17900433": {
           "status": "mismatch",
           "oc_ref": "146358",
           "filename": "2026-06-15_knappsteinbleche.de_146358.pdf",
-          "date": "2026-06-24",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
@@ -228,7 +248,7 @@
           "status": "confirmed",
           "oc_ref": "146358",
           "filename": "2026-06-15_knappsteinbleche.de_146358.pdf",
-          "date": "2026-06-24",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
@@ -350,7 +370,7 @@
           "status": "mismatch",
           "oc_ref": "146358",
           "filename": "2026-06-15_knappsteinbleche.de_146358.pdf",
-          "date": "2026-06-24",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
@@ -472,7 +492,7 @@
           "status": "mismatch",
           "oc_ref": "146358",
           "filename": "2026-06-15_knappsteinbleche.de_146358.pdf",
-          "date": "2026-06-24",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
@@ -594,7 +614,7 @@
           "status": "mismatch",
           "oc_ref": "146358",
           "filename": "2026-06-15_knappsteinbleche.de_146358.pdf",
-          "date": "2026-06-24",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
@@ -772,6 +792,36 @@
           "oc_ref": "90208(57523)",
           "filename": "2026-06-09_knappsteinbleche.de_90208.pdf",
           "date": "2026-06-24",
+          "pattern": "B"
+        },
+        {
+          "oc_ref": "90208(57523)",
+          "filename": "2026-06-09_knappsteinbleche.de_90208.pdf",
+          "date": "2026-06-26",
+          "pattern": "B"
+        },
+        {
+          "oc_ref": "90512",
+          "filename": "2026-06-18_knappsteinbleche.de_90512.pdf",
+          "date": "2026-06-26",
+          "pattern": "B"
+        },
+        {
+          "oc_ref": "90510",
+          "filename": "2026-06-18_knappsteinbleche.de_90510.pdf",
+          "date": "2026-06-26",
+          "pattern": "B"
+        },
+        {
+          "oc_ref": "90213(57523)",
+          "filename": "2026-06-18_knappsteinbleche.de_90213.pdf",
+          "date": "2026-06-26",
+          "pattern": "B"
+        },
+        {
+          "oc_ref": "90208(57523)",
+          "filename": "2026-06-09_knappsteinbleche.de_90208.pdf",
+          "date": "2026-06-26",
           "pattern": "B"
         }
       ]
@@ -5137,13 +5187,13 @@
       "supplier": "Eric Naumann",
       "buyer": "Sylvia Richter",
       "initialized": "2026-06-19",
-      "last_updated": "2026-06-19",
+      "last_updated": "2026-06-26",
       "line_items": {
         "VSI-17895469": {
           "status": "confirmed",
           "oc_ref": "ESBD4744002",
           "filename": "2026-05-28_esb-group.com_01164296-0001.pdf",
-          "date": "2026-06-19",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
@@ -5265,7 +5315,7 @@
           "status": "confirmed",
           "oc_ref": "ESBD4744002",
           "filename": "2026-05-28_esb-group.com_01164296-0001.pdf",
-          "date": "2026-06-19",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
@@ -5387,7 +5437,7 @@
           "status": "confirmed",
           "oc_ref": "ESBD4744002",
           "filename": "2026-05-28_esb-group.com_01164296-0001.pdf",
-          "date": "2026-06-19",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
@@ -5509,7 +5559,7 @@
           "status": "confirmed",
           "oc_ref": "ESBD4744002",
           "filename": "2026-05-28_esb-group.com_01164296-0001.pdf",
-          "date": "2026-06-19",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
@@ -5653,20 +5703,21 @@
           "odoo": "7 Days",
           "warning": true
         }
-      ]
+      ],
+      "slack_ts": "1782478663.330439"
     },
     "P01778": {
       "so_name": "S01480",
       "supplier": "Eric Naumann",
       "buyer": "Sylvia Richter",
       "initialized": "2026-06-19",
-      "last_updated": "2026-06-19",
+      "last_updated": "2026-06-26",
       "line_items": {
         "VSI-17891339": {
           "status": "confirmed",
           "oc_ref": "ESBD4744001",
           "filename": "2026-05-28_esb-group.com_01164295-0001.pdf",
-          "date": "2026-06-19",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
@@ -5677,7 +5728,7 @@
             "total_price": 293.25,
             "grade": "DX54D",
             "thickness": 1.7,
-            "width": 70.0,
+            "width": null,
             "length": null,
             "coating": "GI40/40",
             "coil_number": null
@@ -5724,14 +5775,6 @@
               "note": ""
             },
             {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "70.0",
-              "oc": "70.0",
-              "note": ""
-            },
-            {
               "key": "form",
               "label": "Form",
               "status": "skip",
@@ -5764,6 +5807,14 @@
               "note": ""
             },
             {
+              "key": "width",
+              "label": "Width",
+              "status": "skip",
+              "odoo": "70.0",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
@@ -5780,15 +5831,15 @@
               "note": ""
             }
           ],
-          "score": 6,
-          "total": 6,
+          "score": 5,
+          "total": 5,
           "mismatches": 0
         },
         "VSI-17891351": {
           "status": "confirmed",
           "oc_ref": "ESBD4744001",
           "filename": "2026-05-28_esb-group.com_01164295-0001.pdf",
-          "date": "2026-06-19",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
@@ -5799,7 +5850,7 @@
             "total_price": 306.85,
             "grade": "DX53D",
             "thickness": 1.6,
-            "width": 65.0,
+            "width": null,
             "length": null,
             "coating": "Z100",
             "coil_number": null
@@ -5846,14 +5897,6 @@
               "note": ""
             },
             {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "65.0",
-              "oc": "65.0",
-              "note": ""
-            },
-            {
               "key": "form",
               "label": "Form",
               "status": "skip",
@@ -5886,6 +5929,14 @@
               "note": ""
             },
             {
+              "key": "width",
+              "label": "Width",
+              "status": "skip",
+              "odoo": "65.0",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
@@ -5902,15 +5953,15 @@
               "note": ""
             }
           ],
-          "score": 6,
-          "total": 6,
+          "score": 5,
+          "total": 5,
           "mismatches": 0
         },
         "VSI-17891383": {
           "status": "confirmed",
           "oc_ref": "ESBD4744001",
           "filename": "2026-05-28_esb-group.com_01164295-0001.pdf",
-          "date": "2026-06-19",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
@@ -5921,7 +5972,7 @@
             "total_price": 433.5,
             "grade": "DX52D",
             "thickness": 1.7,
-            "width": 290.0,
+            "width": null,
             "length": null,
             "coating": "AS120",
             "coil_number": null
@@ -5968,14 +6019,6 @@
               "note": ""
             },
             {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "290.0",
-              "oc": "290.0",
-              "note": ""
-            },
-            {
               "key": "form",
               "label": "Form",
               "status": "skip",
@@ -6008,6 +6051,14 @@
               "note": ""
             },
             {
+              "key": "width",
+              "label": "Width",
+              "status": "skip",
+              "odoo": "290.0",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
@@ -6024,15 +6075,15 @@
               "note": ""
             }
           ],
-          "score": 6,
-          "total": 6,
+          "score": 5,
+          "total": 5,
           "mismatches": 0
         },
         "VSI-17891384": {
           "status": "confirmed",
           "oc_ref": "ESBD4744001",
           "filename": "2026-05-28_esb-group.com_01164295-0001.pdf",
-          "date": "2026-06-19",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
@@ -6043,7 +6094,7 @@
             "total_price": 636.65,
             "grade": null,
             "thickness": 1.7,
-            "width": 290.0,
+            "width": null,
             "length": null,
             "coating": null,
             "coil_number": null
@@ -6074,26 +6125,10 @@
               "note": ""
             },
             {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "290.0",
-              "oc": "290.0",
-              "note": ""
-            },
-            {
               "key": "form",
               "label": "Form",
               "status": "skip",
               "odoo": "Slit Coils",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "1st",
               "oc": "\u2014",
               "note": ""
             },
@@ -6106,10 +6141,10 @@
               "note": ""
             },
             {
-              "key": "finish",
-              "label": "Finish",
+              "key": "quality_choice",
+              "label": "Quality Choice",
               "status": "skip",
-              "odoo": "Aluminized (+AS/+AL)",
+              "odoo": "1st",
               "oc": "\u2014",
               "note": ""
             },
@@ -6122,10 +6157,26 @@
               "note": ""
             },
             {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Aluminized (+AS/+AL)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
               "key": "no_of_items",
               "label": "# of Items",
               "status": "skip",
               "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "skip",
+              "odoo": "290.0",
               "oc": "\u2014",
               "note": ""
             },
@@ -6146,15 +6197,15 @@
               "note": ""
             }
           ],
-          "score": 4,
-          "total": 4,
+          "score": 3,
+          "total": 3,
           "mismatches": 0
         },
         "VSI-17891385": {
           "status": "confirmed",
           "oc_ref": "ESBD4744001",
           "filename": "2026-05-28_esb-group.com_01164295-0001.pdf",
-          "date": "2026-06-19",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": null,
             "supplier_article": null,
@@ -6298,7 +6349,8 @@
           "odoo": "30 Days",
           "warning": true
         }
-      ]
+      ],
+      "slack_ts": "1782478665.595759"
     },
     "P01821": {
       "so_name": "S01506",
