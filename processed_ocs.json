@@ -17,12 +17,16 @@
     "1a0285d9c6b145d6bae8e91757f011d7",
     "1e48d000a96f4eeba51683deb0926e07",
     "21aead0809a54d66a881bb3add081762",
+    "21db2cb651cf492a913acc3c0af6bbf5",
     "22b4d28fddfb4a22a11c5d11c80d9737",
     "244f1402fb084b718459a2a6139414ff",
     "25160f06206042c0acd6f9abe39ef025",
     "2746aae562eb41559aa64ea8647b5f0b",
+    "2a77b9bbd1dc49cda159f7f70cb97faa",
     "2ecadbcd9b4041d69079353f6b0dbedc",
+    "2eda1e1eec9c4fafa40205c27ffdf247",
     "3531f20f9a6e4d749b0d6ce9f62cc6e9",
+    "3676f806527f46e9b7dfdbda87f74c87",
     "36d0f4d11f0c416dacf4b87b10498813",
     "36f6d8d2538b46f4ae6aab20a096bfd5",
     "37222624d0834e4cb523eac5ae3a780e",
@@ -36,6 +40,7 @@
     "3f2e55a6da844f008affee949667f242",
     "3fc5fe5c79a542e4adbc8f67e6d0e903",
     "4030adb59ee84d70b43d7528d4fccd81",
+    "4100e2e47b4141ee9f214761ebef8290",
     "4183463988c445e885c9587b7b76cbfb",
     "428b7babc6744c3dbccd95464cb3f8a8",
     "42ce5e9aba6a470e91ba7aec9ca9ab25",
@@ -50,6 +55,7 @@
     "58fe640b7e834eb6b7b01f00e504cd59",
     "59e0b23752264bc9be30ce05d6402643",
     "5be44f62a042448790092b1686d4dcad",
+    "5d6a059d69e045f7b6908df974d3f922",
     "5dcd6a3be229448e834a6120e0d4f1d6",
     "5f48901f4e3f40ee863231f94babab45",
     "5f8f825b2bf54a509258d24327b9bcc2",
@@ -58,10 +64,13 @@
     "65af152fe4db48bd90ef6b9ddf0cf9c6",
     "6c747cffb2f149df9f14cf3a6f07c667",
     "6df6700754f24f9783cfffece9a336ed",
+    "6e0318f4749a42d899f68a73fe50b4df",
     "71a6ede380744a7191dbfc4e21aa7fe0",
     "71bd9cb043314974a81e1c75ef13911a",
+    "77c4b8b4fe9e4b2f98001474029a1277",
     "77f5f86c33bf465f97171e6b729b7fed",
     "781d413a48c24302bd80c56981902728",
+    "79e0bd374eef4cce8644fac1ece2dad5",
     "79e450192e3947c387a6d163a0a8ce59",
     "7c267f7aea724198ba12e4b49229f7b5",
     "7c96b5c2b07e49aabbef353fb1e3dcad",
@@ -90,6 +99,7 @@
     "a1da0a32ab764fb5b3e15319496d0d2d",
     "a1e87a7e5e554300a29c55107af4dd36",
     "a23c3a2687fa46a4b422ee8ae04b9daa",
+    "a62dd7407e3442eebbb416763486a516",
     "a7ac4235e5bd40c09fdb75f7dd3ff1c6",
     "a8b8144ac9944086a77ea829f93143e8",
     "a90d788c29b14169baa3bb436a5eade8",
@@ -124,6 +134,7 @@
     "df83d9fb6d0b4532a7efae161d70e209",
     "dfa02ac15a9a43ab8223c220aa054829",
     "dff41658e1294c07b6710e34939eb2c1",
+    "e03524a728d0487fadbc9374d83ab158",
     "e3905524e5cd4936a721c4c6d588c5cf",
     "f2339b2a2490462d94e49fa5632696bb",
     "f31ec11c8330490a8a29169458406d7e",
@@ -7993,7 +8004,7 @@
       "supplier": "Martin Korreck",
       "buyer": "Olaf Jahn",
       "initialized": "2026-06-24",
-      "last_updated": "2026-06-24",
+      "last_updated": "2026-06-26",
       "line_items": {
         "VSI-17910133": {
           "status": "confirmed",
@@ -8120,8 +8131,8 @@
         "VSI-17910135": {
           "status": "confirmed",
           "oc_ref": "212808",
-          "filename": "Auftragsbest\u00e4tigung_212808.pdf",
-          "date": "2026-06-24",
+          "filename": "2026-06-24_bilstein-kaltband.de_Auftragsbest?tigung_212808.pdf",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": "VSI-17910135",
             "supplier_article": "VSI-17910135",
@@ -8242,8 +8253,8 @@
         "VSI-17910138": {
           "status": "confirmed",
           "oc_ref": "212809",
-          "filename": "Auftragsbest\u00e4tigung_212809.pdf",
-          "date": "2026-06-24",
+          "filename": "2026-06-24_bilstein-kaltband.de_Auftragsbest?tigung_212809.pdf",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": "30059281",
             "supplier_article": "30059281",
@@ -8400,16 +8411,16 @@
         "VSI-17910131": {
           "status": "confirmed",
           "oc_ref": "212810",
-          "filename": "Auftragsbest\u00e4tigung_212810.pdf",
-          "date": "2026-06-24",
+          "filename": "2026-06-24_bilstein-kaltband.de_Auftragsbest?tigung_212810.pdf",
+          "date": "2026-06-26",
           "oc_line": {
-            "vs_article": "30059263",
-            "supplier_article": "30059263",
+            "vs_article": "VSI-17910131",
+            "supplier_article": "VSI-17910131",
             "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) ZE600 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Thickness parallelism / Dickenparallelit\u00e4t",
-            "quantity": null,
+            "quantity": 7.488,
             "unit": "MT",
             "unit_price": 380.0,
-            "total_price": 0.0,
+            "total_price": 2845.44,
             "grade": null,
             "thickness": 1.9,
             "width": 240.0,
@@ -8425,6 +8436,14 @@
               "odoo": "ZE600",
               "oc": "ZE600",
               "note": "cross-field: found in OC coating"
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "7.488",
+              "oc": "7.488",
+              "note": ""
             },
             {
               "key": "price",
@@ -8483,14 +8502,6 @@
               "note": ""
             },
             {
-              "key": "qty",
-              "label": "Quantity",
-              "status": "skip",
-              "odoo": "7.488",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
               "key": "no_of_items",
               "label": "# of Items",
               "status": "skip",
@@ -8515,8 +8526,8 @@
               "note": ""
             }
           ],
-          "score": 4,
-          "total": 4,
+          "score": 5,
+          "total": 5,
           "mismatches": 0
         },
         "VSI-17910143": {
@@ -8525,8 +8536,8 @@
           "filename": "2026-06-24_bilstein-kaltband.de_Auftragsbest?tigung_212811.pdf",
           "date": "2026-06-26",
           "oc_line": {
-            "vs_article": "VSI-17910143",
-            "supplier_article": "VSI-17910143",
+            "vs_article": "30059339",
+            "supplier_article": "30059339",
             "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) HC300LA Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Edges of mechanical damage / Kanten mechanische Besch\u00e4digung",
             "quantity": 3.532,
             "unit": "MT",
