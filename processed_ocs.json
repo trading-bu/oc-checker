@@ -1,6 +1,8 @@
 {
   "processed_ids": [
+    "00ed57e12a054ca8bed2cc542f5fbf18",
     "00fdbeb5b6204f0e8cf522a54b3d76f4",
+    "022a2fb3156b44d9aafdb3afe9641371",
     "02ec34a1e7f642bdaca0981a6686347a",
     "06d2e2acdb2d4819aa35ef4b299dab77",
     "08e2e6265a9641aba6bc302da2ff1aa8",
@@ -12,8 +14,10 @@
     "13c9d34ae7614759b85338de08f8f9cf",
     "14752774939d412f93e8e619c26163d4",
     "1984e604f62a4717b2609f0632355c57",
+    "1a0285d9c6b145d6bae8e91757f011d7",
     "1e48d000a96f4eeba51683deb0926e07",
     "21aead0809a54d66a881bb3add081762",
+    "22b4d28fddfb4a22a11c5d11c80d9737",
     "244f1402fb084b718459a2a6139414ff",
     "25160f06206042c0acd6f9abe39ef025",
     "2746aae562eb41559aa64ea8647b5f0b",
@@ -26,6 +30,7 @@
     "39a8ac8ca7c94438a1fa49e976ea962e",
     "3a612e58b8d64165ba44b80ab52b76fc",
     "3a80009f003d41108b36ca1f901ffa77",
+    "3b0bcbc5bdb345c9948726e00a0056b1",
     "3bd41f7bcf9c4f498ad4f4712f88ab81",
     "3d4b00301a214719a8a55813d9951ffb",
     "3f2e55a6da844f008affee949667f242",
@@ -41,13 +46,17 @@
     "4e506cd23ae24c238ff38451c6590395",
     "4f23832ea4444e15a2e5c94f15ea9a72",
     "501c377c0d5a494093158c80b2d0d3ef",
+    "51851be24da44f3eb8a8f44be21669e0",
     "58fe640b7e834eb6b7b01f00e504cd59",
     "59e0b23752264bc9be30ce05d6402643",
+    "5be44f62a042448790092b1686d4dcad",
     "5dcd6a3be229448e834a6120e0d4f1d6",
+    "5f48901f4e3f40ee863231f94babab45",
     "5f8f825b2bf54a509258d24327b9bcc2",
     "607ba07f61d7433483df149979ae9a74",
     "609b1000e7d4453588757ba4e083bc90",
     "65af152fe4db48bd90ef6b9ddf0cf9c6",
+    "6c747cffb2f149df9f14cf3a6f07c667",
     "6df6700754f24f9783cfffece9a336ed",
     "71a6ede380744a7191dbfc4e21aa7fe0",
     "71bd9cb043314974a81e1c75ef13911a",
@@ -55,6 +64,7 @@
     "781d413a48c24302bd80c56981902728",
     "79e450192e3947c387a6d163a0a8ce59",
     "7c267f7aea724198ba12e4b49229f7b5",
+    "7c96b5c2b07e49aabbef353fb1e3dcad",
     "7d84e05a67394f54923c30ef73005002",
     "7ea42426b9824ef3851aeb16a29559a2",
     "81de3484ac6f42dcbcbd083c12baa6c5",
@@ -77,14 +87,18 @@
     "9c43ba4c0e544ad28461091e4235fbff",
     "9c747382a3d640f18264ab35137f3b5d",
     "a1af1202faff4c068bb44b6c5e7de0e0",
+    "a1da0a32ab764fb5b3e15319496d0d2d",
     "a1e87a7e5e554300a29c55107af4dd36",
     "a23c3a2687fa46a4b422ee8ae04b9daa",
+    "a7ac4235e5bd40c09fdb75f7dd3ff1c6",
     "a8b8144ac9944086a77ea829f93143e8",
     "a90d788c29b14169baa3bb436a5eade8",
     "ab82f31d60fc46f1a5a01d7d9a7a1752",
+    "adb941d1d98b4f77bff33332504d2f36",
     "b2a667f8baf2437c863724dfc7b66e65",
     "b690c15203114f6d8fa1ac8adad0b477",
     "b916b5e7dcbb420ea72b246bfa47c933",
+    "ba982b665784466289b8374b1be65dca",
     "bcb879094ec145a8b93f9e19c3e03962",
     "be5f9d3b31494a0c86952e027fa7a340",
     "c1e7fd2d56e34990a6907b31213d0add",
@@ -92,6 +106,7 @@
     "c95bb706e1ee4b2eb36f73631d9d38ff",
     "c9da8fa140ad40678f7abeeced2a7e19",
     "ca4d20f2f6344637bebbc2ca6b269596",
+    "cab8843b5849421ab5d832562b88095f",
     "caedf126b6c04fdea8cd3e97150958e2",
     "cb0b5ebf02f24dcab9fa00626334d4a2",
     "cb4b2deea80c416d93cd1bc168c2d015",
@@ -100,12 +115,15 @@
     "ccd64532d64b4df1bea024956442651c",
     "cdeff52afdc144898379e9e1b79aa741",
     "cefca7bbdf0f40658db5d7927a4ad950",
+    "d20e79a7ef914c2cbfdb1a0fcbfeead8",
     "d54d406de11148328d00fc912ce160ed",
     "d7ab32a0e1ef40d5b6c695d4f341de8e",
+    "d8fc18f459df40a4b94da6da5fc39ac3",
     "db99297c0ab44ae49b635aa382a92840",
     "de7a2d5c9ba1453a9043a9fa48d255a2",
     "df83d9fb6d0b4532a7efae161d70e209",
     "dfa02ac15a9a43ab8223c220aa054829",
+    "dff41658e1294c07b6710e34939eb2c1",
     "e3905524e5cd4936a721c4c6d588c5cf",
     "f2339b2a2490462d94e49fa5632696bb",
     "f31ec11c8330490a8a29169458406d7e",
@@ -821,6 +839,24 @@
         {
           "oc_ref": "90208(57523)",
           "filename": "2026-06-09_knappsteinbleche.de_90208.pdf",
+          "date": "2026-06-26",
+          "pattern": "B"
+        },
+        {
+          "oc_ref": "90512",
+          "filename": "2026-06-18_knappsteinbleche.de_90512.pdf",
+          "date": "2026-06-26",
+          "pattern": "B"
+        },
+        {
+          "oc_ref": "90510",
+          "filename": "2026-06-18_knappsteinbleche.de_90510.pdf",
+          "date": "2026-06-26",
+          "pattern": "B"
+        },
+        {
+          "oc_ref": "90213(57523)",
+          "filename": "2026-06-18_knappsteinbleche.de_90213.pdf",
           "date": "2026-06-26",
           "pattern": "B"
         }
@@ -5728,7 +5764,7 @@
             "total_price": 293.25,
             "grade": "DX54D",
             "thickness": 1.7,
-            "width": null,
+            "width": 70.0,
             "length": null,
             "coating": "GI40/40",
             "coil_number": null
@@ -5775,6 +5811,14 @@
               "note": ""
             },
             {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "70.0",
+              "oc": "70.0",
+              "note": ""
+            },
+            {
               "key": "form",
               "label": "Form",
               "status": "skip",
@@ -5807,14 +5851,6 @@
               "note": ""
             },
             {
-              "key": "width",
-              "label": "Width",
-              "status": "skip",
-              "odoo": "70.0",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
@@ -5831,8 +5867,8 @@
               "note": ""
             }
           ],
-          "score": 5,
-          "total": 5,
+          "score": 6,
+          "total": 6,
           "mismatches": 0
         },
         "VSI-17891351": {
@@ -5850,7 +5886,7 @@
             "total_price": 306.85,
             "grade": "DX53D",
             "thickness": 1.6,
-            "width": null,
+            "width": 65.0,
             "length": null,
             "coating": "Z100",
             "coil_number": null
@@ -5897,6 +5933,14 @@
               "note": ""
             },
             {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "65.0",
+              "oc": "65.0",
+              "note": ""
+            },
+            {
               "key": "form",
               "label": "Form",
               "status": "skip",
@@ -5929,14 +5973,6 @@
               "note": ""
             },
             {
-              "key": "width",
-              "label": "Width",
-              "status": "skip",
-              "odoo": "65.0",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
@@ -5953,8 +5989,8 @@
               "note": ""
             }
           ],
-          "score": 5,
-          "total": 5,
+          "score": 6,
+          "total": 6,
           "mismatches": 0
         },
         "VSI-17891383": {
@@ -5972,7 +6008,7 @@
             "total_price": 433.5,
             "grade": "DX52D",
             "thickness": 1.7,
-            "width": null,
+            "width": 290.0,
             "length": null,
             "coating": "AS120",
             "coil_number": null
@@ -6019,6 +6055,14 @@
               "note": ""
             },
             {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "290.0",
+              "oc": "290.0",
+              "note": ""
+            },
+            {
               "key": "form",
               "label": "Form",
               "status": "skip",
@@ -6051,14 +6095,6 @@
               "note": ""
             },
             {
-              "key": "width",
-              "label": "Width",
-              "status": "skip",
-              "odoo": "290.0",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
@@ -6075,8 +6111,8 @@
               "note": ""
             }
           ],
-          "score": 5,
-          "total": 5,
+          "score": 6,
+          "total": 6,
           "mismatches": 0
         },
         "VSI-17891384": {
@@ -6094,7 +6130,7 @@
             "total_price": 636.65,
             "grade": null,
             "thickness": 1.7,
-            "width": null,
+            "width": 290.0,
             "length": null,
             "coating": null,
             "coil_number": null
@@ -6122,6 +6158,14 @@
               "status": "match",
               "odoo": "1.7",
               "oc": "1.7",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "290.0",
+              "oc": "290.0",
               "note": ""
             },
             {
@@ -6173,14 +6217,6 @@
               "note": ""
             },
             {
-              "key": "width",
-              "label": "Width",
-              "status": "skip",
-              "odoo": "290.0",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
               "key": "tensile_strength",
               "label": "Tensile Strength",
               "status": "skip",
@@ -6197,8 +6233,8 @@
               "note": ""
             }
           ],
-          "score": 3,
-          "total": 3,
+          "score": 4,
+          "total": 4,
           "mismatches": 0
         },
         "VSI-17891385": {
@@ -8359,7 +8395,7 @@
       "supplier": "Martin Korreck",
       "buyer": "Volker Wolff",
       "initialized": "2026-06-24",
-      "last_updated": "2026-06-24",
+      "last_updated": "2026-06-26",
       "line_items": {
         "VSI-17910131": {
           "status": "confirmed",
@@ -8486,11 +8522,11 @@
         "VSI-17910143": {
           "status": "confirmed",
           "oc_ref": "212811",
-          "filename": "Auftragsbest\u00e4tigung_212811.pdf",
-          "date": "2026-06-24",
+          "filename": "2026-06-24_bilstein-kaltband.de_Auftragsbest?tigung_212811.pdf",
+          "date": "2026-06-26",
           "oc_line": {
-            "vs_article": "30059339",
-            "supplier_article": "30059339",
+            "vs_article": "VSI-17910143",
+            "supplier_article": "VSI-17910143",
             "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) HC300LA Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Edges of mechanical damage / Kanten mechanische Besch\u00e4digung",
             "quantity": 3.532,
             "unit": "MT",
@@ -8608,8 +8644,8 @@
         "VSI-17910144": {
           "status": "confirmed",
           "oc_ref": "212812",
-          "filename": "Auftragsbest\u00e4tigung_212812.pdf",
-          "date": "2026-06-24",
+          "filename": "2026-06-24_bilstein-kaltband.de_Auftragsbest?tigung_212812.pdf",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": "30059340",
             "supplier_article": "30059340",
@@ -8623,7 +8659,7 @@
             "width": 175.0,
             "length": null,
             "coating": null,
-            "coil_number": null
+            "coil_number": "0001131586 0001131587 0001131588 0001131589"
           },
           "fields": [
             {
@@ -8761,13 +8797,13 @@
       "supplier": "Martin Korreck",
       "buyer": "Arnd Seelmann",
       "initialized": "2026-06-24",
-      "last_updated": "2026-06-24",
+      "last_updated": "2026-06-26",
       "line_items": {
         "VSI-17910127": {
           "status": "confirmed",
           "oc_ref": "212813",
-          "filename": "Auftragsbest\u00e4tigung_212813.pdf",
-          "date": "2026-06-24",
+          "filename": "2026-06-24_bilstein-kaltband.de_Auftragsbest?tigung_212813.pdf",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": "30058295",
             "supplier_article": "30058295",
@@ -8888,12 +8924,12 @@
         "VSI-17910142": {
           "status": "confirmed",
           "oc_ref": "212814",
-          "filename": "Auftragsbest\u00e4tigung_212814.pdf",
-          "date": "2026-06-24",
+          "filename": "2026-06-24_bilstein-kaltband.de_Auftragsbest?tigung_212814.pdf",
+          "date": "2026-06-26",
           "oc_line": {
             "vs_article": "30059333",
             "supplier_article": "30059333",
-            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) DC04 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Glue / Kleber | 0.0 | -0001131573",
+            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) DC04 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Glue / Kleber | 0.0 | -0001131573 0001131574",
             "quantity": 4.3,
             "unit": "MT",
             "unit_price": 380.0,
@@ -8903,7 +8939,7 @@
             "width": 245.0,
             "length": null,
             "coating": null,
-            "coil_number": "0001131574"
+            "coil_number": null
           },
           "fields": [
             {
@@ -9010,11 +9046,11 @@
         "VSI-17910146": {
           "status": "confirmed",
           "oc_ref": "212815",
-          "filename": "Auftragsbest\u00e4tigung_212815.pdf",
-          "date": "2026-06-24",
+          "filename": "2026-06-24_bilstein-kaltband.de_Auftragsbest?tigung_212815.pdf",
+          "date": "2026-06-26",
           "oc_line": {
-            "vs_article": "VSI-17910146",
-            "supplier_article": "VSI-17910146",
+            "vs_article": "30059359",
+            "supplier_article": "30059359",
             "description": "Slit Coils 2nd Choice Cold Rolled 16MnCr5M2 Beschreibung : Supplier Finish - (+LG) Stitch / Schabstreifen | 0.0 | -0001131594",
             "quantity": 2.146,
             "unit": "MT",
