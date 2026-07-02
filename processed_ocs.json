@@ -16,6 +16,7 @@
     "13b447bd99b64bc08923963c85b7034f",
     "13c9d34ae7614759b85338de08f8f9cf",
     "14752774939d412f93e8e619c26163d4",
+    "1787de272099413fb5b9f3fc2cc50827",
     "1984e604f62a4717b2609f0632355c57",
     "1a0285d9c6b145d6bae8e91757f011d7",
     "1bb5d94d9e0b4fdf8857b323ac6f4251",
@@ -27,6 +28,7 @@
     "25160f06206042c0acd6f9abe39ef025",
     "2746aae562eb41559aa64ea8647b5f0b",
     "2a77b9bbd1dc49cda159f7f70cb97faa",
+    "2d009a94ae114539b3ef01ff8ad3d1b9",
     "2ecadbcd9b4041d69079353f6b0dbedc",
     "2eda1e1eec9c4fafa40205c27ffdf247",
     "3531f20f9a6e4d749b0d6ce9f62cc6e9",
@@ -49,6 +51,7 @@
     "4183463988c445e885c9587b7b76cbfb",
     "428b7babc6744c3dbccd95464cb3f8a8",
     "42ce5e9aba6a470e91ba7aec9ca9ab25",
+    "4628851a2c9b48fda32011773db73a9d",
     "469eef253294496585340ccd110e3046",
     "49927a42d7cb49958743908b2570dc23",
     "4b2e8a0d1a944d48a2a1b774cd168774",
@@ -103,6 +106,7 @@
     "8edde3cbb8e34b73b7547c56c3dacc3a",
     "8fd84af4b8c046cb891898bd7c69b18b",
     "922d9a284a474971b5f139047e8b3d7f",
+    "924fcc2e566049f292f57e1213c31279",
     "9338c83492734363aa3aa3f096a85b91",
     "9a9f2c5dd030473ab6971d8c35100182",
     "9b3e0fa55725414ba145b7f26b2a3ad1",
@@ -128,6 +132,7 @@
     "be5f9d3b31494a0c86952e027fa7a340",
     "c1e7fd2d56e34990a6907b31213d0add",
     "c7a19ddca4e941c9930ee421c54e95fa",
+    "c827b91b92334d38b86bc0782d44d054",
     "c95bb706e1ee4b2eb36f73631d9d38ff",
     "c9da8fa140ad40678f7abeeced2a7e19",
     "ca4d20f2f6344637bebbc2ca6b269596",
@@ -145,6 +150,7 @@
     "d54d406de11148328d00fc912ce160ed",
     "d7ab32a0e1ef40d5b6c695d4f341de8e",
     "d8fc18f459df40a4b94da6da5fc39ac3",
+    "d99c64c6760e461d90d01a65a810edc4",
     "db99297c0ab44ae49b635aa382a92840",
     "de7a2d5c9ba1453a9043a9fa48d255a2",
     "df83d9fb6d0b4532a7efae161d70e209",
@@ -12511,6 +12517,408 @@
         }
       ],
       "slack_ts": "1782892650.346249"
+    },
+    "P01836": {
+      "so_name": "S01517",
+      "supplier": "Martin Korreck",
+      "buyer": "J\u00f6rg Kutsch",
+      "initialized": "2026-07-02",
+      "last_updated": "2026-07-02",
+      "line_items": {
+        "VSI-17914114": {
+          "status": "confirmed",
+          "oc_ref": "212996",
+          "filename": "Auftragsbest\u00e4tigung_212996.pdf",
+          "date": "2026-07-02",
+          "oc_line": {
+            "vs_article": "30059376",
+            "supplier_article": "30059376",
+            "description": "Coils 2nd Choice Cold Rolled HC420LA Beschreibung : Supplier Finish - NGW Cold rolled mechanical data / Kaltband mechanische Daten | auf Papph\u00fclse | -0001131615 0001131616",
+            "quantity": 6.292,
+            "unit": "MT",
+            "unit_price": 345.0,
+            "total_price": 2170.74,
+            "grade": "HC420LA",
+            "thickness": 0.43,
+            "width": 654.0,
+            "length": null,
+            "coating": null,
+            "coil_number": "-0001131615 0001131616"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HC420LA",
+              "oc": "HC420LA",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "6.292",
+              "oc": "6.292",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "345.0",
+              "oc": "345.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.43",
+              "oc": "0.43",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "654.0",
+              "oc": "654.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "2",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 5,
+          "mismatches": 0
+        },
+        "VSI-17914096": {
+          "status": "confirmed",
+          "oc_ref": "212997",
+          "filename": "Auftragsbest\u00e4tigung_212997.pdf",
+          "date": "2026-07-02",
+          "oc_line": {
+            "vs_article": "30057756",
+            "supplier_article": "30057756",
+            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) ZE600 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Emulsion stains / Emulsionsflecken",
+            "quantity": 12.678,
+            "unit": "MT",
+            "unit_price": 345.0,
+            "total_price": 4373.91,
+            "grade": null,
+            "thickness": 1.8,
+            "width": 351.0,
+            "length": null,
+            "coating": "ZE600",
+            "coil_number": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "ZE600",
+              "oc": "ZE600",
+              "note": "cross-field: found in OC coating"
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "12.678",
+              "oc": "12.678",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "345.0",
+              "oc": "345.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.8",
+              "oc": "1.8",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "351.0",
+              "oc": "351.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "ZE600",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Drawn / Soft (+LC)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "2",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 5,
+          "mismatches": 0
+        },
+        "VSI-17914108": {
+          "status": "confirmed",
+          "oc_ref": "212998",
+          "filename": "Auftragsbest\u00e4tigung_212998.pdf",
+          "date": "2026-07-02",
+          "oc_line": {
+            "vs_article": "30058555",
+            "supplier_article": "30058555",
+            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) ZE600 Beschreibung : Supplier Finish - Cold Drawn / Soft (+LC) Thickness parallelism / Dickenparallelit\u00e4t | -0001130570",
+            "quantity": 5.713,
+            "unit": "MT",
+            "unit_price": 345.0,
+            "total_price": 1970.99,
+            "grade": null,
+            "thickness": 1.8,
+            "width": 351.0,
+            "length": null,
+            "coating": "ZE600",
+            "coil_number": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "ZE600",
+              "oc": "ZE600",
+              "note": "cross-field: found in OC coating"
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "5.713",
+              "oc": "5.713",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "345.0",
+              "oc": "345.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.8",
+              "oc": "1.8",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "351.0",
+              "oc": "351.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "ZE600",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Drawn / Soft (+LC)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 5,
+          "mismatches": 0
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Hagen",
+          "odoo": "J\u00f6rg Kutsch, Switzerland",
+          "warning": true
+        },
+        {
+          "type": "incoterms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Incoterms MISMATCH",
+          "oc": "FCA Hagen",
+          "odoo": "[FCA] FREE CARRIER",
+          "warning": true
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "Innerhalb 30 Tagen ohne Abzug",
+          "odoo": "30 Days",
+          "warning": true
+        }
+      ],
+      "slack_ts": "1782978116.341939"
     }
   }
 }
