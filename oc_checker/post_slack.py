@@ -1,12 +1,14 @@
 """
-Post OC check results to Slack via Incoming Webhook.
-Implements the 2-part format from OC Analysis Instructions v1.1.
+Post OC check results to Slack via Incoming Webhook or Bot API.
 """
 
 import json
 import sys
 import urllib.request
+from datetime import datetime
 
+
+# ── Low-level posting ─────────────────────────────────────────────────────────
 
 def post(webhook_url, payload):
     data = json.dumps(payload).encode("utf-8")
@@ -27,6 +29,8 @@ def post_text(webhook_url, text):
     return post(webhook_url, {"text": text})
 
 
+# ── Formatting helpers ────────────────────────────────────────────────────────
+
 def _fmt_num(v, decimals=2):
     if v is None:
         return "---"
@@ -36,159 +40,295 @@ def _fmt_num(v, decimals=2):
         return str(v)
 
 
-def post_oc_result(webhook_url, result, filename):
-    po        = result.get("po_name", "?")
-    so        = result.get("so_name", "---")
-    supplier  = result.get("supplier", "?")
-    buyer     = result.get("buyer", "---")
-    oc_ref    = result.get("oc_ref", "---")
-    conf_date = result.get("confirmation_date", "---")
-    is_match  = result.get("is_match", False)
-    mismatches = result.get("total_mismatches", 0)
-    pattern   = result.get("pattern", "A")
-    line_results = result.get("line_results", [])
-    flags     = result.get("flags", [])
+def _fmt_date(iso):
+    """2026-08-15  →  15 Aug 2026.  Returns None if blank."""
+    if not iso or iso in ("—", "---", "None"):
+        return None
+    try:
+        d = datetime.strptime(str(iso).strip()[:10], "%Y-%m-%d")
+        return "%d %b %Y" % (d.day, )  # no leading zero
+    except Exception:
+        return str(iso)[:10]
 
-    SEP = "=" * 34
+
+def _fmt_date(iso):
+    """2026-08-15  →  15 Aug 2026.  Returns None if blank."""
+    if not iso or iso in ("—", "---", "None"):
+        return None
+    try:
+        s = str(iso).strip()[:10]
+        year, month, day = s.split("-")
+        month_abbr = ["", "Jan","Feb","Mar","Apr","May","Jun",
+                      "Jul","Aug","Sep","Oct","Nov","Dec"]
+        return "%d %s %s" % (int(day), month_abbr[int(month)], year)
+    except Exception:
+        return str(iso)[:10]
+
+
+def _fmt_dim(v):
+    """Format a dimension value: drop trailing .0 for whole numbers (1500.0 → 1500)."""
+    if v is None:
+        return ""
+    try:
+        f = float(v)
+        return str(int(f)) if f == int(f) else str(f)
+    except Exception:
+        return str(v)
+
+
+def _fmt_delta(label, odoo_v, oc_v):
+    """Return a delta string for numeric mismatches, e.g. '+0.50mm', '-€30.00'."""
+    try:
+        o = float(str(odoo_v).replace(",", "").replace("€", "").strip())
+        c = float(str(oc_v).replace(",", "").replace("€", "").strip())
+        delta = c - o
+        lbl   = label.lower()
+        if "thickness" in lbl or "width" in lbl or "length" in lbl:
+            return "  (%+.2fmm)" % delta
+        elif "price" in lbl:
+            sign = "+" if delta >= 0 else "-"
+            return "  (%s€%.2f)" % (sign, abs(delta))
+        elif "qty" in lbl or "quantity" in lbl:
+            return "  (%+.3ft)" % delta
+        else:
+            return "  (%+.2f)" % delta
+    except Exception:
+        return ""
+
+
+# ── Main message builder ──────────────────────────────────────────────────────
+
+def build_po_status_text(po_name, po_log):
+    """
+    Build the Slack message for a PO's current OC status.
+
+    Message structure:
+      [icon] *STATUS — PO  SO*
+      Supplier → Buyer  |  OC ref  |  date
+      X/Y confirmed  |  incoterms  |  net amount
+      ──────────────────────────────────────
+      [per-line rows — compact for confirmed, expanded for mismatch]
+      ──────────────────────────────────────
+      [commercial flags — pickup address, payment terms]
+      [footer action line]
+    """
+    line_items    = po_log.get("line_items", {})
+    so_name       = po_log.get("so_name", "—")
+    supplier      = po_log.get("supplier", "?")
+    buyer         = po_log.get("buyer", "—")
+    flags         = po_log.get("flags", [])
+    pattern_b_ocs = po_log.get("pattern_b_ocs", [])
+
+    total      = len(line_items)
+    n_conf     = sum(1 for v in line_items.values() if v["status"] == "confirmed")
+    n_mismatch = sum(1 for v in line_items.values() if v["status"] == "mismatch")
+    n_pending  = sum(1 for v in line_items.values() if v["status"] == "pending")
+
+    # Pull OC-level info from the first non-pending entry (they share OC metadata)
+    oc_ref_global    = ""
+    conf_date_global = ""
+    net_amount       = None
+    for entry in line_items.values():
+        if entry.get("status") in ("confirmed", "mismatch"):
+            oc_ref_global    = entry.get("oc_ref", "")
+            conf_date_global = entry.get("date", "")
+            # net from oc_line (stored in each entry)
+            break
+
+    # Pull incoterms + VAT net from flags
+    incoterm_str = ""
+    net_str      = ""
+    pay_str      = ""
+    for flag in flags:
+        if flag["type"] == "incoterms":
+            # Mismatch flag — show OC value with warning marker
+            incoterm_str = "⚠️ %s (PO: %s)" % (flag["oc"], flag["odoo"])
+        elif flag["type"] == "vat" and flag.get("net"):
+            net_str = "EUR %s net" % _fmt_num(flag["net"])
+        elif flag["type"] == "payment_terms":
+            pay_str = "⚠️ Payment: %s (PO: %s)" % (flag["oc"], flag["odoo"])
+    # If incoterms matched (no flag), try to get from first oc_line's data
+    # (We don't store matched incoterms in flags, so just skip — only show mismatches)
+
+    DIV = "─" * 36
 
     lines = []
 
-    # Header
-    if is_match:
-        lines.append(":white_check_mark:  *OC CONFIRMED -- %s %s*" % (po, so))
+    # ── Header ────────────────────────────────────────────────────────────────
+    if n_pending == 0 and n_mismatch == 0:
+        lines.append(":white_check_mark:  *OC CONFIRMED — %s  %s*" % (po_name, so_name))
+    elif n_mismatch > 0 and n_pending == 0:
+        lines.append(":x:  *OC MISMATCH — %s  %s — %d issue(s)*" % (
+            po_name, so_name, n_mismatch))
     else:
-        issues = mismatches if pattern == "A" else "?"
-        lines.append(":x:  *OC MISMATCH -- %s -- %s issue(s)*" % (po, issues))
+        lines.append(":hourglass_flowing_sand:  *OC IN PROGRESS — %s  %s — %d/%d items*" % (
+            po_name, so_name, n_conf + n_mismatch, total))
 
+    # Subheader: supplier → buyer  |  OC ref  |  date
+    subheader_parts = ["%s  →  %s" % (supplier, buyer)]
+    if oc_ref_global:
+        subheader_parts.append("OC %s" % oc_ref_global)
+    if conf_date_global:
+        d = _fmt_date(conf_date_global)
+        if d:
+            subheader_parts.append(d)
+    lines.append("  |  ".join(subheader_parts))
+
+    # Progress line: counts | incoterms | net amount
+    progress_parts = [
+        "*%d/%d confirmed*%s%s" % (
+            n_conf, total,
+            "   |   %d mismatch(es)" % n_mismatch if n_mismatch else "",
+            "   |   %d pending" % n_pending if n_pending else "",
+        )
+    ]
+    if incoterm_str:
+        progress_parts.append(incoterm_str)
+    if net_str:
+        progress_parts.append(net_str)
+    if pay_str:
+        progress_parts.append(pay_str)
+    lines.append("   |   ".join(progress_parts))
+
+    # Pattern B/C warning — surface early, before the line list
+    if pattern_b_ocs:
+        lines.append("")
+        lines.append(":warning: *Combined OC* (Pattern B/C) — lines below cannot be auto-verified:")
+        for pb in pattern_b_ocs:
+            lines.append("   OC %s  (%s)  %s  — manual review required" % (
+                pb["oc_ref"], pb["filename"], pb["date"]))
+
+    # ── Per-line rows ─────────────────────────────────────────────────────────
     lines.append("")
-    lines.append("PO: `%s`   SO: `%s`   Supplier: %s   Buyer: %s" % (po, so, supplier, buyer))
-    lines.append("OC Ref: %s   Confirmed: %s" % (oc_ref, conf_date))
-    lines.append("File: _%s_" % filename)
-    lines.append("")
-    lines.append(SEP)
-    lines.append("*PART 1 -- PARAMETER CHECK*")
-    lines.append(SEP)
+    lines.append(DIV)
 
-    # Pattern B/C warning
-    if pattern == "C":
-        oc_lines_data = result.get("oc_data", {}).get("lines", [])
-        total_wt = oc_lines_data[0].get("quantity", "?") if oc_lines_data else "?"
-        lines.append("")
-        lines.append(":warning: *Pattern C -- Combined OC*: %s confirmed the entire PO as a single weight of %st." % (supplier, total_wt))
-        lines.append("   Individual spec fields cannot be auto-verified. Please check each PO line manually.")
-    elif pattern == "B":
-        lines.append("")
-        lines.append(":warning: *Pattern B -- Combined OC*: %s aggregated multiple PO lines into fewer OC lines." % supplier)
-        lines.append("   Individual spec fields cannot be auto-verified. Please check each PO line manually.")
+    def _sort_key(item):
+        return {"mismatch": 0, "confirmed": 1, "pending": 2}.get(
+            item[1].get("status", "pending"), 9)
 
-    # Per-line results
-    for lr in line_results:
-        vs_id = lr.get("vs_id", "?")
-        ol    = lr.get("oc_line", {})
-        grade = ol.get("grade", "")
-        thick = ol.get("thickness", "")
-        width = ol.get("width", "")
-        qty   = ol.get("quantity", "")
+    for vs_id, entry in sorted(line_items.items(), key=_sort_key):
+        status    = entry.get("status", "pending")
+        oc_line   = entry.get("oc_line", {})
+        field_res = entry.get("fields", [])
 
-        coil_num  = ol.get("coil_number", "")
-        dim_str   = (" -- %sx%smm" % (thick, width)) if thick and width else ""
-        qty_str   = (" -- %st" % qty) if qty else ""
-        grade_str = (" -- " + grade) if grade else ""
-        coil_str  = ("  |  Coil: %s" % coil_num) if coil_num else ""
-        lines.append("")
-        lines.append("*%s*%s%s%s%s" % (vs_id, grade_str, dim_str, qty_str, coil_str))
+        grade    = oc_line.get("grade", "") or ""
+        thick    = oc_line.get("thickness", "")
+        width    = oc_line.get("width", "")
+        qty      = oc_line.get("quantity", "")
+        coil_num = oc_line.get("coil_number", "") or ""
+        extr_warn = oc_line.get("extraction_warning") or ""
 
-        for f in lr.get("fields", []):
-            label  = f["label"]
-            status = f["status"]
-            odoo_v = f["odoo"]
-            oc_v   = f["oc"]
-            note   = f.get("note", "")
+        # Dimensions string
+        dim_str   = "%s×%smm" % (_fmt_dim(thick), _fmt_dim(width)) if thick and width else ""
+        qty_str   = "%st" % _fmt_dim(qty) if qty else ""
+        coil_str  = "(%s)" % coil_num if coil_num else ""
 
-            if status == "match":
-                note_str = ("  " + note) if note else ""
-                lines.append("   :white_check_mark: %s: %s%s" % (label, odoo_v, note_str))
-            elif status == "mismatch":
-                lines.append("   :x: *%s*: Odoo `%s`  !=  OC `%s`" % (label, odoo_v, oc_v))
-            elif status == "na":
-                lines.append("   N/A %s: not applicable (coil)" % label)
+        # Delivery date: prefer matched/skipped field result over raw oc_line value
+        delivery_iso = None
+        for _f in field_res:
+            if _f.get("key") == "delivery_date" and _f.get("oc") not in (None, "", "—"):
+                delivery_iso = _f["oc"]
+                break
+        if delivery_iso is None:
+            delivery_iso = oc_line.get("delivery_date")
+        delivery_str = ("→ %s" % _fmt_date(delivery_iso)) if _fmt_date(delivery_iso) else ""
+
+        # Build compact spec string
+        spec_parts = [p for p in [grade, dim_str, qty_str, delivery_str, coil_str] if p]
+        spec_str   = ("  " + "  ".join(spec_parts)) if spec_parts else ""
+
+        if status == "pending":
+            lines.append(":hourglass_flowing_sand: *%s*   _OC not yet received_" % vs_id)
+
+        elif status == "confirmed":
+            lines.append(":white_check_mark: *%s*%s" % (vs_id, spec_str))
+            if extr_warn:
+                lines.append("   :warning: _Extraction warning: %s_" % extr_warn)
+
+        else:  # mismatch
+            mismatches_list = [f for f in field_res if f["status"] == "mismatch"]
+            lines.append(":x: *%s*%s" % (vs_id, spec_str))
+            for f in mismatches_list:
+                delta = _fmt_delta(f["label"], f["odoo"], f["oc"])
+                lines.append("   :x: *%s*   Odoo `%s`  ≠  OC `%s`%s" % (
+                    f["label"], f["odoo"], f["oc"], delta))
+            if extr_warn:
+                lines.append("   :warning: _Extraction warning: %s_" % extr_warn)
+
+    lines.append(DIV)
+
+    # ── Commercial flags ──────────────────────────────────────────────────────
+    # Show pickup address and VAT regardless of match status
+    # Incoterms / payment terms already shown in progress line when mismatched;
+    # only show them here if they MATCHED (to confirm to the trader)
+    flag_lines = []
+    for flag in flags:
+        ftype = flag["type"]
+
+        if ftype == "pickup_address":
+            if flag["warning"]:
+                flag_lines.append(":round_pushpin: *Pickup address DIFFERENT — verify before shipping*")
+                flag_lines.append("   OC: %s" % flag["oc"])
+                flag_lines.append("   Odoo: %s" % flag["odoo"])
             else:
-                lines.append("   -- %s: %s  _(not stated in OC)_" % (label, odoo_v))
+                flag_lines.append(":round_pushpin: Pickup: %s  ✅" % flag["oc"])
 
-        score = lr.get("score", 0)
-        total = lr.get("total", 0)
-        lines.append("   _Score: %d/%d verified fields_" % (score, total))
+        elif ftype == "incoterms" and flag.get("warning"):
+            # Already shown in progress line — skip to avoid duplication
+            pass
 
-    # Part 2 flags
-    if flags:
+        elif ftype == "payment_terms" and flag.get("warning"):
+            # Already shown in progress line — skip
+            pass
+
+        elif ftype == "vat":
+            net_v   = ("EUR %s" % _fmt_num(flag["net"]))   if flag.get("net")   else ""
+            gross_v = ("EUR %s" % _fmt_num(flag["gross"])) if flag.get("gross") else ""
+            vat_parts = [p for p in ["VAT %s" % flag["vat_pct"], net_v, "gross %s" % gross_v] if p]
+            flag_lines.append(":receipt: %s" % "  |  ".join(vat_parts))
+
+    if flag_lines:
         lines.append("")
-        lines.append(SEP)
-        lines.append("*PART 2 -- FLAGS BEFORE SENDING SO*")
-        lines.append(SEP)
+        for fl in flag_lines:
+            lines.append(fl)
 
-        for flag in flags:
-            ftype = flag["type"]
-
-            if ftype == "pickup_address":
-                lines.append("")
-                lines.append(":round_pushpin: *Pickup Address:*")
-                lines.append("   OC: %s" % flag["oc"])
-                lines.append("   Odoo: %s" % flag["odoo"])
-                if flag["warning"]:
-                    lines.append("   -> :warning: *DIFFERENT -- verify before shipping*")
-
-            elif ftype == "incoterms":
-                lines.append("")
-                lines.append(":warning: *Incoterms MISMATCH:*")
-                lines.append("   OC: `%s`  |  PO has: `%s` -- confirm with supplier" % (flag["oc"], flag["odoo"]))
-
-            elif ftype == "payment_terms":
-                lines.append("")
-                lines.append(":warning: *Payment Terms MISMATCH:*")
-                lines.append("   OC: `%s`  |  PO has: `%s` -- confirm with supplier" % (flag["oc"], flag["odoo"]))
-
-            elif ftype == "vat":
-                net_str   = ("EUR " + _fmt_num(flag["net"]))   if flag.get("net")   else "---"
-                gross_str = ("EUR " + _fmt_num(flag["gross"])) if flag.get("gross") else "---"
-                lines.append("")
-                lines.append(":receipt: VAT: %s  |  Net: %s  |  Gross (incl. VAT): %s" % (flag["vat_pct"], net_str, gross_str))
-
-    # Footer
+    # ── Footer ────────────────────────────────────────────────────────────────
     lines.append("")
-    lines.append(SEP)
-    if is_match:
-        lines.append(":white_check_mark: All parameters confirmed -> Open SO `%s` in Odoo and click Send." % so)
+    if n_pending == 0 and n_mismatch == 0:
+        lines.append(":white_check_mark: All %d items confirmed — open SO `%s` in Odoo and click *Send*." % (
+            total, so_name))
+    elif n_pending > 0:
+        lines.append(":hourglass_flowing_sand: %d/%d confirmed — waiting on OC for %d more item(s)." % (
+            n_conf, total, n_pending))
     else:
-        lines.append(":x: Fix %d mismatch(es) in Odoo before sending SO `%s`." % (mismatches, so))
+        lines.append(":x: Fix %d mismatch(es) before sending SO `%s`." % (n_mismatch, so_name))
 
-    text = "\n".join(lines).strip()
-    return post(webhook_url, {"text": text})
+    return "\n".join(lines).strip()
 
+
+# ── Slack Web API ─────────────────────────────────────────────────────────────
 
 def _slack_api_call(token, endpoint, payload):
     """Make a Slack Web API call. Returns the parsed JSON response body."""
-    import urllib.request as _ur
     body = json.dumps(payload).encode("utf-8")
-    req = _ur.Request(
+    req  = urllib.request.Request(
         "https://slack.com/api/%s" % endpoint,
         data=body,
-        headers={"Content-Type": "application/json", "Authorization": "Bearer %s" % token},
+        headers={"Content-Type": "application/json",
+                 "Authorization": "Bearer %s" % token},
         method="POST",
     )
-    with _ur.urlopen(req, timeout=10) as resp:
+    with urllib.request.urlopen(req, timeout=10) as resp:
         return json.loads(resp.read().decode())
 
 
 def check_slack_auth(token, channel):
-    """
-    Validate bot token + channel at startup.
-    Prints a clear diagnostic line visible in CI logs.
-    Returns True if OK.
-    """
+    """Validate bot token + channel at startup. Returns True if OK."""
     try:
         body = _slack_api_call(token, "auth.test", {})
         if not body.get("ok"):
-            print("SLACK AUTH FAILED: %s  (check SLACK_BOT_TOKEN starts with xoxb-)" % body.get("error"))
+            print("SLACK AUTH FAILED: %s  (check SLACK_BOT_TOKEN starts with xoxb-)" %
+                  body.get("error"))
             return False
         print("Slack auth OK: bot=%s workspace=%s" % (body.get("user"), body.get("team")))
     except Exception as e:
@@ -197,9 +337,10 @@ def check_slack_auth(token, channel):
     try:
         body2 = _slack_api_call(token, "conversations.info", {"channel": channel})
         if not body2.get("ok"):
-            print("SLACK CHANNEL ERROR: %s  (check SLACK_CHANNEL_ID='%s')" % (body2.get("error"), channel))
+            print("SLACK CHANNEL ERROR: %s  (check SLACK_CHANNEL_ID='%s')" %
+                  (body2.get("error"), channel))
             return False
-        ch = body2.get("channel", {})
+        ch   = body2.get("channel", {})
         in_ch = ch.get("is_member", False)
         print("Slack channel OK: #%s  bot_is_member=%s" % (ch.get("name"), in_ch))
         if not in_ch:
@@ -212,10 +353,8 @@ def check_slack_auth(token, channel):
 
 def post_via_api(token, channel, text, thread_ts=None):
     """
-    Post a message via the Slack Web API (chat.postMessage).
-
-    Returns (ok: bool, ts: str|None) — ts is the message timestamp,
-    which can be used as thread_ts for replies.
+    Post via Slack Web API (chat.postMessage).
+    Returns (ok: bool, ts: str|None).
     """
     payload = {"channel": channel, "text": text}
     if thread_ts:
@@ -232,185 +371,8 @@ def post_via_api(token, channel, text, thread_ts=None):
         return False, None
 
 
-def build_po_status_text(po_name, po_log):
-    """
-    Build the full PO status message text — same content as post_po_status_update
-    but returns the string instead of posting it.
-    """
-    line_items    = po_log.get("line_items", {})
-    so_name       = po_log.get("so_name", "—")
-    supplier      = po_log.get("supplier", "?")
-    buyer         = po_log.get("buyer", "—")
-    flags         = po_log.get("flags", [])
-    pattern_b_ocs = po_log.get("pattern_b_ocs", [])
-
-    total      = len(line_items)
-    n_conf     = sum(1 for v in line_items.values() if v["status"] == "confirmed")
-    n_mismatch = sum(1 for v in line_items.values() if v["status"] == "mismatch")
-    n_pending  = sum(1 for v in line_items.values() if v["status"] == "pending")
-
-    SEP   = "=" * 34
-    lines = []
-
-    # ---- Header ----
-    if n_pending == 0 and n_mismatch == 0:
-        lines.append(":white_check_mark:  *OC CONFIRMED -- %s  %s*" % (po_name, so_name))
-    elif n_mismatch > 0 and n_pending == 0:
-        lines.append(":x:  *OC MISMATCH -- %s  %s -- %d issue(s)*" % (
-            po_name, so_name, n_mismatch))
-    else:
-        lines.append(":hourglass_flowing_sand:  *OC IN PROGRESS -- %s  %s -- %d/%d items*" % (
-            po_name, so_name, n_conf + n_mismatch, total))
-
-    lines.append("")
-    lines.append("PO: `%s`   SO: `%s`   Supplier: %s   Buyer: %s" % (
-        po_name, so_name, supplier, buyer))
-
-    progress = "*%d/%d items confirmed*" % (n_conf, total)
-    if n_mismatch:
-        progress += "   |   %d mismatch(es)" % n_mismatch
-    if n_pending:
-        progress += "   |   %d still pending" % n_pending
-    lines.append(progress)
-
-    # ---- Part 1: line items ----
-    lines.append("")
-    lines.append(SEP)
-    lines.append("*PART 1 -- PARAMETER CHECK*")
-    lines.append(SEP)
-
-    def _sort_key(item):
-        return {"mismatch": 0, "confirmed": 1, "pending": 2}.get(item[1].get("status", "pending"), 9)
-
-    for vs_id, entry in sorted(line_items.items(), key=_sort_key):
-        status = entry.get("status", "pending")
-
-        if status == "pending":
-            lines.append("")
-            lines.append(":hourglass_flowing_sand: *%s*   _— OC not yet received_" % vs_id)
-            continue
-
-        oc_ref      = entry.get("oc_ref", "?")
-        conf_date   = entry.get("date", "")
-        oc_line     = entry.get("oc_line", {})
-        field_res   = entry.get("fields", [])
-        score       = entry.get("score", 0)
-        total_flds  = entry.get("total", 0)
-        mismatches  = entry.get("mismatches", 0)
-
-        grade    = oc_line.get("grade", "")
-        thick    = oc_line.get("thickness", "")
-        width    = oc_line.get("width", "")
-        qty      = oc_line.get("quantity", "")
-        coil_num = oc_line.get("coil_number", "")
-
-        grade_str = ("  " + grade)                 if grade             else ""
-        dim_str   = ("  %sx%smm" % (thick, width)) if thick and width   else ""
-        qty_str   = ("  %st" % qty)                if qty               else ""
-        coil_str  = ("  |  Coil: %s" % coil_num)  if coil_num          else ""
-        meta      = "  _(OC %s · %s)_" % (oc_ref, conf_date) if conf_date else "  _(OC %s)_" % oc_ref
-
-        lines.append("")
-        if mismatches == 0:
-            lines.append(":white_check_mark: *%s*%s%s%s%s%s   %d/%d ✅" % (
-                vs_id, grade_str, dim_str, qty_str, coil_str, meta, score, total_flds))
-        else:
-            lines.append(":x: *%s*%s%s%s%s%s" % (
-                vs_id, grade_str, dim_str, qty_str, coil_str, meta))
-            for f in field_res:
-                label   = f["label"]
-                fstatus = f["status"]
-                odoo_v  = f["odoo"]
-                oc_v    = f["oc"]
-                note    = f.get("note", "")
-                if fstatus == "mismatch":
-                    lines.append("   :x: *%s*: Odoo `%s`  !=  OC `%s`" % (label, odoo_v, oc_v))
-                elif fstatus == "match":
-                    note_str = ("  " + note) if note else ""
-                    lines.append("   :white_check_mark: %s: %s%s" % (label, odoo_v, note_str))
-                elif fstatus == "na":
-                    lines.append("   N/A %s" % label)
-                else:
-                    lines.append("   -- %s: %s  _(not in OC)_" % (label, odoo_v))
-            lines.append("   _Score: %d/%d verified fields_" % (score, total_flds))
-
-    # ---- Pattern B/C note ----
-    if pattern_b_ocs:
-        lines.append("")
-        lines.append(":warning: Pattern B/C OC(s) received — individual lines cannot be auto-verified:")
-        for pb in pattern_b_ocs:
-            lines.append("   OC %s  (%s)  %s  — manual review required" % (
-                pb["oc_ref"], pb["filename"], pb["date"]))
-
-    # ---- Part 2: flags ----
-    if flags:
-        lines.append("")
-        lines.append(SEP)
-        lines.append("*PART 2 -- FLAGS BEFORE SENDING SO*")
-        lines.append(SEP)
-
-        for flag in flags:
-            ftype = flag["type"]
-
-            if ftype == "pickup_address":
-                lines.append("")
-                lines.append(":round_pushpin: *Pickup Address:*")
-                lines.append("   OC: %s" % flag["oc"])
-                lines.append("   Odoo: %s" % flag["odoo"])
-                if flag["warning"]:
-                    lines.append("   -> :warning: *DIFFERENT -- verify before shipping*")
-
-            elif ftype == "incoterms":
-                lines.append("")
-                lines.append(":warning: *Incoterms MISMATCH:*")
-                lines.append("   OC: `%s`  |  PO has: `%s` -- confirm with supplier" % (
-                    flag["oc"], flag["odoo"]))
-
-            elif ftype == "payment_terms":
-                lines.append("")
-                lines.append(":warning: *Payment Terms MISMATCH:*")
-                lines.append("   OC: `%s`  |  PO has: `%s` -- confirm with supplier" % (
-                    flag["oc"], flag["odoo"]))
-
-            elif ftype == "vat":
-                net_str   = ("EUR " + _fmt_num(flag["net"]))   if flag.get("net")   else "---"
-                gross_str = ("EUR " + _fmt_num(flag["gross"])) if flag.get("gross") else "---"
-                lines.append("")
-                lines.append(":receipt: VAT: %s  |  Net: %s  |  Gross (incl. VAT): %s" % (
-                    flag["vat_pct"], net_str, gross_str))
-
-    # ---- Footer ----
-    lines.append("")
-    lines.append(SEP)
-    if n_pending == 0 and n_mismatch == 0:
-        lines.append(":white_check_mark: All %d items confirmed -> Open SO `%s` in Odoo and click Send." % (
-            total, so_name))
-    elif n_pending > 0:
-        lines.append(":hourglass_flowing_sand: %d/%d items confirmed. Still waiting on OC for %d item(s)." % (
-            n_conf, total, n_pending))
-    else:
-        lines.append(":x: Fix %d mismatch(es) in Odoo before sending SO `%s`." % (n_mismatch, so_name))
-    return "\n".join(lines).strip()
-
-
 def post_po_status_update(webhook_url, po_name, po_log):
-    """
-    Post the full status of a PO as a single Slack message.
-
-    Reads from the persistent po_oc_log entry built up across runs:
-      - confirmed items  \u2192 compact one-liner (full detail if any mismatches)
-      - mismatch items   \u2192 full field detail so trader knows what to fix
-      - pending items    \u2192 \u23f3 "OC not yet received"
-
-    Message progresses naturally:
-      Day 1: \u23f3 3/10 confirmed \u2014 7 still pending
-      Day 2: \u23f3 6/10 confirmed \u2014 4 still pending
-      Day 3: \u2705 All 10 confirmed \u2014 open SO and send
-
-    Args:
-        po_name  \u2014 e.g. "P01807"
-        po_log   \u2014 the state["po_oc_log"][po_name] dict
-    """
+    """Post PO status via webhook (no threading)."""
     text = build_po_status_text(po_name, po_log)
     return post(webhook_url, {"text": text})
 

@@ -1,20 +1,23 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// saveOCsToDrive + uploadToDocsumo
+// saveOCsToDrive
 //
 // Two ways an OC gets picked up:
 //   AUTO:   Supplier emails caught by keyword filter (existing logic)
 //   MANUAL: You apply the "OC-Upload" label to any email (e.g. internal forwards)
-//           → script uploads it and swaps label to "OC-Saved"
+//           → script saves PDF to Drive and swaps label to "OC-Saved"
 //
-// SETUP: In Apps Script editor → Project Settings → Script Properties, add:
-//   DOCSUMO_API_KEY     → your Docsumo API key
-//   DOCSUMO_DOC_TYPE_ID → others__vNgOt
+// PDFs are saved to the "OC Inbox" Drive folder.
+// The Python OC checker (GitHub Actions) reads from there, extracts data via
+// Claude API, and moves processed files to "OC Processed".
+//
+// SETUP: No Script Properties needed — just deploy this as a time-based trigger
+//        (every 15–30 minutes) in Google Apps Script.
 // ─────────────────────────────────────────────────────────────────────────────
 
 function saveOCsToDrive() {
-  var FOLDER_NAME      = "OC Inbox";
-  var LABEL_SAVED      = "OC-Saved";
-  var LABEL_UPLOAD     = "OC-Upload";   // ← apply this manually to forwarded OCs
+  var FOLDER_NAME  = "OC Inbox";
+  var LABEL_SAVED  = "OC-Saved";
+  var LABEL_UPLOAD = "OC-Upload";   // ← apply this manually to forwarded OCs
 
   var folders = DriveApp.getFoldersByName(FOLDER_NAME);
   var folder  = folders.hasNext() ? folders.next() : DriveApp.createFolder(FOLDER_NAME);
@@ -71,9 +74,8 @@ function saveOCsToDrive() {
         if (shouldSkip(att.getName())) continue;
         var filename = dateStr + "_" + domain + "_" + att.getName();
         folder.createFile(att).setName(filename);
-        uploadToDocsumo(att, filename);
         saved++;
-        Logger.log("Saved + uploaded: " + filename);
+        Logger.log("Saved to Drive: " + filename);
       }
     }
     return saved;
@@ -100,58 +102,10 @@ function saveOCsToDrive() {
   var manualThreads = GmailApp.search("label:" + LABEL_UPLOAD, 0, 20);
   for (var m = 0; m < manualThreads.length; m++) {
     var thread = manualThreads[m];
-    total += processAttachments(thread, thread.getMessages(), false);  // no sender filter
+    total += processAttachments(thread, thread.getMessages(), false);
     thread.removeLabel(labelUpload);
     thread.addLabel(labelSaved);
   }
 
-  Logger.log("Done. " + total + " OC PDF(s) saved.");
-}
-
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Upload a PDF to Docsumo for extraction
-// ─────────────────────────────────────────────────────────────────────────────
-function uploadToDocsumo(att, filename) {
-  var props     = PropertiesService.getScriptProperties();
-  var apiKey    = props.getProperty("DOCSUMO_API_KEY");
-  var docTypeId = props.getProperty("DOCSUMO_DOC_TYPE_ID");
-
-  if (!apiKey || !docTypeId) {
-    Logger.log("DOCSUMO_API_KEY or DOCSUMO_DOC_TYPE_ID not set in Script Properties.");
-    return;
-  }
-
-  // Use Apps Script's built-in multipart handling — pass payload as an object
-  // and let UrlFetchApp build the multipart body correctly
-  var pdfBlob = att.copyBlob()
-                   .setName(filename)
-                   .setContentType("application/pdf");
-
-  var options = {
-    method:  "post",
-    headers: {
-      "apikey":          apiKey,
-      "User-Agent":      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-      "Accept":          "application/json",
-      "Accept-Language": "en-US,en;q=0.9"
-    },
-    payload: {
-      "type": docTypeId,   // Docsumo expects "type", not "doc_type"
-      "file": pdfBlob
-    },
-    muteHttpExceptions: true
-  };
-
-  var response = UrlFetchApp.fetch(
-    "https://app.docsumo.com/api/v1/eevee/apikey/upload/",
-    options
-  );
-
-  var code = response.getResponseCode();
-  if (code === 200 || code === 201) {
-    Logger.log("Docsumo upload OK: " + filename);
-  } else {
-    Logger.log("Docsumo upload FAILED (" + code + "): " + response.getContentText() + " | " + filename);
-  }
+  Logger.log("Done. " + total + " OC PDF(s) saved to Drive.");
 }

@@ -28,8 +28,8 @@ jobs:
 
       - name: Run OC checker
         env:
-          DOCSUMO_API_KEY:             ${{ secrets.DOCSUMO_API_KEY }}
-          DOCSUMO_DOC_TYPE_ID:         ${{ secrets.DOCSUMO_DOC_TYPE_ID }}
+          ANTHROPIC_API_KEY:           ${{ secrets.ANTHROPIC_API_KEY }}
+          GOOGLE_CREDENTIALS:          ${{ secrets.GOOGLE_CREDENTIALS }}
           ODOO_URL:                    ${{ secrets.ODOO_URL }}
           ODOO_DB:                     ${{ secrets.ODOO_DB }}
           ODOO_USERNAME:               ${{ secrets.ODOO_USERNAME }}

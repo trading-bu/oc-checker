@@ -115,6 +115,7 @@ def get_po_lines(models, db, uid, api_key, po_id):
             "vs_article",
             "sale_order_id",
             "sale_line_id",
+            "date_planned",        # requested delivery date per line
         ],
         limit=50
     )

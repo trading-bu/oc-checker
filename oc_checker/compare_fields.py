@@ -219,6 +219,24 @@ def _compare_text(key, label, odoo_val, oc_val):
     return _field(key, label, "match" if ok else "mismatch", o, c)
 
 
+def _parse_date(v):
+    """Truncate a date or datetime string to YYYY-MM-DD for comparison."""
+    if not v:
+        return None
+    return str(v).strip()[:10]  # "2026-08-15 00:00:00" → "2026-08-15"
+
+
+def _compare_date(key, label, odoo_val, oc_val):
+    """Compare date fields; missing OC date = skip (not mismatch)."""
+    o = _parse_date(odoo_val)
+    c = _parse_date(oc_val)
+    if c is None:
+        return _field(key, label, "skip", o or "—", None)
+    if o is None:
+        return _field(key, label, "skip", "—", c)
+    return _field(key, label, "match" if o == c else "mismatch", o, c)
+
+
 # ── Per-line comparison ───────────────────────────────────────────────────────
 
 def _compare_line(oc_line, po_line, so_line, cfg, skip_qty=False, group_note=None):
@@ -377,6 +395,11 @@ def _compare_line(oc_line, po_line, so_line, cfg, skip_qty=False, group_note=Non
     else:
         results.append(_compare_numeric("tensile_strength", "Tensile Strength", odoo_ts, oc_ts,
                                         tolerance_abs=comp.get("tensile_strength_tolerance", 0.0)))
+
+    # 13. DELIVERY DATE (from PO line date_planned vs OC per-line delivery_date)
+    odoo_delivery = po_line.get("date_planned") if po_line else None
+    oc_delivery   = oc_line.get("delivery_date")
+    results.append(_compare_date("delivery_date", "Delivery Date", odoo_delivery, oc_delivery))
 
     # Sort: mismatches first, then matches, then skip, then na
     order = {"mismatch": 0, "match": 1, "skip": 2, "na": 3}

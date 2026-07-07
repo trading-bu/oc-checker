@@ -2,13 +2,14 @@
 Main OC checker — runs in GitHub Actions.
 
 Flow:
-  1. Ask Docsumo for recently processed OC documents
+  1. List new PDF files in Google Drive "OC Inbox" folder
   2. Skip any already in processed_ocs.json
-  3. For each new document:
-     a. Fetch extracted data from Docsumo
+  3. For each new PDF:
+     a. Download from Drive and extract fields via Claude API
      b. Find the matching PO in Odoo
      c. On first OC for this PO: seed the log with ALL Odoo line items as 'pending'
      d. Compare OC vs Odoo → update matched VSI IDs to 'confirmed' or 'mismatch'
+     e. Move PDF to "OC Processed" folder in Drive
   4. Post ONE Slack message per PO showing the FULL picture:
        ⏳ 3/10 confirmed — 7 still pending (Day 1)
        ⏳ 6/10 confirmed — 4 still pending (Day 2)
@@ -16,13 +17,15 @@ Flow:
   5. Persist updated processed_ocs.json (committed back by workflow)
 
 Environment variables (set as GitHub Secrets):
-  DOCSUMO_API_KEY       — Docsumo API key
-  DOCSUMO_DOC_TYPE_ID   — others__vNgOt
+  ANTHROPIC_API_KEY     — Anthropic API key (for Claude PDF extraction)
+  GOOGLE_CREDENTIALS    — Google OAuth2 credentials JSON (for Drive access)
   ODOO_URL              — https://erp.ops.vanillasteel.com
   ODOO_DB               — vanillasteel-main-22503126
   ODOO_USERNAME         — mridul.goel@vanillasteel.com
   ODOO_API_KEY          — Odoo API key
   SLACK_WEBHOOK_URL     — Slack incoming webhook URL
+  SLACK_BOT_TOKEN       — Slack bot token (for threading)
+  SLACK_CHANNEL_ID      — Slack channel ID
 """
 
 import os
@@ -33,7 +36,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-import docsumo_client
+import drive_client
+import extractor
 import odoo_client
 import compare_fields
 import post_slack
@@ -231,30 +235,36 @@ def get_odoo_cfg() -> dict:
 
 def process_one(doc: dict, odoo_cfg: dict, slack_webhook: str):
     """
-    Fetch one OC from Docsumo, compare against Odoo.
+    Download one OC PDF from Drive, extract via Claude, compare against Odoo.
 
     Returns:
         (success, result, filename, po_lines, so_data, po_data)
         On hard error: (False, None, filename, [], None, None)
 
-    Hard errors (Docsumo failure, PO not found) post to Slack immediately
+    Hard errors (extraction failure, PO not found) post to Slack immediately
     since we can't group them — we don't know which PO they belong to.
     """
     doc_id   = doc["id"]
     filename = doc.get("title") or doc_id
 
     print(f"\n{'='*60}")
-    print(f"Processing: {filename}  (Docsumo ID: {doc_id})")
+    print(f"Processing: {filename}  (Drive ID: {doc_id})")
     print(f"{'='*60}")
 
-    # 1. Fetch from Docsumo
+    # 1. Download PDF from Drive and extract via Claude
     try:
-        raw     = docsumo_client.fetch_document_data(doc_id)
-        oc_data = docsumo_client.parse_oc_data(raw, doc_id)
+        pdf_bytes = drive_client.download_pdf(doc_id)
+        oc_data   = extractor.extract_oc_from_pdf(pdf_bytes, filename=filename, doc_id=doc_id)
     except Exception as e:
-        print(f"  ERROR fetching from Docsumo: {e}")
+        print(f"  ERROR extracting OC: {e}")
         post_slack.post_text(slack_webhook,
-            f"OC Check Error\nCould not fetch `{filename}` from Docsumo: {e}")
+            f"OC Check Error\nCould not extract `{filename}`: {e}")
+        return False, None, filename, [], None, None
+
+    # extractor returns None when the PDF is a VS Purchase Order, not a supplier OC.
+    # Mark it processed so we don't attempt it again, but don't post to Slack.
+    if oc_data is None:
+        print(f"  Skipping '{filename}' — identified as a VS Purchase Order, not a supplier OC.")
         return False, None, filename, [], None, None
 
     po_number = oc_data.get("po_number")
@@ -334,6 +344,12 @@ def main():
     odoo_cfg      = get_odoo_cfg()
     slack_webhook = os.environ.get("SLACK_WEBHOOK_URL", "")
 
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        print("ERROR: ANTHROPIC_API_KEY not set.")
+        sys.exit(1)
+    if not os.environ.get("GOOGLE_CREDENTIALS"):
+        print("ERROR: GOOGLE_CREDENTIALS not set.")
+        sys.exit(1)
     if not odoo_cfg["api_key"]:
         print("ERROR: ODOO_API_KEY not set.")
         sys.exit(1)
@@ -354,13 +370,13 @@ def main():
     processed_ids = get_processed_ids(state)
     print(f"Already processed: {len(processed_ids)} document(s)")
 
-    # Fetch recent documents from Docsumo
+    # Fetch new PDF files from Google Drive "OC Inbox" folder
     try:
-        all_docs = docsumo_client.list_recent_documents(limit=50)
+        all_docs = drive_client.list_new_pdfs()
     except Exception as e:
-        print(f"ERROR listing Docsumo documents: {e}")
+        print(f"ERROR listing Drive files: {e}")
         post_slack.post_text(slack_webhook,
-            f"OC Check Error\nCould not list Docsumo documents: {e}")
+            f"OC Check Error\nCould not list Drive inbox: {e}")
         sys.exit(1)
 
     new_docs = [d for d in all_docs if d["id"] not in processed_ids]
@@ -383,6 +399,12 @@ def main():
         # doc is skipped next time rather than double-processed.
         state = mark_processed(state, doc["id"])
         save_state(state)
+
+        # Move the PDF out of the Drive inbox so it doesn't reappear next run
+        try:
+            drive_client.mark_processed(doc["id"])
+        except Exception as e:
+            print(f"  WARNING: could not move Drive file to processed folder: {e}")
 
         if success and result:
             po_name = result.get("po_name", "UNKNOWN")

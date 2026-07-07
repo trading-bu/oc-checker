@@ -5,3 +5,7 @@ __pycache__/
 
 # Local config with credentials — never commit
 oc_checker/config.json
+
+# OAuth credentials — never commit
+credentials.json
+client_secret.json
