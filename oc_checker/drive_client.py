@@ -40,20 +40,24 @@ SCOPES = ["https://www.googleapis.com/auth/drive"]
 # ---------------------------------------------------------------------------
 
 class _Token:
-    """Holds an access token and refreshes it when needed."""
+    """Holds credentials and always fetches a fresh access token via refresh_token."""
 
     def __init__(self, creds: dict):
         self._client_id     = creds.get("client_id", "")
         self._client_secret = creds.get("client_secret", "")
         self._refresh_token = creds.get("refresh_token", "")
-        self._access_token  = creds.get("token", "")
         self._token_uri     = creds.get("token_uri", "https://oauth2.googleapis.com/token")
+        self._access_token  = ""  # always refresh on first use
 
     def get(self) -> str:
-        """Return a valid access token, refreshing if necessary."""
+        """Return a valid access token. Always refreshes (stored token may be expired)."""
         if not self._access_token:
             self._refresh()
         return self._access_token
+
+    def invalidate(self):
+        """Force a refresh on the next get() call."""
+        self._access_token = ""
 
     def _refresh(self):
         if not self._refresh_token:
@@ -78,7 +82,14 @@ class _Token:
         self._access_token = body["access_token"]
 
 
+# Module-level singleton so we only refresh once per process run
+_token_singleton: _Token | None = None
+
+
 def _load_token() -> _Token:
+    global _token_singleton
+    if _token_singleton is not None:
+        return _token_singleton
     raw = os.environ.get("GOOGLE_CREDENTIALS", "")
     if not raw:
         raise RuntimeError("GOOGLE_CREDENTIALS environment variable not set.")
@@ -86,7 +97,8 @@ def _load_token() -> _Token:
         creds = json.loads(raw)
     except json.JSONDecodeError as e:
         raise RuntimeError("GOOGLE_CREDENTIALS is not valid JSON: %s" % e)
-    return _Token(creds)
+    _token_singleton = _Token(creds)
+    return _token_singleton
 
 
 # ---------------------------------------------------------------------------
@@ -95,7 +107,7 @@ def _load_token() -> _Token:
 
 def _api(token: _Token, method: str, url: str, params: dict = None,
          body: dict = None) -> dict:
-    """Make a Drive API call. Returns parsed JSON."""
+    """Make a Drive API call. Returns parsed JSON. Retries once on 401."""
     if params:
         url = url + "?" + urllib.parse.urlencode(params)
     data = json.dumps(body).encode("utf-8") if body else None
@@ -106,8 +118,18 @@ def _api(token: _Token, method: str, url: str, params: dict = None,
     if data:
         headers["Content-Type"] = "application/json"
     req = urllib.request.Request(url, data=data, headers=headers, method=method)
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        return json.loads(resp.read())
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            return json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        if e.code == 401:
+            # Access token expired mid-run — refresh and retry once
+            token.invalidate()
+            headers["Authorization"] = "Bearer " + token.get()
+            req2 = urllib.request.Request(url, data=data, headers=headers, method=method)
+            with urllib.request.urlopen(req2, timeout=60) as resp:
+                return json.loads(resp.read())
+        raise
 
 
 def _download(token: _Token, file_id: str) -> bytes:
@@ -116,8 +138,18 @@ def _download(token: _Token, file_id: str) -> bytes:
     req = urllib.request.Request(
         url, headers={"Authorization": "Bearer " + token.get()}, method="GET"
     )
-    with urllib.request.urlopen(req, timeout=120) as resp:
-        return resp.read()
+    try:
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            return resp.read()
+    except urllib.error.HTTPError as e:
+        if e.code == 401:
+            token.invalidate()
+            req2 = urllib.request.Request(
+                url, headers={"Authorization": "Bearer " + token.get()}, method="GET"
+            )
+            with urllib.request.urlopen(req2, timeout=120) as resp:
+                return resp.read()
+        raise
 
 
 # ---------------------------------------------------------------------------
