@@ -52,7 +52,7 @@ oc-checker/
 | Secret | Purpose |
 |--------|---------|
 | `ANTHROPIC_API_KEY` | Claude API for PDF extraction (get from console.anthropic.com) |
-| `GOOGLE_CREDENTIALS` | Full OAuth2 JSON from `setup_google_auth.py` (one-time setup) |
+| `GOOGLE_CREDENTIALS` | Full OAuth2 JSON from `setup_google_auth.py` (one-time setup) ✅ Done |
 | `ODOO_URL` | `https://erp.ops.vanillasteel.com` |
 | `ODOO_DB` | `vanillasteel-main-22503126` |
 | `ODOO_USERNAME` | `mridul.goel@vanillasteel.com` |
@@ -67,20 +67,22 @@ oc-checker/
 
 ## One-Time Google OAuth Setup
 
-Before the system can read from Google Drive, you need to generate a `GOOGLE_CREDENTIALS` secret once:
+✅ **Already completed** — `GOOGLE_CREDENTIALS` is set in GitHub Secrets.
+
+If credentials ever need to be regenerated (e.g. token revoked, support account migration):
 
 1. Go to [console.cloud.google.com](https://console.cloud.google.com/)
 2. Create or select a project
 3. Enable **Google Drive API** (APIs & Services → Library)
 4. APIs & Services → Credentials → **Create Credentials → OAuth 2.0 Client ID**
 5. Application type: **Desktop app** → Download the JSON → rename it `client_secret.json`
-6. Place `client_secret.json` in the repo root
-7. Run: `pip install google-auth-oauthlib google-api-python-client`
-8. Run: `python setup_google_auth.py`
+6. Place `client_secret.json` in the **repo root** (not in `oc_checker/`)
+7. Run from repo root: `pip install google-auth-oauthlib google-api-python-client`
+8. Run from repo root: `python setup_google_auth.py`
 9. Sign in via the browser window that opens
 10. Copy the full content of the generated `credentials.json`
-11. GitHub repo → Settings → Secrets → New secret → name: `GOOGLE_CREDENTIALS` → paste content
-12. Delete `client_secret.json` and `credentials.json` from the repo (don't commit them)
+11. GitHub repo → Settings → Secrets → New/update secret → name: `GOOGLE_CREDENTIALS` → paste content
+12. **Delete** `client_secret.json` and `credentials.json` — never commit these files
 
 ---
 
@@ -103,16 +105,17 @@ Before the system can read from Google Drive, you need to generate a `GOOGLE_CRE
 
 ## Known Gotchas (Read Before Touching Anything)
 
-1. **Windows file locking on `processed_ocs.json`**: GitHub Desktop holds a git index lock.
-   Always close GitHub Desktop before running `git add / commit / push` from terminal.
-   If you see `index.lock exists`, run: `del "C:\Users\MridulGoel\Documents\GitHub\oc-checker\.git\index.lock"`
+1. **Windows file locking on git index**: GitHub Desktop holds a git index lock.
+   If you see `index.lock exists`, delete it manually:
+   `C:\Users\MridulGoel\Documents\GitHub\oc-checker\.git\index.lock`
+   (Enable hidden files in Explorer: View → Show → Hidden items)
 
 2. **Never use Claude's Edit tool on files in this repo from a Windows Cowork session.**
    The Edit tool truncates files mid-line on Windows mounts.
-   Always modify files via bash Python scripts (`python3 -c "..."` or a temp script).
+   Use the **Write tool** (full file rewrite) or bash Python scripts for all file modifications.
 
 3. **`processed_ocs.json` is not gitignored** — it must be committed and pushed.
-   If it gets deleted from GitHub (to resolve conflicts), rebuild from the last known-good commit:
+   If it ever needs to be rebuilt from a previous commit:
    `git show <commit_hash>:processed_ocs.json > processed_ocs.json`
 
 4. **Drive file IDs vs old Docsumo IDs**: `processed_ids` in the state file may contain old
@@ -121,9 +124,9 @@ Before the system can read from Google Drive, you need to generate a `GOOGLE_CRE
    Old Docsumo IDs are harmless — they'll never match a Drive file ID.
 
 5. **VS's own POs getting processed as OCs (P01814, P01821 affected)**: When VS forwards
-   its own PO PDF internally, the Apps Script may pick it up as an OC. The `po_oc_log`
-   entries for these POs may have circular "confirmed" statuses with no real supplier data.
-   These entries need to be manually invalidated and re-processed once the real OC arrives.
+   its own PO PDF internally, the Apps Script may pick it up as an OC. The extractor now
+   returns `None` for doc_type=="po" and `run_oc_check.py` skips these silently.
+   Old corrupt entries for P01814/P01821 were cleared when `processed_ocs.json` was reset.
 
 6. **European number format in extraction**: Claude prompt explicitly handles:
    - `3,0` → `3.0` (decimal comma → decimal point)
@@ -160,41 +163,34 @@ handles all supplier formats natively). This work is complete:
 - `requirements.txt` — MODIFIED: anthropic, google-auth, google-api-python-client
 - `setup_google_auth.py` — NEW: one-time OAuth flow helper
 
-**Before the system runs end-to-end, the Google OAuth setup (above) must be completed.**
-
 ---
 
-### Stage 3 — Comparison Logic Overhaul ← CURRENT
+### Stage 3 — Comparison Logic Overhaul ✅ DONE (2026-07-06)
 **Goal**: Accurate per-line confirmed/mismatch/pending verdicts.
 
-**Known issues to fix** (from Stage 1 audit + new architecture):
-1. **Doc-type guard**: reject VS's own PO PDFs before extraction (check doc structure or filename)
-2. **Arithmetic self-check**: verify `qty × unit_price ≈ total_amount` inside extractor;
-   flag extraction as unreliable if it doesn't balance
-3. **Null-as-pending**: missing OC field should show as `⚠️ not provided` not `❌ mismatch`
-4. **Page-break spec shift**: multi-page OCs where item spec continues on next page
-5. **Thousands-separator qty**: `1.586` → `1586.0` MT (European format) — patch in extractor
-6. **Delivery date extraction**: currently missing or inconsistent
-7. **Multi-coil line items**: one OC line covering multiple Odoo lines → aggregate qty comparison
-
-**Test approach**: Build test suite with known OC + PO pairs where correct verdict is known.
-
-**Files to modify**: `oc_checker/compare_fields.py`, `oc_checker/extractor.py`
-**Files to create**: `tests/test_compare.py`
-**Also**: Invalidate P01814/P01821 log entries; re-process real Risse+Wilke OC 6300167921
+All issues resolved:
+1. **Doc-type guard**: extractor returns `None` for VS POs → `run_oc_check.py` skips silently
+2. **Arithmetic self-check**: Claude verifies `qty×price≈total` per line, sets `extraction_warning`
+3. **Null-as-pending**: missing OC fields return "skip" status, not "mismatch" — already correct
+4. **Page-break spec shift**: auto-fixed — was a Docsumo OCR artifact; Claude reads full PDF natively
+5. **Thousands-separator qty**: handled in extraction prompt (`1.586` → `1586.0`)
+6. **Delivery date**: added per-line to extractor + `_compare_date` in compare_fields.py
+   + `date_planned` fetched from Odoo PO lines + rendered in Slack
+7. **Extraction warnings**: rendered in Slack when arithmetic check flags a discrepancy
 
 ---
 
-### Stage 4 — Slack Output Cleanup
+### Stage 4 — Slack Output Cleanup ✅ DONE (2026-07-06)
 **Goal**: Slack message is clear, accurate, and actionable for the team.
 
-By this stage, data is trustworthy. Slack message just needs polish:
-- Show delivery date and incoterms in the summary
-- Flag pattern B/C OCs (multi-line format) more clearly
-- Show which specific fields mismatched and by how much
-- Threading is already working — just verify it's solid
-
-**Files to modify**: `oc_checker/post_slack.py`
+Full rewrite of `post_slack.py → build_po_status_text`:
+- New structure: header → subheader (supplier→buyer | OC ref | date) → progress line
+- Progress line shows incoterms/payment term mismatches inline (⚠️)
+- Mismatch lines show ONLY mismatching fields with numeric delta (`+0.50mm`, `-€30.00`)
+- Delivery dates shown on confirmed lines as `→ 15 Aug 2026`
+- Dimensions clean: `3×1250mm` not `3.0×1250.0mm`
+- Pattern B/C warning shown near top of message
+- Added `_fmt_dim`, `_fmt_date`, `_fmt_delta` helper functions
 
 ---
 
@@ -234,40 +230,28 @@ Store generated PDFs in Google Drive (buyer confirmation folder) or email direct
 |-------|--------|-------|
 | Stage 1 — Extraction Audit | ✅ Done (2026-07-06) | 93.75% on gate fields — see STAGE1_AUDIT.md |
 | Stage 2 — Extraction Rebuild | ✅ Done (2026-07-06) | Docsumo replaced with Claude API + Drive |
-| Stage 3 — Comparison Logic | ✅ Done (2026-07-06) | All issues resolved — see last session summary |
-| Stage 4 — Slack Output | ✅ Done (2026-07-06) | Full rewrite — see last session summary |
+| Stage 3 — Comparison Logic | ✅ Done (2026-07-06) | All issues resolved |
+| Stage 4 — Slack Output | ✅ Done (2026-07-06) | Full rewrite of post_slack.py |
 | Stage 5 — Buyer PDF | ⬜ Not started | |
 | Stage 6 — Reliability | ⬜ Not started | |
 
-**Last session summary** (2026-07-06):
-- Completed Stage 2: replaced Docsumo with Claude API (extractor.py, drive_client.py)
-- Completed Stage 3: all comparison logic issues resolved:
-  - Doc-type guard: extractor returns None for VS POs → run_oc_check skips silently
-  - Arithmetic self-check: Claude verifies qty×price≈total per line, sets extraction_warning
-  - Null-as-pending: already correct (compare returns "skip" not "mismatch" for missing OC fields)
-  - Page-break spec shift: auto-fixed — was a Docsumo OCR artifact; Claude reads full PDF natively
-  - Delivery date: added per-line to extractor prompt + _compare_date in compare_fields.py
-    + date_planned fetched from Odoo PO lines + rendered in Slack (→ YYYY-MM-DD on confirmed lines)
-  - Extraction warnings: rendered in Slack when arithmetic check flags a discrepancy
-  - P01814/P01821: removed from po_oc_log (were VS own POs misidentified as OCs)
-- **Before first run**: complete Google OAuth setup (see One-Time Google OAuth Setup above)
-- **Next action**: Stage 5 (buyer PDF) or a real end-to-end test with a live OC PDF first.
-  To test: add ANTHROPIC_API_KEY + GOOGLE_CREDENTIALS to GitHub Secrets, complete OAuth setup,
-  drop an OC PDF into the Drive "OC Inbox" folder, trigger the workflow manually.
+**Last session summary** (2026-07-08):
+- Fixed corrupted `processed_ocs.json` (was truncated mid-JSON after merge conflict resolution)
+- Reset to clean empty state `{"processed_ids": [], "po_oc_log": {}}` and pushed to GitHub
+- Resolved git `index.lock` blocking commits (deleted manually from `.git/` in Explorer)
+- P01814/P01821 old corrupt entries cleared automatically by the reset
 
-**Stage 4 — Slack output (post_slack.py) — full rewrite summary:**
-- Removed dead `post_oc_result` function (was never called)
-- New message structure: header → subheader (supplier→buyer | OC ref | date) → progress line
-- Progress line shows incoterms/payment term mismatches inline (⚠️) — no longer buried in Part 2
-- Mismatch lines: show ONLY the mismatching fields with delta (e.g. `+0.50mm`, `-€30.00`)
-  — matched/skipped fields no longer listed (was very noisy)
-- Removed internal "Score: X/Y verified fields" line — not user-facing
-- Delivery dates shown on every confirmed line as `→ 15 Aug 2026`
-- Dimensions formatted cleanly: `3×1250mm` not `3.0×1250.0mm`
-- Pickup address shown as one-liner when matching: `📍 Pickup: 9011 Győr...  ✅`
-- Pattern B/C warning shown near top of message, not buried after line items
-- Human-readable dates throughout (`15 Aug 2026` not `2026-08-15`)
-- Added `_fmt_dim`, `_fmt_date`, `_fmt_delta` helper functions with full test coverage
+**System is now ready for a first live end-to-end test:**
+1. Drop a real supplier OC PDF into the Google Drive "OC Inbox" folder
+2. Go to GitHub → Actions → OC Checker → Run workflow (manual trigger)
+3. Watch the Actions log for extraction → comparison → Slack output
+4. Check the Slack channel for the result message
+
+**Pending (non-blocking):**
+- Migrate automation ownership to company support email account (currently on mridul.goel@vanillasteel.com)
+  - Steps: create support account, give it Editor access to Drive folders + Apps Script,
+    re-run `setup_google_auth.py` signed in as support account, update `GOOGLE_CREDENTIALS` secret
+- Deploy updated `saveOCsToDrive.js` to Apps Script on support account
 
 ---
 
