@@ -1,10 +1,12 @@
 {
   "processed_ids": [
+    "1A9S33URVsjaUaKnrzLEDk9B7jJlkDzjK",
     "1BDtgC1CSY-uyTwSDrV4wxZD5V2hpNWGK",
     "1HF6eIOLWrUzisJhso1b8BeHchVnuEc5n",
     "1_1trcGizJLEm0x79fJ7z50xQKNUGlmX4",
     "1hjeSM9GFWdj1fgPsiL_CKBXzA1wuoIdb",
-    "1k1oUEX6gBYvI05CE0j8cATOa7jMxrDub"
+    "1k1oUEX6gBYvI05CE0j8cATOa7jMxrDub",
+    "1zC0CADqSH82MQxbzTcrD92Cy86V9yxbo"
   ],
   "po_oc_log": {
     "P01842": {
@@ -12,17 +14,18 @@
       "supplier": "Martin Korreck",
       "buyer": "Olaf Jahn",
       "initialized": "2026-07-08",
-      "last_updated": "2026-07-08",
+      "last_updated": "2026-07-10",
       "line_items": {
         "VSI-17918189": {
           "status": "mismatch",
           "oc_ref": "213135",
-          "filename": "2026-07-07_bilstein-kaltband.de_Auftragsbest\u00e4tigung_213135.PDF",
-          "date": "2026-07-08",
+          "oc_date": "2026-07-07",
+          "filename": "Auftragsbest\u00e4tigung_213135.PDF",
+          "date": "2026-07-10",
           "oc_line": {
             "vs_article": "VSI-17918189",
             "supplier_article": "30059428",
-            "description": "2A Material - Coils 2nd Choice Cold Drawn / Soft (+LC) C45E - Supplier Finish - Cold Drawn / Soft (+LC) Wrong I-D, A-D, bar count / falscher I-D, A-D, Stabzahl | 0.0 | -0001131762 - Verladung - Liegend",
+            "description": "2A Material - Coils 2nd Choice Cold Drawn / Soft (+LC) C45E - Supplier Finish - Cold Drawn / Soft (+LC) Wrong I-D, A-D, bar count / falscher I-D, A-D, Stabzahl | 0.0 | -0001131762 | Verladung - Liegend",
             "quantity": 3.175,
             "unit": "MT",
             "unit_price": 430.0,
@@ -37,14 +40,6 @@
             "extraction_warning": null
           },
           "fields": [
-            {
-              "key": "delivery_date",
-              "label": "Delivery Date",
-              "status": "mismatch",
-              "odoo": "2026-07-06",
-              "oc": "2026-07-08",
-              "note": ""
-            },
             {
               "key": "grade",
               "label": "Grade",
@@ -143,18 +138,19 @@
             }
           ],
           "score": 5,
-          "total": 6,
-          "mismatches": 1
+          "total": 9,
+          "mismatches": 4
         },
         "VSI-17918186": {
           "status": "mismatch",
           "oc_ref": "213136",
-          "filename": "2026-07-07_bilstein-kaltband.de_Auftragsbest\u00e4tigung_213136.PDF",
-          "date": "2026-07-08",
+          "oc_date": "2026-07-07",
+          "filename": "Auftragsbest\u00e4tigung_213136.PDF",
+          "date": "2026-07-10",
           "oc_line": {
             "vs_article": "VSI-17918186",
             "supplier_article": "30059418",
-            "description": "2A Material | Slit Coils 2nd Choice Cold Rolled CK75M2GKZ | Supplier Finish - (+LG) Longitudinal tear / L\u00e4ngsrisse | 0.0 | -0001131749 | Verladung - Liegend",
+            "description": "Slit Coils 2nd Choice Cold Rolled CK75M2GKZ | Supplier Finish - (+LG) Longitudinal tear / L\u00e4ngsrisse | 0.0 | -0001131749 | Verladung - Liegend",
             "quantity": 0.924,
             "unit": "MT",
             "unit_price": 430.0,
@@ -169,14 +165,6 @@
             "extraction_warning": null
           },
           "fields": [
-            {
-              "key": "delivery_date",
-              "label": "Delivery Date",
-              "status": "mismatch",
-              "odoo": "2026-07-06",
-              "oc": "2026-07-08",
-              "note": ""
-            },
             {
               "key": "grade",
               "label": "Grade",
@@ -275,8 +263,8 @@
             }
           ],
           "score": 5,
-          "total": 6,
-          "mismatches": 1
+          "total": 9,
+          "mismatches": 4
         }
       },
       "flags": [
