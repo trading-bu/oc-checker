@@ -105,6 +105,44 @@ Split combined grade+coating strings on "+":
   "S235JR"             → grade="S235JR",   coating=null
 
 ════════════════════════════════════════
+STEP 6 — INCOTERM AND PAYMENT TERMS NORMALISATION
+════════════════════════════════════════
+incoterm — extract ONLY the standard 3-letter Incoterm code. Drop city, port, and location.
+  Recognised codes and their aliases:
+    FCA — "Free Carrier", "Frei Frachtführer", "Franco Vettore"
+    DAP — "Delivered At Place", "Geliefert benannter Ort"
+    DDP — "Delivered Duty Paid", "Frei Haus", "Geliefert verzollt"
+    CIF — "Cost, Insurance and Freight"
+    CPT — "Carriage Paid To", "Frachtfrei"
+    EXW — "Ex Works", "Ab Werk", "Ex Usine"
+    FOB — "Free On Board"
+    CFR — "Cost and Freight"
+    CIP — "Carriage and Insurance Paid To"
+    DPU — "Delivered at Place Unloaded"
+  If the code appears in brackets like "[FCA] FREE CARRIER", extract just "FCA".
+  Examples:
+    "FCA Im Weinhof 36, 58119 Hagen"  → "FCA"
+    "Free Carrier Győr"               → "FCA"
+    "[FCA] FREE CARRIER"              → "FCA"
+    "DAP München"                     → "DAP"
+    "Frei Haus"                       → "DDP"
+    "Ab Werk"                         → "EXW"
+
+payment_terms — normalise to "X Days" where X is the number of days.
+  Examples:
+    "Innerhalb 30 Tagen ohne Abzug"  → "30 Days"
+    "30 Tage netto"                  → "30 Days"
+    "Netto 30 Tage"                  → "30 Days"
+    "Net 30 days"                    → "30 Days"
+    "Within 30 Days Net"             → "30 Days"
+    "60 giorni data fattura"         → "60 Days"
+    "60 jours net"                   → "60 Days"
+    "Zahlbar sofort netto"           → "0 Days"
+    "Immediate payment"              → "0 Days"
+  If no simple single day count can be determined (e.g. staged "30/60/90 days"),
+  extract the raw text as-is.
+
+════════════════════════════════════════
 JSON STRUCTURE TO RETURN
 ════════════════════════════════════════
 {
@@ -113,8 +151,8 @@ JSON STRUCTURE TO RETURN
   "supplier_order_num": "84916029",
   "supplier_name":      "ThyssenKrupp Materials",
   "confirmation_date":  "2026-06-17",
-  "incoterm":           "FCA Győr",
-  "payment_terms":      "Within 30 Days Net",
+  "incoterm":           "FCA",
+  "payment_terms":      "30 Days",
   "pickup_address":     "9011 Győr, Gerda utca 3.",
   "total_amount":       12500.00,
   "gross_amount":       14875.00,

@@ -54,6 +54,107 @@ def _split_grade_coating(grade_str):
     return grade_str, None
 
 
+# ── Incoterm and payment terms normalisation helpers ──────────────────────────
+
+def _extract_inco_code(s):
+    """
+    Extract the 3-letter Incoterm code from any format Odoo or OC might use.
+
+    Handles:
+      "[FCA] FREE CARRIER"  → "FCA"   (Odoo's bracket format)
+      "FCA Hagen"           → "FCA"   (city after code)
+      "FREE CARRIER"        → "FCA"   (long-form name)
+      "FCA"                 → "FCA"   (already clean)
+    """
+    if not s:
+        return ""
+    s = s.strip()
+
+    # Brackets first: [FCA] FREE CARRIER
+    m = re.search(r'\[([A-Z]{3})\]', s, re.IGNORECASE)
+    if m:
+        return m.group(1).upper()
+
+    # First word exactly 3 letters: "FCA Hagen"
+    words = s.split()
+    if words and re.match(r'^[A-Z]{3}$', words[0], re.IGNORECASE):
+        return words[0].upper()
+
+    # Long-form name lookup (Odoo sometimes stores full names without code)
+    _ALIASES = {
+        "FREE CARRIER":                        "FCA",
+        "FREI FRACHTFÜHRER":                   "FCA",
+        "FRANCO VETTORE":                      "FCA",
+        "DELIVERED AT PLACE":                  "DAP",
+        "GELIEFERT BENANNTER ORT":             "DAP",
+        "DELIVERED DUTY PAID":                 "DDP",
+        "FREI HAUS":                           "DDP",
+        "GELIEFERT VERZOLLT":                  "DDP",
+        "COST INSURANCE AND FREIGHT":          "CIF",
+        "COST, INSURANCE AND FREIGHT":         "CIF",
+        "CARRIAGE PAID TO":                    "CPT",
+        "FRACHTFREI":                          "CPT",
+        "EX WORKS":                            "EXW",
+        "AB WERK":                             "EXW",
+        "EX USINE":                            "EXW",
+        "FREE ON BOARD":                       "FOB",
+        "COST AND FREIGHT":                    "CFR",
+        "CARRIAGE AND INSURANCE PAID TO":      "CIP",
+        "DELIVERED AT PLACE UNLOADED":         "DPU",
+    }
+    key = re.sub(r'[^A-Z ]', '', s.upper()).strip()
+    if key in _ALIASES:
+        return _ALIASES[key]
+
+    # Any standalone 3-letter uppercase word
+    for w in words:
+        w_clean = re.sub(r'[^A-Za-z]', '', w)
+        if re.match(r'^[A-Z]{3}$', w_clean, re.IGNORECASE):
+            return w_clean.upper()
+
+    return words[0].upper() if words else ""
+
+
+def _extract_days(s):
+    """
+    Extract the number of days from a payment terms string.
+
+    Handles multiple languages:
+      "Innerhalb 30 Tagen ohne Abzug"  → 30
+      "30 Tage netto"                  → 30
+      "Net 30 days"                    → 30
+      "30 Days"                        → 30
+      "60 giorni data fattura"         → 60
+      "60 jours net"                   → 60
+      "Zahlbar sofort netto"           → 0   (no number → treat as 0/immediate)
+
+    Returns int or None if unparseable.
+    """
+    if not s:
+        return None
+
+    # "sofort" / "immediate" / "sofort netto" → 0 days
+    if re.search(r'\b(sofort|immediate|immediately|sofortfällig)\b', s, re.IGNORECASE):
+        return 0
+
+    # Number followed by (or preceded by) day-like word
+    m = re.search(r'\b(\d+)\s*(?:tage[n]?|days?|giorni|jours?|dagen|días?)\b', s, re.IGNORECASE)
+    if m:
+        return int(m.group(1))
+
+    # Day-like word followed by number: "Days 30"
+    m = re.search(r'\b(?:tage[n]?|days?|giorni|jours?|dagen)\s*(\d+)\b', s, re.IGNORECASE)
+    if m:
+        return int(m.group(1))
+
+    # Fall back: first standalone integer in the string
+    m = re.search(r'\b(\d+)\b', s)
+    if m:
+        return int(m.group(1))
+
+    return None
+
+
 # ── Line matching ─────────────────────────────────────────────────────────────
 
 def _norm_article(v):
@@ -408,14 +509,17 @@ def _build_flags(oc_data, po_data, so_data, odoo_shipping_address):
             "warning": not same,
         })
 
-    # Flag C — Incoterms (only if mismatch)
+    # Flag C — Incoterms
     oc_inco = _norm(oc_data.get("incoterm"))
     po_inco = ""
     if po_data and po_data.get("incoterm_id"):
         po_inco = po_data["incoterm_id"][1] if isinstance(po_data["incoterm_id"], (list, tuple)) else str(po_data["incoterm_id"])
+
     if oc_inco and po_inco:
-        oc_code = oc_inco.split()[0].upper()
-        po_code = po_inco.split()[0].upper()
+        # Extract the 3-letter code from both sides.
+        # Odoo may return "[FCA] FREE CARRIER"; OC may say "FCA Hagen" or just "FCA".
+        oc_code = _extract_inco_code(oc_inco)
+        po_code = _extract_inco_code(po_inco)
         if oc_code != po_code:
             flags.append({
                 "type":    "incoterms",
@@ -426,13 +530,24 @@ def _build_flags(oc_data, po_data, so_data, odoo_shipping_address):
                 "warning": True,
             })
 
-    # Flag D — Payment terms (only if mismatch)
+    # Flag D — Payment terms
     oc_pay = _norm(oc_data.get("payment_terms"))
     po_pay = ""
     if po_data and po_data.get("payment_term_id"):
         po_pay = po_data["payment_term_id"][1] if isinstance(po_data["payment_term_id"], (list, tuple)) else str(po_data["payment_term_id"])
+
     if oc_pay and po_pay:
-        if oc_pay.lower() != po_pay.lower():
+        # Try to compare by number of days first (language-agnostic).
+        # "Innerhalb 30 Tagen ohne Abzug" == "30 Days" → both → 30 days → match.
+        oc_days = _extract_days(oc_pay)
+        po_days = _extract_days(po_pay)
+        if oc_days is not None and po_days is not None:
+            days_match = (oc_days == po_days)
+        else:
+            # Fall back to case-insensitive string compare
+            days_match = (oc_pay.lower() == po_pay.lower())
+
+        if not days_match:
             flags.append({
                 "type":    "payment_terms",
                 "icon":    "⚠️",
