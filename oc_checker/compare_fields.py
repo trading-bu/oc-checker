@@ -2,8 +2,15 @@
 OC vs Odoo field comparison — Vanilla Steel.
 
 Implements the OC Analysis Instructions v1.1:
-  Part 1 — 13 parameter check per line item
+  Part 1 — 12 parameter check per line item (delivery date excluded)
   Part 2 — Commercial flags (incoterms, payment terms, VAT, pickup address)
+
+Match count rules:
+  - Field missing in BOTH Odoo and OC → excluded entirely (not counted)
+  - Field present in Odoo, missing in OC → counted in denominator, not numerator
+  - Field present in OC, missing in Odoo → counted in denominator, not numerator
+  - Field present in both, values match → counted in both (numerator + denominator)
+  - Field present in both, values differ → counted in denominator only
 """
 
 import re
@@ -63,10 +70,6 @@ def _match_po_line(oc_line, po_lines):
       3. oc supplier_article / vs_article  →  Odoo aoo_fast_number
       4. oc coil_number                    →  Odoo original_supplier_article
       5. oc coil_number                    →  Odoo vs_article
-
-    The coil_number path handles cases where Docsumo extracts the position
-    code (e.g. "52101848") as vs_article but the real coil ref is in the
-    separate coil_number field (e.g. "F900258989").
     """
     oc_sup  = _norm_article(oc_line.get("supplier_article") or oc_line.get("vs_article") or "")
     oc_coil = _norm_article(oc_line.get("coil_number") or "")
@@ -121,10 +124,6 @@ def _extract_coil_refs(oc_line):
     """
     Extract all coil references from an OC line's vs_article,
     supplier_article, coil_number, and description fields.
-
-    Used to detect multi-coil OC lines where the supplier lists N coils
-    under a single line item (all same spec, one line in the OC, N Odoo PO
-    lines).  Returns a list of normalised refs in order, deduplicated.
     """
     seen = set()
     refs = []
@@ -135,14 +134,11 @@ def _extract_coil_refs(oc_line):
             seen.add(n)
             refs.append(n)
 
-    # Explicit article fields first
     for field in ("vs_article", "supplier_article", "coil_number"):
         val = oc_line.get(field) or ""
-        # Only add if it looks like a real coil ref, not a position code
         if _COIL_REF_RE.fullmatch(val.strip()):
             _add(val)
 
-    # Scan description for embedded coil refs
     desc = oc_line.get("description") or ""
     for m in _COIL_REF_RE.finditer(desc):
         _add(m.group(1))
@@ -167,7 +163,6 @@ def _detect_pattern(oc_lines, po_lines):
     if oc_count >= po_count:
         return "A"
 
-    # Check Pattern C: 1 OC line, weight ≈ sum of PO lines
     if oc_count == 1:
         oc_qty = _to_float(oc_lines[0].get("quantity"))
         po_total = sum(_to_float(pl.get("product_qty") or 0) or 0 for pl in po_lines)
@@ -219,40 +214,19 @@ def _compare_text(key, label, odoo_val, oc_val):
     return _field(key, label, "match" if ok else "mismatch", o, c)
 
 
-def _parse_date(v):
-    """Truncate a date or datetime string to YYYY-MM-DD for comparison."""
-    if not v:
-        return None
-    return str(v).strip()[:10]  # "2026-08-15 00:00:00" → "2026-08-15"
-
-
-def _compare_date(key, label, odoo_val, oc_val):
-    """Compare date fields; missing OC date = skip (not mismatch)."""
-    o = _parse_date(odoo_val)
-    c = _parse_date(oc_val)
-    if c is None:
-        return _field(key, label, "skip", o or "—", None)
-    if o is None:
-        return _field(key, label, "skip", "—", c)
-    return _field(key, label, "match" if o == c else "mismatch", o, c)
-
-
 # ── Per-line comparison ───────────────────────────────────────────────────────
 
 def _compare_line(oc_line, po_line, so_line, cfg, skip_qty=False, group_note=None):
     """
     Compare one OC line against the matched Odoo PO/SO line.
+    12 fields compared (delivery date excluded).
 
-    skip_qty   — True for lines that belong to a multi-coil group: the OC
-                 weight is a group total, not per-coil, so individual qty
-                 comparison is meaningless.
-    group_note — Human-readable note added to the qty field when skip_qty
-                 is True (e.g. "Part of 4-coil group · OC total 4.354 MT").
+    skip_qty   — True for multi-coil group lines: OC weight is a group total.
+    group_note — Human-readable note for skip_qty lines.
     """
     comp = cfg.get("comparison", {})
     results = []
 
-    # Resolve values: SO fields take precedence for spec fields; PO for price/qty
     def so(field):
         return so_line.get(field) if so_line else None
 
@@ -265,20 +239,7 @@ def _compare_line(oc_line, po_line, so_line, cfg, skip_qty=False, group_note=Non
         ok = oc_form.lower() == odoo_form.lower() if odoo_form else False
         results.append(_field("form", "Form", "match" if ok else "mismatch", odoo_form or "—", oc_form))
 
-    # 2–3, 5. QUALITY CHOICE / GRADE / COATING — cross-field aware
-    #
-    # Odoo stores grade, coating, and choice as three separate fields.
-    # Supplier OCs often put any of these values in any field — e.g. the
-    # grade value might appear in the quality_choice column, the coating
-    # might be embedded in the grade string (DX51D+Z275), or the choice
-    # label might end up in the grade field.
-    #
-    # Strategy: build a pool of all non-empty OC spec values and, for each
-    # Odoo value, first check the corresponding OC field (direct match), then
-    # fall back to the pool (cross-field match).  A cross-field match is still
-    # counted as confirmed — the supplier DID confirm the right value, just in
-    # the wrong column.
-
+    # 2–3, 5. GRADE / QUALITY CHOICE / COATING — cross-field aware
     oc_grade_raw         = _norm(oc_line.get("grade"))
     oc_grade, oc_coating_from_grade = _split_grade_coating(oc_grade_raw)
     oc_coating           = _norm(oc_line.get("coating")) or oc_coating_from_grade or ""
@@ -288,25 +249,18 @@ def _compare_line(oc_line, po_line, so_line, cfg, skip_qty=False, group_note=Non
     odoo_coating = _norm(so("coating"))
     odoo_q       = _norm(so("choice"))
 
-    # OC spec pool: normalised-lower value → field name it came from (first wins)
     _oc_spec = {}
     for _fn, _fv in [("grade", oc_grade), ("coating", oc_coating), ("quality_choice", oc_q)]:
         if _fv:
             _oc_spec.setdefault(_fv.lower(), _fn)
 
     def _spec_field(key, label, odoo_val, oc_primary, primary_name, extra_note=""):
-        """
-        Compare one spec field with cross-field fallback.
-        odoo_val     — what Odoo has
-        oc_primary   — what the OC put in the corresponding field
-        primary_name — display name of that OC field (for notes)
-        """
         if not odoo_val:
             return _field(key, label, "skip", "—", oc_primary or None)
-        if not _oc_spec:                          # OC sent no spec at all
+        if not _oc_spec:
             return _field(key, label, "skip", odoo_val, None)
         odoo_norm = odoo_val.lower()
-        if not oc_primary:                        # primary OC field empty
+        if not oc_primary:
             if odoo_norm in _oc_spec:
                 found = _oc_spec[odoo_norm]
                 note = f"cross-field: found in OC {found}"
@@ -314,9 +268,9 @@ def _compare_line(oc_line, po_line, so_line, cfg, skip_qty=False, group_note=Non
                     note = extra_note + "; " + note
                 return _field(key, label, "match", odoo_val, odoo_val, note)
             return _field(key, label, "skip", odoo_val, None)
-        if oc_primary.lower() == odoo_norm:       # direct match
+        if oc_primary.lower() == odoo_norm:
             return _field(key, label, "match", odoo_val, oc_primary, extra_note)
-        if odoo_norm in _oc_spec:                 # cross-field match
+        if odoo_norm in _oc_spec:
             found = _oc_spec[odoo_norm]
             note = f"cross-field: found in OC {found} (OC {primary_name}: {oc_primary})"
             if extra_note:
@@ -329,7 +283,7 @@ def _compare_line(oc_line, po_line, so_line, cfg, skip_qty=False, group_note=Non
     results.append(_spec_field("quality_choice", "Quality Choice", odoo_q,       oc_q,       "quality_choice"))
     results.append(_spec_field("coating",        "Coating",        odoo_coating, oc_coating, "coating"))
 
-    # 4. FINISH (not part of cross-field spec pool — different semantics)
+    # 4. FINISH
     oc_finish = _norm(oc_line.get("finish"))
     odoo_finish = _norm(so("finish"))
     if not oc_finish:
@@ -396,24 +350,42 @@ def _compare_line(oc_line, po_line, so_line, cfg, skip_qty=False, group_note=Non
         results.append(_compare_numeric("tensile_strength", "Tensile Strength", odoo_ts, oc_ts,
                                         tolerance_abs=comp.get("tensile_strength_tolerance", 0.0)))
 
-    # 13. DELIVERY DATE (from PO line date_planned vs OC per-line delivery_date)
-    odoo_delivery = po_line.get("date_planned") if po_line else None
-    oc_delivery   = oc_line.get("delivery_date")
-    results.append(_compare_date("delivery_date", "Delivery Date", odoo_delivery, oc_delivery))
+    # NOTE: Delivery date (field 13 in v1.0) removed — no longer compared.
+    # It is extracted by the extractor but only used for display, not matching.
 
     # Sort: mismatches first, then matches, then skip, then na
     order = {"mismatch": 0, "match": 1, "skip": 2, "na": 3}
     results.sort(key=lambda f: order.get(f["status"], 9))
 
-    mismatches = sum(1 for f in results if f["status"] == "mismatch")
-    verified = [f for f in results if f["status"] not in ("skip", "na")]
-    score = sum(1 for f in verified if f["status"] == "match")
+    # ── Effective field scoring ───────────────────────────────────────────────
+    # A field is "effective" (counted) if at least one side has a non-empty value.
+    # Fields where BOTH odoo and oc are empty/missing are excluded entirely.
+    # Fields where only one side has a value are in the denominator but not
+    # the numerator — they represent an unverified or unmatched parameter.
+    #
+    # Also excluded:
+    #   - "na" fields (not applicable, e.g. length for coils)
+    #   - multi-coil group skips (qty is a group total, can't verify per-coil)
+    def _effective(f):
+        if f["status"] == "na":
+            return False
+        # Multi-coil group skip (explicitly skipped — note contains "group")
+        if f["status"] == "skip" and "group" in (f.get("note") or "").lower():
+            return False
+        # Both sides empty → not counted
+        odoo_empty = f.get("odoo", "—") in ("—", "", None)
+        oc_empty   = f.get("oc",   "—") in ("—", "", None)
+        return not (odoo_empty and oc_empty)
+
+    effective  = [f for f in results if _effective(f)]
+    mismatches = sum(1 for f in effective if f["status"] != "match")
+    score      = sum(1 for f in effective if f["status"] == "match")
 
     return {
-        "fields":    results,
+        "fields":     results,
         "mismatches": mismatches,
-        "score":     score,
-        "total":     len(verified),
+        "score":      score,
+        "total":      len(effective),
     }
 
 
@@ -442,7 +414,6 @@ def _build_flags(oc_data, po_data, so_data, odoo_shipping_address):
     if po_data and po_data.get("incoterm_id"):
         po_inco = po_data["incoterm_id"][1] if isinstance(po_data["incoterm_id"], (list, tuple)) else str(po_data["incoterm_id"])
     if oc_inco and po_inco:
-        # Extract just the code (first word) for comparison
         oc_code = oc_inco.split()[0].upper()
         po_code = po_inco.split()[0].upper()
         if oc_code != po_code:
@@ -495,18 +466,11 @@ def compare(oc_data, po_data, po_lines, so_data, so_lines, config,
             odoo_shipping_address=None):
     """
     Compare OC data against Odoo PO/SO.
-    Returns result dict consumed by post_slack.post_oc_result().
+    Returns result dict consumed by post_slack.build_po_status_text().
     """
     oc_lines = oc_data.get("lines") or oc_data.get("line_items", [])
     pattern  = _detect_pattern(oc_lines, po_lines)
 
-    # Pattern B fires when the OC has fewer lines than the PO. But this also
-    # happens legitimately when a supplier sends one OC file per item (e.g.
-    # Bilstein: 5 separate OC PDFs each with 1 line, for a 5-line PO), or
-    # when a multi-coil OC covers only a subset of a large PO.
-    # Before giving up on per-line comparison, check whether the OC lines can
-    # be matched to specific PO lines via article number OR coil refs in the
-    # description. If any match found, treat as Pattern A.
     if pattern == "B":
         def _any_match(oc_lines, po_lines):
             for ol in oc_lines:
@@ -523,46 +487,23 @@ def compare(oc_data, po_data, po_lines, so_data, so_lines, config,
     total_mismatches = 0
 
     if pattern in ("B", "C"):
-        # Genuine aggregation — cannot do per-line spec comparison
         line_results = []
     else:
-        # Use positional matching if OC lines have no real article IDs (e.g. 1, 2, 3)
         use_positional = _is_positional_id(oc_lines) or not any(
             _match_po_line(ol, po_lines) for ol in oc_lines
         )
 
-        # Track PO line IDs already assigned so the same physical PO line is
-        # never matched twice (e.g. once via primary article and again via
-        # description-extracted coil ref from another OC line).
         assigned_po_ids = set()
 
         for idx, ol in enumerate(oc_lines):
             if use_positional:
-                # Simple 1-to-1 positional mapping
                 pl = po_lines[idx] if idx < len(po_lines) else None
                 matched_po_lines = [pl] if pl else []
                 if pl and pl.get("id"):
                     assigned_po_ids.add(pl["id"])
             else:
-                # -----------------------------------------------------------
-                # Multi-coil group expansion
-                #
-                # Step 1: collect all coil refs present in this OC line
-                #         (vs_article, coil_number, and refs embedded in
-                #         the description text like "R90R904232 R90R904233").
-                # Step 2: for each ref, find the matching Odoo PO line.
-                # Step 3: deduplicate (skip refs already assigned to earlier
-                #         OC lines) and build the group.
-                #
-                # If N refs resolve to N PO lines → multi-coil group:
-                #   - all lines get the same spec comparison (grade/dims/price)
-                #   - qty comparison is SKIPPED (OC weight is the group total,
-                #     not the individual coil weight)
-                # If only 1 PO line resolves → single coil, qty compared normally.
-                # -----------------------------------------------------------
                 coil_refs = _extract_coil_refs(ol)
 
-                # Build ordered list of matched PO lines (no duplicates)
                 matched_po_lines = []
                 for ref in coil_refs:
                     synthetic = {"vs_article": ref, "supplier_article": ref}
@@ -573,8 +514,6 @@ def compare(oc_data, po_data, po_lines, so_data, so_lines, config,
                             matched_po_lines.append(apl)
                             assigned_po_ids.add(apl_id)
 
-                # Fall back to plain article match if description parsing
-                # found nothing (e.g. refs not yet in Odoo's fields)
                 if not matched_po_lines:
                     pl = _match_po_line(ol, po_lines)
                     if pl:
@@ -593,7 +532,6 @@ def compare(oc_data, po_data, po_lines, so_data, so_lines, config,
                 )
 
             if not matched_po_lines:
-                # OC line could not be matched to any PO line
                 vs_id = _norm(ol.get("vs_article") or ol.get("supplier_article") or "?")
                 lr = _compare_line(ol, None, None, config)
                 lr["vs_id"]   = vs_id
@@ -615,23 +553,22 @@ def compare(oc_data, po_data, po_lines, so_data, so_lines, config,
                     total_mismatches += lr["mismatches"]
                     line_results.append(lr)
 
-    # Part 2 flags
     flags = _build_flags(oc_data, po_data, so_data, odoo_shipping_address)
 
     is_match = (total_mismatches == 0 and pattern == "A")
 
     return {
-        "po_name":        po_data.get("name", "?") if po_data else "?",
-        "so_name":        so_data.get("name", "—") if so_data else "—",
-        "supplier":       (po_data["partner_id"][1] if po_data and po_data.get("partner_id") else
-                           oc_data.get("supplier_name", "?")),
-        "buyer":          (so_data["partner_id"][1] if so_data and so_data.get("partner_id") else "—"),
-        "oc_ref":         oc_data.get("supplier_order_num", "—"),
+        "po_name":           po_data.get("name", "?") if po_data else "?",
+        "so_name":           so_data.get("name", "—") if so_data else "—",
+        "supplier":          (po_data["partner_id"][1] if po_data and po_data.get("partner_id") else
+                              oc_data.get("supplier_name", "?")),
+        "buyer":             (so_data["partner_id"][1] if so_data and so_data.get("partner_id") else "—"),
+        "oc_ref":            oc_data.get("supplier_order_num", "—"),
         "confirmation_date": oc_data.get("confirmation_date", "—"),
-        "is_match":       is_match,
-        "total_mismatches": total_mismatches,
-        "pattern":        pattern,
-        "line_results":   line_results,
-        "flags":          flags,
-        "oc_data":        oc_data,
+        "is_match":          is_match,
+        "total_mismatches":  total_mismatches,
+        "pattern":           pattern,
+        "line_results":      line_results,
+        "flags":             flags,
+        "oc_data":           oc_data,
     }

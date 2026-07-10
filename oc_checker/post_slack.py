@@ -41,20 +41,9 @@ def _fmt_num(v, decimals=2):
 
 
 def _fmt_date(iso):
-    """2026-08-15  →  15 Aug 2026.  Returns None if blank."""
+    """2026-08-15  →  15 Aug 2026.  Returns empty string if blank."""
     if not iso or iso in ("—", "---", "None"):
-        return None
-    try:
-        d = datetime.strptime(str(iso).strip()[:10], "%Y-%m-%d")
-        return "%d %b %Y" % (d.day, )  # no leading zero
-    except Exception:
-        return str(iso)[:10]
-
-
-def _fmt_date(iso):
-    """2026-08-15  →  15 Aug 2026.  Returns None if blank."""
-    if not iso or iso in ("—", "---", "None"):
-        return None
+        return ""
     try:
         s = str(iso).strip()[:10]
         year, month, day = s.split("-")
@@ -66,7 +55,7 @@ def _fmt_date(iso):
 
 
 def _fmt_dim(v):
-    """Format a dimension value: drop trailing .0 for whole numbers (1500.0 → 1500)."""
+    """Format a dimension: drop trailing .0 for whole numbers (1500.0 → 1500)."""
     if v is None:
         return ""
     try:
@@ -96,21 +85,54 @@ def _fmt_delta(label, odoo_v, oc_v):
         return ""
 
 
+# ── Effective score helpers ───────────────────────────────────────────────────
+
+def _is_effective(f):
+    """
+    True if this field should be included in the match count.
+
+    Excluded:
+      - "na" fields (not applicable — e.g. length for coils)
+      - Multi-coil group quantity skips (can't verify individual weight)
+      - Fields where BOTH sides are empty/missing (nothing to compare)
+
+    Included (counts in denominator):
+      - Both sides have values (match or mismatch)
+      - One side has a value, other doesn't (unverified — in denominator, not numerator)
+    """
+    if f["status"] == "na":
+        return False
+    if f["status"] == "skip" and "group" in (f.get("note") or "").lower():
+        return False
+    odoo_empty = f.get("odoo", "—") in ("—", "", None)
+    oc_empty   = f.get("oc",   "—") in ("—", "", None)
+    return not (odoo_empty and oc_empty)
+
+
+def _effective_score(field_res):
+    """
+    Compute score/total from stored fields.
+    Returns (score, total) — total only counts effective fields.
+    """
+    effective = [f for f in field_res if _is_effective(f)]
+    score = sum(1 for f in effective if f["status"] == "match")
+    return score, len(effective)
+
+
 # ── Main message builder ──────────────────────────────────────────────────────
 
 def build_po_status_text(po_name, po_log):
     """
     Build the Slack message for a PO's current OC status.
 
-    Message structure:
-      [icon] *STATUS — PO  SO*
-      Supplier → Buyer  |  OC ref  |  date
-      X/Y confirmed  |  incoterms  |  net amount
-      ──────────────────────────────────────
-      [per-line rows — compact for confirmed, expanded for mismatch]
-      ──────────────────────────────────────
-      [commercial flags — pickup address, payment terms]
-      [footer action line]
+    Confirmed line:
+      ✅ *VSI-17918186*  CK75M2GKZ  1.18×105mm  0.924t  (OC 213136 · 7 Jul 2026)  4/4  ✅
+    Mismatch line:
+      ❌ *VSI-17918189*  C45E  2×635mm  3.175t  (OC 213135 · 7 Jul 2026)  3/4
+         ❌ *Unit Price*   Odoo 450.00  ≠  OC 430.00  (-€20.00)
+         ⚠️ *Coating*   Odoo Z275  (not confirmed by OC)
+    Pending line:
+      ⏳ *VSI-17919000*   OC not yet received
     """
     line_items    = po_log.get("line_items", {})
     so_name       = po_log.get("so_name", "—")
@@ -124,31 +146,17 @@ def build_po_status_text(po_name, po_log):
     n_mismatch = sum(1 for v in line_items.values() if v["status"] == "mismatch")
     n_pending  = sum(1 for v in line_items.values() if v["status"] == "pending")
 
-    # Pull OC-level info from the first non-pending entry (they share OC metadata)
-    oc_ref_global    = ""
-    conf_date_global = ""
-    net_amount       = None
-    for entry in line_items.values():
-        if entry.get("status") in ("confirmed", "mismatch"):
-            oc_ref_global    = entry.get("oc_ref", "")
-            conf_date_global = entry.get("date", "")
-            # net from oc_line (stored in each entry)
-            break
-
-    # Pull incoterms + VAT net from flags
+    # Pull commercial flags
     incoterm_str = ""
     net_str      = ""
     pay_str      = ""
     for flag in flags:
         if flag["type"] == "incoterms":
-            # Mismatch flag — show OC value with warning marker
             incoterm_str = "⚠️ %s (PO: %s)" % (flag["oc"], flag["odoo"])
         elif flag["type"] == "vat" and flag.get("net"):
             net_str = "EUR %s net" % _fmt_num(flag["net"])
         elif flag["type"] == "payment_terms":
             pay_str = "⚠️ Payment: %s (PO: %s)" % (flag["oc"], flag["odoo"])
-    # If incoterms matched (no flag), try to get from first oc_line's data
-    # (We don't store matched incoterms in flags, so just skip — only show mismatches)
 
     DIV = "─" * 36
 
@@ -161,20 +169,13 @@ def build_po_status_text(po_name, po_log):
         lines.append(":x:  *OC MISMATCH — %s  %s — %d issue(s)*" % (
             po_name, so_name, n_mismatch))
     else:
-        lines.append(":hourglass_flowing_sand:  *OC IN PROGRESS — %s  %s — %d/%d items*" % (
+        lines.append(":hourglass_flowing_sand:  *OC IN PROGRESS — %s  %s — %d/%d confirmed*" % (
             po_name, so_name, n_conf + n_mismatch, total))
 
-    # Subheader: supplier → buyer  |  OC ref  |  date
-    subheader_parts = ["%s  →  %s" % (supplier, buyer)]
-    if oc_ref_global:
-        subheader_parts.append("OC %s" % oc_ref_global)
-    if conf_date_global:
-        d = _fmt_date(conf_date_global)
-        if d:
-            subheader_parts.append(d)
-    lines.append("  |  ".join(subheader_parts))
+    # Subheader: supplier → buyer
+    lines.append("%s  →  %s" % (supplier, buyer))
 
-    # Progress line: counts | incoterms | net amount
+    # Progress line
     progress_parts = [
         "*%d/%d confirmed*%s%s" % (
             n_conf, total,
@@ -190,7 +191,7 @@ def build_po_status_text(po_name, po_log):
         progress_parts.append(pay_str)
     lines.append("   |   ".join(progress_parts))
 
-    # Pattern B/C warning — surface early, before the line list
+    # Pattern B/C warning
     if pattern_b_ocs:
         lines.append("")
         lines.append(":warning: *Combined OC* (Pattern B/C) — lines below cannot be auto-verified:")
@@ -211,56 +212,77 @@ def build_po_status_text(po_name, po_log):
         oc_line   = entry.get("oc_line", {})
         field_res = entry.get("fields", [])
 
+        if status == "pending":
+            lines.append(":hourglass_flowing_sand: *%s*   _OC not yet received_" % vs_id)
+            continue
+
+        # Compact spec from OC data
         grade    = oc_line.get("grade", "") or ""
         thick    = oc_line.get("thickness", "")
         width    = oc_line.get("width", "")
         qty      = oc_line.get("quantity", "")
-        coil_num = oc_line.get("coil_number", "") or ""
         extr_warn = oc_line.get("extraction_warning") or ""
 
-        # Dimensions string
-        dim_str   = "%s×%smm" % (_fmt_dim(thick), _fmt_dim(width)) if thick and width else ""
-        qty_str   = "%st" % _fmt_dim(qty) if qty else ""
-        coil_str  = "(%s)" % coil_num if coil_num else ""
+        dim_str = "%s×%smm" % (_fmt_dim(thick), _fmt_dim(width)) if thick and width else ""
+        qty_str = "%st" % _fmt_dim(qty) if qty else ""
 
-        # Delivery date: prefer matched/skipped field result over raw oc_line value
-        delivery_iso = None
-        for _f in field_res:
-            if _f.get("key") == "delivery_date" and _f.get("oc") not in (None, "", "—"):
-                delivery_iso = _f["oc"]
-                break
-        if delivery_iso is None:
-            delivery_iso = oc_line.get("delivery_date")
-        delivery_str = ("→ %s" % _fmt_date(delivery_iso)) if _fmt_date(delivery_iso) else ""
+        # OC reference + issue date: (OC 213136 · 7 Jul 2026)
+        oc_ref      = entry.get("oc_ref", "")
+        oc_date     = entry.get("oc_date") or entry.get("date", "")
+        oc_date_fmt = _fmt_date(oc_date)
+        if oc_ref and oc_date_fmt:
+            oc_info = "(OC %s · %s)" % (oc_ref, oc_date_fmt)
+        elif oc_ref:
+            oc_info = "(OC %s)" % oc_ref
+        else:
+            oc_info = ""
 
-        # Build compact spec string
-        spec_parts = [p for p in [grade, dim_str, qty_str, delivery_str, coil_str] if p]
-        spec_str   = ("  " + "  ".join(spec_parts)) if spec_parts else ""
+        # Effective match count
+        score, total_eff = _effective_score(field_res)
+        count_str = "%d/%d" % (score, total_eff) if total_eff else ""
 
-        if status == "pending":
-            lines.append(":hourglass_flowing_sand: *%s*   _OC not yet received_" % vs_id)
+        spec_parts   = [p for p in [grade, dim_str, qty_str] if p]
+        spec_str     = ("  " + "  ".join(spec_parts)) if spec_parts else ""
+        suffix_parts = [p for p in [oc_info, count_str] if p]
+        suffix       = ("  " + "  ".join(suffix_parts)) if suffix_parts else ""
 
-        elif status == "confirmed":
-            lines.append(":white_check_mark: *%s*%s" % (vs_id, spec_str))
+        if status == "confirmed":
+            lines.append(":white_check_mark: *%s*%s%s  :white_check_mark:" % (
+                vs_id, spec_str, suffix))
             if extr_warn:
                 lines.append("   :warning: _Extraction warning: %s_" % extr_warn)
 
         else:  # mismatch
-            mismatches_list = [f for f in field_res if f["status"] == "mismatch"]
-            lines.append(":x: *%s*%s" % (vs_id, spec_str))
-            for f in mismatches_list:
-                delta = _fmt_delta(f["label"], f["odoo"], f["oc"])
-                lines.append("   :x: *%s*   Odoo `%s`  ≠  OC `%s`%s" % (
-                    f["label"], f["odoo"], f["oc"], delta))
+            lines.append(":x: *%s*%s%s" % (vs_id, spec_str, suffix))
+
+            # Show only non-matching effective fields
+            for f in field_res:
+                if not _is_effective(f):
+                    continue
+                if f["status"] == "match":
+                    continue
+
+                if f["status"] == "mismatch":
+                    delta = _fmt_delta(f["label"], f["odoo"], f["oc"])
+                    lines.append("   :x: *%s*   Odoo `%s`  ≠  OC `%s`%s" % (
+                        f["label"], f["odoo"], f["oc"], delta))
+
+                elif f["status"] == "skip":
+                    odoo_has = f.get("odoo", "—") not in ("—", "")
+                    oc_has   = f.get("oc",   "—") not in ("—", "")
+                    if odoo_has and not oc_has:
+                        lines.append("   :warning: *%s*   Odoo `%s`  _(not confirmed by OC)_" % (
+                            f["label"], f["odoo"]))
+                    elif oc_has and not odoo_has:
+                        lines.append("   :warning: *%s*   OC `%s`  _(not in Odoo)_" % (
+                            f["label"], f["oc"]))
+
             if extr_warn:
                 lines.append("   :warning: _Extraction warning: %s_" % extr_warn)
 
     lines.append(DIV)
 
     # ── Commercial flags ──────────────────────────────────────────────────────
-    # Show pickup address and VAT regardless of match status
-    # Incoterms / payment terms already shown in progress line when mismatched;
-    # only show them here if they MATCHED (to confirm to the trader)
     flag_lines = []
     for flag in flags:
         ftype = flag["type"]
@@ -273,13 +295,8 @@ def build_po_status_text(po_name, po_log):
             else:
                 flag_lines.append(":round_pushpin: Pickup: %s  ✅" % flag["oc"])
 
-        elif ftype == "incoterms" and flag.get("warning"):
-            # Already shown in progress line — skip to avoid duplication
-            pass
-
-        elif ftype == "payment_terms" and flag.get("warning"):
-            # Already shown in progress line — skip
-            pass
+        elif ftype in ("incoterms", "payment_terms") and flag.get("warning"):
+            pass  # Already shown in progress line
 
         elif ftype == "vat":
             net_v   = ("EUR %s" % _fmt_num(flag["net"]))   if flag.get("net")   else ""
@@ -309,7 +326,6 @@ def build_po_status_text(po_name, po_log):
 # ── Slack Web API ─────────────────────────────────────────────────────────────
 
 def _slack_api_call(token, endpoint, payload):
-    """Make a Slack Web API call. Returns the parsed JSON response body."""
     body = json.dumps(payload).encode("utf-8")
     req  = urllib.request.Request(
         "https://slack.com/api/%s" % endpoint,

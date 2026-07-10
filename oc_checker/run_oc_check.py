@@ -167,6 +167,8 @@ def update_po_log_with_result(state: dict, po_name: str, result: dict,
     today    = date.today().isoformat()
     oc_ref   = result.get("oc_ref", "?")
     pattern  = result.get("pattern", "A")
+    # The OC's own issue date (e.g. "2026-07-07"), distinct from today's processing date
+    oc_date  = result.get("confirmation_date") or today
 
     if pattern in ("B", "C"):
         po_entry.setdefault("pattern_b_ocs", []).append({
@@ -183,9 +185,6 @@ def update_po_log_with_result(state: dict, po_name: str, result: dict,
             if not vs_id:
                 continue
             if vs_id not in po_entry["line_items"]:
-                # This ID wasn't seeded from Odoo — likely a matching failure
-                # (e.g. vs_id='?' or a supplier coil/article code that Odoo
-                # doesn't know about). Skip it to avoid ghost entries in the log.
                 print(f"  Skipping unrecognized ID '{vs_id}' "
                       f"(not in Odoo PO log — likely a matching failure)")
                 continue
@@ -194,8 +193,9 @@ def update_po_log_with_result(state: dict, po_name: str, result: dict,
             po_entry["line_items"][vs_id] = {
                 "status":     "confirmed" if mismatches == 0 else "mismatch",
                 "oc_ref":     oc_ref,
+                "oc_date":    oc_date,    # OC's own issue date (for Slack display)
                 "filename":   filename,
-                "date":       today,
+                "date":       today,      # today's processing date
                 "oc_line":    lr.get("oc_line", {}),
                 "fields":     lr.get("fields", []),
                 "score":      lr.get("score", 0),
@@ -240,9 +240,6 @@ def process_one(doc: dict, odoo_cfg: dict, slack_webhook: str):
     Returns:
         (success, result, filename, po_lines, so_data, po_data)
         On hard error: (False, None, filename, [], None, None)
-
-    Hard errors (extraction failure, PO not found) post to Slack immediately
-    since we can't group them — we don't know which PO they belong to.
     """
     doc_id   = doc["id"]
     filename = doc.get("title") or doc_id
@@ -261,8 +258,6 @@ def process_one(doc: dict, odoo_cfg: dict, slack_webhook: str):
             f"OC Check Error\nCould not extract `{filename}`: {e}")
         return False, None, filename, [], None, None
 
-    # extractor returns None when the PDF is a VS Purchase Order, not a supplier OC.
-    # Mark it processed so we don't attempt it again, but don't post to Slack.
     if oc_data is None:
         print(f"  Skipping '{filename}' — identified as a VS Purchase Order, not a supplier OC.")
         return False, None, filename, [], None, None
@@ -330,7 +325,6 @@ def process_one(doc: dict, odoo_cfg: dict, slack_webhook: str):
     print(f"  Comparison: {'MATCH' if result['is_match'] else 'MISMATCH'}  "
           f"pattern={result.get('pattern','?')}  mismatches={result.get('total_mismatches',0)}")
 
-    # Return po_lines, so, and po so main() can initialize the log
     return True, result, filename, po_lines, so, po
 
 
@@ -370,7 +364,6 @@ def main():
     processed_ids = get_processed_ids(state)
     print(f"Already processed: {len(processed_ids)} document(s)")
 
-    # Fetch new PDF files from Google Drive "OC Inbox" folder
     try:
         all_docs = drive_client.list_new_pdfs()
     except Exception as e:
@@ -386,21 +379,13 @@ def main():
         print("Nothing new. Done.")
         sys.exit(0)
 
-    # ------------------------------------------------------------------
-    # Process each new OC.  Post a Slack message immediately after each
-    # one so every arriving PDF produces its own status update showing
-    # the cumulative picture for that PO (confirmed so far + still pending).
-    # ------------------------------------------------------------------
     for doc in new_docs:
         success, result, filename, po_lines, so_data, po_data = process_one(
             doc, odoo_cfg, slack_webhook)
 
-        # Mark processed immediately — crash-safe: if the run dies here the
-        # doc is skipped next time rather than double-processed.
         state = mark_processed(state, doc["id"])
         save_state(state)
 
-        # Move the PDF out of the Drive inbox so it doesn't reappear next run
         try:
             drive_client.mark_processed(doc["id"])
         except Exception as e:
@@ -409,19 +394,12 @@ def main():
         if success and result:
             po_name = result.get("po_name", "UNKNOWN")
 
-            # On first OC for this PO: seed log with ALL Odoo lines as 'pending'
             state = initialize_po_log_if_needed(
                 state, po_name, po_data, po_lines, so_data)
 
-            # Update the matched VSI IDs with confirmed/mismatch + details
             state = update_po_log_with_result(state, po_name, result, filename)
             save_state(state)
 
-            # Post Slack now — one message per arriving OC, always showing
-            # the full picture: confirmed items + items still waiting on OC.
-            # If bot token is configured: first post creates a top-level message
-            # and subsequent posts for the same PO reply in that thread.
-            # Otherwise: falls back to webhook (no threading).
             po_log = state["po_oc_log"][po_name]
             text   = post_slack.build_po_status_text(po_name, po_log)
 
@@ -431,11 +409,9 @@ def main():
                     slack_bot_token, slack_channel, text, thread_ts=thread_ts)
                 if ok:
                     if not thread_ts and ts:
-                        # First post — save ts so future updates thread under it
                         state["po_oc_log"][po_name]["slack_ts"] = ts
                         save_state(state)
                 else:
-                    # API failed — fall back to webhook so message still gets through
                     print(f"  Slack API failed for {po_name}, falling back to webhook")
                     post_slack.post_po_status_update(slack_webhook, po_name, po_log)
             else:
