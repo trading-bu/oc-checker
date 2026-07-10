@@ -3,7 +3,8 @@
     "1BDtgC1CSY-uyTwSDrV4wxZD5V2hpNWGK",
     "1HF6eIOLWrUzisJhso1b8BeHchVnuEc5n",
     "1_1trcGizJLEm0x79fJ7z50xQKNUGlmX4",
-    "1hjeSM9GFWdj1fgPsiL_CKBXzA1wuoIdb"
+    "1hjeSM9GFWdj1fgPsiL_CKBXzA1wuoIdb",
+    "1k1oUEX6gBYvI05CE0j8cATOa7jMxrDub"
   ],
   "po_oc_log": {
     "P01842": {
@@ -491,6 +492,702 @@
         }
       ],
       "slack_ts": "1783516341.830579"
+    },
+    "P01822": {
+      "so_name": "S01507",
+      "supplier": "Eric Naumann",
+      "buyer": "Sylvia Richter",
+      "initialized": "2026-07-10",
+      "last_updated": "2026-07-10",
+      "line_items": {
+        "VSI-17910382": {
+          "status": "mismatch",
+          "oc_ref": "ESBD 4776401",
+          "filename": "2026-06-24_esb-group.com_01172050-0001.pdf",
+          "date": "2026-07-10",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Spaltband Feuerverzinkt in der G\u00fcte HCT490X nach DIN EN 10346:2015-10/10143:2006-09, gefettet, MB, GI60/60, bes\u00e4umt; Dicke 0,80 mm, Breite 558,00 mm",
+            "quantity": 5.5,
+            "unit": "MT",
+            "unit_price": 350.0,
+            "total_price": 1925.0,
+            "grade": "HCT490X",
+            "thickness": 0.8,
+            "width": 558.0,
+            "length": null,
+            "coating": "GI60/60",
+            "coil_number": null,
+            "delivery_date": "2026-06-29",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "delivery_date",
+              "label": "Delivery Date",
+              "status": "mismatch",
+              "odoo": "2026-06-22",
+              "oc": "2026-06-29",
+              "note": ""
+            },
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HCT490X",
+              "oc": "HCT490X",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "5.5",
+              "oc": "5.5",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "350.0",
+              "oc": "350.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.8",
+              "oc": "0.8",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "558.0",
+              "oc": "558.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "GI60/60",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 6,
+          "mismatches": 1
+        },
+        "VSI-17910383": {
+          "status": "mismatch",
+          "oc_ref": "ESBD 4776401",
+          "filename": "2026-06-24_esb-group.com_01172050-0001.pdf",
+          "date": "2026-07-10",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Spaltband Feuerverzinkt in der G\u00fcte HCT490X nach DIN EN 10346:2015-10/10143:2006-09, gefettet, MB, GI60/60, bes\u00e4umt; Dicke 0,80 mm, Breite 558,00 mm",
+            "quantity": 5.54,
+            "unit": "MT",
+            "unit_price": 350.0,
+            "total_price": 1939.0,
+            "grade": "HCT490X",
+            "thickness": 0.8,
+            "width": 558.0,
+            "length": null,
+            "coating": "GI60/60",
+            "coil_number": null,
+            "delivery_date": "2026-06-29",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "delivery_date",
+              "label": "Delivery Date",
+              "status": "mismatch",
+              "odoo": "2026-06-22",
+              "oc": "2026-06-29",
+              "note": ""
+            },
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HCT490X",
+              "oc": "HCT490X",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "5.54",
+              "oc": "5.54",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "350.0",
+              "oc": "350.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.8",
+              "oc": "0.8",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "558.0",
+              "oc": "558.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "GI60/60",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 6,
+          "mismatches": 1
+        },
+        "VSI-17910384": {
+          "status": "mismatch",
+          "oc_ref": "ESBD 4776401",
+          "filename": "2026-06-24_esb-group.com_01172050-0001.pdf",
+          "date": "2026-07-10",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Spaltband Feuerverzinkt in der G\u00fcte HCT490X nach DIN EN 10346:2015-10/10143:2006-09, gefettet, MB, GI60/60, bes\u00e4umt; Dicke 0,80 mm, Breite 558,00 mm",
+            "quantity": 5.76,
+            "unit": "MT",
+            "unit_price": 350.0,
+            "total_price": 2016.0,
+            "grade": "HCT490X",
+            "thickness": 0.8,
+            "width": 558.0,
+            "length": null,
+            "coating": "GI60/60",
+            "coil_number": null,
+            "delivery_date": "2026-06-29",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "delivery_date",
+              "label": "Delivery Date",
+              "status": "mismatch",
+              "odoo": "2026-06-22",
+              "oc": "2026-06-29",
+              "note": ""
+            },
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HCT490X",
+              "oc": "HCT490X",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "5.76",
+              "oc": "5.76",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "350.0",
+              "oc": "350.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.8",
+              "oc": "0.8",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "558.0",
+              "oc": "558.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "GI60/60",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 6,
+          "mismatches": 1
+        },
+        "VSI-17910385": {
+          "status": "mismatch",
+          "oc_ref": "ESBD 4776401",
+          "filename": "2026-06-24_esb-group.com_01172050-0001.pdf",
+          "date": "2026-07-10",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Spaltband Feuerverzinkt in der G\u00fcte HCT490X nach DIN EN 10346:2015-10/10143:2006-09, gefettet, MB, GI60/60, bes\u00e4umt; Dicke 0,80 mm, Breite 558,00 mm",
+            "quantity": 5.78,
+            "unit": "MT",
+            "unit_price": 350.0,
+            "total_price": 2023.0,
+            "grade": "HCT490X",
+            "thickness": 0.8,
+            "width": 558.0,
+            "length": null,
+            "coating": "GI60/60",
+            "coil_number": null,
+            "delivery_date": "2026-06-29",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "delivery_date",
+              "label": "Delivery Date",
+              "status": "mismatch",
+              "odoo": "2026-06-22",
+              "oc": "2026-06-29",
+              "note": ""
+            },
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HCT490X",
+              "oc": "HCT490X",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "5.78",
+              "oc": "5.78",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "350.0",
+              "oc": "350.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.8",
+              "oc": "0.8",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "558.0",
+              "oc": "558.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "GI60/60",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 6,
+          "mismatches": 1
+        },
+        "VSI-17910386": {
+          "status": "mismatch",
+          "oc_ref": "ESBD 4776401",
+          "filename": "2026-06-24_esb-group.com_01172050-0001.pdf",
+          "date": "2026-07-10",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Spaltband Feuerverzinkt in der G\u00fcte CR240LA nach VDA 239-100:2016-05, gefettet, MB, GI40/40, bes\u00e4umt; Dicke 0,80 mm, Breite 120,00 mm",
+            "quantity": 0.4,
+            "unit": "MT",
+            "unit_price": 350.0,
+            "total_price": 140.0,
+            "grade": "CR240LA",
+            "thickness": 0.8,
+            "width": 120.0,
+            "length": null,
+            "coating": "GI40/40",
+            "coil_number": null,
+            "delivery_date": "2026-06-29",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "delivery_date",
+              "label": "Delivery Date",
+              "status": "mismatch",
+              "odoo": "2026-06-22",
+              "oc": "2026-06-29",
+              "note": ""
+            },
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "CR240LA",
+              "oc": "CR240LA",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "0.4",
+              "oc": "0.4",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "350.0",
+              "oc": "350.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.8",
+              "oc": "0.8",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "120.0",
+              "oc": "120.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "GI40/40",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 6,
+          "mismatches": 1
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "thyssenkrupp Materials Processing Europe GmbH, K\u00f6titzerstr. 110, 01445 Radebeul, Deutschland",
+          "odoo": "Sylvia Richter, Germany",
+          "warning": true
+        },
+        {
+          "type": "incoterms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Incoterms MISMATCH",
+          "oc": "FCA Verkauf",
+          "odoo": "[FCA] FREE CARRIER",
+          "warning": true
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "30 Tage netto",
+          "odoo": "30 Days",
+          "warning": true
+        }
+      ],
+      "slack_ts": "1783689400.956989"
     }
   }
 }
