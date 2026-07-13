@@ -294,6 +294,13 @@ def process_one(doc: dict, odoo_cfg: dict, slack_webhook: str):
 
     # 3. Fetch PO lines + linked SO
     po_lines = odoo_client.get_po_lines(models, o["database"], uid, o["api_key"], po["id"])
+    # Filter out cancelled / zero-quantity lines so pattern detection and
+    # positional matching only sees lines the buyer actually ordered.
+    po_lines_all = po_lines
+    po_lines = [pl for pl in po_lines if (pl.get("product_qty") or 0) > 0]
+    if len(po_lines) < len(po_lines_all):
+        print(f"  Filtered {len(po_lines_all) - len(po_lines)} zero-qty PO line(s) "
+              f"({len(po_lines)} active)")
     so       = odoo_client.get_linked_sale_order(models, o["database"], uid, o["api_key"], po_lines)
     so_lines = []
     if so:
