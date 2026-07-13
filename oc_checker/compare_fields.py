@@ -11,6 +11,11 @@ Match count rules:
   - Field present in OC, missing in Odoo → counted in denominator, not numerator
   - Field present in both, values match → counted in both (numerator + denominator)
   - Field present in both, values differ → counted in denominator only
+
+Line matching priority (Pattern A):
+  1. Article code match  — supplier_article / vs_article / coil_number → Odoo codes
+  2. Quantity match      — OC weight ≈ PO product_qty (order-independent fallback)
+  3. Positional          — last resort, assumes same line order
 """
 
 import re
@@ -46,7 +51,6 @@ def _split_grade_coating(grade_str):
     """
     if not grade_str:
         return grade_str, None
-    # Handle coatings like Z275, ZE75/75AO, AS120, ZM310, AZ150, GI50/50
     m = re.match(r'^(.+?)\+((ZM|ZF|ZA|AZ|ZE|AS|AL|GI|Z)[\d/A-Za-z]*)\s*$',
                  grade_str.strip(), re.IGNORECASE)
     if m:
@@ -119,35 +123,22 @@ def _extract_days(s):
     """
     Extract the number of days from a payment terms string.
 
-    Handles multiple languages:
-      "Innerhalb 30 Tagen ohne Abzug"  → 30
-      "30 Tage netto"                  → 30
-      "Net 30 days"                    → 30
-      "30 Days"                        → 30
-      "60 giorni data fattura"         → 60
-      "60 jours net"                   → 60
-      "Zahlbar sofort netto"           → 0   (no number → treat as 0/immediate)
-
     Returns int or None if unparseable.
     """
     if not s:
         return None
 
-    # "sofort" / "immediate" / "sofort netto" → 0 days
     if re.search(r'\b(sofort|immediate|immediately|sofortfällig)\b', s, re.IGNORECASE):
         return 0
 
-    # Number followed by (or preceded by) day-like word
     m = re.search(r'\b(\d+)\s*(?:tage[n]?|days?|giorni|jours?|dagen|días?)\b', s, re.IGNORECASE)
     if m:
         return int(m.group(1))
 
-    # Day-like word followed by number: "Days 30"
     m = re.search(r'\b(?:tage[n]?|days?|giorni|jours?|dagen)\s*(\d+)\b', s, re.IGNORECASE)
     if m:
         return int(m.group(1))
 
-    # Fall back: first standalone integer in the string
     m = re.search(r'\b(\d+)\b', s)
     if m:
         return int(m.group(1))
@@ -163,7 +154,7 @@ def _norm_article(v):
 
 def _match_po_line(oc_line, po_lines):
     """
-    Match OC line to PO line.
+    Match OC line to PO line by article code.
 
     Lookup order (most-specific first):
       1. oc supplier_article / vs_article  →  Odoo original_supplier_article
@@ -191,8 +182,38 @@ def _match_po_line(oc_line, po_lines):
     return None
 
 
+def _match_po_line_by_qty(oc_line, po_lines, assigned_ids, tol_pct=0.5):
+    """
+    Match an OC line to the closest unassigned PO line by quantity (weight).
+
+    Used as an order-independent fallback when article codes don't match.
+    Steel coil weights are typically unique per line, making this reliable.
+
+    Returns the best-matching PO line, or None if nothing is within tolerance.
+    """
+    oc_qty = _to_float(oc_line.get("quantity"))
+    if oc_qty is None:
+        return None
+
+    best     = None
+    best_diff = float("inf")
+
+    for pl in po_lines:
+        if pl.get("id") in assigned_ids:
+            continue
+        po_qty = _to_float(pl.get("product_qty"))
+        if po_qty is None:
+            continue
+        diff = abs(oc_qty - po_qty) / po_qty * 100 if po_qty else 100
+        if diff <= tol_pct and diff < best_diff:
+            best      = pl
+            best_diff = diff
+
+    return best
+
+
 def _is_positional_id(oc_lines):
-    """Return True if all OC line IDs are just sequential integers (1,2,3…) — no real article codes."""
+    """Return True if all OC line IDs are just sequential integers (1,2,3…)."""
     ids = [str(ol.get("supplier_article") or ol.get("vs_article") or "").strip() for ol in oc_lines]
     try:
         nums = [int(x) for x in ids if x]
@@ -452,28 +473,17 @@ def _compare_line(oc_line, po_line, so_line, cfg, skip_qty=False, group_note=Non
                                         tolerance_abs=comp.get("tensile_strength_tolerance", 0.0)))
 
     # NOTE: Delivery date (field 13 in v1.0) removed — no longer compared.
-    # It is extracted by the extractor but only used for display, not matching.
 
     # Sort: mismatches first, then matches, then skip, then na
     order = {"mismatch": 0, "match": 1, "skip": 2, "na": 3}
     results.sort(key=lambda f: order.get(f["status"], 9))
 
     # ── Effective field scoring ───────────────────────────────────────────────
-    # A field is "effective" (counted) if at least one side has a non-empty value.
-    # Fields where BOTH odoo and oc are empty/missing are excluded entirely.
-    # Fields where only one side has a value are in the denominator but not
-    # the numerator — they represent an unverified or unmatched parameter.
-    #
-    # Also excluded:
-    #   - "na" fields (not applicable, e.g. length for coils)
-    #   - multi-coil group skips (qty is a group total, can't verify per-coil)
     def _effective(f):
         if f["status"] == "na":
             return False
-        # Multi-coil group skip (explicitly skipped — note contains "group")
         if f["status"] == "skip" and "group" in (f.get("note") or "").lower():
             return False
-        # Both sides empty → not counted
         odoo_empty = f.get("odoo", "—") in ("—", "", None)
         oc_empty   = f.get("oc",   "—") in ("—", "", None)
         return not (odoo_empty and oc_empty)
@@ -516,8 +526,6 @@ def _build_flags(oc_data, po_data, so_data, odoo_shipping_address):
         po_inco = po_data["incoterm_id"][1] if isinstance(po_data["incoterm_id"], (list, tuple)) else str(po_data["incoterm_id"])
 
     if oc_inco and po_inco:
-        # Extract the 3-letter code from both sides.
-        # Odoo may return "[FCA] FREE CARRIER"; OC may say "FCA Hagen" or just "FCA".
         oc_code = _extract_inco_code(oc_inco)
         po_code = _extract_inco_code(po_inco)
         if oc_code != po_code:
@@ -537,14 +545,11 @@ def _build_flags(oc_data, po_data, so_data, odoo_shipping_address):
         po_pay = po_data["payment_term_id"][1] if isinstance(po_data["payment_term_id"], (list, tuple)) else str(po_data["payment_term_id"])
 
     if oc_pay and po_pay:
-        # Try to compare by number of days first (language-agnostic).
-        # "Innerhalb 30 Tagen ohne Abzug" == "30 Days" → both → 30 days → match.
         oc_days = _extract_days(oc_pay)
         po_days = _extract_days(po_pay)
         if oc_days is not None and po_days is not None:
             days_match = (oc_days == po_days)
         else:
-            # Fall back to case-insensitive string compare
             days_match = (oc_pay.lower() == po_pay.lower())
 
         if not days_match:
@@ -598,28 +603,29 @@ def compare(oc_data, po_data, po_lines, so_data, so_lines, config,
         if _any_match(oc_lines, po_lines):
             pattern = "A"
 
-    line_results = []
+    line_results     = []
     total_mismatches = 0
 
     if pattern in ("B", "C"):
         line_results = []
     else:
-        use_positional = _is_positional_id(oc_lines) or not any(
-            _match_po_line(ol, po_lines) for ol in oc_lines
-        )
+        # ── Determine matching strategy ───────────────────────────────────────
+        # Priority:
+        #   1. Article code match  (supplier_article / vs_article → Odoo codes)
+        #   2. Quantity match      (OC weight ≈ PO product_qty, order-independent)
+        #   3. Positional          (last resort — assumes same line ordering)
+
+        has_code_match = any(_match_po_line(ol, po_lines) for ol in oc_lines)
 
         assigned_po_ids = set()
 
         for idx, ol in enumerate(oc_lines):
-            if use_positional:
-                pl = po_lines[idx] if idx < len(po_lines) else None
-                matched_po_lines = [pl] if pl else []
-                if pl and pl.get("id"):
-                    assigned_po_ids.add(pl["id"])
-            else:
+            matched_po_lines = []
+
+            if has_code_match:
+                # ── Strategy 1: article code matching ────────────────────────
                 coil_refs = _extract_coil_refs(ol)
 
-                matched_po_lines = []
                 for ref in coil_refs:
                     synthetic = {"vs_article": ref, "supplier_article": ref}
                     apl = _match_po_line(synthetic, po_lines)
@@ -636,6 +642,27 @@ def compare(oc_data, po_data, po_lines, so_data, so_lines, config,
                         if pl_id not in assigned_po_ids:
                             matched_po_lines = [pl]
                             assigned_po_ids.add(pl_id)
+
+            else:
+                # ── Strategy 2: quantity (weight) matching ────────────────────
+                # Each OC line is paired to the unassigned PO line with the
+                # closest matching product_qty (within tolerance).
+                # Order-independent — works even when OC and PO list items
+                # in different sequences.
+                comp_cfg = config.get("comparison", {})
+                tol      = comp_cfg.get("quantity_tolerance_pct", 0.5)
+                pl = _match_po_line_by_qty(ol, po_lines, assigned_po_ids, tol_pct=tol)
+                if pl:
+                    matched_po_lines = [pl]
+                    assigned_po_ids.add(pl.get("id"))
+                else:
+                    # ── Strategy 3: positional fallback ──────────────────────
+                    pl = po_lines[idx] if idx < len(po_lines) else None
+                    if pl and pl.get("id") not in assigned_po_ids:
+                        matched_po_lines = [pl]
+                        assigned_po_ids.add(pl.get("id"))
+                        print(f"  WARNING: qty match failed for OC line {idx+1} "
+                              f"(qty={ol.get('quantity')}) — using positional fallback")
 
             is_multi_coil = len(matched_po_lines) > 1
             oc_qty        = ol.get("quantity")
