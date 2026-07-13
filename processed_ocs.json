@@ -1,6 +1,7 @@
 {
   "processed_ids": [
     "117e0kRwx2EjsLqTfvQ3_6ed4qXBIsJIF",
+    "11b1uhbfUKU1uYoFNlRzkNvoCDuIAufNQ",
     "14eCuEWxsXHaa0H0mWaVyFz2tisZzHCrQ",
     "14gXtjPVo3_tsDatkhFKravozPNaXsVEp",
     "17xwkyetbfGGgI5G5U_7WsgnQfo_Wu45p",
@@ -11,12 +12,15 @@
     "1HF6eIOLWrUzisJhso1b8BeHchVnuEc5n",
     "1Rsopq84SCXrPXbTZchgUL1B-wQjvZwOm",
     "1TrSoh7YDeXclulyvfPNeBLVGbUVb6346",
+    "1URXndFlSFvhRXDMwLNGQGUxRbnlqryt1",
+    "1YUf1z-ph76GLJgM3JeymKrcaMY5u-5n5",
     "1_1trcGizJLEm0x79fJ7z50xQKNUGlmX4",
     "1hS7sU7cOyUsIe3oZZmkD8rZGtzJu_brp",
     "1hjeSM9GFWdj1fgPsiL_CKBXzA1wuoIdb",
     "1k1oUEX6gBYvI05CE0j8cATOa7jMxrDub",
     "1mFv8VGP-Q03MK3JQPssU_9gRY8fyRvYo",
     "1pDGeG52DAj9S-N0PYb6MG0zJa9by48rS",
+    "1r4unHQw3hhr-acDqvzhFqxaRrCPYHA0S",
     "1rVT8M_gAq-CCxgvSkBRZK4dKek-RZgw7",
     "1zC0CADqSH82MQxbzTcrD92Cy86V9yxbo"
   ],
@@ -26,18 +30,18 @@
       "supplier": "Martin Korreck",
       "buyer": "Olaf Jahn",
       "initialized": "2026-07-08",
-      "last_updated": "2026-07-10",
+      "last_updated": "2026-07-13",
       "line_items": {
         "VSI-17918189": {
           "status": "mismatch",
           "oc_ref": "213135",
           "oc_date": "2026-07-07",
-          "filename": "Auftragsbest\u00e4tigung_213135.PDF",
-          "date": "2026-07-10",
+          "filename": "Copy of 2026-07-07_bilstein-kaltband.de_Auftragsbest\u00e4tigung_213135.PDF",
+          "date": "2026-07-13",
           "oc_line": {
             "vs_article": "VSI-17918189",
             "supplier_article": "30059428",
-            "description": "2A Material - Coils 2nd Choice Cold Drawn / Soft (+LC) C45E - Supplier Finish - Cold Drawn / Soft (+LC) Wrong I-D, A-D, bar count / falscher I-D, A-D, Stabzahl | 0.0 | -0001131762 | Verladung - Liegend",
+            "description": "Coils 2nd Choice Cold Drawn / Soft (+LC) C45E - Supplier Finish - Cold Drawn / Soft (+LC) Wrong I-D, A-D, bar count / falscher I-D, A-D, Stabzahl | 0.0 | -0001131762 | Verladung - Liegend",
             "quantity": 3.175,
             "unit": "MT",
             "unit_price": 430.0,
@@ -157,8 +161,8 @@
           "status": "mismatch",
           "oc_ref": "213136",
           "oc_date": "2026-07-07",
-          "filename": "Auftragsbest\u00e4tigung_213136.PDF",
-          "date": "2026-07-10",
+          "filename": "Copy of 2026-07-07_bilstein-kaltband.de_Auftragsbest\u00e4tigung_213136.PDF",
+          "date": "2026-07-13",
           "oc_line": {
             "vs_article": "VSI-17918186",
             "supplier_article": "30059418",
@@ -321,17 +325,18 @@
       "supplier": "Martin Korreck",
       "buyer": "Arnd Seelmann",
       "initialized": "2026-07-08",
-      "last_updated": "2026-07-08",
+      "last_updated": "2026-07-13",
       "line_items": {
         "VSI-17918185": {
           "status": "mismatch",
           "oc_ref": "213134",
-          "filename": "2026-07-07_bilstein-kaltband.de_Auftragsbest\u00e4tigung_213134.PDF",
-          "date": "2026-07-08",
+          "oc_date": "2026-07-07",
+          "filename": "Copy of 2026-07-07_bilstein-kaltband.de_Auftragsbest\u00e4tigung_213134.PDF",
+          "date": "2026-07-13",
           "oc_line": {
             "vs_article": "VSI-17918185",
             "supplier_article": "30058748",
-            "description": "Slit Coils 2nd Choice Cold Drawn / Soft (+LC) DC04 | Supplier Finish - Cold Drawn / Soft (+LC) Cold rolled mechanical data / Kaltband mechanische Daten | 0.0 | -0001130790 0001130791 0001130792 0001130793 0001130794 0001130795 0001130796 | Verladung - Liegend",
+            "description": "2A Material - Slit Coils 2nd Choice Cold Drawn / Soft (+LC) DC04 | Supplier Finish - Cold Drawn / Soft (+LC) Cold rolled mechanical data / Kaltband mechanische Daten | 0.0 | Coils: 0001130790 0001130791 0001130792 0001130793 0001130794 0001130795 0001130796 | Dicke: 1.91mm | Breite: 318.00mm | Anzahl der Artikel: 7 | Verladung - Liegend",
             "quantity": 20.206,
             "unit": "MT",
             "unit_price": 400.0,
@@ -346,14 +351,6 @@
             "extraction_warning": null
           },
           "fields": [
-            {
-              "key": "delivery_date",
-              "label": "Delivery Date",
-              "status": "mismatch",
-              "odoo": "2026-07-06",
-              "oc": "2026-07-08",
-              "note": ""
-            },
             {
               "key": "grade",
               "label": "Grade",
@@ -452,8 +449,8 @@
             }
           ],
           "score": 5,
-          "total": 6,
-          "mismatches": 1
+          "total": 10,
+          "mismatches": 5
         }
       },
       "flags": [
