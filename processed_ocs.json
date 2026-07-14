@@ -9,6 +9,7 @@
     "1XlkoNE-dAcE_PKkUx1SsZlJuP4tdi-KB",
     "1Z8UlqElOoEp44_4l56EPnB3V6pt1cRaR",
     "1_UIUeWf9NxgV8A5vR5hiLTVWeNh1EN6c",
+    "1hKBDNK3NI89OA6GLdRP3Ro3JxMJ2qdAr",
     "1hVjqRaQVVLXTJHb8aGecNub2aOKv77EA",
     "1pKi6md383m0qlEUFYM1HG76GiGk1vVvt"
   ],
@@ -3832,6 +3833,169 @@
         }
       ],
       "slack_ts": "1784052879.165749"
+    },
+    "P01771": {
+      "so_name": "S01476",
+      "supplier": "Andre Lenzen",
+      "buyer": "Nassim Dehimi",
+      "initialized": "2026-07-14",
+      "last_updated": "2026-07-14",
+      "line_items": {
+        "VSI-17889753": {
+          "status": "confirmed",
+          "oc_ref": "7628990",
+          "oc_date": "2026-05-18",
+          "filename": "7628990 (3).pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "grade": "DX51D",
+            "thickness": 0.82,
+            "width": 1003.0,
+            "quantity": 22.48,
+            "unit_price": 840.0,
+            "form": null,
+            "coating": "Z275"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX51D",
+              "oc": "DX51D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "Z275",
+              "oc": "Z275",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "22.48",
+              "oc": "22.48",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "840.0",
+              "oc": "840.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.82",
+              "oc": "0.82",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1003.0",
+              "oc": "1003.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "match",
+              "odoo": "312.0",
+              "oc": "312.0",
+              "note": "OC description states Rm 312"
+            }
+          ],
+          "score": 7,
+          "total": 11,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Spedition Josef Wiechers GmbH, Bremerhaven Str. 10, D-47229 Duisburg - Rheinhausen (Logport)",
+          "odoo": "Bremerhavener Stra\u00dfe  10, 47229, Duisburg, Germany",
+          "warning": true
+        },
+        {
+          "type": "incoterms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Incoterms MISMATCH",
+          "oc": "CPT",
+          "odoo": "[FCA] FREE CARRIER",
+          "warning": true
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "0 Days",
+          "odoo": "30 Days",
+          "warning": true
+        },
+        {
+          "type": "vat",
+          "icon": "\ud83e\uddfe",
+          "label": "VAT",
+          "vat_pct": "19%",
+          "net": 18883.2,
+          "gross": 22471.01,
+          "warning": false
+        }
+      ],
+      "slack_ts": "1784057983.983439"
     }
   }
 }
