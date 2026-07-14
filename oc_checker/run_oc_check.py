@@ -311,14 +311,20 @@ def process_one(doc, odoo_cfg, slack_webhook):
         else:
             # No PO number in OC — try supplier name + total weight fallback
             print("  No PO number found -- trying supplier+weight fallback...")
-            oc_total = sum(float(l.get("quantity") or 0)
-                           for l in oc_data.get("lines", []))
-            supplier = oc_data.get("supplier_name") or ""
+            oc_lines  = oc_data.get("lines", [])
+            oc_total  = sum(float(l.get("quantity") or 0) for l in oc_lines)
+            supplier  = oc_data.get("supplier_name") or ""
+            print("  [debug] supplier_name=%r  oc_lines=%d  oc_total=%s" % (
+                supplier, len(oc_lines), oc_total))
             if supplier and oc_total > 0:
                 matched = odoo_client.find_po_by_supplier_and_weight(
                     models, o["database"], uid, o["api_key"], supplier, oc_total)
                 pos = [matched] if matched else []
             else:
+                if not supplier:
+                    print("  [debug] skipping fallback: supplier_name is empty")
+                if not oc_total:
+                    print("  [debug] skipping fallback: oc_total is 0 (quantities not extracted)")
                 pos = []
 
     except Exception as e:
