@@ -159,51 +159,43 @@ def update_po_log_with_result(state: dict, po_name: str, result: dict,
     """
     Update the PO log with the comparison result from one OC file.
 
-    Pattern A:  update each matched VSI ID with confirmed/mismatch status + details
-    Pattern B/C: can't update individual lines — record the OC ref for manual review
-    Flags:      merged into the PO-level flag list (first occurrence of each type wins)
+    line_results always contains per-line data (code/qty/spec-group/positional match).
+    Flags: merged into the PO-level flag list (first occurrence of each type wins).
     """
     po_entry = state["po_oc_log"][po_name]
     today    = date.today().isoformat()
     oc_ref   = result.get("oc_ref", "?")
-    pattern  = result.get("pattern", "A")
     # The OC's own issue date (e.g. "2026-07-07"), distinct from today's processing date
     oc_date  = result.get("confirmation_date") or today
 
-    if pattern in ("B", "C"):
-        po_entry.setdefault("pattern_b_ocs", []).append({
-            "oc_ref":   oc_ref,
-            "filename": filename,
-            "date":     today,
-            "pattern":  pattern,
-        })
-        print(f"  Pattern {pattern} OC — recorded for manual review, no per-line update")
-    else:
-        updated = 0
-        for lr in result.get("line_results", []):
-            vs_id = lr.get("vs_id", "")
-            if not vs_id:
-                continue
-            if vs_id not in po_entry["line_items"]:
-                print(f"  Skipping unrecognized ID '{vs_id}' "
-                      f"(not in Odoo PO log — likely a matching failure)")
-                continue
+    updated = 0
+    for lr in result.get("line_results", []):
+        vs_id = lr.get("vs_id", "")
+        if not vs_id:
+            continue
+        if vs_id not in po_entry["line_items"]:
+            print(f"  Skipping unrecognized ID '{vs_id}' "
+                  f"(not in Odoo PO log — likely a matching failure)")
+            continue
 
-            mismatches = lr.get("mismatches", 0)
-            po_entry["line_items"][vs_id] = {
-                "status":     "confirmed" if mismatches == 0 else "mismatch",
-                "oc_ref":     oc_ref,
-                "oc_date":    oc_date,    # OC's own issue date (for Slack display)
-                "filename":   filename,
-                "date":       today,      # today's processing date
-                "oc_line":    lr.get("oc_line", {}),
-                "fields":     lr.get("fields", []),
-                "score":      lr.get("score", 0),
-                "total":      lr.get("total", 0),
-                "mismatches": mismatches,
-            }
-            updated += 1
-        print(f"  Updated {updated} VSI ID(s) in PO log")
+        mismatches = lr.get("mismatches", 0)
+        entry = {
+            "status":     "confirmed" if mismatches == 0 else "mismatch",
+            "oc_ref":     oc_ref,
+            "oc_date":    oc_date,    # OC's own issue date (for Slack display)
+            "filename":   filename,
+            "date":       today,      # today's processing date
+            "oc_line":    lr.get("oc_line", {}),
+            "fields":     lr.get("fields", []),
+            "score":      lr.get("score", 0),
+            "total":      lr.get("total", 0),
+            "mismatches": mismatches,
+        }
+        if lr.get("positional_fallback"):
+            entry["match_note"] = lr.get("match_note", "positional fallback")
+        po_entry["line_items"][vs_id] = entry
+        updated += 1
+    print(f"  Updated {updated} VSI ID(s) in PO log")
 
     # Merge flags — first occurrence of each type wins (dedup across OC files)
     existing_types = {f["type"] for f in po_entry.get("flags", [])}
@@ -329,8 +321,10 @@ def process_one(doc: dict, odoo_cfg: dict, slack_webhook: str):
         odoo_shipping_address=shipping_address
     )
 
+    n_lines     = len(result.get("line_results", []))
+    n_mismatches = result.get("total_mismatches", 0)
     print(f"  Comparison: {'MATCH' if result['is_match'] else 'MISMATCH'}  "
-          f"pattern={result.get('pattern','?')}  mismatches={result.get('total_mismatches',0)}")
+          f"lines={n_lines}  mismatches={n_mismatches}")
 
     return True, result, filename, po_lines, so, po
 
