@@ -1,7 +1,1625 @@
 {
   "processed_ids": [
     "1B-mNcm-p21BI_E7w6kv9TA9tkz5x6xbJ",
+    "1IK71p62PYw7HssHzmV3yKrBogQMW0A7r",
+    "1RYaQ3CGtmZqSFiJAN9CrEUjsMKc4nAif",
+    "1Z8UlqElOoEp44_4l56EPnB3V6pt1cRaR",
     "1pKi6md383m0qlEUFYM1HG76GiGk1vVvt"
   ],
-  "po_oc_log": {}
+  "po_oc_log": {
+    "P01844": {
+      "so_name": "S01522",
+      "supplier": "Andrea Nagy",
+      "buyer": "Bartlomiej Brzezinski",
+      "initialized": "2026-07-14",
+      "last_updated": "2026-07-14",
+      "line_items": {
+        "VSI-17918961": {
+          "status": "pending"
+        },
+        "VSI-17918962": {
+          "status": "pending"
+        },
+        "VSI-17918963": {
+          "status": "pending"
+        },
+        "VSI-17918964": {
+          "status": "pending"
+        },
+        "VSI-17918965": {
+          "status": "pending"
+        },
+        "VSI-17918966": {
+          "status": "pending"
+        },
+        "VSI-17918967": {
+          "status": "pending"
+        },
+        "VSI-17918968": {
+          "status": "pending"
+        },
+        "VSI-17918969": {
+          "status": "pending"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "9011 Gy\u0151r, Gerda utca 3.",
+          "odoo": "Bartlomiej Brzezinski, Poland",
+          "warning": true
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "Pro Forma Payment",
+          "odoo": "Immediate Payment",
+          "warning": true
+        }
+      ],
+      "pattern_b_ocs": [
+        {
+          "oc_ref": "84920335",
+          "filename": "Vanilla Steel PO01844 Confirmation.pdf",
+          "date": "2026-07-14",
+          "pattern": "C"
+        }
+      ],
+      "slack_ts": "1784037429.012709"
+    },
+    "P01845": {
+      "so_name": "S01523",
+      "supplier": "Mario Gerth",
+      "buyer": "David Villalon",
+      "initialized": "2026-07-14",
+      "last_updated": "2026-07-14",
+      "line_items": {
+        "VSI-17918904": {
+          "status": "pending"
+        },
+        "VSI-17918908": {
+          "status": "mismatch",
+          "oc_ref": "2300018237",
+          "oc_date": "2026-07-12",
+          "filename": "ORDER_CONFIRMATION_2300018237.PDF",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": "999999",
+            "description": "W. AR 2A SCELTA H10X250 L6000",
+            "quantity": 1.806,
+            "unit": "MT",
+            "unit_price": 390.0,
+            "total_price": 704.34,
+            "grade": "AR",
+            "thickness": 10.0,
+            "width": 250.0,
+            "length": 6000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-07",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "S235JR",
+              "oc": "AR",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "mismatch",
+              "odoo": "\u2014",
+              "oc": "10.0",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.806",
+              "oc": "1.806",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "390.0",
+              "oc": "390.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "250.0",
+              "oc": "250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "6000.0",
+              "oc": "6000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Flat Bars",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "As Rolled (+AR)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "488",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 10,
+          "mismatches": 6
+        },
+        "VSI-17918915": {
+          "status": "mismatch",
+          "oc_ref": "2300018237",
+          "oc_date": "2026-07-12",
+          "filename": "ORDER_CONFIRMATION_2300018237.PDF",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": "999999",
+            "description": "W. AR 2A SCELTA H15X250 L6000",
+            "quantity": 10.224,
+            "unit": "MT",
+            "unit_price": 390.0,
+            "total_price": 3987.36,
+            "grade": "AR",
+            "thickness": 15.0,
+            "width": 250.0,
+            "length": 6000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-07",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "S355J2",
+              "oc": "AR",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "mismatch",
+              "odoo": "\u2014",
+              "oc": "15.0",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "10.224",
+              "oc": "10.224",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "390.0",
+              "oc": "390.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "250.0",
+              "oc": "250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "6000.0",
+              "oc": "6000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Flat Bars",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "As Rolled (+AR)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "6",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 10,
+          "mismatches": 6
+        },
+        "VSI-17918916": {
+          "status": "mismatch",
+          "oc_ref": "2300018237",
+          "oc_date": "2026-07-12",
+          "filename": "ORDER_CONFIRMATION_2300018237.PDF",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": "999999",
+            "description": "W. AR 2A SCELTA H10X250 L6000",
+            "quantity": 6.882,
+            "unit": "MT",
+            "unit_price": 390.0,
+            "total_price": 2683.98,
+            "grade": "AR",
+            "thickness": 10.0,
+            "width": 250.0,
+            "length": 6000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-07",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "S355J2",
+              "oc": "AR",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "mismatch",
+              "odoo": "\u2014",
+              "oc": "10.0",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "6.882",
+              "oc": "6.882",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "390.0",
+              "oc": "390.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "250.0",
+              "oc": "250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "6000.0",
+              "oc": "6000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Flat Bars",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "As Rolled (+AR)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "2",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 10,
+          "mismatches": 6
+        },
+        "VSI-17918927": {
+          "status": "mismatch",
+          "oc_ref": "2300018237",
+          "oc_date": "2026-07-12",
+          "filename": "ORDER_CONFIRMATION_2300018237.PDF",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": "999999",
+            "description": "W. AR 2A SCELTA H10X250 L6000",
+            "quantity": 1.004,
+            "unit": "MT",
+            "unit_price": 390.0,
+            "total_price": 391.56,
+            "grade": "AR",
+            "thickness": 10.0,
+            "width": 250.0,
+            "length": 6000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-07",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "S235JR",
+              "oc": "AR",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "mismatch",
+              "odoo": "\u2014",
+              "oc": "10.0",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.004",
+              "oc": "1.004",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "390.0",
+              "oc": "390.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "250.0",
+              "oc": "250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "6000.0",
+              "oc": "6000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Flat Bars",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "As Rolled (+AR)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 10,
+          "mismatches": 6
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Via Domenico Ghidoni, 169, 25035 Ospitaletto (BS) - Italia",
+          "odoo": "David Villalon, Spain",
+          "warning": true
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "B.B. ANTICIPATO",
+          "odoo": "Immediate Payment",
+          "warning": true
+        }
+      ],
+      "slack_ts": "1784037446.526229"
+    },
+    "P01846": {
+      "so_name": "S01524",
+      "supplier": "Rodrigue Payntar",
+      "buyer": "Nicolae Ismana",
+      "initialized": "2026-07-14",
+      "last_updated": "2026-07-14",
+      "line_items": {
+        "VSI-17922719": {
+          "status": "mismatch",
+          "oc_ref": "002549",
+          "oc_date": "2026-07-13",
+          "filename": "Vente  vanilla 002549 Po 1846.pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Bobine lamin\u00e9e \u00e0 froid huil\u00e9e 1.4 X 1000 mm CR4",
+            "quantity": 5.913,
+            "unit": "MT",
+            "unit_price": 480.0,
+            "total_price": 2838.24,
+            "grade": "CR4",
+            "thickness": 1.4,
+            "width": 1000.0,
+            "length": null,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-20",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "DX56D",
+              "oc": "CR4",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "5.913",
+              "oc": "5.913",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.4",
+              "oc": "1.4",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1000.0",
+              "oc": "1000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 9,
+          "mismatches": 5
+        },
+        "VSI-17922720": {
+          "status": "mismatch",
+          "oc_ref": "002549",
+          "oc_date": "2026-07-13",
+          "filename": "Vente  vanilla 002549 Po 1846.pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Bobine lamin\u00e9e \u00e0 froid huil\u00e9e 1.5 X 1200 mm HC300LA",
+            "quantity": 3.272,
+            "unit": "MT",
+            "unit_price": 480.0,
+            "total_price": 1570.56,
+            "grade": "HC300LA",
+            "thickness": 1.5,
+            "width": 1200.0,
+            "length": null,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-20",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HC300LA",
+              "oc": "HC300LA",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "3.272",
+              "oc": "3.272",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.5",
+              "oc": "1.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1200.0",
+              "oc": "1200.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4
+        },
+        "VSI-17922721": {
+          "status": "mismatch",
+          "oc_ref": "002549",
+          "oc_date": "2026-07-13",
+          "filename": "Vente  vanilla 002549 Po 1846.pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Bobine lamin\u00e9e \u00e0 froid huil\u00e9e 1.4 X 1000 mm CR4",
+            "quantity": 3.032,
+            "unit": "MT",
+            "unit_price": 480.0,
+            "total_price": 1455.36,
+            "grade": "CR4",
+            "thickness": 1.4,
+            "width": 1000.0,
+            "length": null,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-20",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "DX56D",
+              "oc": "CR4",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "3.032",
+              "oc": "3.032",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.4",
+              "oc": "1.4",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1000.0",
+              "oc": "1000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 9,
+          "mismatches": 5
+        },
+        "VSI-17922722": {
+          "status": "mismatch",
+          "oc_ref": "002549",
+          "oc_date": "2026-07-13",
+          "filename": "Vente  vanilla 002549 Po 1846.pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Bobine lamin\u00e9e \u00e0 froid huil\u00e9e 1.4 X 1000 mm CR4",
+            "quantity": 4.927,
+            "unit": "MT",
+            "unit_price": 480.0,
+            "total_price": 2364.96,
+            "grade": "CR4",
+            "thickness": 1.4,
+            "width": 1000.0,
+            "length": null,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-20",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "DX56D",
+              "oc": "CR4",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "4.927",
+              "oc": "4.927",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.4",
+              "oc": "1.4",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1000.0",
+              "oc": "1000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 9,
+          "mismatches": 5
+        },
+        "VSI-17922723": {
+          "status": "mismatch",
+          "oc_ref": "002549",
+          "oc_date": "2026-07-13",
+          "filename": "Vente  vanilla 002549 Po 1846.pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Bobine lamin\u00e9e \u00e0 froid huil\u00e9e 1.45 X 1221.5 mm HC220CA",
+            "quantity": 1.655,
+            "unit": "MT",
+            "unit_price": 480.0,
+            "total_price": 794.4,
+            "grade": "HC220CA",
+            "thickness": 1.45,
+            "width": 1221.5,
+            "length": null,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-20",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HC220CA",
+              "oc": "HC220CA",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.655",
+              "oc": "1.655",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.45",
+              "oc": "1.45",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1221.5",
+              "oc": "1221.5",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "59",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "skip",
+              "odoo": "2007.0",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5
+        },
+        "VSI-17922724": {
+          "status": "mismatch",
+          "oc_ref": "002549",
+          "oc_date": "2026-07-13",
+          "filename": "Vente  vanilla 002549 Po 1846.pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Bobine lamin\u00e9e \u00e0 froid huil\u00e9e 1.45 X 1221.5 mm HC220CA",
+            "quantity": 1.705,
+            "unit": "MT",
+            "unit_price": 480.0,
+            "total_price": 818.4,
+            "grade": "HC220CA",
+            "thickness": 1.45,
+            "width": 1221.5,
+            "length": null,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-20",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HC220CA",
+              "oc": "HC220CA",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.705",
+              "oc": "1.705",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.45",
+              "oc": "1.45",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1221.5",
+              "oc": "1221.5",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "55",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "skip",
+              "odoo": "2207.0",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5
+        },
+        "VSI-17922725": {
+          "status": "mismatch",
+          "oc_ref": "002549",
+          "oc_date": "2026-07-13",
+          "filename": "Vente  vanilla 002549 Po 1846.pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Bobine lamin\u00e9e \u00e0 froid huil\u00e9e 1.45 X 1221.5 mm HC220CA",
+            "quantity": 1.7,
+            "unit": "MT",
+            "unit_price": 480.0,
+            "total_price": 816.0,
+            "grade": "HC220CA",
+            "thickness": 1.45,
+            "width": 1221.5,
+            "length": null,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-20",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HC220CA",
+              "oc": "HC220CA",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.7",
+              "oc": "1.7",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.45",
+              "oc": "1.45",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1221.5",
+              "oc": "1221.5",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "55",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "skip",
+              "odoo": "2207.0",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5
+        },
+        "VSI-17922726": {
+          "status": "mismatch",
+          "oc_ref": "002549",
+          "oc_date": "2026-07-13",
+          "filename": "Vente  vanilla 002549 Po 1846.pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Bobine lamin\u00e9e \u00e0 froid huil\u00e9e 1.45 X 1221.5 mm HC220CA",
+            "quantity": 1.4,
+            "unit": "MT",
+            "unit_price": 480.0,
+            "total_price": 672.0,
+            "grade": "HC220CA",
+            "thickness": 1.45,
+            "width": 1221.5,
+            "length": null,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-20",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HC220CA",
+              "oc": "HC220CA",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.4",
+              "oc": "1.4",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.45",
+              "oc": "1.45",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1221.5",
+              "oc": "1221.5",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "45",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "skip",
+              "odoo": "2207.0",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "57140 Woippy",
+          "odoo": "Nicolae Ismana, Romania",
+          "warning": true
+        }
+      ],
+      "slack_ts": "1784037465.859039"
+    }
+  }
 }
