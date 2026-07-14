@@ -295,29 +295,48 @@ def process_one(doc, odoo_cfg, slack_webhook):
         return False, None, filename, [], None, None
 
     po_number = oc_data.get("po_number")
-    if not po_number:
-        print("  WARNING: No PO number extracted. Skipping.")
-        post_slack.post_text(slack_webhook,
-            "OC Check Warning\n`%s` -- could not extract VS PO number. Check manually." % filename)
-        return False, None, filename, [], None, None
 
     # Step 2: Find matching PO in Odoo
+    # Primary path : match by PO number (already extracted from OC)
+    # Fallback path: if no PO number, match by supplier name + total OC weight
     try:
         o = odoo_cfg
         uid, models = odoo_client.connect(o["url"], o["database"], o["username"], o["api_key"])
-        po_digits   = odoo_client.normalize_po_digits(po_number)
-        pos         = odoo_client.find_purchase_orders(
-                        models, o["database"], uid, o["api_key"],
-                        po_digits, oc_data.get("supplier_name"))
+
+        if po_number:
+            po_digits = odoo_client.normalize_po_digits(po_number)
+            pos = odoo_client.find_purchase_orders(
+                    models, o["database"], uid, o["api_key"],
+                    po_digits, oc_data.get("supplier_name"))
+        else:
+            # No PO number in OC — try supplier name + total weight fallback
+            print("  No PO number found -- trying supplier+weight fallback...")
+            oc_total = sum(float(l.get("quantity") or 0)
+                           for l in oc_data.get("lines", []))
+            supplier = oc_data.get("supplier_name") or ""
+            if supplier and oc_total > 0:
+                matched = odoo_client.find_po_by_supplier_and_weight(
+                    models, o["database"], uid, o["api_key"], supplier, oc_total)
+                pos = [matched] if matched else []
+            else:
+                pos = []
+
     except Exception as e:
         print("  ERROR connecting to Odoo: %s" % e)
         post_slack.post_text(slack_webhook, "OC Check Error\nOdoo connection failed: %s" % e)
         return False, None, filename, [], None, None
 
     if not pos:
-        print("  No Odoo PO found matching '%s'" % po_number)
-        post_slack.post_text(slack_webhook,
-            "OC Check Warning\n`%s` -- PO `%s` not found in Odoo." % (filename, po_number))
+        if po_number:
+            print("  No Odoo PO found matching '%s'" % po_number)
+            post_slack.post_text(slack_webhook,
+                "OC Check Warning\n`%s` -- PO `%s` not found in Odoo." % (filename, po_number))
+        else:
+            supplier = oc_data.get("supplier_name") or "unknown supplier"
+            print("  No PO found via supplier+weight fallback (%s)" % supplier)
+            post_slack.post_text(slack_webhook,
+                ("OC Check Warning\n`%s` -- no PO number found and supplier+weight"
+                 " fallback failed (%s). Check manually.") % (filename, supplier))
         return False, None, filename, [], None, None
 
     po          = pos[0]
