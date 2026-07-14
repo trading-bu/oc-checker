@@ -259,4 +259,4 @@ if __name__ == "__main__":
                 width = sl.get("width") or "---"
                 qty = sl.get("product_uom_qty")
                 vs_art = sl.get("vs_article") or "---"
-                print(f"    SO Line: grade={grade} 
+                print(f"    SO Line: grade={grade} coating={coating} thick={thick} width={width} qty={qty} vs_article={vs_art}")
