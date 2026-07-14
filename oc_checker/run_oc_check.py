@@ -330,13 +330,13 @@ def process_one(doc, odoo_cfg, slack_webhook):
         so_lines = odoo_client.get_so_lines(models, o["database"], uid, o["api_key"], so["id"])
         print("  Linked SO: %s" % so["name"])
 
-    # product_address_id is a VS-specific field on SO lines = supplier pickup address.
+    # product_address_id is a VS-specific field on PO lines = supplier pickup address.
     # Take the first non-null value across lines.
     shipping_address = None
     shipping_partner_id = None
-    for sl in so_lines:
-        if sl.get("product_address_id"):
-            shipping_partner_id = sl["product_address_id"]
+    for pl in po_lines:
+        if pl.get("product_address_id"):
+            shipping_partner_id = pl["product_address_id"]
             break
     if shipping_partner_id:
         shipping_address = odoo_client.get_shipping_address(

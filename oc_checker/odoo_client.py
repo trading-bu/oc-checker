@@ -116,6 +116,7 @@ def get_po_lines(models, db, uid, api_key, po_id):
             "sale_order_id",
             "sale_line_id",
             "date_planned",        # requested delivery date per line
+            "product_address_id",  # VS-specific: supplier pickup address per line
         ],
         limit=50
     )
@@ -175,7 +176,6 @@ def get_so_lines(models, db, uid, api_key, so_id):
             "tensile_strength",
             "no_of_items",
             "vs_article",
-            "product_address_id",    # VS-specific: supplier pickup address per line
         ],
         limit=50
     )
