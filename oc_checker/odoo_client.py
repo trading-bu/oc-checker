@@ -175,6 +175,7 @@ def get_so_lines(models, db, uid, api_key, so_id):
             "tensile_strength",
             "no_of_items",
             "vs_article",
+            "product_address_id",    # VS-specific: supplier pickup address per line
         ],
         limit=50
     )
@@ -258,4 +259,4 @@ if __name__ == "__main__":
                 width = sl.get("width") or "---"
                 qty = sl.get("product_uom_qty")
                 vs_art = sl.get("vs_article") or "---"
-                print(f"    SO Line: grade={grade} coating={coating} thick={thick} width={width} qty={qty} vs_article={vs_art}")
+                print(f"    SO Line: grade={grade} 

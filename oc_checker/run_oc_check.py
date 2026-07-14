@@ -330,10 +330,17 @@ def process_one(doc, odoo_cfg, slack_webhook):
         so_lines = odoo_client.get_so_lines(models, o["database"], uid, o["api_key"], so["id"])
         print("  Linked SO: %s" % so["name"])
 
+    # product_address_id is a VS-specific field on SO lines = supplier pickup address.
+    # Take the first non-null value across lines.
     shipping_address = None
-    if so and so.get("partner_shipping_id"):
+    shipping_partner_id = None
+    for sl in so_lines:
+        if sl.get("product_address_id"):
+            shipping_partner_id = sl["product_address_id"]
+            break
+    if shipping_partner_id:
         shipping_address = odoo_client.get_shipping_address(
-            models, o["database"], uid, o["api_key"], so["partner_shipping_id"])
+            models, o["database"], uid, o["api_key"], shipping_partner_id)
 
     # Step 4: Compare OC against Odoo
     # USE_AI_COMPARISON env var: "false" forces Python engine
