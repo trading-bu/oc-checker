@@ -6,6 +6,7 @@
     "1H8qjZ1wpfSCrfvZUE1RQjg1pBMSVFnQE",
     "1IK71p62PYw7HssHzmV3yKrBogQMW0A7r",
     "1RYaQ3CGtmZqSFiJAN9CrEUjsMKc4nAif",
+    "1XlkoNE-dAcE_PKkUx1SsZlJuP4tdi-KB",
     "1Z8UlqElOoEp44_4l56EPnB3V6pt1cRaR",
     "1pKi6md383m0qlEUFYM1HG76GiGk1vVvt"
   ],
@@ -2844,6 +2845,1034 @@
         }
       ],
       "slack_ts": "1784037465.859039"
+    },
+    "P01848": {
+      "so_name": "S01525",
+      "supplier": "Rodrigue Payntar",
+      "buyer": "Thomas Ohm",
+      "initialized": "2026-07-14",
+      "last_updated": "2026-07-14",
+      "line_items": {
+        "VSI-17922735": {
+          "status": "mismatch",
+          "oc_ref": "002550",
+          "oc_date": "2026-07-13",
+          "filename": "Vente Vanilla 002550 PO1848.pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Refendues Galva 0.59 X 119 mm DX51 YS220 Z140",
+            "quantity": 2.28,
+            "unit": "TO",
+            "unit_price": 480.0,
+            "total_price": 1094.4,
+            "grade": "DX51",
+            "thickness": 0.59,
+            "width": 119.0,
+            "length": null,
+            "coating": "Z140",
+            "coil_number": null,
+            "delivery_date": "2026-07-20",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "DX51D",
+              "oc": "DX51",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "Z140",
+              "oc": "Z140",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "2.28",
+              "oc": "2.28",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.59",
+              "oc": "0.59",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "119.0",
+              "oc": "119.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17922736": {
+          "status": "mismatch",
+          "oc_ref": "002550",
+          "oc_date": "2026-07-13",
+          "filename": "Vente Vanilla 002550 PO1848.pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Refendues Galva 0.59 X 119 mm DX51 YS220 Z140",
+            "quantity": 2.13,
+            "unit": "TO",
+            "unit_price": 480.0,
+            "total_price": 1022.4,
+            "grade": "DX51",
+            "thickness": 0.59,
+            "width": 119.0,
+            "length": null,
+            "coating": "Z140",
+            "coil_number": null,
+            "delivery_date": "2026-07-20",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "DX51D",
+              "oc": "DX51",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "Z140",
+              "oc": "Z140",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "2.13",
+              "oc": "2.13",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.59",
+              "oc": "0.59",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "119.0",
+              "oc": "119.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17922737": {
+          "status": "mismatch",
+          "oc_ref": "002550",
+          "oc_date": "2026-07-13",
+          "filename": "Vente Vanilla 002550 PO1848.pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Refendues Galva 0.59 X 119 mm DX51 YS220 Z140",
+            "quantity": 1.97,
+            "unit": "TO",
+            "unit_price": 480.0,
+            "total_price": 945.6,
+            "grade": "DX51",
+            "thickness": 0.59,
+            "width": 119.0,
+            "length": null,
+            "coating": "Z140",
+            "coil_number": null,
+            "delivery_date": "2026-07-20",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "DX51D",
+              "oc": "DX51",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "Z140",
+              "oc": "Z140",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.97",
+              "oc": "1.97",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.59",
+              "oc": "0.59",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "119.0",
+              "oc": "119.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17922738": {
+          "status": "mismatch",
+          "oc_ref": "002550",
+          "oc_date": "2026-07-13",
+          "filename": "Vente Vanilla 002550 PO1848.pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Refendues Galva 0.59 X 119 mm DX51 YS220 Z140",
+            "quantity": 2.255,
+            "unit": "TO",
+            "unit_price": 480.0,
+            "total_price": 1082.4,
+            "grade": "DX51",
+            "thickness": 0.59,
+            "width": 119.0,
+            "length": null,
+            "coating": "Z140",
+            "coil_number": null,
+            "delivery_date": "2026-07-20",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "DX51D",
+              "oc": "DX51",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "Z140",
+              "oc": "Z140",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "2.255",
+              "oc": "2.255",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.59",
+              "oc": "0.59",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "119.0",
+              "oc": "119.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17922739": {
+          "status": "mismatch",
+          "oc_ref": "002550",
+          "oc_date": "2026-07-13",
+          "filename": "Vente Vanilla 002550 PO1848.pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Refendues Galva 0.59 X 119 mm DX51 YS220 Z140",
+            "quantity": 2.29,
+            "unit": "TO",
+            "unit_price": 480.0,
+            "total_price": 1099.2,
+            "grade": "DX51",
+            "thickness": 0.59,
+            "width": 119.0,
+            "length": null,
+            "coating": "Z140",
+            "coil_number": null,
+            "delivery_date": "2026-07-20",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "DX51D",
+              "oc": "DX51",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "Z140",
+              "oc": "Z140",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "2.29",
+              "oc": "2.29",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.59",
+              "oc": "0.59",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "119.0",
+              "oc": "119.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17922740": {
+          "status": "mismatch",
+          "oc_ref": "002550",
+          "oc_date": "2026-07-13",
+          "filename": "Vente Vanilla 002550 PO1848.pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Refendues Galva 0.59 X 119 mm DX51 YS220 Z140",
+            "quantity": 2.29,
+            "unit": "TO",
+            "unit_price": 480.0,
+            "total_price": 1099.2,
+            "grade": "DX51",
+            "thickness": 0.59,
+            "width": 119.0,
+            "length": null,
+            "coating": "Z140",
+            "coil_number": null,
+            "delivery_date": "2026-07-20",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "DX51D",
+              "oc": "DX51",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "Z140",
+              "oc": "Z140",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "2.29",
+              "oc": "2.29",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.59",
+              "oc": "0.59",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "119.0",
+              "oc": "119.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17922741": {
+          "status": "mismatch",
+          "oc_ref": "002550",
+          "oc_date": "2026-07-13",
+          "filename": "Vente Vanilla 002550 PO1848.pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Refendues Galva 0.59 X 119 mm DX51 YS220 Z140",
+            "quantity": 2.29,
+            "unit": "TO",
+            "unit_price": 480.0,
+            "total_price": 1099.2,
+            "grade": "DX51",
+            "thickness": 0.59,
+            "width": 119.0,
+            "length": null,
+            "coating": "Z140",
+            "coil_number": null,
+            "delivery_date": "2026-07-20",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "DX51D",
+              "oc": "DX51",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "Z140",
+              "oc": "Z140",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "2.29",
+              "oc": "2.29",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.59",
+              "oc": "0.59",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "119.0",
+              "oc": "119.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17922742": {
+          "status": "mismatch",
+          "oc_ref": "002550",
+          "oc_date": "2026-07-13",
+          "filename": "Vente Vanilla 002550 PO1848.pdf",
+          "date": "2026-07-14",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "Refendues Galva 0.58 X 119 mm DX51 YS180 Z140",
+            "quantity": 4.37,
+            "unit": "TO",
+            "unit_price": 480.0,
+            "total_price": 2097.6,
+            "grade": "DX51",
+            "thickness": 0.58,
+            "width": 119.0,
+            "length": null,
+            "coating": "Z140",
+            "coil_number": null,
+            "delivery_date": "2026-07-20",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "DX51D",
+              "oc": "DX51",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "Z140",
+              "oc": "Z140",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "4.37",
+              "oc": "4.37",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.58",
+              "oc": "0.58",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "119.0",
+              "oc": "119.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "2",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "FCA Woippy 57140 France",
+          "odoo": "Thomas Ohm, Germany",
+          "warning": true
+        }
+      ],
+      "slack_ts": "1784052879.165749"
     }
   }
 }
