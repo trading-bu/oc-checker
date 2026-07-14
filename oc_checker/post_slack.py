@@ -324,6 +324,16 @@ def build_po_status_text(po_name, po_log):
         for fl in flag_lines:
             lines.append(fl)
 
+    # ── Supplier Notes ───────────────────────────────────────────────────────
+    # Stored at PO log level by update_po_log_with_result() from oc_data
+    supplier_notes = po_log.get("supplier_notes", [])
+    if supplier_notes:
+        lines.append("")
+        lines.append(DIV)
+        lines.append(":notepad_spiral: *Supplier Notes*")
+        for note in supplier_notes:
+            lines.append("   • %s" % note)
+
     # ── Footer ────────────────────────────────────────────────────────────────
     lines.append("")
     if n_pending == 0 and n_mismatch == 0:

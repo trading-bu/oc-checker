@@ -158,6 +158,7 @@ JSON STRUCTURE TO RETURN
   "gross_amount":       14875.00,
   "vat_amount":         2375.00,
   "vat_pct":            "19%",
+  "supplier_notes":    ["Loading surcharge: €50/t applies", "Test certificates available on request"],
   "lines": [
     {
       "vs_article":          "F900258989",
@@ -189,8 +190,16 @@ Field rules:
 - length: null for coils; value in mm for cut sheets/plates.
 - vat_pct: string with % sign e.g. "19%", or null if not stated.
 - All numeric fields: standard decimal float, not strings.
-- extraction_warning: string describing arithmetic discrepancy if qty×price≠total, else null.
+- extraction_warning: string describing arithmetic discrepancy if qty×price!=total, else null.
+- supplier_notes: array of short strings capturing any EXTRA information the supplier included
+  that is NOT already covered by the standard fields above. Look for things like:
+  extra charges (loading, testing, transport surcharges), certificate notes (test certs not
+  included / available at cost), special material or grade conditions, truck/logistics
+  requirements, validity periods, force majeure clauses, or any other noteworthy remark.
+  Each note should be one concise sentence. Empty array [] if nothing extra found.
+  Translate to English if the OC is in another language.
 """
+
 
 
 # ---------------------------------------------------------------------------
@@ -362,6 +371,15 @@ def extract_oc_from_pdf(pdf_bytes: bytes, filename: str = "", doc_id: str = "") 
     if warnings:
         for line_num, warn in warnings:
             print(f"  ⚠️  Line {line_num} arithmetic warning: {warn}")
+
+    # Normalise supplier_notes — always a list of non-empty strings
+    notes = parsed.get("supplier_notes")
+    if isinstance(notes, list):
+        parsed["supplier_notes"] = [str(n).strip() for n in notes if n and str(n).strip()]
+    elif isinstance(notes, str) and notes.strip():
+        parsed["supplier_notes"] = [notes.strip()]
+    else:
+        parsed["supplier_notes"] = []
 
     # Always set currency
     parsed["currency"] = "EUR"

@@ -196,6 +196,14 @@ def update_po_log_with_result(state, po_name, result, filename):
             po_entry.setdefault("flags", []).append(flag)
             existing_types.add(flag["type"])
 
+    # Store supplier notes from this OC (overwrite with latest run's notes)
+    oc_data = result.get("oc_data", {})
+    notes = oc_data.get("supplier_notes", [])
+    if isinstance(notes, list) and notes:
+        po_entry["supplier_notes"] = notes
+    elif "supplier_notes" not in po_entry:
+        po_entry["supplier_notes"] = []
+
     po_entry["last_updated"] = today
     return state
 
