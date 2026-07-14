@@ -248,6 +248,20 @@ def build_po_status_text(po_name, po_log):
                 vs_id, spec_str, suffix))
             if pos_warn:
                 lines.append(pos_warn)
+            # Show fields Odoo has but OC did not confirm
+            for f in field_res:
+                if not _is_effective(f):
+                    continue
+                if f["status"] != "skip":
+                    continue
+                odoo_has = f.get("odoo", "—") not in ("—", "")
+                oc_has   = f.get("oc",   "—") not in ("—", "")
+                if odoo_has and not oc_has:
+                    lines.append("   :warning: *%s*   Odoo `%s`  _(not confirmed by OC)_" % (
+                        f["label"], f["odoo"]))
+                elif oc_has and not odoo_has:
+                    lines.append("   :warning: *%s*   OC `%s`  _(not in Odoo)_" % (
+                        f["label"], f["oc"]))
             if extr_warn:
                 lines.append("   :warning: _Extraction warning: %s_" % extr_warn)
 
