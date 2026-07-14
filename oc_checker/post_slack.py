@@ -354,9 +354,11 @@ def check_slack_auth(token, channel):
     try:
         body2 = _slack_api_call(token, "conversations.info", {"channel": channel})
         if not body2.get("ok"):
-            print("SLACK CHANNEL ERROR: %s  (check SLACK_CHANNEL_ID='%s')" %
-                  (body2.get("error"), channel))
-            return False
+            # conversations.info needs channels:read scope — not required for posting.
+            # Only warn; don't fail startup if the bot only has chat:write.
+            print("Slack channel check skipped: %s (bot may lack channels:read scope — posting still works)" %
+                  body2.get("error"))
+            return True
         ch   = body2.get("channel", {})
         in_ch = ch.get("is_member", False)
         print("Slack channel OK: #%s  bot_is_member=%s" % (ch.get("name"), in_ch))
