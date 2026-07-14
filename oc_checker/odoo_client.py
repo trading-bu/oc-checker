@@ -117,7 +117,6 @@ def get_po_lines(models, db, uid, api_key, po_id):
             "sale_line_id",
             "date_planned",        # requested delivery date per line
             "product_address_id",  # VS-specific: supplier pickup address per line
-            "total_weight",        # total weight of the line (qty * product weight)
         ],
         limit=50
     )
@@ -183,83 +182,152 @@ def get_so_lines(models, db, uid, api_key, so_id):
 
 
 
+
 def find_po_by_supplier_and_weight(models, db, uid, api_key, supplier_name,
-                                    oc_total_weight, weight_tol_pct=5.0):
+                                    oc_total_weight, weight_tol_pct=1.0):
     """
     Fallback PO matching when no PO number is available in the OC.
 
-    Strategy:
-      1. Search open POs by supplier name keyword match
-      2. For each candidate PO, sum all PO line product_qty
-      3. Return the PO whose total weight is closest to oc_total_weight
-         (within weight_tol_pct %)
+    Strategy — weight-first (supplier name is secondary tiebreaker only):
+
+    Step 1 — Weight search on purchase.order.line:
+      Search lines where total_weight is within weight_tol_pct of oc_total_weight.
+      Fetch the parent POs, filter by state.
+      If exactly 1 → done.
+      If multiple → pick the one whose partner name best matches supplier_name.
+
+    Step 2 — Name fallback (only if Step 1 finds nothing):
+      Search res.partner by supplier name keywords,
+      fetch their open POs, sum line weights, return closest match within 5%.
 
     Returns the best matching PO dict, or None if no match found.
     """
-    if not supplier_name or not oc_total_weight:
+    if not oc_total_weight:
         return None
 
-    # Extract meaningful keywords (4+ chars) from supplier name
+    # ------------------------------------------------------------------ Step 1
+    # total_weight is a float field on purchase.order header — search it directly
+    tol = oc_total_weight * weight_tol_pct / 100.0
+    pos = search_read(
+        models, db, uid, api_key,
+        "purchase.order",
+        [
+            ["total_weight", ">=", oc_total_weight - tol],
+            ["total_weight", "<=", oc_total_weight + tol],
+            ["state", "in", ["purchase", "done", "to approve"]],
+        ],
+        ["id", "name", "partner_id", "amount_total", "currency_id",
+         "date_order", "date_planned", "order_line",
+         "incoterm_id", "payment_term_id", "total_weight"],
+        limit=20,
+    )
+    print("  Supplier fallback: weight search (%.3ft +/-%.1f%%) -> %d PO(s)" % (
+        oc_total_weight, weight_tol_pct, len(pos)))
+
+    if pos:
+        for po in pos:
+            pname = (po["partner_id"] or [0, "?"])[1]
+            print("    PO %s | %s | total_weight=%.3f" % (po["name"], pname, po.get("total_weight") or 0))
+
+        if len(pos) == 1:
+            return pos[0]
+
+        if supplier_name:
+            # Tiebreak: pick the PO whose partner name overlaps most with supplier_name
+            s_lower = supplier_name.lower()
+            def name_score(po):
+                odoo_name = (po["partner_id"][1] if po["partner_id"] else "").lower()
+                words = [w for w in re.split(r"\s+", s_lower) if len(w) >= 3]
+                return sum(1 for w in words if w in odoo_name)
+            best = max(pos, key=name_score)
+            print("  Tiebreak by supplier name -> %s" % best["name"])
+            return best
+
+        return pos[0]
+
+    # ------------------------------------------------------------------ Step 2
+    # Weight search found nothing — fall back to partner-name search + sum weights
+    if not supplier_name:
+        print("  Supplier fallback: no weight match and no supplier name to search by")
+        return None
+
     keywords = [w for w in re.split(r"\s+", supplier_name) if len(w) >= 4]
     if not keywords:
         keywords = [supplier_name[:6]] if len(supplier_name) >= 4 else []
     if not keywords:
         return None
 
-    candidates = []
-    seen_ids   = set()
+    partner_ids = []
+    seen_pids   = set()
     for kw in keywords[:3]:
-        results = search_read(
+        partners = search_read(
             models, db, uid, api_key,
-            "purchase.order",
-            [
-                ["partner_id.name", "ilike", kw],
-                ["state", "in", ["purchase", "done", "to approve"]],
-            ],
-            ["id", "name", "partner_id", "amount_total", "currency_id",
-             "date_order", "date_planned", "order_line",
-             "incoterm_id", "payment_term_id"],
-            limit=20,
+            "res.partner",
+            [["name", "ilike", kw]],
+            ["id", "name"],
+            limit=10,
         )
-        for r in results:
-            if r["id"] not in seen_ids:
-                candidates.append(r)
-                seen_ids.add(r["id"])
-        if candidates:
-            break  # found results with this keyword — no need to try others
+        print("  Supplier fallback (name): keyword=%r  partners=%d" % (kw, len(partners)))
+        for p in partners:
+            if p["id"] not in seen_pids:
+                partner_ids.append(p["id"])
+                seen_pids.add(p["id"])
+                print("    partner: id=%d  name=%r" % (p["id"], p["name"]))
+        if partner_ids:
+            break
 
-    if not candidates:
-        print("  Supplier fallback: no POs found for supplier '%s'" % supplier_name)
+    if not partner_ids:
+        print("  Supplier fallback: no Odoo partner found for '%s'" % supplier_name)
         return None
 
-    print("  Supplier fallback: %d candidate PO(s) for supplier '%s'  OC weight=%.3ft" % (
-        len(candidates), supplier_name, oc_total_weight))
+    candidates = []
+    seen_ids   = set()
+    results = search_read(
+        models, db, uid, api_key,
+        "purchase.order",
+        [
+            ["partner_id", "in", partner_ids],
+            ["state", "in", ["purchase", "done", "to approve"]],
+        ],
+        ["id", "name", "partner_id", "amount_total", "currency_id",
+         "date_order", "date_planned", "order_line",
+         "incoterm_id", "payment_term_id"],
+        limit=20,
+    )
+    for r in results:
+        if r["id"] not in seen_ids:
+            candidates.append(r)
+            seen_ids.add(r["id"])
+
+    if not candidates:
+        print("  Supplier fallback: partner found but no open POs for '%s'" % supplier_name)
+        return None
+
+    print("  Supplier fallback (name): %d candidate PO(s)" % len(candidates))
 
     best_po       = None
     best_diff_pct = float("inf")
-
     for po in candidates:
-        # Use total_weight from PO lines (pre-computed by Odoo as qty * product weight)
         wt_lines = search_read(
             models, db, uid, api_key,
             "purchase.order.line",
             [["order_id", "=", po["id"]]],
-            ["total_weight"],
+            ["weight"],
             limit=50,
         )
-        po_total = sum(float(pl.get("total_weight") or 0) for pl in wt_lines)
+        po_total = sum(float(pl.get("weight") or 0) for pl in wt_lines)
         if po_total <= 0:
             continue
         diff_pct = abs(po_total - oc_total_weight) / po_total * 100
-        print("    PO %s: total_weight=%.3ft  diff=%.1f%%" % (po["name"], po_total, diff_pct))
-        if diff_pct <= weight_tol_pct and diff_pct < best_diff_pct:
+        print("    PO %s: weight=%.3ft  diff=%.1f%%" % (po["name"], po_total, diff_pct))
+        if diff_pct <= 5.0 and diff_pct < best_diff_pct:
             best_diff_pct = diff_pct
             best_po       = po
 
     if best_po:
-        print("  Matched by weight: %s  (diff=%.1f%%)" % (best_po["name"], best_diff_pct))
+        print("  Matched by weight (name fallback): %s  (diff=%.1f%%)" % (best_po["name"], best_diff_pct))
     else:
-        print("  No weight match within %.1f%% tolerance" % weight_tol_pct)
+        print("  No weight match within 5%% tolerance via name fallback")
     return best_po
 
 
