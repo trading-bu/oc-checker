@@ -188,11 +188,14 @@ def get_shipping_address(models, db, uid, api_key, partner_id):
     pid = partner_id[0] if isinstance(partner_id, (list, tuple)) else partner_id
     records = read_record(models, db, uid, api_key,
         "res.partner", [pid],
-        ["name", "street", "city", "zip", "country_id"])
+        ["name", "type", "street", "city", "zip", "country_id"])
     if not records:
         return None
     r = records[0]
-    parts = [r.get("name",""), r.get("street",""), r.get("zip",""), r.get("city","")]
+    # Skip generic "Delivery Address" name — only include real company names
+    name = r.get("name", "") or ""
+    use_name = name if r.get("type") != "delivery" and name.lower() != "delivery address" else ""
+    parts = [use_name, r.get("street",""), r.get("zip",""), r.get("city","")]
     country = r.get("country_id")
     if country:
         parts.append(country[1] if isinstance(country,(list,tuple)) else str(country))

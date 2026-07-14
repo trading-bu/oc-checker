@@ -458,7 +458,20 @@ def _build_flags(oc_data, po_data, so_data, odoo_shipping_address):
     oc_addr = _norm(oc_data.get("pickup_address"))
     if oc_addr:
         odoo_addr = _norm(odoo_shipping_address or "")
-        same = oc_addr.lower() == odoo_addr.lower() if odoo_addr else False
+        # Token overlap match: split both addresses into meaningful tokens and
+        # check if enough of them appear in both (handles "FCA Woippy 57140 France"
+        # vs "Chem Des Romains 20, 57140, Woippy, France" — city + zip overlap).
+        def _addr_tokens(s):
+            noise = {"fca","fob","exw","cpt","cip","dat","dap","ddp","free","carrier",
+                     "address","delivery","street","str","road"}
+            return {t for t in re.split(r'[\s,./]+', s.lower()) if len(t) >= 3 and t not in noise}
+        if odoo_addr:
+            oc_tok   = _addr_tokens(oc_addr)
+            odoo_tok = _addr_tokens(odoo_addr)
+            overlap  = oc_tok & odoo_tok
+            same     = len(overlap) >= 2 or (len(overlap) == 1 and any(t.isdigit() for t in overlap))
+        else:
+            same = False
         flags.append({"type": "pickup_address", "icon": "📍", "label": "Pickup Address",
                        "oc": oc_addr, "odoo": odoo_addr or "—", "warning": not same})
 
