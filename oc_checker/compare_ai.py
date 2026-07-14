@@ -230,11 +230,18 @@ def _call_claude(prompt, model="claude-opus-4-5", max_tokens=4096):
 
 
 def _parse_json(raw):
-    """Parse Claude's response, tolerating markdown code fences."""
+    """Parse Claude's response, tolerating markdown code fences and trailing commas."""
     text = raw.strip()
     # Strip ```json ... ``` or ``` ... ```
     text = re.sub(r'^```(?:json)?\s*', '', text)
     text = re.sub(r'\s*```$',         '', text)
+    text = text.strip()
+    # Extract just the outermost JSON object in case Claude adds prose before/after
+    m = re.search(r'\{.*\}', text, re.DOTALL)
+    if m:
+        text = m.group(0)
+    # Remove trailing commas before } or ] (common Claude output quirk)
+    text = re.sub(r',\s*([}\]])', r'\1', text)
     return json.loads(text)
 
 
