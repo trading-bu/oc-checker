@@ -19,6 +19,7 @@
     "1faRucHz0ygeFyYxzkotLl2cbwOmpbJ5n",
     "1g2Ye0a7UnkOSjaaGKHCxO-H8jOQ3nTRs",
     "1hlJiKvYpZV3OwWbiUSoS1JBtYEWFkHU5",
+    "1kIhoNDDThCiGMXEMG6o8BoqE3D2zM6Wh",
     "1kKBQXTkTkW4sxo3bqjShnjPjG_DGv1sG",
     "1kzlYfcJmbxqX4EZefM4bgaNzDyWq3n57",
     "1l9llEc8buXosi57I0YtWwHgzLBiF6kzq",
@@ -27,7 +28,8 @@
     "1o_r2kb2uYK3vuMDTNWEESx1ePYsgiG7v",
     "1ocWQqDE0dq8zI1DC_ipsVxRe4LSgKlcC",
     "1oqNSrjBBmSSHzUdPVnCC4chrOnjns6nK",
-    "1v843f3D3FiC6elRyTFdfWUGzIGup9DG_"
+    "1v843f3D3FiC6elRyTFdfWUGzIGup9DG_",
+    "1vQapJY1HGDrcEEB7ybTImytENdNQjIWW"
   ],
   "po_oc_log": {
     "P01851": {
@@ -7734,6 +7736,821 @@
         }
       ],
       "slack_ts": "1784122130.714829"
+    },
+    "P01832": {
+      "so_name": "S01513",
+      "supplier": "J\u00f6rg Ro\u00df",
+      "buyer": "Thomas Andersson",
+      "initialized": "2026-07-15",
+      "last_updated": "2026-07-15",
+      "line_items": {
+        "VSI-17909224": {
+          "status": "confirmed",
+          "oc_ref": "2416",
+          "oc_date": "2026-06-29",
+          "filename": "CCF_002099.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "DC04",
+            "thickness": 0.5,
+            "width": 1230.0,
+            "quantity": 4.47,
+            "unit_price": 933.0,
+            "form": "Coils",
+            "coating": "ZE AC"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC04",
+              "oc": "DC04",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "ZE25/25",
+              "oc": "ZE AC",
+              "note": "OC specifies 'ZE AC' (alternating current process), Odoo specifies 'ZE25/25'; coating weight not confirmed"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Electro-Galvanized (+ZE)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Coils",
+              "oc": "Coils",
+              "note": ""
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "4.47",
+              "oc": "4.47",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "933.0",
+              "oc": "933.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.5",
+              "oc": "0.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1230.0",
+              "oc": "1230.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 6,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Spedt. Clau\u00dfmeyer, Dortmund",
+          "odoo": "Wendenhof 7, 57223, Kreuztal, Germany",
+          "warning": true
+        },
+        {
+          "type": "incoterms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Incoterms MISMATCH",
+          "oc": "EXW",
+          "odoo": "[FCA] FREE CARRIER",
+          "warning": true
+        }
+      ],
+      "supplier_notes": [
+        "Over-rolled quantities are delivered excluding warranty; material must be checked for quality and condition before processing as processed material cannot be subject to complaints.",
+        "No liability for consequential costs; no claim for replacement in case of failure."
+      ],
+      "processing_runs": [
+        {
+          "filename": "CCF_002099.pdf",
+          "time_s": 29.6,
+          "extraction_tokens": {
+            "input": 4162,
+            "output": 491
+          },
+          "comparison_tokens": {
+            "input": 1849,
+            "output": 792
+          },
+          "comparison_engine": "ai"
+        }
+      ],
+      "slack_ts": "1784122756.756719"
+    },
+    "P01804": {
+      "so_name": "S01496",
+      "supplier": "Ronald Mahnke",
+      "buyer": "David Villalon",
+      "initialized": "2026-07-15",
+      "last_updated": "2026-07-15",
+      "line_items": {
+        "VSI-17898186": {
+          "status": "mismatch",
+          "oc_ref": "2026/VW166",
+          "oc_date": "2026-06-12",
+          "filename": "Order confirmation.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "S355J2",
+            "thickness": null,
+            "width": null,
+            "quantity": 9.493,
+            "unit_price": 500.0,
+            "form": "Round Bars",
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "A105",
+              "oc": "S355J2",
+              "note": "Grade mismatch"
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "match",
+              "odoo": "2nd",
+              "oc": "2nd",
+              "note": "OC notes confirm 2nd choice"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "As Rolled (+AR)",
+              "oc": "As Rolled (+AR)",
+              "note": "OC notes confirm +AR delivery condition"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Round Bars",
+              "oc": "Round Bars",
+              "note": "OC description confirms Rundstahl Staebe"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "mismatch",
+              "odoo": "9.533",
+              "oc": "9.493",
+              "note": "Diff 0.44% \u2014 within tolerance but grade mismatch makes this match unreliable"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "skip",
+              "odoo": "0.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "skip",
+              "odoo": "0.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "skip",
+              "odoo": "5500.0",
+              "oc": "\u2014",
+              "note": "OC states length range 5500-6500mm; Odoo value within range but not exact confirmed"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 10,
+          "mismatches": 2,
+          "comparison_engine": "ai",
+          "match_note": "positional fallback"
+        },
+        "VSI-17898209": {
+          "status": "mismatch",
+          "oc_ref": "2026/VW166",
+          "oc_date": "2026-06-12",
+          "filename": "Order confirmation.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "S355J2",
+            "thickness": null,
+            "width": null,
+            "quantity": 3.071,
+            "unit_price": 500.0,
+            "form": "Round Bars",
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S355J2",
+              "oc": "S355J2",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "match",
+              "odoo": "2nd",
+              "oc": "2nd",
+              "note": "OC notes confirm 2nd choice"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "As Rolled (+AR)",
+              "oc": "As Rolled (+AR)",
+              "note": "OC notes confirm +AR delivery condition"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Round Bars",
+              "oc": "Round Bars",
+              "note": "OC description confirms Rundstahl Staebe"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "mismatch",
+              "odoo": "3.087",
+              "oc": "3.071",
+              "note": "Diff 0.52% \u2014 marginally outside 0.5% tolerance"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "skip",
+              "odoo": "0.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "skip",
+              "odoo": "0.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "skip",
+              "odoo": "6000.0",
+              "oc": "\u2014",
+              "note": "OC states length range 6000-7000mm; Odoo value at lower bound but not exactly confirmed"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 1,
+          "comparison_engine": "ai"
+        },
+        "VSI-17898399": {
+          "status": "mismatch",
+          "oc_ref": "2026/VW166",
+          "oc_date": "2026-06-12",
+          "filename": "Order confirmation.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": null,
+            "thickness": null,
+            "width": null,
+            "quantity": null,
+            "unit_price": null,
+            "form": null,
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "C10E",
+              "oc": "\u2014",
+              "note": "No matching OC line found"
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "As Rolled (+AR)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Round Bars",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "mismatch",
+              "odoo": "8.653",
+              "oc": "\u2014",
+              "note": "No matching OC line found"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "skip",
+              "odoo": "500.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "skip",
+              "odoo": "0.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "skip",
+              "odoo": "0.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "skip",
+              "odoo": "5500.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 0,
+          "total": 10,
+          "mismatches": 2,
+          "comparison_engine": "ai"
+        },
+        "VSI-17898404": {
+          "status": "mismatch",
+          "oc_ref": "2026/VW166",
+          "oc_date": "2026-06-12",
+          "filename": "Order confirmation.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": null,
+            "thickness": null,
+            "width": null,
+            "quantity": null,
+            "unit_price": null,
+            "form": null,
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "C15E",
+              "oc": "\u2014",
+              "note": "No matching OC line found"
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "As Rolled (+AR)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Round Bars",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "mismatch",
+              "odoo": "2.257",
+              "oc": "\u2014",
+              "note": "No matching OC line found"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "skip",
+              "odoo": "500.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "skip",
+              "odoo": "0.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "skip",
+              "odoo": "0.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "skip",
+              "odoo": "6000.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 0,
+          "total": 10,
+          "mismatches": 2,
+          "comparison_engine": "ai"
+        },
+        "VSI-17898420": {
+          "status": "mismatch",
+          "oc_ref": "2026/VW166",
+          "oc_date": "2026-06-12",
+          "filename": "Order confirmation.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": null,
+            "thickness": null,
+            "width": null,
+            "quantity": null,
+            "unit_price": null,
+            "form": null,
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "S235JR",
+              "oc": "\u2014",
+              "note": "No matching OC line found"
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "As Rolled (+AR)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Round Bars",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "mismatch",
+              "odoo": "1.77",
+              "oc": "\u2014",
+              "note": "No matching OC line found"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "skip",
+              "odoo": "500.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "skip",
+              "odoo": "0.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "skip",
+              "odoo": "0.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "skip",
+              "odoo": "6000.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 0,
+          "total": 10,
+          "mismatches": 2,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Zollabfertigungsst. Alicante, Tinglado 15, 03008 Alicante/Alacant, Spanien",
+          "odoo": "Via Nazionale 24, 25050, Sellero BS, Italy",
+          "warning": true
+        },
+        {
+          "type": "incoterms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Incoterms MISMATCH",
+          "oc": "DAP",
+          "odoo": "[CPT] CARRIAGE PAID TO",
+          "warning": true
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "Prepayment",
+          "odoo": "Immediate Payment",
+          "warning": true
+        }
+      ],
+      "supplier_notes": [
+        "2nd choice material, complaints excluded.",
+        "Batch analysis: yes; tensile tests: no.",
+        "Edge decarburization: 1% diameter / smallest side 0.3 mm.",
+        "Indicative coil weight: 2500 kg.",
+        "Delivery condition: +AR (as-rolled).",
+        "Shipping plant: SELLERO."
+      ],
+      "processing_runs": [
+        {
+          "filename": "Order confirmation.pdf",
+          "time_s": 76.1,
+          "extraction_tokens": {
+            "input": 55122,
+            "output": 638
+          },
+          "comparison_tokens": {
+            "input": 2557,
+            "output": 3470
+          },
+          "comparison_engine": "ai"
+        }
+      ],
+      "slack_ts": "1784122834.988749"
     }
   }
 }
