@@ -217,7 +217,7 @@ Include ALL Odoo line items in line_results, in the same order.
     )
 
 
-def _call_claude(prompt, model="claude-opus-4-5", max_tokens=4096):
+def _call_claude(prompt, model="claude-opus-4-5", max_tokens=8192):
     api_key = os.environ.get("ANTHROPIC_API_KEY", "")
     client  = anthropic.Anthropic(api_key=api_key)
     resp    = client.messages.create(
@@ -392,7 +392,10 @@ def compare_via_claude(oc_data, po_data, po_lines, so_data, so_lines, config,
     model = config.get("ai_comparison_model", "claude-opus-4-5")
     print("  [AI compare] Sending %d PO lines to Claude (%s)..." % (len(po_lines), model))
 
-    raw       = _call_claude(prompt, model=model)
+    # Scale max_tokens with PO size: ~700 tokens per line (12 fields × ~55 tokens each).
+    # Floor at 8192; most models support up to 16384 for standard generation.
+    max_tok   = max(8192, len(po_lines) * 700)
+    raw       = _call_claude(prompt, model=model, max_tokens=max_tok)
     ai_result = _parse_json(raw)
 
     n_lines = len(ai_result.get("line_results", []))
