@@ -2,11 +2,13 @@
   "processed_ids": [
     "1-TUhGboj_CqpSUaoaKwJzPrEIvGt09iz",
     "10x3VkNvIG9L9x6AgU_TZDN_EbFa1bEeO",
+    "16UsFJDxB99i1JJDXbJXd9wAPVIS5eHTc",
     "18ATfa2TuROBER0l0APy6vIIDOTVkQ3sl",
     "1K1ht5lu9hI_d1tiDnc6Hj6hsJJe0447e",
     "1LDKdZWFoW38hG-21iR4Hos4uhg0AVr0J",
     "1OCMRmrGPgFwCM2J9Lx3lSEVdRqteQHBU",
     "1QCda4exTSKFf8qG_wz4_7oBPwp46lYxN",
+    "1SDCZ6198_l569vKvz5beEylp51WGw9To",
     "1VwZR8-jRayYczJwwrBxTT2tWivHsAAqF",
     "1aoCHWq9-vQCr7iI-QInyGm2xGwCp6Tfu",
     "1cprlidPRtk5Ru0OmR62auiYYx0fUp4cu",
@@ -5925,6 +5927,551 @@
         "Force majeure clause applies including Russia-Ukraine conflict-related disruptions."
       ],
       "slack_ts": "1784117056.295659"
+    },
+    "P01827": {
+      "so_name": "S01511",
+      "supplier": "Pasqual Dibelius",
+      "buyer": "Dominik Bonk",
+      "initialized": "2026-07-15",
+      "last_updated": "2026-07-15",
+      "line_items": {
+        "VSI-17911922": {
+          "status": "confirmed",
+          "oc_ref": "2000052765",
+          "oc_date": "2026-06-25",
+          "filename": "Copy of Copy of 2026-06-25_schaefer-werke.de_Auftrag 2000052765 23.06.2026.PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "S500MC",
+            "thickness": 2.0,
+            "width": 1500.0,
+            "quantity": 26.977,
+            "unit_price": 899.0,
+            "form": null,
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S500MC",
+              "oc": "S500MC",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "GB O",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "26.977",
+              "oc": "26.977",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "899.0",
+              "oc": "899.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.0",
+              "oc": "2.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "MPa",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            }
+          ],
+          "score": 5,
+          "total": 11,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Pfannenbergstra\u00dfe 1, D-57290 Neunkirchen",
+          "odoo": "Pfannenbergstra\u00dfe 1, 57290, Neunkirchen, Germany",
+          "warning": false
+        },
+        {
+          "type": "vat",
+          "icon": "\ud83e\uddfe",
+          "label": "VAT",
+          "vat_pct": "19%",
+          "net": 24252.32,
+          "gross": 28860.26,
+          "warning": false
+        }
+      ],
+      "supplier_notes": [
+        "Delivery is subject to correct and timely self-supply; liability for non-delivery or delivery delays is excluded.",
+        "Force majeure events (e.g. operational disruptions, fire, machine/roll breakage, raw material or energy shortages) entitle the supplier to postpone deliveries for the duration of the impediment plus a reasonable start-up period.",
+        "No mill certificate (kein Werkszeugnis) provided.",
+        "Weighing method: Brutto f\u00fcr Netto (gross for net).",
+        "Labelling: EMW standard, without logo.",
+        "Loading orientation: standing in cradle with upright support (stehend in Mulde + Steher hoch)."
+      ],
+      "slack_ts": "1784117640.770249"
+    },
+    "P01757": {
+      "so_name": "S01466",
+      "supplier": "Joonas Suomela",
+      "buyer": "Bartosz Sagalara",
+      "initialized": "2026-07-15",
+      "last_updated": "2026-07-15",
+      "line_items": {
+        "VSI-17890424": {
+          "status": "confirmed",
+          "oc_ref": "85554(01)",
+          "oc_date": "2026-06-01",
+          "filename": "Copy of Copy of 2026-06-01_ssab.com_TILKKURA_85554_01_P01757_20260601_084043.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "SECOND CHOICE",
+            "thickness": 15.06,
+            "width": 1507.0,
+            "quantity": 25.86,
+            "unit_price": 610.0,
+            "form": "COILS",
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "skip",
+              "odoo": "S275JR",
+              "oc": "SECOND CHOICE",
+              "note": "OC grade field only shows quality tier, not steel grade"
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "match",
+              "odoo": "2nd",
+              "oc": "SECOND CHOICE",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Hot Rolled",
+              "oc": "HOT ROLLED",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Coils",
+              "oc": "COILS",
+              "note": ""
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "25.86",
+              "oc": "25.86",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "610.0",
+              "oc": "610.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "15.06",
+              "oc": "15.06",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1507.0",
+              "oc": "1507.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "441.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            }
+          ],
+          "score": 7,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17890425": {
+          "status": "confirmed",
+          "oc_ref": "85554(01)",
+          "oc_date": "2026-06-01",
+          "filename": "Copy of Copy of 2026-06-01_ssab.com_TILKKURA_85554_01_P01757_20260601_084043.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "SECOND CHOICE",
+            "thickness": 15.21,
+            "width": 1492.0,
+            "quantity": 27.16,
+            "unit_price": 580.0,
+            "form": "COILS",
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "skip",
+              "odoo": "S275J2C",
+              "oc": "SECOND CHOICE",
+              "note": "OC grade field only shows quality tier, not steel grade"
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "match",
+              "odoo": "2nd",
+              "oc": "SECOND CHOICE",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Hot Rolled",
+              "oc": "HOT ROLLED",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Coils",
+              "oc": "COILS",
+              "note": ""
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "27.16",
+              "oc": "27.16",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "580.0",
+              "oc": "580.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "15.21",
+              "oc": "15.21",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1492.0",
+              "oc": "1492.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "458.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            }
+          ],
+          "score": 7,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17890426": {
+          "status": "confirmed",
+          "oc_ref": "85554(01)",
+          "oc_date": "2026-06-01",
+          "filename": "Copy of Copy of 2026-06-01_ssab.com_TILKKURA_85554_01_P01757_20260601_084043.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "SECOND CHOICE",
+            "thickness": 15.3,
+            "width": 1527.0,
+            "quantity": 28.56,
+            "unit_price": 580.0,
+            "form": "COILS",
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "skip",
+              "odoo": "S440",
+              "oc": "SECOND CHOICE",
+              "note": "OC grade field only shows quality tier, not steel grade"
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "match",
+              "odoo": "2nd",
+              "oc": "SECOND CHOICE",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Hot Rolled",
+              "oc": "HOT ROLLED",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Coils",
+              "oc": "COILS",
+              "note": ""
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "28.56",
+              "oc": "28.56",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "580.0",
+              "oc": "580.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "15.3",
+              "oc": "15.3",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1527.0",
+              "oc": "1527.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "592.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            }
+          ],
+          "score": 7,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "incoterms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Incoterms MISMATCH",
+          "oc": "CIP",
+          "odoo": "[CPT] CARRIAGE PAID TO",
+          "warning": true
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "Advance Payment 100%",
+          "odoo": "30 Days",
+          "warning": true
+        }
+      ],
+      "supplier_notes": [
+        "All bank charges outside Finland are for the buyer's account.",
+        "Destination: Poland (Krakow via Szczecin).",
+        "Mode of transport: Ship + Truck.",
+        "Invoicing weight: Actual weight.",
+        "Interest on overdue invoices: 14%.",
+        "Other conditions according to SSAB's General Conditions of Sale (www.ssab.com/support/orders-and-deliveries)."
+      ],
+      "slack_ts": "1784117679.724529"
     }
   }
 }
