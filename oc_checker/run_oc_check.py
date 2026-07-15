@@ -170,8 +170,18 @@ def update_po_log_with_result(state, po_name, result, filename):
             continue
 
         mismatches = lr.get("mismatches", 0)
+        new_status = "confirmed" if (mismatches == 0 and lr.get("score", 0) > 0) else ("mismatch" if mismatches > 0 else "pending")
+
+        # Never downgrade confirmed/mismatch → pending.
+        # The AI comparison returns ALL Odoo PO lines (even ones not in the current OC).
+        # Unmatched lines come back with score=0, mismatches=0 → would be "pending".
+        # Silently skip those so previously confirmed/mismatched lines aren't overwritten.
+        existing_status = po_entry["line_items"].get(vs_id, {}).get("status", "pending")
+        if new_status == "pending" and existing_status in ("confirmed", "mismatch"):
+            continue
+
         entry = {
-            "status":            "confirmed" if (mismatches == 0 and lr.get("score", 0) > 0) else ("mismatch" if mismatches > 0 else "pending"),
+            "status":            new_status,
             "oc_ref":            oc_ref,
             "oc_date":           oc_date,
             "filename":          filename,
