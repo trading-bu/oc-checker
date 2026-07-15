@@ -10,11 +10,13 @@
     "1VwZR8-jRayYczJwwrBxTT2tWivHsAAqF",
     "1aoCHWq9-vQCr7iI-QInyGm2xGwCp6Tfu",
     "1cprlidPRtk5Ru0OmR62auiYYx0fUp4cu",
+    "1cukRo7llbNbkkjNWOGz7JXGou6R-XAEy",
     "1g2Ye0a7UnkOSjaaGKHCxO-H8jOQ3nTRs",
     "1hlJiKvYpZV3OwWbiUSoS1JBtYEWFkHU5",
     "1kKBQXTkTkW4sxo3bqjShnjPjG_DGv1sG",
     "1kzlYfcJmbxqX4EZefM4bgaNzDyWq3n57",
     "1l9llEc8buXosi57I0YtWwHgzLBiF6kzq",
+    "1mgMABMFGPplwkf3b_JnETo8tAaQdktwb",
     "1o_r2kb2uYK3vuMDTNWEESx1ePYsgiG7v",
     "1ocWQqDE0dq8zI1DC_ipsVxRe4LSgKlcC",
     "1oqNSrjBBmSSHzUdPVnCC4chrOnjns6nK",
@@ -4146,6 +4148,1134 @@
         "No guarantee of quality in the legal sense is associated with the agreement of values or the information in the certificate."
       ],
       "slack_ts": "1784111127.599849"
+    },
+    "P01778": {
+      "so_name": "S01480",
+      "supplier": "Eric Naumann",
+      "buyer": "Sylvia Richter",
+      "initialized": "2026-07-15",
+      "last_updated": "2026-07-15",
+      "line_items": {
+        "VSI-17891339": {
+          "status": "confirmed",
+          "oc_ref": "ESBD 4744001",
+          "oc_date": "2026-05-21",
+          "filename": "Copy of 2026-05-28_esb-group.com_01164295-0001.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "DX54D",
+            "thickness": 1.7,
+            "width": 70.0,
+            "quantity": 0.69,
+            "unit_price": 425.0,
+            "form": "Spaltband",
+            "coating": "GI40/40"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX54D",
+              "oc": "DX54D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "GI40/40",
+              "oc": "GI40/40",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Slit Coils",
+              "oc": "Spaltband",
+              "note": ""
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "0.69",
+              "oc": "0.69",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "2",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "425.0",
+              "oc": "425.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.7",
+              "oc": "1.7",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "70.0",
+              "oc": "70.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 7,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17891351": {
+          "status": "confirmed",
+          "oc_ref": "ESBD 4744001",
+          "oc_date": "2026-05-21",
+          "filename": "Copy of 2026-05-28_esb-group.com_01164295-0001.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "DX53D",
+            "thickness": 1.6,
+            "width": 65.0,
+            "quantity": 0.722,
+            "unit_price": 425.0,
+            "form": "Spaltband",
+            "coating": "Z100"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX53D",
+              "oc": "DX53D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "Z100",
+              "oc": "Z100",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Slit Coils",
+              "oc": "Spaltband",
+              "note": ""
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "0.722",
+              "oc": "0.722",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "425.0",
+              "oc": "425.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.6",
+              "oc": "1.6",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "65.0",
+              "oc": "65.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 7,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17891383": {
+          "status": "confirmed",
+          "oc_ref": "ESBD 4744001",
+          "oc_date": "2026-05-21",
+          "filename": "Copy of 2026-05-28_esb-group.com_01164295-0001.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "DX52D",
+            "thickness": 1.7,
+            "width": 290.0,
+            "quantity": 1.02,
+            "unit_price": 425.0,
+            "form": "Spaltband",
+            "coating": "AS120"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX52D",
+              "oc": "DX52D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "AS120",
+              "oc": "AS120",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Aluminized (+AS/+AL)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Slit Coils",
+              "oc": "Spaltband",
+              "note": ""
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.02",
+              "oc": "1.02",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "425.0",
+              "oc": "425.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.7",
+              "oc": "1.7",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "290.0",
+              "oc": "290.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 7,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17891384": {
+          "status": "confirmed",
+          "oc_ref": "ESBD 4744001",
+          "oc_date": "2026-05-21",
+          "filename": "Copy of 2026-05-28_esb-group.com_01164295-0001.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "DX52D",
+            "thickness": 1.7,
+            "width": 290.0,
+            "quantity": 1.498,
+            "unit_price": 425.0,
+            "form": "Spaltband",
+            "coating": "AS120"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX52D",
+              "oc": "DX52D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "AS120",
+              "oc": "AS120",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Aluminized (+AS/+AL)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Slit Coils",
+              "oc": "Spaltband",
+              "note": ""
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.498",
+              "oc": "1.498",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "425.0",
+              "oc": "425.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.7",
+              "oc": "1.7",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "290.0",
+              "oc": "290.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 7,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17891385": {
+          "status": "confirmed",
+          "oc_ref": "ESBD 4744001",
+          "oc_date": "2026-05-21",
+          "filename": "Copy of 2026-05-28_esb-group.com_01164295-0001.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "DX52D",
+            "thickness": 1.7,
+            "width": 300.0,
+            "quantity": 0.94,
+            "unit_price": 425.0,
+            "form": "Spaltband",
+            "coating": "AS120"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX52D",
+              "oc": "DX52D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "AS120",
+              "oc": "AS120",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Aluminized (+AS/+AL)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Slit Coils",
+              "oc": "Spaltband",
+              "note": ""
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "0.94",
+              "oc": "0.94",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "425.0",
+              "oc": "425.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.7",
+              "oc": "1.7",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "300.0",
+              "oc": "300.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 7,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "thyssenkrupp Materials Processing Europe GmbH, K\u00f6titzerstr. 110, 01445 Radebeul, Deutschland",
+          "odoo": "K\u00f6titzer Str. 110, 01445, Radelbeul, Germany",
+          "warning": false
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "0 Days",
+          "odoo": "30 Days",
+          "warning": true
+        }
+      ],
+      "supplier_notes": [
+        "Delivery obligations are subject to correct and timely self-supply.",
+        "Extended and expanded retention of title is agreed.",
+        "General terms and conditions apply as per https://www.esb-group.com/agb.html."
+      ],
+      "slack_ts": "1784116659.859099"
+    },
+    "P01780": {
+      "so_name": "S01482",
+      "supplier": "Eric Naumann",
+      "buyer": "Sylvia Richter",
+      "initialized": "2026-07-15",
+      "last_updated": "2026-07-15",
+      "line_items": {
+        "VSI-17895469": {
+          "status": "confirmed",
+          "oc_ref": "ESBD 4744002",
+          "oc_date": "2026-05-28",
+          "filename": "Copy of 2026-05-28_esb-group.com_01164296-0001.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "DX52D",
+            "thickness": 1.7,
+            "width": 200.0,
+            "quantity": 1.244,
+            "unit_price": 425.0,
+            "form": "Spaltband",
+            "coating": "AS120"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX52D",
+              "oc": "DX52D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "AS120",
+              "oc": "AS120",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Aluminized (+AS/+AL)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Slit Coils",
+              "oc": "Spaltband",
+              "note": "Spaltband = Slit Coils"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.244",
+              "oc": "1.244",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "425.0",
+              "oc": "425.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.7",
+              "oc": "1.7",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "200.0",
+              "oc": "200.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 7,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17895470": {
+          "status": "confirmed",
+          "oc_ref": "ESBD 4744002",
+          "oc_date": "2026-05-28",
+          "filename": "Copy of 2026-05-28_esb-group.com_01164296-0001.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "DX52D",
+            "thickness": 1.7,
+            "width": 290.0,
+            "quantity": 1.442,
+            "unit_price": 425.0,
+            "form": "Spaltband",
+            "coating": "AS120"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX52D",
+              "oc": "DX52D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "AS120",
+              "oc": "AS120",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Aluminized (+AS/+AL)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Slit Coils",
+              "oc": "Spaltband",
+              "note": "Spaltband = Slit Coils"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.442",
+              "oc": "1.442",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "425.0",
+              "oc": "425.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.7",
+              "oc": "1.7",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "290.0",
+              "oc": "290.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 7,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17895471": {
+          "status": "confirmed",
+          "oc_ref": "ESBD 4744002",
+          "oc_date": "2026-05-28",
+          "filename": "Copy of 2026-05-28_esb-group.com_01164296-0001.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "DX52D",
+            "thickness": 1.7,
+            "width": 295.0,
+            "quantity": 1.212,
+            "unit_price": 425.0,
+            "form": "Spaltband",
+            "coating": "AS120"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX52D",
+              "oc": "DX52D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "AS120",
+              "oc": "AS120",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Aluminized (+AS/+AL)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Slit Coils",
+              "oc": "Spaltband",
+              "note": "Spaltband = Slit Coils"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.212",
+              "oc": "1.212",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "425.0",
+              "oc": "425.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.7",
+              "oc": "1.7",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "295.0",
+              "oc": "295.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 7,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17895472": {
+          "status": "confirmed",
+          "oc_ref": "ESBD 4744002",
+          "oc_date": "2026-05-28",
+          "filename": "Copy of 2026-05-28_esb-group.com_01164296-0001.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "DX52D",
+            "thickness": 1.7,
+            "width": 500.0,
+            "quantity": 2.006,
+            "unit_price": 425.0,
+            "form": "Spaltband",
+            "coating": "AS120"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX52D",
+              "oc": "DX52D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "AS120",
+              "oc": "AS120",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Aluminized (+AS/+AL)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Slit Coils",
+              "oc": "Spaltband",
+              "note": "Spaltband = Slit Coils"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "2.006",
+              "oc": "2.006",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "425.0",
+              "oc": "425.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.7",
+              "oc": "1.7",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 7,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "thyssenkrupp Materials Processing Europe GmbH, K\u00f6titzerstr. 110, 01445 Radebeul, Deutschland",
+          "odoo": "K\u00f6titzer Str. 110, 01445, Radelbeul, Germany",
+          "warning": false
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "0 Days",
+          "odoo": "7 Days",
+          "warning": true
+        }
+      ],
+      "supplier_notes": [
+        "Delivery obligations are subject to correct and timely self-delivery by the supplier.",
+        "Extended and expanded retention of title is agreed.",
+        "General terms and conditions apply as per https://www.esb-group.com/agb.html."
+      ],
+      "slack_ts": "1784116701.917629"
     }
   }
 }
