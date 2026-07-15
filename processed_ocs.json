@@ -5,9 +5,11 @@
     "1K1ht5lu9hI_d1tiDnc6Hj6hsJJe0447e",
     "1LDKdZWFoW38hG-21iR4Hos4uhg0AVr0J",
     "1OCMRmrGPgFwCM2J9Lx3lSEVdRqteQHBU",
+    "1aoCHWq9-vQCr7iI-QInyGm2xGwCp6Tfu",
     "1cprlidPRtk5Ru0OmR62auiYYx0fUp4cu",
     "1g2Ye0a7UnkOSjaaGKHCxO-H8jOQ3nTRs",
     "1hlJiKvYpZV3OwWbiUSoS1JBtYEWFkHU5",
+    "1kzlYfcJmbxqX4EZefM4bgaNzDyWq3n57",
     "1l9llEc8buXosi57I0YtWwHgzLBiF6kzq"
   ],
   "po_oc_log": {
@@ -48,7 +50,7 @@
               "status": "match",
               "odoo": "2nd",
               "oc": "2nd Choice",
-              "note": "OC describes as 2nd Choice / NGW Fremdfehler"
+              "note": ""
             },
             {
               "key": "coating",
@@ -137,7 +139,7 @@
           "comparison_engine": "ai"
         },
         "VSI-17919769": {
-          "status": "confirmed",
+          "status": "mismatch",
           "oc_ref": "213351",
           "oc_date": "2026-07-15",
           "filename": "2026-07-15_bilstein-kaltband.de_Auftragsbest\u00e4tigung_213351.PDF",
@@ -158,7 +160,7 @@
               "status": "skip",
               "odoo": "HC340LA",
               "oc": "\u2014",
-              "note": "not confirmed by OC \u2014 OC contains no matching line for supplier_article 30059493 / aoo 213352"
+              "note": "not confirmed by OC"
             },
             {
               "key": "quality_choice",
@@ -195,10 +197,10 @@
             {
               "key": "quantity",
               "label": "Quantity",
-              "status": "skip",
+              "status": "mismatch",
               "odoo": "24.005",
               "oc": "\u2014",
-              "note": "not confirmed by OC \u2014 line missing from OC"
+              "note": "OC line for supplier_article 30059493 / aoo 213352 not found in OC"
             },
             {
               "key": "no_of_items",
@@ -251,7 +253,7 @@
           ],
           "score": 0,
           "total": 9,
-          "mismatches": 0,
+          "mismatches": 1,
           "comparison_engine": "ai"
         }
       },
@@ -275,11 +277,11 @@
         }
       ],
       "supplier_notes": [
-        "Product finish described as NGW Fremdfehler / Foreign error (2nd Choice material).",
-        "Loading instruction: Verladung - Stehend (standing/upright).",
-        "PCF (Product Carbon Footprint) for 2024: weighted average of 2.479 kg CO2e/t cold strip, calculated per GHG Protocol Product Standard and ISO 14067.",
+        "Material is 2nd choice with supplier finish defect: NGW Fremdfehler / Foreign error.",
+        "Loading instruction: standing upright (Verladung - Stehend).",
+        "Weighted average PCF for all products manufactured by BILSTEIN GmbH & Co. KG for reporting year 2024 is 2.479 kg CO2e/t cold strip, calculated in accordance with GHG Protocol Product Standard and ISO 14067.",
         "Prices outside agreed contract periods are subject to reservation; discussions will be initiated in due time.",
-        "Delivery dates are subject to timely and proper self-delivery by the supplier."
+        "Delivery dates are subject to timely and proper self-supply."
       ],
       "slack_ts": "1784099843.200839"
     },
