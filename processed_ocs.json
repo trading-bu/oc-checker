@@ -5,12 +5,15 @@
     "1K1ht5lu9hI_d1tiDnc6Hj6hsJJe0447e",
     "1LDKdZWFoW38hG-21iR4Hos4uhg0AVr0J",
     "1OCMRmrGPgFwCM2J9Lx3lSEVdRqteQHBU",
+    "1VwZR8-jRayYczJwwrBxTT2tWivHsAAqF",
     "1aoCHWq9-vQCr7iI-QInyGm2xGwCp6Tfu",
     "1cprlidPRtk5Ru0OmR62auiYYx0fUp4cu",
     "1g2Ye0a7UnkOSjaaGKHCxO-H8jOQ3nTRs",
     "1hlJiKvYpZV3OwWbiUSoS1JBtYEWFkHU5",
     "1kzlYfcJmbxqX4EZefM4bgaNzDyWq3n57",
-    "1l9llEc8buXosi57I0YtWwHgzLBiF6kzq"
+    "1l9llEc8buXosi57I0YtWwHgzLBiF6kzq",
+    "1ocWQqDE0dq8zI1DC_ipsVxRe4LSgKlcC",
+    "1v843f3D3FiC6elRyTFdfWUGzIGup9DG_"
   ],
   "po_oc_log": {
     "P01851": {
@@ -1144,6 +1147,394 @@
         "Prices outside agreed contract periods are subject to reservation."
       ],
       "slack_ts": "1784099920.303069"
+    },
+    "P01773": {
+      "so_name": "S01477",
+      "supplier": "Martin Korreck",
+      "buyer": "Tekin Recber",
+      "initialized": "2026-07-15",
+      "last_updated": "2026-07-15",
+      "line_items": {
+        "VSI-17892445": {
+          "status": "confirmed",
+          "oc_ref": "211879",
+          "oc_date": "2026-05-19",
+          "filename": "Copy of 2026-05-19_bilstein-kaltband.de_Auftragsbest\u00e4tigung_211879.PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "CK75M2GKZ",
+            "thickness": 0.79,
+            "width": 70.0,
+            "quantity": 1.044,
+            "unit_price": 400.0,
+            "form": "Slit Coils",
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "CK75M2GKZ",
+              "oc": "CK75M2GKZ",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "match",
+              "odoo": "2nd",
+              "oc": "2nd Choice",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Cold Rolled",
+              "oc": "Cold Rolled",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Slit Coils",
+              "oc": "Slit Coils",
+              "note": ""
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.044",
+              "oc": "1.044",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "match",
+              "odoo": "2",
+              "oc": "2",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "400.0",
+              "oc": "400.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.79",
+              "oc": "0.79",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "70.0",
+              "oc": "70.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 9,
+          "total": 9,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17892446": {
+          "status": "pending",
+          "oc_ref": "211879",
+          "oc_date": "2026-05-19",
+          "filename": "Copy of 2026-05-19_bilstein-kaltband.de_Auftragsbest\u00e4tigung_211879.PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": null,
+            "thickness": null,
+            "width": null,
+            "quantity": null,
+            "unit_price": null,
+            "form": null,
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "skip",
+              "odoo": "DC04",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Drawn / Soft (+LC)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "2.556",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "skip",
+              "odoo": "400.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "skip",
+              "odoo": "1.79",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "skip",
+              "odoo": "279.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 0,
+          "total": 9,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17892450": {
+          "status": "pending",
+          "oc_ref": "211879",
+          "oc_date": "2026-05-19",
+          "filename": "Copy of 2026-05-19_bilstein-kaltband.de_Auftragsbest\u00e4tigung_211879.PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": null,
+            "thickness": null,
+            "width": null,
+            "quantity": null,
+            "unit_price": null,
+            "form": null,
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "skip",
+              "odoo": "DC04",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "5.25",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "skip",
+              "odoo": "400.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "skip",
+              "odoo": "2.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "skip",
+              "odoo": "339.5",
+              "oc": "\u2014",
+              "note": "not confirmed by OC \u2014 line not present in OC"
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 0,
+          "total": 9,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Im Weinhof 36, 58119 Hagen",
+          "odoo": "Im Weinhof 36, 58119, Hagen, Germany",
+          "warning": false
+        },
+        {
+          "type": "vat",
+          "icon": "\ud83e\uddfe",
+          "label": "VAT",
+          "vat_pct": "19%",
+          "net": 1022.4,
+          "gross": 1216.66,
+          "warning": false
+        }
+      ],
+      "supplier_notes": [
+        "Loading orientation: lying flat (Verladung - Liegend).",
+        "PCF for all produced goods in 2024: weighted average of 2.479 kg CO2e/t cold strip, calculated in accordance with GHG Protocol Product Standard and ISO 14067.",
+        "Prices outside agreed contract periods are subject to change; discussions will be initiated in due time."
+      ],
+      "slack_ts": "1784107307.042169"
     }
   }
 }
