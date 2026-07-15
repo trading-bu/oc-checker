@@ -347,14 +347,20 @@ def build_po_status_text(po_name, po_log):
 
             ext = run.get("extraction_tokens") or {}
             cmp = run.get("comparison_tokens") or {}
-            total_tok = (
-                (ext.get("input") or 0) + (ext.get("output") or 0) +
-                (cmp.get("input") or 0) + (cmp.get("output") or 0)
-            )
-            tok_str = "{:,} tok".format(total_tok) if total_tok else ""
+            ext_tok = (ext.get("input") or 0) + (ext.get("output") or 0)
+            cmp_tok = (cmp.get("input") or 0) + (cmp.get("output") or 0)
 
             engine    = run.get("comparison_engine", "?")
             eng_label = "AI" if engine == "ai" else "Python"
+
+            if cmp_tok:
+                # AI engine: show extraction and comparison separately
+                tok_str = "{:,} ext + {:,} cmp tok".format(ext_tok, cmp_tok)
+            elif ext_tok:
+                # Python engine: only extraction used Claude
+                tok_str = "{:,} ext tok".format(ext_tok)
+            else:
+                tok_str = ""
 
             parts = [p for p in [time_str, tok_str, "(%s)" % eng_label] if p]
             lines.append(":stopwatch: `%s`   %s" % (short, "  ·  ".join(parts)))
