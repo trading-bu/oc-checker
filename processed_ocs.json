@@ -5,6 +5,7 @@
     "11EkZibHoPaIwfvsCUqACvkGbDF9k-WtA",
     "16UsFJDxB99i1JJDXbJXd9wAPVIS5eHTc",
     "18ATfa2TuROBER0l0APy6vIIDOTVkQ3sl",
+    "1Bkaxv7fB-4v75AeRYUxJ9DyVlIVfeIMC",
     "1FlS5eiEZ9ySE7YCcCyOE0a-2kAQl6-Uz",
     "1K1ht5lu9hI_d1tiDnc6Hj6hsJJe0447e",
     "1LDKdZWFoW38hG-21iR4Hos4uhg0AVr0J",
@@ -7558,6 +7559,181 @@
         }
       ],
       "slack_ts": "1784120635.285839"
+    },
+    "P01720": {
+      "so_name": "S01442",
+      "supplier": "Marius Schmechil",
+      "buyer": "Jan Juhnke",
+      "initialized": "2026-07-15",
+      "last_updated": "2026-07-15",
+      "line_items": {
+        "VSI-17882798": {
+          "status": "confirmed",
+          "oc_ref": "62798",
+          "oc_date": "2026-04-16",
+          "filename": "Copy of 2026-04-17_wolter-stahl.de_AB Vanilla.pdf",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "DX56D",
+            "thickness": 0.7,
+            "width": 1565.0,
+            "quantity": 22.06,
+            "unit_price": 740.0,
+            "form": "Coil",
+            "coating": "Z100"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX56D",
+              "oc": "DX56D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "Z100",
+              "oc": "Z100",
+              "note": "MBO suffix ignored as passivation treatment, base coating matches"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "feuerverzinktes Coil",
+              "note": "OC description indicates hot-dip galvanized"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Coils",
+              "oc": "Coil",
+              "note": ""
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "22.06",
+              "oc": "22.06",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "740.0",
+              "oc": "740.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.7",
+              "oc": "0.7",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1565.0",
+              "oc": "1565.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "0.0",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "match",
+              "odoo": "286.0",
+              "oc": "286.0",
+              "note": "OC states Rm 286 MPa"
+            }
+          ],
+          "score": 9,
+          "total": 11,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Industriestra\u00dfe 40, 57413 Finnentrop",
+          "odoo": "Industriestra\u00dfe 40, 57413, Finnentrop, Germany",
+          "warning": false
+        },
+        {
+          "type": "incoterms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Incoterms MISMATCH",
+          "oc": "EXW",
+          "odoo": "[FCA] FREE CARRIER",
+          "warning": true
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "15 Days",
+          "odoo": "30 Days",
+          "warning": true
+        }
+      ],
+      "supplier_notes": [
+        "Packaging: 3x cross strapping, 1x longitudinal strapping, standing position.",
+        "Material mechanical properties: Re 159 MPa, Rm 286 MPa, A% 47.8%.",
+        "Material reference/heat number: F6894/N8.",
+        "Payment due by the 15th of the month following delivery, net without deduction."
+      ],
+      "processing_runs": [
+        {
+          "filename": "Copy of 2026-04-17_wolter-stahl.de_AB Vanilla.pdf",
+          "time_s": 25.7,
+          "extraction_tokens": {
+            "input": 4650,
+            "output": 544
+          },
+          "comparison_tokens": {
+            "input": 1919,
+            "output": 775
+          },
+          "comparison_engine": "ai"
+        }
+      ],
+      "slack_ts": "1784122130.714829"
     }
   }
 }
