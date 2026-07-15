@@ -171,7 +171,7 @@ def update_po_log_with_result(state, po_name, result, filename):
 
         mismatches = lr.get("mismatches", 0)
         entry = {
-            "status":            "confirmed" if mismatches == 0 else "mismatch",
+            "status":            "confirmed" if (mismatches == 0 and lr.get("score", 0) > 0) else ("mismatch" if mismatches > 0 else "pending"),
             "oc_ref":            oc_ref,
             "oc_date":           oc_date,
             "filename":          filename,
