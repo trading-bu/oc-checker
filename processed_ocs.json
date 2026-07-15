@@ -11,6 +11,7 @@
     "1cprlidPRtk5Ru0OmR62auiYYx0fUp4cu",
     "1g2Ye0a7UnkOSjaaGKHCxO-H8jOQ3nTRs",
     "1hlJiKvYpZV3OwWbiUSoS1JBtYEWFkHU5",
+    "1kKBQXTkTkW4sxo3bqjShnjPjG_DGv1sG",
     "1kzlYfcJmbxqX4EZefM4bgaNzDyWq3n57",
     "1l9llEc8buXosi57I0YtWwHgzLBiF6kzq",
     "1ocWQqDE0dq8zI1DC_ipsVxRe4LSgKlcC",
@@ -1961,6 +1962,713 @@
         "Prices outside agreed contract periods are subject to change; discussions will be initiated in due time."
       ],
       "slack_ts": "1784110872.286329"
+    },
+    "P01807": {
+      "so_name": "S01498",
+      "supplier": "Andrea Nagy",
+      "buyer": "Pedro Bilbao Mendizabal",
+      "initialized": "2026-07-15",
+      "last_updated": "2026-07-15",
+      "line_items": {
+        "VSI-17903414": {
+          "status": "pending"
+        },
+        "VSI-17903415": {
+          "status": "pending"
+        },
+        "VSI-17903433": {
+          "status": "mismatch",
+          "oc_ref": "84916030",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_2..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "Z90R903740",
+            "supplier_article": "51100331",
+            "description": "Hot-rolled coils, Steel grade S315MC, pickled, oiled, DIN EN 10 149 Teil 2, 2 x 420, nominal thick 2,00 mm, Commodity Code: 72111900",
+            "quantity": 4.132,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 2066.0,
+            "grade": "S315MC",
+            "thickness": 2.0,
+            "width": 420.0,
+            "length": null,
+            "coating": null,
+            "coil_number": "Z90R903740",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S315MC",
+              "oc": "S315MC",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "4.132",
+              "oc": "4.132",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.0",
+              "oc": "2.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "420.0",
+              "oc": "420.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17903435": {
+          "status": "mismatch",
+          "oc_ref": "84916030",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_2..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R904235",
+            "supplier_article": "51100342",
+            "description": "Hot-rolled coils, Steel grade S355MC, pickled, oiled, DIN EN 10 149 Teil 2, 2 x 140, nominal thick 2,00 mm, Commodity Code: 72111900, Ring inside diameter 508 mm",
+            "quantity": 1.3,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 650.0,
+            "grade": "S355MC",
+            "thickness": 2.0,
+            "width": 140.0,
+            "length": null,
+            "coating": null,
+            "coil_number": "R90R904235",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S355MC",
+              "oc": "S355MC",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.3",
+              "oc": "1.3",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.0",
+              "oc": "2.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "140.0",
+              "oc": "140.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17903444": {
+          "status": "mismatch",
+          "oc_ref": "84916030",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_2..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R903564 R90R903569",
+            "supplier_article": "51100355",
+            "description": "Hot-rolled coils, Steel grade S355MC, pickled, oiled, DIN EN 10 149 Teil 2, 4 x 250, nominal thick 4,00 mm, Commodity Code: 72111900, Ring inside diameter 508 mm",
+            "quantity": 2.534,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 1267.0,
+            "grade": "S355MC",
+            "thickness": 4.0,
+            "width": 250.0,
+            "length": null,
+            "coating": null,
+            "coil_number": "R90R903564 R90R903569",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S355MC",
+              "oc": "S355MC",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "4.0",
+              "oc": "4.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "250.0",
+              "oc": "250.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "0.92",
+              "oc": "2.534",
+              "note": "Spec-group confirmed \u00b7 OC total 2.534 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 8,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17903445": {
+          "status": "mismatch",
+          "oc_ref": "84916030",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_2..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R903564 R90R903569",
+            "supplier_article": "51100355",
+            "description": "Hot-rolled coils, Steel grade S355MC, pickled, oiled, DIN EN 10 149 Teil 2, 4 x 250, nominal thick 4,00 mm, Commodity Code: 72111900, Ring inside diameter 508 mm",
+            "quantity": 2.534,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 1267.0,
+            "grade": "S355MC",
+            "thickness": 4.0,
+            "width": 250.0,
+            "length": null,
+            "coating": null,
+            "coil_number": "R90R903564 R90R903569",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S355MC",
+              "oc": "S355MC",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "4.0",
+              "oc": "4.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "250.0",
+              "oc": "250.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "1.614",
+              "oc": "2.534",
+              "note": "Spec-group confirmed \u00b7 OC total 2.534 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 8,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17903447": {
+          "status": "mismatch",
+          "oc_ref": "84916030",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_2..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R904038",
+            "supplier_article": "51100355",
+            "description": "Hot-rolled coils, Steel grade S355MC, pickled, oiled, DIN EN 10 149 Teil 2, 4 x 120, nominal thick 4,00 mm, Commodity Code: 72111900, Ring inside diameter 508 mm",
+            "quantity": 1.09,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 545.0,
+            "grade": "S355MC",
+            "thickness": 4.0,
+            "width": 120.0,
+            "length": null,
+            "coating": null,
+            "coil_number": "R90R904038",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S355MC",
+              "oc": "S355MC",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.09",
+              "oc": "1.09",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "4.0",
+              "oc": "4.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "120.0",
+              "oc": "120.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17903508": {
+          "status": "pending"
+        },
+        "VSI-17903512": {
+          "status": "pending"
+        },
+        "VSI-17903513": {
+          "status": "pending"
+        },
+        "VSI-17903514": {
+          "status": "pending"
+        },
+        "VSI-17903515": {
+          "status": "pending"
+        },
+        "VSI-17903534": {
+          "status": "pending"
+        },
+        "VSI-17903535": {
+          "status": "pending"
+        },
+        "VSI-17903546": {
+          "status": "pending"
+        },
+        "VSI-17903547": {
+          "status": "pending"
+        },
+        "VSI-17903562": {
+          "status": "pending"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "9011 Gy\u0151r, Gerda utca 3.",
+          "odoo": "Gerda U 3, 9011, Gyor Magyarorszag, Hungary",
+          "warning": false
+        },
+        {
+          "type": "incoterms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Incoterms MISMATCH",
+          "oc": "FCA",
+          "odoo": "[EXW] EX WORKS",
+          "warning": true
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "30 Days",
+          "odoo": "Immediate Payment",
+          "warning": true
+        }
+      ],
+      "supplier_notes": [
+        "MPE will not provide a manufacturer test certificate per DIN EN 10204 unless expressly agreed; instead MPE prepares its own 'test certificate based on DIN EN 10204' adopting the manufacturer's results and/or its own.",
+        "No guarantee of quality in the legal sense is associated with the agreement of values or the information in the certificate.",
+        "Document is generated automatically and valid without signature."
+      ],
+      "slack_ts": "1784111127.599849"
     }
   }
 }
