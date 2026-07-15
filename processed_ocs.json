@@ -1,18 +1,23 @@
 {
   "processed_ids": [
     "1-TUhGboj_CqpSUaoaKwJzPrEIvGt09iz",
+    "10x3VkNvIG9L9x6AgU_TZDN_EbFa1bEeO",
     "18ATfa2TuROBER0l0APy6vIIDOTVkQ3sl",
     "1K1ht5lu9hI_d1tiDnc6Hj6hsJJe0447e",
     "1LDKdZWFoW38hG-21iR4Hos4uhg0AVr0J",
     "1OCMRmrGPgFwCM2J9Lx3lSEVdRqteQHBU",
+    "1QCda4exTSKFf8qG_wz4_7oBPwp46lYxN",
     "1VwZR8-jRayYczJwwrBxTT2tWivHsAAqF",
     "1aoCHWq9-vQCr7iI-QInyGm2xGwCp6Tfu",
     "1cprlidPRtk5Ru0OmR62auiYYx0fUp4cu",
     "1g2Ye0a7UnkOSjaaGKHCxO-H8jOQ3nTRs",
     "1hlJiKvYpZV3OwWbiUSoS1JBtYEWFkHU5",
+    "1kKBQXTkTkW4sxo3bqjShnjPjG_DGv1sG",
     "1kzlYfcJmbxqX4EZefM4bgaNzDyWq3n57",
     "1l9llEc8buXosi57I0YtWwHgzLBiF6kzq",
+    "1o_r2kb2uYK3vuMDTNWEESx1ePYsgiG7v",
     "1ocWQqDE0dq8zI1DC_ipsVxRe4LSgKlcC",
+    "1oqNSrjBBmSSHzUdPVnCC4chrOnjns6nK",
     "1v843f3D3FiC6elRyTFdfWUGzIGup9DG_"
   ],
   "po_oc_log": {
@@ -1535,6 +1540,2612 @@
         "Prices outside agreed contract periods are subject to change; discussions will be initiated in due time."
       ],
       "slack_ts": "1784107307.042169"
+    },
+    "P01811": {
+      "so_name": "S01500",
+      "supplier": "Martin Korreck",
+      "buyer": "Volker Wolff",
+      "initialized": "2026-07-15",
+      "last_updated": "2026-07-15",
+      "line_items": {
+        "VSI-17907945": {
+          "status": "mismatch",
+          "oc_ref": "212618",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_bilstein-kaltband.de_Auftragsbest\u00e4tigung_212618.PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "ZE600",
+            "thickness": 1.78,
+            "width": 209.0,
+            "quantity": 2.978,
+            "unit_price": 380.0,
+            "form": "Slit Coils",
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "ZE600",
+              "oc": "ZE600",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "match",
+              "odoo": "2nd",
+              "oc": "2nd Choice",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Cold Rolled",
+              "oc": "Cold Rolled",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Slit Coils",
+              "oc": "Slit Coils",
+              "note": ""
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "mismatch",
+              "odoo": "2.938",
+              "oc": "2.978",
+              "note": "OC qty 2.978t vs Odoo 2.938t; difference ~1.36%, exceeds 0.5% tolerance"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "match",
+              "odoo": "1",
+              "oc": "1",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "380.0",
+              "oc": "380.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.78",
+              "oc": "1.78",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "209.0",
+              "oc": "209.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 8,
+          "total": 9,
+          "mismatches": 1,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Im Weinhof 36, 58119 Hagen, Germany",
+          "odoo": "Im Weinhof 36, 58119, Hagen, Germany",
+          "warning": false
+        },
+        {
+          "type": "vat",
+          "icon": "\ud83e\uddfe",
+          "label": "VAT",
+          "vat_pct": "19%",
+          "net": 1131.64,
+          "gross": null,
+          "warning": false
+        }
+      ],
+      "supplier_notes": [
+        "Product carbon footprint (PCF) for 2024: weighted average of 2.479 kg CO2e/t cold rolled steel, calculated in accordance with GHG Protocol Product Standard and ISO 14067.",
+        "Delivery in lying/horizontal position (Verladung - Liegend).",
+        "Prices outside agreed contract periods are subject to reservation; discussions will be initiated in due time.",
+        "Delivery dates are subject to timely and proper self-delivery by the supplier."
+      ],
+      "slack_ts": "1784110845.223319"
+    },
+    "P01808": {
+      "so_name": "S01499",
+      "supplier": "Martin Korreck",
+      "buyer": "Tekin Recber",
+      "initialized": "2026-07-15",
+      "last_updated": "2026-07-15",
+      "line_items": {
+        "VSI-17907943": {
+          "status": "pending",
+          "oc_ref": "212617",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_bilstein-kaltband.de_Auftragsbest\u00e4tigung_212617.PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": null,
+            "thickness": null,
+            "width": null,
+            "quantity": null,
+            "unit_price": null,
+            "form": null,
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "skip",
+              "odoo": "DC04",
+              "oc": "\u2014",
+              "note": "no matching OC line found"
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "no matching OC line found"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Drawn / Soft (+LC)",
+              "oc": "\u2014",
+              "note": "no matching OC line found"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": "no matching OC line found"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "3.824",
+              "oc": "\u2014",
+              "note": "no matching OC line found"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "2",
+              "oc": "\u2014",
+              "note": "no matching OC line found"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "skip",
+              "odoo": "400.0",
+              "oc": "\u2014",
+              "note": "no matching OC line found"
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "skip",
+              "odoo": "1.4",
+              "oc": "\u2014",
+              "note": "no matching OC line found"
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "skip",
+              "odoo": "198.0",
+              "oc": "\u2014",
+              "note": "no matching OC line found"
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 0,
+          "total": 9,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17907946": {
+          "status": "confirmed",
+          "oc_ref": "212617",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_bilstein-kaltband.de_Auftragsbest\u00e4tigung_212617.PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "grade": "DC04",
+            "thickness": 1.25,
+            "width": 224.0,
+            "quantity": 2.186,
+            "unit_price": 400.0,
+            "form": "Slit Coils",
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC04",
+              "oc": "DC04",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "match",
+              "odoo": "2nd",
+              "oc": "2nd Choice",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Cold Drawn / Soft (+LC)",
+              "oc": "Cold Drawn / Soft (+LC)",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Slit Coils",
+              "oc": "Slit Coils",
+              "note": ""
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "2.186",
+              "oc": "2.186",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "400.0",
+              "oc": "400.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.25",
+              "oc": "1.25",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "224.0",
+              "oc": "224.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 8,
+          "total": 9,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Im Weinhof 36, 58119 Hagen, Germany",
+          "odoo": "Im Weinhof 36, 58119, Hagen, Germany",
+          "warning": false
+        },
+        {
+          "type": "vat",
+          "icon": "\ud83e\uddfe",
+          "label": "VAT",
+          "vat_pct": "19%",
+          "net": 874.4,
+          "gross": 1040.54,
+          "warning": false
+        }
+      ],
+      "supplier_notes": [
+        "Loading instruction: lying (Verladung - Liegend).",
+        "Supplier material number: 90000011.",
+        "For the reporting year 2024, the weighted average PCF for all products manufactured by BILSTEIN GmbH & Co. KG is 2.479 kg CO2e/t cold strip, calculated in accordance with the GHG Protocol Product Standard and ISO 14067.",
+        "Prices outside agreed contract periods are subject to change; discussions will be initiated in due time."
+      ],
+      "slack_ts": "1784110872.286329"
+    },
+    "P01807": {
+      "so_name": "S01498",
+      "supplier": "Andrea Nagy",
+      "buyer": "Pedro Bilbao Mendizabal",
+      "initialized": "2026-07-15",
+      "last_updated": "2026-07-15",
+      "line_items": {
+        "VSI-17903414": {
+          "status": "mismatch",
+          "oc_ref": "84916029",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_1.PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R904131 R90R904132",
+            "supplier_article": "50100220",
+            "description": "Cold-rolled coils, Steel grade DC04, A m O, normal surface, normal, oiled, DIN EN 10 130 / 10 131, 3 x 141, nominal thick 3.00 mm, Ring inside diameter 508 mm, Commodity Code: 72112330",
+            "quantity": 1.28,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 640.0,
+            "grade": "DC04",
+            "thickness": 3.0,
+            "width": 141.0,
+            "length": null,
+            "coating": null,
+            "coil_number": "R90R904131 R90R904132",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC04",
+              "oc": "DC04",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "3.0",
+              "oc": "3.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "141.0",
+              "oc": "141.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "0.638",
+              "oc": "1.28",
+              "note": "Spec-group confirmed \u00b7 OC total 1.28 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 8,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17903415": {
+          "status": "mismatch",
+          "oc_ref": "84916029",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_1.PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R904131 R90R904132",
+            "supplier_article": "50100220",
+            "description": "Cold-rolled coils, Steel grade DC04, A m O, normal surface, normal, oiled, DIN EN 10 130 / 10 131, 3 x 141, nominal thick 3.00 mm, Ring inside diameter 508 mm, Commodity Code: 72112330",
+            "quantity": 1.28,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 640.0,
+            "grade": "DC04",
+            "thickness": 3.0,
+            "width": 141.0,
+            "length": null,
+            "coating": null,
+            "coil_number": "R90R904131 R90R904132",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC04",
+              "oc": "DC04",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "3.0",
+              "oc": "3.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "141.0",
+              "oc": "141.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "0.642",
+              "oc": "1.28",
+              "note": "Spec-group confirmed \u00b7 OC total 1.28 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 8,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17903433": {
+          "status": "mismatch",
+          "oc_ref": "84916030",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_2..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "Z90R903740",
+            "supplier_article": "51100331",
+            "description": "Hot-rolled coils, Steel grade S315MC, pickled, oiled, DIN EN 10 149 Teil 2, 2 x 420, nominal thick 2,00 mm, Commodity Code: 72111900",
+            "quantity": 4.132,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 2066.0,
+            "grade": "S315MC",
+            "thickness": 2.0,
+            "width": 420.0,
+            "length": null,
+            "coating": null,
+            "coil_number": "Z90R903740",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S315MC",
+              "oc": "S315MC",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "4.132",
+              "oc": "4.132",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.0",
+              "oc": "2.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "420.0",
+              "oc": "420.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17903435": {
+          "status": "mismatch",
+          "oc_ref": "84916030",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_2..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R904235",
+            "supplier_article": "51100342",
+            "description": "Hot-rolled coils, Steel grade S355MC, pickled, oiled, DIN EN 10 149 Teil 2, 2 x 140, nominal thick 2,00 mm, Commodity Code: 72111900, Ring inside diameter 508 mm",
+            "quantity": 1.3,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 650.0,
+            "grade": "S355MC",
+            "thickness": 2.0,
+            "width": 140.0,
+            "length": null,
+            "coating": null,
+            "coil_number": "R90R904235",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S355MC",
+              "oc": "S355MC",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.3",
+              "oc": "1.3",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.0",
+              "oc": "2.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "140.0",
+              "oc": "140.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17903444": {
+          "status": "mismatch",
+          "oc_ref": "84916030",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_2..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R903564 R90R903569",
+            "supplier_article": "51100355",
+            "description": "Hot-rolled coils, Steel grade S355MC, pickled, oiled, DIN EN 10 149 Teil 2, 4 x 250, nominal thick 4,00 mm, Commodity Code: 72111900, Ring inside diameter 508 mm",
+            "quantity": 2.534,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 1267.0,
+            "grade": "S355MC",
+            "thickness": 4.0,
+            "width": 250.0,
+            "length": null,
+            "coating": null,
+            "coil_number": "R90R903564 R90R903569",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S355MC",
+              "oc": "S355MC",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "4.0",
+              "oc": "4.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "250.0",
+              "oc": "250.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "0.92",
+              "oc": "2.534",
+              "note": "Spec-group confirmed \u00b7 OC total 2.534 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 8,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17903445": {
+          "status": "mismatch",
+          "oc_ref": "84916030",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_2..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R903564 R90R903569",
+            "supplier_article": "51100355",
+            "description": "Hot-rolled coils, Steel grade S355MC, pickled, oiled, DIN EN 10 149 Teil 2, 4 x 250, nominal thick 4,00 mm, Commodity Code: 72111900, Ring inside diameter 508 mm",
+            "quantity": 2.534,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 1267.0,
+            "grade": "S355MC",
+            "thickness": 4.0,
+            "width": 250.0,
+            "length": null,
+            "coating": null,
+            "coil_number": "R90R903564 R90R903569",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S355MC",
+              "oc": "S355MC",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "4.0",
+              "oc": "4.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "250.0",
+              "oc": "250.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "1.614",
+              "oc": "2.534",
+              "note": "Spec-group confirmed \u00b7 OC total 2.534 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 8,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17903447": {
+          "status": "mismatch",
+          "oc_ref": "84916030",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_2..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R904038",
+            "supplier_article": "51100355",
+            "description": "Hot-rolled coils, Steel grade S355MC, pickled, oiled, DIN EN 10 149 Teil 2, 4 x 120, nominal thick 4,00 mm, Commodity Code: 72111900, Ring inside diameter 508 mm",
+            "quantity": 1.09,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 545.0,
+            "grade": "S355MC",
+            "thickness": 4.0,
+            "width": 120.0,
+            "length": null,
+            "coating": null,
+            "coil_number": "R90R904038",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S355MC",
+              "oc": "S355MC",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.09",
+              "oc": "1.09",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "4.0",
+              "oc": "4.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "120.0",
+              "oc": "120.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17903508": {
+          "status": "mismatch",
+          "oc_ref": "84916031",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_3..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "F900258989",
+            "supplier_article": "52101848",
+            "description": "Hot dip galvanized coils, Steel grade DX51D+Z 140 MACU, chem. passivated, unoiled, EN 10346, 3 x 166, nominal thick 3.00 mm, Ring inside diameter 500 mm",
+            "quantity": 1.586,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 793.0,
+            "grade": "DX51D",
+            "thickness": 3.0,
+            "width": 166.0,
+            "length": null,
+            "coating": "Z140MACU",
+            "coil_number": "F900258989",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX51D",
+              "oc": "DX51D",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.586",
+              "oc": "1.586",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "3.0",
+              "oc": "3.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "166.0",
+              "oc": "166.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "Z140MACU",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17903512": {
+          "status": "mismatch",
+          "oc_ref": "84916031",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_3..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R904232 R90R904233 R90R904230 R90R904231",
+            "supplier_article": "52102571",
+            "description": "Hot dip galvanized coils, Steel grade HX260LAD+ZA 130 MC_O, oiled, EN 10346, 2 x 150, nominal thick 2.00 mm, Ring inside diameter 508 mm",
+            "quantity": 4.354,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 2177.0,
+            "grade": "HX260LAD",
+            "thickness": 2.0,
+            "width": 150.0,
+            "length": null,
+            "coating": "ZA130MC_O",
+            "coil_number": "R90R904232 R90R904233 R90R904230 R90R904231",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HX260LAD",
+              "oc": "HX260LAD",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.0",
+              "oc": "2.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "150.0",
+              "oc": "150.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "ZA130MC_O",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Galfan (+ZA)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "1.448",
+              "oc": "4.354",
+              "note": "Spec-group confirmed \u00b7 OC total 4.354 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 9,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17903513": {
+          "status": "mismatch",
+          "oc_ref": "84916031",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_3..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R904232 R90R904233 R90R904230 R90R904231",
+            "supplier_article": "52102571",
+            "description": "Hot dip galvanized coils, Steel grade HX260LAD+ZA 130 MC_O, oiled, EN 10346, 2 x 150, nominal thick 2.00 mm, Ring inside diameter 508 mm",
+            "quantity": 4.354,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 2177.0,
+            "grade": "HX260LAD",
+            "thickness": 2.0,
+            "width": 150.0,
+            "length": null,
+            "coating": "ZA130MC_O",
+            "coil_number": "R90R904232 R90R904233 R90R904230 R90R904231",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HX260LAD",
+              "oc": "HX260LAD",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.0",
+              "oc": "2.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "150.0",
+              "oc": "150.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "ZA130MC_O",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Galfan (+ZA)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "1.472",
+              "oc": "4.354",
+              "note": "Spec-group confirmed \u00b7 OC total 4.354 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 9,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17903514": {
+          "status": "mismatch",
+          "oc_ref": "84916031",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_3..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R904232 R90R904233 R90R904230 R90R904231",
+            "supplier_article": "52102571",
+            "description": "Hot dip galvanized coils, Steel grade HX260LAD+ZA 130 MC_O, oiled, EN 10346, 2 x 150, nominal thick 2.00 mm, Ring inside diameter 508 mm",
+            "quantity": 4.354,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 2177.0,
+            "grade": "HX260LAD",
+            "thickness": 2.0,
+            "width": 150.0,
+            "length": null,
+            "coating": "ZA130MC_O",
+            "coil_number": "R90R904232 R90R904233 R90R904230 R90R904231",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HX260LAD",
+              "oc": "HX260LAD",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.0",
+              "oc": "2.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "150.0",
+              "oc": "150.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "ZA130MC_O",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Galfan (+ZA)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "0.698",
+              "oc": "4.354",
+              "note": "Spec-group confirmed \u00b7 OC total 4.354 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 9,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17903515": {
+          "status": "mismatch",
+          "oc_ref": "84916031",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_3..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R904232 R90R904233 R90R904230 R90R904231",
+            "supplier_article": "52102571",
+            "description": "Hot dip galvanized coils, Steel grade HX260LAD+ZA 130 MC_O, oiled, EN 10346, 2 x 150, nominal thick 2.00 mm, Ring inside diameter 508 mm",
+            "quantity": 4.354,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 2177.0,
+            "grade": "HX260LAD",
+            "thickness": 2.0,
+            "width": 150.0,
+            "length": null,
+            "coating": "ZA130MC_O",
+            "coil_number": "R90R904232 R90R904233 R90R904230 R90R904231",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HX260LAD",
+              "oc": "HX260LAD",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.0",
+              "oc": "2.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "150.0",
+              "oc": "150.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "ZA130MC_O",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Galfan (+ZA)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "0.736",
+              "oc": "4.354",
+              "note": "Spec-group confirmed \u00b7 OC total 4.354 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 9,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17903534": {
+          "status": "mismatch",
+          "oc_ref": "84916031",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_3..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R903967",
+            "supplier_article": "52105558",
+            "description": "Hot dip galvanized coils, HX260LAD+Z 100 MB_O, oiled, EN 10346, 3 x 200, nominal thick 3.00 mm, Ring inside diameter 508 mm",
+            "quantity": 1.93,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 965.0,
+            "grade": "HX260LAD",
+            "thickness": 3.0,
+            "width": 200.0,
+            "length": null,
+            "coating": "Z100MB_O",
+            "coil_number": "R90R903967",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HX260LAD",
+              "oc": "HX260LAD",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.93",
+              "oc": "1.93",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "3.0",
+              "oc": "3.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "200.0",
+              "oc": "200.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "Z100MB_O",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17903535": {
+          "status": "mismatch",
+          "oc_ref": "84916031",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_3..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R904074",
+            "supplier_article": "52105558",
+            "description": "Hot dip galvanized coils, HX260LAD+Z 100 MB_O, oiled, EN 10346, 3 x 180, nominal thick 3.00 mm, Ring inside diameter 508 mm",
+            "quantity": 1.724,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 862.0,
+            "grade": "HX260LAD",
+            "thickness": 3.0,
+            "width": 180.0,
+            "length": null,
+            "coating": "Z100MB_O",
+            "coil_number": "R90R904074",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HX260LAD",
+              "oc": "HX260LAD",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.724",
+              "oc": "1.724",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "3.0",
+              "oc": "3.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "180.0",
+              "oc": "180.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "Z100MB_O",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17903546": {
+          "status": "mismatch",
+          "oc_ref": "84916031",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_3..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "F900186174 F900186175",
+            "supplier_article": "52106788",
+            "description": "Hot dip galvanized coils, DX51D+Z 200 MACU, chem. passivated, unoiled, EN 10346, 3 x 116, nominal thick 3.00 mm, Ring inside diameter 500 mm",
+            "quantity": 2.618,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 1309.0,
+            "grade": "DX51D",
+            "thickness": 3.0,
+            "width": 116.0,
+            "length": null,
+            "coating": "Z200MACU",
+            "coil_number": "F900186174 F900186175",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX51D",
+              "oc": "DX51D",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "3.0",
+              "oc": "3.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "116.0",
+              "oc": "116.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "Z200MACU",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "1.308",
+              "oc": "2.618",
+              "note": "Spec-group confirmed \u00b7 OC total 2.618 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 9,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17903547": {
+          "status": "mismatch",
+          "oc_ref": "84916031",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_3..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "F900186174 F900186175",
+            "supplier_article": "52106788",
+            "description": "Hot dip galvanized coils, DX51D+Z 200 MACU, chem. passivated, unoiled, EN 10346, 3 x 116, nominal thick 3.00 mm, Ring inside diameter 500 mm",
+            "quantity": 2.618,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 1309.0,
+            "grade": "DX51D",
+            "thickness": 3.0,
+            "width": 116.0,
+            "length": null,
+            "coating": "Z200MACU",
+            "coil_number": "F900186174 F900186175",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX51D",
+              "oc": "DX51D",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "3.0",
+              "oc": "3.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "116.0",
+              "oc": "116.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "Z200MACU",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "1.31",
+              "oc": "2.618",
+              "note": "Spec-group confirmed \u00b7 OC total 2.618 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 9,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17903562": {
+          "status": "mismatch",
+          "oc_ref": "84916031",
+          "oc_date": "2026-06-17",
+          "filename": "Copy of 2026-06-17_thyssenkrupp-materials.com_P01807_Confirmation_3..PDF",
+          "date": "2026-07-15",
+          "oc_line": {
+            "vs_article": "R90R904182",
+            "supplier_article": "52109262",
+            "description": "Hot dip galvanized coils, HX260LAD+ZA 130 _C_O, oiled, EN 10346, 2 x 139, nominal thick 2.00 mm, Ring inside diameter 508 mm",
+            "quantity": 2.35,
+            "unit": "MT",
+            "unit_price": 500.0,
+            "total_price": 1175.0,
+            "grade": "HX260LAD",
+            "thickness": 2.0,
+            "width": 139.0,
+            "length": null,
+            "coating": "ZA130_C_O",
+            "coil_number": "R90R904182",
+            "delivery_date": "2026-06-30",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "HX260LAD",
+              "oc": "HX260LAD",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "2.35",
+              "oc": "2.35",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "500.0",
+              "oc": "500.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.0",
+              "oc": "2.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "139.0",
+              "oc": "139.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "ZA130_C_O",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Galfan (+ZA)",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "N/A (coil)",
+              "oc": "N/A (coil)",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "9011 Gy\u0151r, Gerda utca 3.",
+          "odoo": "Gerda U 3, 9011, Gyor Magyarorszag, Hungary",
+          "warning": false
+        },
+        {
+          "type": "incoterms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Incoterms MISMATCH",
+          "oc": "FCA",
+          "odoo": "[EXW] EX WORKS",
+          "warning": true
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "30 Days",
+          "odoo": "Immediate Payment",
+          "warning": true
+        }
+      ],
+      "supplier_notes": [
+        "MPE will not provide a manufacturer test certificate per DIN EN 10204 unless expressly agreed; instead MPE will prepare its own test certificate based on DIN EN 10204 adopting the manufacturer's test results and/or its own results.",
+        "No guarantee of quality in the legal sense is associated with the agreement of values or the information in the certificate."
+      ],
+      "slack_ts": "1784111127.599849"
     }
   }
 }
