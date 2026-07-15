@@ -259,11 +259,14 @@ def _call_claude(pdf_bytes: bytes, filename: str = "") -> str:
     with urllib.request.urlopen(req, timeout=120) as resp:
         result = json.loads(resp.read().decode("utf-8"))
 
+    usage  = result.get("usage", {})
+    tokens = {"input": usage.get("input_tokens", 0), "output": usage.get("output_tokens", 0)}
+
     # Extract text from the first content block
     content = result.get("content", [])
     for block in content:
         if block.get("type") == "text":
-            return block["text"].strip()
+            return block["text"].strip(), tokens
 
     raise RuntimeError("Claude returned no text content. Response: %s" % result)
 
@@ -334,7 +337,7 @@ def extract_oc_from_pdf(pdf_bytes: bytes, filename: str = "", doc_id: str = "") 
     """
     print(f"  Extracting via Claude API: {filename or doc_id}")
 
-    raw_text = _call_claude(pdf_bytes, filename)
+    raw_text, ext_tokens = _call_claude(pdf_bytes, filename)
     print(f"  Claude response: {len(raw_text)} chars")
 
     try:
@@ -350,7 +353,7 @@ def extract_oc_from_pdf(pdf_bytes: bytes, filename: str = "", doc_id: str = "") 
     doc_type = parsed.get("doc_type", "oc")
     if doc_type == "po":
         print(f"  SKIPPED: document identified as a VS Purchase Order, not a supplier OC.")
-        return None
+        return None, {}
 
     # Normalise top-level numeric fields
     for field in ("total_amount", "gross_amount", "vat_amount"):
@@ -390,7 +393,7 @@ def extract_oc_from_pdf(pdf_bytes: bytes, filename: str = "", doc_id: str = "") 
     sup = parsed.get("supplier_name", "?")
     print(f"  Extracted: PO={po}  lines={n}  supplier={sup}")
 
-    return parsed
+    return parsed, ext_tokens
 
 
 # ---------------------------------------------------------------------------

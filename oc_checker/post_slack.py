@@ -334,6 +334,31 @@ def build_po_status_text(po_name, po_log):
         for note in supplier_notes:
             lines.append("   • %s" % note)
 
+    # ── Processing stats (time + tokens per OC) ─────────────────────────────
+    processing_runs = po_log.get("processing_runs", [])
+    if processing_runs:
+        lines.append("")
+        lines.append(DIV)
+        for run in processing_runs:
+            fname = run.get("filename", "?")
+            short = (fname[:48] + "…") if len(fname) > 48 else fname
+
+            time_str = ("%ds" % int(run["time_s"])) if run.get("time_s") is not None else ""
+
+            ext = run.get("extraction_tokens") or {}
+            cmp = run.get("comparison_tokens") or {}
+            total_tok = (
+                (ext.get("input") or 0) + (ext.get("output") or 0) +
+                (cmp.get("input") or 0) + (cmp.get("output") or 0)
+            )
+            tok_str = "{:,} tok".format(total_tok) if total_tok else ""
+
+            engine    = run.get("comparison_engine", "?")
+            eng_label = "AI" if engine == "ai" else "Python"
+
+            parts = [p for p in [time_str, tok_str, "(%s)" % eng_label] if p]
+            lines.append(":stopwatch: `%s`   %s" % (short, "  ·  ".join(parts)))
+
     # ── Footer ────────────────────────────────────────────────────────────────
     lines.append("")
     if n_pending == 0 and n_mismatch == 0:

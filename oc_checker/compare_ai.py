@@ -226,7 +226,9 @@ def _call_claude(prompt, model="claude-opus-4-5", max_tokens=8192):
         system=SYSTEM_PROMPT,
         messages=[{"role": "user", "content": prompt}],
     )
-    return resp.content[0].text.strip()
+    usage  = resp.usage
+    tokens = {"input": usage.input_tokens, "output": usage.output_tokens}
+    return resp.content[0].text.strip(), tokens
 
 
 def _parse_json(raw):
@@ -395,11 +397,13 @@ def compare_via_claude(oc_data, po_data, po_lines, so_data, so_lines, config,
     # Scale max_tokens with PO size: ~700 tokens per line (12 fields × ~55 tokens each).
     # Floor at 8192; most models support up to 16384 for standard generation.
     max_tok   = max(8192, len(po_lines) * 700)
-    raw       = _call_claude(prompt, model=model, max_tokens=max_tok)
+    raw, cmp_tokens = _call_claude(prompt, model=model, max_tokens=max_tok)
     ai_result = _parse_json(raw)
 
     n_lines = len(ai_result.get("line_results", []))
     print("  [AI compare] Received %d line result(s)" % n_lines)
 
-    return _build_result(ai_result, oc_data, po_data, so_data, po_lines, so_lines,
-                         config, odoo_shipping_address)
+    result = _build_result(ai_result, oc_data, po_data, so_data, po_lines, so_lines,
+                           config, odoo_shipping_address)
+    result["tokens"] = cmp_tokens
+    return result

@@ -40,6 +40,7 @@ Optional overrides:
 import os
 import sys
 import json
+import time
 from datetime import date
 from pathlib import Path
 
@@ -215,6 +216,17 @@ def update_po_log_with_result(state, po_name, result, filename):
         po_entry["supplier_notes"] = []
 
     po_entry["last_updated"] = today
+
+    # Store per-OC processing stats (time + tokens) — appended, not overwritten
+    run_stat = {
+        "filename":          filename,
+        "time_s":            result.get("processing_time_s"),
+        "extraction_tokens": result.get("extraction_tokens", {}),
+        "comparison_tokens": result.get("tokens", {}),
+        "comparison_engine": engine,
+    }
+    po_entry.setdefault("processing_runs", []).append(run_stat)
+
     return state
 
 
@@ -289,11 +301,12 @@ def process_one(doc, odoo_cfg, slack_webhook):
     print("=" * 60)
     print("Processing: %s  (Drive ID: %s)" % (filename, doc_id))
     print("=" * 60)
+    _t0 = time.time()
 
     # Step 1: Download PDF and extract OC data via Claude
     try:
         pdf_bytes = drive_client.download_pdf(doc_id)
-        oc_data   = extractor.extract_oc_from_pdf(pdf_bytes, filename=filename, doc_id=doc_id)
+        oc_data, ext_tokens = extractor.extract_oc_from_pdf(pdf_bytes, filename=filename, doc_id=doc_id)
     except Exception as e:
         print("  ERROR extracting OC: %s" % e)
         post_slack.post_text(slack_webhook,
@@ -409,6 +422,8 @@ def process_one(doc, odoo_cfg, slack_webhook):
     n_mm     = result.get("total_mismatches", 0)
     print("  Comparison: %s  engine=%s  lines=%d  mismatches=%d" % (outcome, engine, n_lines, n_mm))
 
+    result["processing_time_s"] = round(time.time() - _t0, 1)
+    result["extraction_tokens"]  = ext_tokens
     return True, result, filename, po_lines, so, po
 
 
