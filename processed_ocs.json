@@ -5,20 +5,35 @@
     "11EkZibHoPaIwfvsCUqACvkGbDF9k-WtA",
     "16UsFJDxB99i1JJDXbJXd9wAPVIS5eHTc",
     "18ATfa2TuROBER0l0APy6vIIDOTVkQ3sl",
+    "19WcfDrY4-04QT-STlQB2jG4AUmNp66ai",
+    "19yMBZ4z7KfqD3bknZmhLSZ3jJ7tpXE0g",
     "1Bkaxv7fB-4v75AeRYUxJ9DyVlIVfeIMC",
+    "1CH_x5yC7_2KQY-2zs3THOG5T7aPL5xsX",
+    "1F6_V0FNjewQMg9CWhlGsJ82gEof6Srig",
     "1FlS5eiEZ9ySE7YCcCyOE0a-2kAQl6-Uz",
+    "1IL0_oe93Hcm0P8HGZa8RW8bYU00SQNvI",
+    "1IjOI4VLWi0JXmlP7D2tSBzEE28lRYYjT",
+    "1JcSaaKqn7nuQriMA8d0NH16jE2nvZvHW",
     "1K1ht5lu9hI_d1tiDnc6Hj6hsJJe0447e",
+    "1KjQYCzawbbQb7k0rzreWDrp1GE6iYJtj",
     "1LDKdZWFoW38hG-21iR4Hos4uhg0AVr0J",
+    "1NwKAreL41dZg7aTSyIWy0AiP3k2yqxIF",
     "1OCMRmrGPgFwCM2J9Lx3lSEVdRqteQHBU",
     "1QCda4exTSKFf8qG_wz4_7oBPwp46lYxN",
     "1SDCZ6198_l569vKvz5beEylp51WGw9To",
+    "1TpNU1ET-NnhBpB7gLgGQ5sf6BueedaTN",
     "1VwZR8-jRayYczJwwrBxTT2tWivHsAAqF",
+    "1XeFz7zZRcASWPHZoH8lSzuwsSKIVJtDK",
+    "1_1omIWk55ozaBYhWd35hdAJen73GkigA",
     "1aoCHWq9-vQCr7iI-QInyGm2xGwCp6Tfu",
+    "1bb-0slxZkXF9z0DtA23AuK6lBfpW8hpq",
     "1cprlidPRtk5Ru0OmR62auiYYx0fUp4cu",
     "1cukRo7llbNbkkjNWOGz7JXGou6R-XAEy",
+    "1d23I8Ya68Ul_rN1go_tmukmA1awAvGBD",
     "1faRucHz0ygeFyYxzkotLl2cbwOmpbJ5n",
     "1g2Ye0a7UnkOSjaaGKHCxO-H8jOQ3nTRs",
     "1hlJiKvYpZV3OwWbiUSoS1JBtYEWFkHU5",
+    "1k-vAkgKP2oeQcwk0mOzkXPvvrXivt-t7",
     "1kIhoNDDThCiGMXEMG6o8BoqE3D2zM6Wh",
     "1kKBQXTkTkW4sxo3bqjShnjPjG_DGv1sG",
     "1kzlYfcJmbxqX4EZefM4bgaNzDyWq3n57",
@@ -29,6 +44,7 @@
     "1ocWQqDE0dq8zI1DC_ipsVxRe4LSgKlcC",
     "1oqNSrjBBmSSHzUdPVnCC4chrOnjns6nK",
     "1v843f3D3FiC6elRyTFdfWUGzIGup9DG_",
+    "1vC4jVXSsnZbqVpBumIJO6Vg7N6dCHkLn",
     "1vQapJY1HGDrcEEB7ybTImytENdNQjIWW"
   ],
   "po_oc_log": {
@@ -5291,22 +5307,22 @@
       "supplier": "Jens Raupach",
       "buyer": "Dominik Bonk",
       "initialized": "2026-07-15",
-      "last_updated": "2026-07-15",
+      "last_updated": "2026-07-16",
       "line_items": {
         "VSI-17900433": {
           "status": "confirmed",
           "oc_ref": "146358",
-          "oc_date": "2026-06-03",
-          "filename": "knappsteinbleche.de_146358.pdf",
-          "date": "2026-07-15",
+          "oc_date": "2026-06-24",
+          "filename": "2026-06-24_knappsteinbleche.de_LE 146358 Vanilla.pdf",
+          "date": "2026-07-16",
           "oc_line": {
             "grade": "S355MC",
             "thickness": 1.5,
             "width": 1052.0,
-            "quantity": 42.0,
-            "unit_price": 840.0,
+            "quantity": null,
+            "unit_price": null,
             "form": null,
-            "coating": null
+            "coating": "gebeizt + ge\u00f6lt (pickled and oiled)"
           },
           "fields": [
             {
@@ -5330,8 +5346,8 @@
               "label": "Coating",
               "status": "skip",
               "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
+              "oc": "gebeizt + ge\u00f6lt (pickled and oiled)",
+              "note": "not in Odoo"
             },
             {
               "key": "finish",
@@ -5352,10 +5368,10 @@
             {
               "key": "quantity",
               "label": "Quantity",
-              "status": "match",
+              "status": "skip",
               "odoo": "42.0",
-              "oc": "42.0",
-              "note": ""
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
             },
             {
               "key": "no_of_items",
@@ -5368,10 +5384,10 @@
             {
               "key": "price",
               "label": "Unit Price",
-              "status": "match",
+              "status": "skip",
               "odoo": "840.0",
-              "oc": "840.0",
-              "note": ""
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
             },
             {
               "key": "thickness",
@@ -5406,8 +5422,8 @@
               "note": ""
             }
           ],
-          "score": 5,
-          "total": 9,
+          "score": 3,
+          "total": 10,
           "mismatches": 0,
           "comparison_engine": "ai",
           "match_note": "positional fallback"
@@ -5415,17 +5431,17 @@
         "VSI-17900434": {
           "status": "confirmed",
           "oc_ref": "146358",
-          "oc_date": "2026-06-03",
-          "filename": "knappsteinbleche.de_146358.pdf",
-          "date": "2026-07-15",
+          "oc_date": "2026-06-24",
+          "filename": "2026-06-24_knappsteinbleche.de_LE 146358 Vanilla.pdf",
+          "date": "2026-07-16",
           "oc_line": {
             "grade": "S355MC",
             "thickness": 1.5,
             "width": 1062.0,
-            "quantity": 43.0,
-            "unit_price": 840.0,
+            "quantity": null,
+            "unit_price": null,
             "form": null,
-            "coating": null
+            "coating": "gebeizt + ge\u00f6lt (pickled and oiled)"
           },
           "fields": [
             {
@@ -5449,8 +5465,8 @@
               "label": "Coating",
               "status": "skip",
               "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
+              "oc": "gebeizt + ge\u00f6lt (pickled and oiled)",
+              "note": "not in Odoo"
             },
             {
               "key": "finish",
@@ -5471,10 +5487,10 @@
             {
               "key": "quantity",
               "label": "Quantity",
-              "status": "match",
+              "status": "skip",
               "odoo": "43.0",
-              "oc": "43.0",
-              "note": ""
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
             },
             {
               "key": "no_of_items",
@@ -5487,10 +5503,10 @@
             {
               "key": "price",
               "label": "Unit Price",
-              "status": "match",
+              "status": "skip",
               "odoo": "840.0",
-              "oc": "840.0",
-              "note": ""
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
             },
             {
               "key": "thickness",
@@ -5525,24 +5541,143 @@
               "note": ""
             }
           ],
-          "score": 5,
-          "total": 9,
+          "score": 3,
+          "total": 10,
           "mismatches": 0,
           "comparison_engine": "ai",
           "match_note": "positional fallback"
         },
         "VSI-17900435": {
-          "status": "mismatch",
+          "status": "confirmed",
           "oc_ref": "146358",
-          "oc_date": "2026-06-03",
-          "filename": "knappsteinbleche.de_146358.pdf",
-          "date": "2026-07-15",
+          "oc_date": "2026-06-24",
+          "filename": "2026-06-24_knappsteinbleche.de_LE 146358 Vanilla.pdf",
+          "date": "2026-07-16",
           "oc_line": {
             "grade": "S355MC",
             "thickness": 1.5,
             "width": 1095.0,
-            "quantity": 43.0,
-            "unit_price": 840.0,
+            "quantity": null,
+            "unit_price": null,
+            "form": null,
+            "coating": "gebeizt + ge\u00f6lt (pickled and oiled)"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S355MC",
+              "oc": "S355MC",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "gebeizt + ge\u00f6lt (pickled and oiled)",
+              "note": "not in Odoo"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot Rolled",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "42.59",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "2",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "skip",
+              "odoo": "840.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.5",
+              "oc": "1.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1095.0",
+              "oc": "1095.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 3,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai",
+          "match_note": "positional fallback"
+        },
+        "VSI-17900436": {
+          "status": "mismatch",
+          "oc_ref": "90925",
+          "oc_date": "2026-07-13",
+          "filename": "2026-07-15_knappsteinbleche.de_90925.pdf",
+          "date": "2026-07-16",
+          "oc_line": {
+            "grade": "S355MC",
+            "thickness": 1.5,
+            "width": 1155.0,
+            "quantity": 21.51,
+            "unit_price": null,
             "form": null,
             "coating": null
           },
@@ -5591,144 +5726,25 @@
               "key": "quantity",
               "label": "Quantity",
               "status": "mismatch",
-              "odoo": "42.59",
-              "oc": "43.0",
-              "note": "OC qty 43.0 differs from Odoo qty 42.59 (diff ~0.96%, exceeds 0.5% threshold)"
-            },
-            {
-              "key": "no_of_items",
-              "label": "# of Items",
-              "status": "skip",
-              "odoo": "2",
-              "oc": "\u2014",
-              "note": "not confirmed by OC"
-            },
-            {
-              "key": "price",
-              "label": "Unit Price",
-              "status": "match",
-              "odoo": "840.0",
-              "oc": "840.0",
-              "note": ""
-            },
-            {
-              "key": "thickness",
-              "label": "Thickness",
-              "status": "match",
-              "odoo": "1.5",
-              "oc": "1.5",
-              "note": ""
-            },
-            {
-              "key": "width",
-              "label": "Width",
-              "status": "match",
-              "odoo": "1095.0",
-              "oc": "1095.0",
-              "note": ""
-            },
-            {
-              "key": "length",
-              "label": "Length",
-              "status": "na",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": "N/A coil"
-            },
-            {
-              "key": "tensile_strength",
-              "label": "Tensile Strength",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            }
-          ],
-          "score": 4,
-          "total": 9,
-          "mismatches": 1,
-          "comparison_engine": "ai",
-          "match_note": "positional fallback"
-        },
-        "VSI-17900436": {
-          "status": "confirmed",
-          "oc_ref": "146358",
-          "oc_date": "2026-06-03",
-          "filename": "knappsteinbleche.de_146358.pdf",
-          "date": "2026-07-15",
-          "oc_line": {
-            "grade": "S355MC",
-            "thickness": 1.5,
-            "width": 1155.0,
-            "quantity": 44.0,
-            "unit_price": 840.0,
-            "form": null,
-            "coating": null
-          },
-          "fields": [
-            {
-              "key": "grade",
-              "label": "Grade",
-              "status": "match",
-              "odoo": "S355MC",
-              "oc": "S355MC",
-              "note": ""
-            },
-            {
-              "key": "quality_choice",
-              "label": "Quality Choice",
-              "status": "skip",
-              "odoo": "1st",
-              "oc": "\u2014",
-              "note": "not confirmed by OC"
-            },
-            {
-              "key": "coating",
-              "label": "Coating",
-              "status": "skip",
-              "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
-            },
-            {
-              "key": "finish",
-              "label": "Finish",
-              "status": "skip",
-              "odoo": "Hot Rolled",
-              "oc": "\u2014",
-              "note": "not confirmed by OC"
-            },
-            {
-              "key": "form",
-              "label": "Form",
-              "status": "skip",
-              "odoo": "Coils",
-              "oc": "\u2014",
-              "note": "not confirmed by OC"
-            },
-            {
-              "key": "quantity",
-              "label": "Quantity",
-              "status": "match",
               "odoo": "44.0",
-              "oc": "44.0",
-              "note": ""
+              "oc": "21.51",
+              "note": "OC quantity 21.51t is ~48.9% of Odoo 44.0t; OC appears to confirm only 1 of 2 coils (aoo=90923/90925, only 90925 matched)"
             },
             {
               "key": "no_of_items",
               "label": "# of Items",
-              "status": "skip",
+              "status": "match",
               "odoo": "1",
-              "oc": "\u2014",
-              "note": "not confirmed by OC"
+              "oc": "1",
+              "note": "OC confirms 1 coil; Odoo aoo references 2 coil numbers (90923/90925)"
             },
             {
               "key": "price",
               "label": "Unit Price",
-              "status": "match",
+              "status": "skip",
               "odoo": "840.0",
-              "oc": "840.0",
-              "note": ""
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
             },
             {
               "key": "thickness",
@@ -5763,26 +5779,25 @@
               "note": ""
             }
           ],
-          "score": 5,
+          "score": 4,
           "total": 9,
-          "mismatches": 0,
-          "comparison_engine": "ai",
-          "match_note": "positional fallback"
+          "mismatches": 1,
+          "comparison_engine": "ai"
         },
         "VSI-17900437": {
           "status": "confirmed",
           "oc_ref": "146358",
-          "oc_date": "2026-06-03",
-          "filename": "knappsteinbleche.de_146358.pdf",
-          "date": "2026-07-15",
+          "oc_date": "2026-06-24",
+          "filename": "2026-06-24_knappsteinbleche.de_LE 146358 Vanilla.pdf",
+          "date": "2026-07-16",
           "oc_line": {
             "grade": "S355MC",
             "thickness": 1.5,
             "width": 1215.0,
-            "quantity": 46.0,
-            "unit_price": 840.0,
+            "quantity": null,
+            "unit_price": null,
             "form": null,
-            "coating": null
+            "coating": "gebeizt + ge\u00f6lt (pickled and oiled)"
           },
           "fields": [
             {
@@ -5806,8 +5821,8 @@
               "label": "Coating",
               "status": "skip",
               "odoo": "\u2014",
-              "oc": "\u2014",
-              "note": ""
+              "oc": "gebeizt + ge\u00f6lt (pickled and oiled)",
+              "note": "not in Odoo"
             },
             {
               "key": "finish",
@@ -5828,10 +5843,10 @@
             {
               "key": "quantity",
               "label": "Quantity",
-              "status": "match",
+              "status": "skip",
               "odoo": "46.0",
-              "oc": "46.0",
-              "note": ""
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
             },
             {
               "key": "no_of_items",
@@ -5844,10 +5859,10 @@
             {
               "key": "price",
               "label": "Unit Price",
-              "status": "match",
+              "status": "skip",
               "odoo": "840.0",
-              "oc": "840.0",
-              "note": ""
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
             },
             {
               "key": "thickness",
@@ -5882,8 +5897,8 @@
               "note": ""
             }
           ],
-          "score": 5,
-          "total": 9,
+          "score": 3,
+          "total": 10,
           "mismatches": 0,
           "comparison_engine": "ai",
           "match_note": "positional fallback"
@@ -5925,14 +5940,119 @@
         }
       ],
       "supplier_notes": [
-        "Intra-community supply, VAT exempt (Art. 138 Dir. 2006/112/EC); reverse charge applies.",
-        "Supplied under Belgian VAT-ID BE0774.769.583.",
-        "Quantity tolerance: +/- 20%.",
-        "Packaging: standing in coil cradle, gross for net weighing, max. ring weight 25,000 kg.",
-        "Shipment by truck.",
-        "Force majeure clause applies including Russia-Ukraine conflict-related disruptions."
+        "This is a supplier declaration of preferential origin (Lieferantenerkl\u00e4rung) for rolled iron and steel products with EU preferential origin (Belgium).",
+        "No cumulation applied.",
+        "Document covers order positions 1-5 with dimensions 1.5mm thickness in widths 1052mm, 1062mm, 1095mm, 1155mm, and 1215mm.",
+        "Batches (Chargen): N87598, N86157, N87601, N86522, N86519, N86534, N86528, N86526, N86154.",
+        "Grade: S355MC, pickled and oiled (gebeizt + ge\u00f6lt). Customs tariff number: 72082700."
       ],
-      "slack_ts": "1784117056.295659"
+      "slack_ts": "1784117056.295659",
+      "processing_runs": [
+        {
+          "filename": "2026-06-09_knappsteinbleche.de_90208.pdf",
+          "time_s": 36.6,
+          "extraction_tokens": {
+            "input": 4175,
+            "output": 234
+          },
+          "comparison_tokens": {
+            "input": 2083,
+            "output": 2539
+          },
+          "comparison_engine": "ai"
+        },
+        {
+          "filename": "2026-06-15_knappsteinbleche.de_146358.pdf",
+          "time_s": 51.1,
+          "extraction_tokens": {
+            "input": 8894,
+            "output": 1274
+          },
+          "comparison_tokens": {
+            "input": 3378,
+            "output": 2785
+          },
+          "comparison_engine": "ai"
+        },
+        {
+          "filename": "2026-06-18_knappsteinbleche.de_90213.pdf",
+          "time_s": 39.8,
+          "extraction_tokens": {
+            "input": 4175,
+            "output": 231
+          },
+          "comparison_tokens": {
+            "input": 2078,
+            "output": 2878
+          },
+          "comparison_engine": "ai"
+        },
+        {
+          "filename": "2026-06-18_knappsteinbleche.de_90510.pdf",
+          "time_s": 39.6,
+          "extraction_tokens": {
+            "input": 4175,
+            "output": 220
+          },
+          "comparison_tokens": {
+            "input": 2069,
+            "output": 2486
+          },
+          "comparison_engine": "ai"
+        },
+        {
+          "filename": "2026-06-18_knappsteinbleche.de_90512.pdf",
+          "time_s": 32.0,
+          "extraction_tokens": {
+            "input": 4175,
+            "output": 231
+          },
+          "comparison_tokens": {
+            "input": 2074,
+            "output": 2594
+          },
+          "comparison_engine": "ai"
+        },
+        {
+          "filename": "2026-06-24_knappsteinbleche.de_LE 146358 Vanilla.pdf",
+          "time_s": 40.2,
+          "extraction_tokens": {
+            "input": 8740,
+            "output": 794
+          },
+          "comparison_tokens": {
+            "input": 2869,
+            "output": 2582
+          },
+          "comparison_engine": "ai"
+        },
+        {
+          "filename": "2026-07-15_knappsteinbleche.de_90923.pdf",
+          "time_s": 40.0,
+          "extraction_tokens": {
+            "input": 4175,
+            "output": 220
+          },
+          "comparison_tokens": {
+            "input": 2066,
+            "output": 2901
+          },
+          "comparison_engine": "ai"
+        },
+        {
+          "filename": "2026-07-15_knappsteinbleche.de_90925.pdf",
+          "time_s": 46.0,
+          "extraction_tokens": {
+            "input": 4175,
+            "output": 219
+          },
+          "comparison_tokens": {
+            "input": 2067,
+            "output": 3207
+          },
+          "comparison_engine": "ai"
+        }
+      ]
     },
     "P01827": {
       "so_name": "S01511",
