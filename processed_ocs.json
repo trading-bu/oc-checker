@@ -9,6 +9,7 @@
     "19yMBZ4z7KfqD3bknZmhLSZ3jJ7tpXE0g",
     "1Bkaxv7fB-4v75AeRYUxJ9DyVlIVfeIMC",
     "1CH_x5yC7_2KQY-2zs3THOG5T7aPL5xsX",
+    "1DQNm52c_7ndBUP1gGrA6NNCdUhPiuoz-",
     "1F6_V0FNjewQMg9CWhlGsJ82gEof6Srig",
     "1FlS5eiEZ9ySE7YCcCyOE0a-2kAQl6-Uz",
     "1IL0_oe93Hcm0P8HGZa8RW8bYU00SQNvI",
@@ -8672,6 +8673,635 @@
         }
       ],
       "slack_ts": "1784122834.988749"
+    },
+    "P01857": {
+      "so_name": "S01531",
+      "supplier": "Rodrigue Payntar",
+      "buyer": "Christian Vehma",
+      "initialized": "2026-07-20",
+      "last_updated": "2026-07-20",
+      "line_items": {
+        "VSI-17925495": {
+          "status": "confirmed",
+          "oc_ref": "002562",
+          "oc_date": "2026-07-16",
+          "filename": "Vente Vanilla  002562 P01857.pdf",
+          "date": "2026-07-20",
+          "oc_line": {
+            "grade": "S320GD",
+            "thickness": 0.72,
+            "width": 1250.0,
+            "quantity": 8.21,
+            "unit_price": 760.0,
+            "form": "Coils",
+            "coating": "Z100MAC"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S320GD",
+              "oc": "S320GD",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "Z100",
+              "oc": "Z100MAC",
+              "note": "OC specifies Z100MAC; Odoo has Z100 \u2014 MAC suffix unconfirmed"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Coils",
+              "oc": "Coils",
+              "note": "OC description 'Bobine' = Coil"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "8.21",
+              "oc": "8.21",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "760.0",
+              "oc": "760.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.72",
+              "oc": "0.72",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1250.0",
+              "oc": "1250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 6,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17925496": {
+          "status": "confirmed",
+          "oc_ref": "002562",
+          "oc_date": "2026-07-16",
+          "filename": "Vente Vanilla  002562 P01857.pdf",
+          "date": "2026-07-20",
+          "oc_line": {
+            "grade": "S320GD",
+            "thickness": 0.72,
+            "width": 1250.0,
+            "quantity": 7.97,
+            "unit_price": 760.0,
+            "form": "Coils",
+            "coating": "Z100MAC"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S320GD",
+              "oc": "S320GD",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "Z100",
+              "oc": "Z100MAC",
+              "note": "OC specifies Z100MAC; Odoo has Z100 \u2014 MAC suffix unconfirmed"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Coils",
+              "oc": "Coils",
+              "note": "OC description 'Bobine' = Coil"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "7.97",
+              "oc": "7.97",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "760.0",
+              "oc": "760.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.72",
+              "oc": "0.72",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1250.0",
+              "oc": "1250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 6,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17925497": {
+          "status": "confirmed",
+          "oc_ref": "002562",
+          "oc_date": "2026-07-16",
+          "filename": "Vente Vanilla  002562 P01857.pdf",
+          "date": "2026-07-20",
+          "oc_line": {
+            "grade": "S320GD",
+            "thickness": 0.72,
+            "width": 1250.0,
+            "quantity": 8.11,
+            "unit_price": 760.0,
+            "form": "Coils",
+            "coating": "Z100MAC"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S320GD",
+              "oc": "S320GD",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "Z100",
+              "oc": "Z100MAC",
+              "note": "OC specifies Z100MAC; Odoo has Z100 \u2014 MAC suffix unconfirmed"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Coils",
+              "oc": "Coils",
+              "note": "OC description 'Bobine' = Coil"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "8.11",
+              "oc": "8.11",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "760.0",
+              "oc": "760.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.72",
+              "oc": "0.72",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1250.0",
+              "oc": "1250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 6,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17925498": {
+          "status": "confirmed",
+          "oc_ref": "002562",
+          "oc_date": "2026-07-16",
+          "filename": "Vente Vanilla  002562 P01857.pdf",
+          "date": "2026-07-20",
+          "oc_line": {
+            "grade": "S320GD",
+            "thickness": 0.72,
+            "width": 1250.0,
+            "quantity": 7.97,
+            "unit_price": 760.0,
+            "form": "Coils",
+            "coating": "Z100MAC"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S320GD",
+              "oc": "S320GD",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "Z100",
+              "oc": "Z100MAC",
+              "note": "OC specifies Z100MAC; Odoo has Z100 \u2014 MAC suffix unconfirmed"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Coils",
+              "oc": "Coils",
+              "note": "OC description 'Bobine' = Coil"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "7.97",
+              "oc": "7.97",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "760.0",
+              "oc": "760.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.72",
+              "oc": "0.72",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1250.0",
+              "oc": "1250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 6,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17925499": {
+          "status": "confirmed",
+          "oc_ref": "002562",
+          "oc_date": "2026-07-16",
+          "filename": "Vente Vanilla  002562 P01857.pdf",
+          "date": "2026-07-20",
+          "oc_line": {
+            "grade": "S320GD",
+            "thickness": 0.72,
+            "width": 1250.0,
+            "quantity": 9.5,
+            "unit_price": 760.0,
+            "form": "Coils",
+            "coating": "Z100MAC"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "S320GD",
+              "oc": "S320GD",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "1st",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "Z100",
+              "oc": "Z100MAC",
+              "note": "OC specifies Z100MAC; Odoo has Z100 \u2014 MAC suffix unconfirmed"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Coils",
+              "oc": "Coils",
+              "note": "OC description 'Bobine' = Coil"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "9.5",
+              "oc": "9.5",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "760.0",
+              "oc": "760.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.72",
+              "oc": "0.72",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1250.0",
+              "oc": "1250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 6,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Blandain B7522",
+          "odoo": "Z.I Tournai Ouest, Rue du mont des Carliers 4, 7522, Blandain",
+          "warning": true
+        }
+      ],
+      "supplier_notes": [
+        "Payment by bank transfer on proforma invoice.",
+        "Shipment: departure (D\u00e9part)."
+      ],
+      "processing_runs": [
+        {
+          "filename": "Vente Vanilla  002562 P01857.pdf",
+          "time_s": 38.3,
+          "extraction_tokens": {
+            "input": 6265,
+            "output": 747
+          },
+          "comparison_tokens": {
+            "input": 2891,
+            "output": 2717
+          },
+          "comparison_engine": "ai"
+        }
+      ],
+      "slack_ts": "1784543342.819919"
     }
   }
 }
