@@ -45,6 +45,7 @@
     "1o_r2kb2uYK3vuMDTNWEESx1ePYsgiG7v",
     "1ocWQqDE0dq8zI1DC_ipsVxRe4LSgKlcC",
     "1oqNSrjBBmSSHzUdPVnCC4chrOnjns6nK",
+    "1pujaHc6-87DefldCnYlmjqbch3aBTk1D",
     "1v843f3D3FiC6elRyTFdfWUGzIGup9DG_",
     "1vC4jVXSsnZbqVpBumIJO6Vg7N6dCHkLn",
     "1vQapJY1HGDrcEEB7ybTImytENdNQjIWW"
@@ -9302,6 +9303,174 @@
         }
       ],
       "slack_ts": "1784543342.819919"
+    },
+    "P01864": {
+      "so_name": "S01536",
+      "supplier": "Martin Korreck",
+      "buyer": "Volker Wolff",
+      "initialized": "2026-07-21",
+      "last_updated": "2026-07-21",
+      "line_items": {
+        "VSI-17922858": {
+          "status": "confirmed",
+          "oc_ref": "213490",
+          "oc_date": "2026-07-21",
+          "filename": "Auftragsbest\u00e4tigung_213490.PDF",
+          "date": "2026-07-21",
+          "oc_line": {
+            "grade": "DC04",
+            "thickness": 2.5,
+            "width": 332.0,
+            "quantity": 2.61,
+            "unit_price": 400.0,
+            "form": "Slit Coils",
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC04",
+              "oc": "DC04",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "match",
+              "odoo": "2nd",
+              "oc": "2nd Choice",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Cold Drawn / Soft (+LC)",
+              "oc": "Cold Drawn / Soft (+LC)",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Slit Coils",
+              "oc": "Slit Coils",
+              "note": ""
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "2.61",
+              "oc": "2.61",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "400.0",
+              "oc": "400.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.5",
+              "oc": "2.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "332.0",
+              "oc": "332.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 8,
+          "total": 9,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Im Weinhof 36, 58119 Hagen, Germany",
+          "odoo": "Im Weinhof 36, 58119, Hagen, Germany",
+          "warning": false
+        },
+        {
+          "type": "vat",
+          "icon": "\ud83e\uddfe",
+          "label": "VAT",
+          "vat_pct": "19%",
+          "net": 1044.0,
+          "gross": 1242.36,
+          "warning": false
+        }
+      ],
+      "supplier_notes": [
+        "Loading instruction: lying (Verladung - Liegend).",
+        "Material description note: wrapped too loose (Zu lose gewickelt).",
+        "PCF (Product Carbon Footprint) for all products manufactured by BILSTEIN GmbH & Co. KG in reporting year 2024 is a quantity-weighted average of 2.479 kg CO2e/t cold strip, calculated in accordance with GHG Protocol Product Standard and ISO 14067.",
+        "Prices outside agreed contract periods are subject to change; discussions will be initiated in due time."
+      ],
+      "processing_runs": [
+        {
+          "filename": "Auftragsbest\u00e4tigung_213490.PDF",
+          "time_s": 24.0,
+          "extraction_tokens": {
+            "input": 5182,
+            "output": 429
+          },
+          "comparison_tokens": {
+            "input": 1921,
+            "output": 534
+          },
+          "comparison_engine": "ai"
+        }
+      ],
+      "slack_ts": "1784618597.238559"
     }
   }
 }
