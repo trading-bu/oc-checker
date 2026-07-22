@@ -4,6 +4,7 @@
     "10x3VkNvIG9L9x6AgU_TZDN_EbFa1bEeO",
     "11EkZibHoPaIwfvsCUqACvkGbDF9k-WtA",
     "16UsFJDxB99i1JJDXbJXd9wAPVIS5eHTc",
+    "16gyaFJqAu_y6Jm3x2nUlLwx6MC7O3wLZ",
     "18ATfa2TuROBER0l0APy6vIIDOTVkQ3sl",
     "19WcfDrY4-04QT-STlQB2jG4AUmNp66ai",
     "19yMBZ4z7KfqD3bknZmhLSZ3jJ7tpXE0g",
@@ -12,6 +13,7 @@
     "1DQNm52c_7ndBUP1gGrA6NNCdUhPiuoz-",
     "1F6_V0FNjewQMg9CWhlGsJ82gEof6Srig",
     "1FlS5eiEZ9ySE7YCcCyOE0a-2kAQl6-Uz",
+    "1GeDzW41hzHigJ4Fg19twAcuJ5UWO3ILT",
     "1IL0_oe93Hcm0P8HGZa8RW8bYU00SQNvI",
     "1IjOI4VLWi0JXmlP7D2tSBzEE28lRYYjT",
     "1JcSaaKqn7nuQriMA8d0NH16jE2nvZvHW",
@@ -21,6 +23,8 @@
     "1NwKAreL41dZg7aTSyIWy0AiP3k2yqxIF",
     "1OCMRmrGPgFwCM2J9Lx3lSEVdRqteQHBU",
     "1QCda4exTSKFf8qG_wz4_7oBPwp46lYxN",
+    "1Qhzq-E_rGYHEGw0Ra6q3l_qbRfkMCA5v",
+    "1S1U1M1IykgoeRbV9FfPtOveyfU9HZ578",
     "1SDCZ6198_l569vKvz5beEylp51WGw9To",
     "1TpNU1ET-NnhBpB7gLgGQ5sf6BueedaTN",
     "1VwZR8-jRayYczJwwrBxTT2tWivHsAAqF",
@@ -48,7 +52,8 @@
     "1pujaHc6-87DefldCnYlmjqbch3aBTk1D",
     "1v843f3D3FiC6elRyTFdfWUGzIGup9DG_",
     "1vC4jVXSsnZbqVpBumIJO6Vg7N6dCHkLn",
-    "1vQapJY1HGDrcEEB7ybTImytENdNQjIWW"
+    "1vQapJY1HGDrcEEB7ybTImytENdNQjIWW",
+    "1zraCaNIeib-NgaJ-kFKgRqbuIIrGCT9-"
   ],
   "po_oc_log": {
     "P01851": {
@@ -9471,6 +9476,1287 @@
         }
       ],
       "slack_ts": "1784618597.238559"
+    },
+    "P01860": {
+      "so_name": "S01533",
+      "supplier": "Denis Rieger",
+      "buyer": "Bartlomiej Brzezinski",
+      "initialized": "2026-07-22",
+      "last_updated": "2026-07-22",
+      "line_items": {
+        "VSI-17925857": {
+          "status": "confirmed",
+          "oc_ref": "84921551",
+          "oc_date": "2026-07-21",
+          "filename": "AB P01860 1,35 x 340.pdf",
+          "date": "2026-07-22",
+          "oc_line": {
+            "grade": "CR340LA",
+            "thickness": 1.35,
+            "width": 340.0,
+            "quantity": 3.186,
+            "unit_price": 400.0,
+            "form": null,
+            "coating": "GI50/50"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "CR340LA",
+              "oc": "CR340LA",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "GI50/50",
+              "oc": "GI50/50",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Hot-dip Galvanized (+Z/+GI)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "3.186",
+              "oc": "3.186",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "400.0",
+              "oc": "400.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.35",
+              "oc": "1.35",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "340.0",
+              "oc": "340.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 6,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17925858": {
+          "status": "confirmed",
+          "oc_ref": "84921553",
+          "oc_date": "2026-07-21",
+          "filename": "AB P01860 1,65 x 405,6.pdf",
+          "date": "2026-07-22",
+          "oc_line": {
+            "grade": "DX53D",
+            "thickness": 1.65,
+            "width": 405.6,
+            "quantity": null,
+            "unit_price": 400.0,
+            "form": null,
+            "coating": "ZA"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX53D",
+              "oc": "DX53D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "ZA",
+              "note": "not in Odoo"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Galfan (+ZA)",
+              "oc": "ZA",
+              "note": "Galfan finish consistent with ZA coating"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "3.53",
+              "oc": "\u2014",
+              "note": "skip_qty: OC line covers group total (6.904t for VSI-17925858+859+860)"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "400.0",
+              "oc": "400.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.65",
+              "oc": "1.65",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "405.6",
+              "oc": "405.6",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17925859": {
+          "status": "confirmed",
+          "oc_ref": "84921553",
+          "oc_date": "2026-07-21",
+          "filename": "AB P01860 1,65 x 405,6.pdf",
+          "date": "2026-07-22",
+          "oc_line": {
+            "grade": "DX53D",
+            "thickness": 1.65,
+            "width": 405.6,
+            "quantity": null,
+            "unit_price": 400.0,
+            "form": null,
+            "coating": "ZA"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX53D",
+              "oc": "DX53D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "ZA",
+              "note": "not in Odoo"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Galfan (+ZA)",
+              "oc": "ZA",
+              "note": "Galfan finish consistent with ZA coating"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "1.686",
+              "oc": "\u2014",
+              "note": "skip_qty: OC line covers group total (6.904t for VSI-17925858+859+860)"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "400.0",
+              "oc": "400.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.65",
+              "oc": "1.65",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "405.6",
+              "oc": "405.6",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17925860": {
+          "status": "confirmed",
+          "oc_ref": "84921553",
+          "oc_date": "2026-07-21",
+          "filename": "AB P01860 1,65 x 405,6.pdf",
+          "date": "2026-07-22",
+          "oc_line": {
+            "grade": "DX53D",
+            "thickness": 1.65,
+            "width": 405.6,
+            "quantity": null,
+            "unit_price": 400.0,
+            "form": null,
+            "coating": "ZA"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX53D",
+              "oc": "DX53D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "ZA",
+              "note": "not in Odoo"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Galfan (+ZA)",
+              "oc": "ZA",
+              "note": "Galfan finish consistent with ZA coating"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "1.688",
+              "oc": "\u2014",
+              "note": "skip_qty: OC line covers group total (6.904t for VSI-17925858+859+860)"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "400.0",
+              "oc": "400.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.65",
+              "oc": "1.65",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "405.6",
+              "oc": "405.6",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17925861": {
+          "status": "confirmed",
+          "oc_ref": "84921554",
+          "oc_date": "2026-07-21",
+          "filename": "AB P01860 1,65 x 409.pdf",
+          "date": "2026-07-22",
+          "oc_line": {
+            "grade": "DX53D",
+            "thickness": 1.65,
+            "width": 409.0,
+            "quantity": null,
+            "unit_price": 400.0,
+            "form": "Coils",
+            "coating": "ZA 90/40 MB_O"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX53D",
+              "oc": "DX53D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "ZA 90/40 MB_O",
+              "note": "not in Odoo"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Galfan (+ZA)",
+              "oc": "Galfan",
+              "note": "ZA suffix consistent with Galfan"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Slit Coils",
+              "oc": "Coils",
+              "note": ""
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "4.044",
+              "oc": "\u2014",
+              "note": "skip_qty: OC covers group total 8.34t for VSI-17925861+VSI-17925862"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "400.0",
+              "oc": "400.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.65",
+              "oc": "1.65",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "409.0",
+              "oc": "409.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 6,
+          "total": 9,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17925862": {
+          "status": "confirmed",
+          "oc_ref": "84921554",
+          "oc_date": "2026-07-21",
+          "filename": "AB P01860 1,65 x 409.pdf",
+          "date": "2026-07-22",
+          "oc_line": {
+            "grade": "DX53D",
+            "thickness": 1.65,
+            "width": 409.0,
+            "quantity": null,
+            "unit_price": 400.0,
+            "form": "Coils",
+            "coating": "ZA 90/40 MB_O"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX53D",
+              "oc": "DX53D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "ZA 90/40 MB_O",
+              "note": "not in Odoo"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Galfan (+ZA)",
+              "oc": "Galfan",
+              "note": "ZA suffix consistent with Galfan"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Slit Coils",
+              "oc": "Coils",
+              "note": ""
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "4.296",
+              "oc": "\u2014",
+              "note": "skip_qty: OC covers group total 8.34t for VSI-17925861+VSI-17925862"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "400.0",
+              "oc": "400.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.65",
+              "oc": "1.65",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "409.0",
+              "oc": "409.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 6,
+          "total": 9,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17925863": {
+          "status": "confirmed",
+          "oc_ref": "84921510",
+          "oc_date": "2026-07-21",
+          "filename": "AB P01860 1,80 x 371.pdf",
+          "date": "2026-07-22",
+          "oc_line": {
+            "grade": "DX54D",
+            "thickness": 1.8,
+            "width": 371.0,
+            "quantity": 4.194,
+            "unit_price": 400.0,
+            "form": "Slit Coils",
+            "coating": "ZA 090/40 MA_O"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DX54D",
+              "oc": "DX54D",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "ZA 090/40 MA_O",
+              "note": "not in Odoo"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Galfan (+ZA)",
+              "oc": "Galfan",
+              "note": "Galfan (+ZA) consistent with ZA coating"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "match",
+              "odoo": "Slit Coils",
+              "oc": "Slit Coils",
+              "note": "OC description references coil form"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "4.194",
+              "oc": "4.194",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "400.0",
+              "oc": "400.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.8",
+              "oc": "1.8",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "371.0",
+              "oc": "371.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 7,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17925864": {
+          "status": "mismatch",
+          "oc_ref": "84921509",
+          "oc_date": "2026-07-21",
+          "filename": "AB P01860 1.pdf",
+          "date": "2026-07-22",
+          "oc_line": {
+            "grade": "DX53D",
+            "thickness": 1.8,
+            "width": 402.0,
+            "quantity": 10.847,
+            "unit_price": 400.0,
+            "form": null,
+            "coating": "ZA90/40"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "DX54D",
+              "oc": "DX53D",
+              "note": "OC grade field says DX53D but OC description states DX54D; likely OC data entry error"
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "ZA90/40",
+              "oc": "ZA90/40",
+              "note": "derived from OC description 'ZA90/40'"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Galfan (+ZA)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "3.607",
+              "oc": "10.847",
+              "note": "skip_qty: OC line covers group total 10.847t for VSI-17925864+VSI-17925865+VSI-17925866"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "400.0",
+              "oc": "400.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.8",
+              "oc": "1.8",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "402.0",
+              "oc": "402.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 9,
+          "mismatches": 1,
+          "comparison_engine": "ai"
+        },
+        "VSI-17925865": {
+          "status": "mismatch",
+          "oc_ref": "84921509",
+          "oc_date": "2026-07-21",
+          "filename": "AB P01860 1.pdf",
+          "date": "2026-07-22",
+          "oc_line": {
+            "grade": "DX53D",
+            "thickness": 1.8,
+            "width": 402.0,
+            "quantity": 10.847,
+            "unit_price": 400.0,
+            "form": null,
+            "coating": "ZA90/40"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "DX54D",
+              "oc": "DX53D",
+              "note": "OC grade field says DX53D but OC description states DX54D; likely OC data entry error"
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "ZA90/40",
+              "oc": "ZA90/40",
+              "note": "derived from OC description 'ZA90/40'"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Galfan (+ZA)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "3.603",
+              "oc": "10.847",
+              "note": "skip_qty: OC line covers group total 10.847t for VSI-17925864+VSI-17925865+VSI-17925866"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "400.0",
+              "oc": "400.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.8",
+              "oc": "1.8",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "402.0",
+              "oc": "402.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 9,
+          "mismatches": 1,
+          "comparison_engine": "ai"
+        },
+        "VSI-17925866": {
+          "status": "mismatch",
+          "oc_ref": "84921509",
+          "oc_date": "2026-07-21",
+          "filename": "AB P01860 1.pdf",
+          "date": "2026-07-22",
+          "oc_line": {
+            "grade": "DX53D",
+            "thickness": 1.8,
+            "width": 402.0,
+            "quantity": 10.847,
+            "unit_price": 400.0,
+            "form": null,
+            "coating": "ZA90/40"
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "mismatch",
+              "odoo": "DX54D",
+              "oc": "DX53D",
+              "note": "OC grade field says DX53D but OC description states DX54D; likely OC data entry error"
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "match",
+              "odoo": "ZA90/40",
+              "oc": "ZA90/40",
+              "note": "derived from OC description 'ZA90/40'"
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Galfan (+ZA)",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "3.637",
+              "oc": "10.847",
+              "note": "skip_qty: OC line covers group total 10.847t for VSI-17925864+VSI-17925865+VSI-17925866"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "400.0",
+              "oc": "400.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.8",
+              "oc": "1.8",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "402.0",
+              "oc": "402.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 4,
+          "total": 9,
+          "mismatches": 1,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Am Mittelkai 50, 70329 Stuttgart",
+          "odoo": "Am Mittelkai 50, 70329, Stuttgart, Germany",
+          "warning": false
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "30 Days",
+          "odoo": "Immediate Payment",
+          "warning": true
+        }
+      ],
+      "supplier_notes": [
+        "Material is considered delivered as per condition IIa/declared upon leaving the warehouse; later complaints cannot be accepted.",
+        "Finished material must be picked up within 1 week after VSB notification.",
+        "Delivery confirmation is subject to the reservation of self-delivery by their suppliers (Section V of general terms).",
+        "Supplier will not provide a manufacturer's inspection certificate per DIN EN 10204 unless explicitly agreed; instead a document 'based on DIN EN 10204' will be provided using manufacturer and/or own test results."
+      ],
+      "processing_runs": [
+        {
+          "filename": "AB P01860 1,35 x 340.pdf",
+          "time_s": 62.6,
+          "extraction_tokens": {
+            "input": 7165,
+            "output": 385
+          },
+          "comparison_tokens": {
+            "input": 2792,
+            "output": 5371
+          },
+          "comparison_engine": "ai"
+        },
+        {
+          "filename": "AB P01860 1,80 x 371.pdf",
+          "time_s": 66.7,
+          "extraction_tokens": {
+            "input": 7270,
+            "output": 490
+          },
+          "comparison_tokens": {
+            "input": 2902,
+            "output": 5333
+          },
+          "comparison_engine": "ai"
+        },
+        {
+          "filename": "AB P01860 1,65 x 409.pdf",
+          "time_s": 66.7,
+          "extraction_tokens": {
+            "input": 7267,
+            "output": 505
+          },
+          "comparison_tokens": {
+            "input": 2914,
+            "output": 5282
+          },
+          "comparison_engine": "ai"
+        },
+        {
+          "filename": "AB P01860 1,65 x 405,6.pdf",
+          "time_s": 67.5,
+          "extraction_tokens": {
+            "input": 7161,
+            "output": 400
+          },
+          "comparison_tokens": {
+            "input": 2808,
+            "output": 5624
+          },
+          "comparison_engine": "ai"
+        },
+        {
+          "filename": "AB P01860 1.pdf",
+          "time_s": 71.6,
+          "extraction_tokens": {
+            "input": 7163,
+            "output": 385
+          },
+          "comparison_tokens": {
+            "input": 2797,
+            "output": 5769
+          },
+          "comparison_engine": "ai"
+        }
+      ],
+      "slack_ts": "1784705101.302619"
     }
   }
 }
