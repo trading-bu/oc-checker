@@ -45,6 +45,7 @@
     "1l9llEc8buXosi57I0YtWwHgzLBiF6kzq",
     "1mgMABMFGPplwkf3b_JnETo8tAaQdktwb",
     "1n6IT2ozt7NITCYiZLzoD1t6mQ9oPQSPz",
+    "1nru8rtUm9sZd1tkPKWoeyxBpUcxkfnon",
     "1oMdTZZ1M96KeFBZIK--0Bt0hGzLtkjq8",
     "1o_r2kb2uYK3vuMDTNWEESx1ePYsgiG7v",
     "1ocWQqDE0dq8zI1DC_ipsVxRe4LSgKlcC",
@@ -10757,6 +10758,4145 @@
         }
       ],
       "slack_ts": "1784705101.302619"
+    },
+    "P01863": {
+      "so_name": "S01535",
+      "supplier": "Aleksander Szukalski",
+      "buyer": "Karol Zakrzewski",
+      "initialized": "2026-07-23",
+      "last_updated": "2026-07-23",
+      "line_items": {
+        "VSI-17922370": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Blechzuschnitte in G\u00fcte DC01, 1,50 x 1000 x 2100 mm, Zolltarif-Nr. 72092690, Package Weight in Kg to = 2500",
+            "quantity": 2.326,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 1279.3,
+            "grade": "DC01",
+            "thickness": 1.5,
+            "width": 1000.0,
+            "length": 2100.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "mismatch",
+              "odoo": "1.44",
+              "oc": "1.5",
+              "note": ""
+            },
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "2.326",
+              "oc": "2.326",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1000.0",
+              "oc": "1000.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "2100.0",
+              "oc": "2100.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "95",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17922373": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 3,00 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 0,50",
+            "quantity": 0.809,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 444.95,
+            "grade": "DC01",
+            "thickness": 3.0,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "3.0",
+              "oc": "3.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "0.485",
+              "oc": "0.809",
+              "note": "Spec-group confirmed \u00b7 OC total 0.809 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "4",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922374": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 0,75 x 1250 x 2500 mm, Zolltarif-Nr. 72092790, Paket Gewicht in To bis = 1,50",
+            "quantity": 1.074,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 590.7,
+            "grade": "DC01",
+            "thickness": 0.75,
+            "width": 1250.0,
+            "length": 2500.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "mismatch",
+              "odoo": "0.8",
+              "oc": "0.75",
+              "note": ""
+            },
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.074",
+              "oc": "1.074",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1250.0",
+              "oc": "1250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "2500.0",
+              "oc": "2500.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "51",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5,
+          "comparison_engine": "python"
+        },
+        "VSI-17922375": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,00 x 1250 x 2500 mm, Zolltarif-Nr. 72092790, Paket Gewicht in To bis = 2,50",
+            "quantity": 7.42,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 4081.0,
+            "grade": "DC01",
+            "thickness": 1.0,
+            "width": 1250.0,
+            "length": 2500.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.0",
+              "oc": "1.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1250.0",
+              "oc": "1250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "2500.0",
+              "oc": "2500.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "2.49",
+              "oc": "7.42",
+              "note": "Spec-group confirmed \u00b7 OC total 7.42 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "98",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922376": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,00 x 1250 x 2500 mm, Zolltarif-Nr. 72092790, Paket Gewicht in To bis = 2,50",
+            "quantity": 7.42,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 4081.0,
+            "grade": "DC01",
+            "thickness": 1.0,
+            "width": 1250.0,
+            "length": 2500.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.0",
+              "oc": "1.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1250.0",
+              "oc": "1250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "2500.0",
+              "oc": "2500.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "2.47",
+              "oc": "7.42",
+              "note": "Spec-group confirmed \u00b7 OC total 7.42 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "98",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922377": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 2,00 x 1250 x 2500 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,60",
+            "quantity": 7.585,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 4171.75,
+            "grade": "DC01",
+            "thickness": 2.0,
+            "width": 1250.0,
+            "length": 2500.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.0",
+              "oc": "2.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1250.0",
+              "oc": "1250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "2500.0",
+              "oc": "2500.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "2.46",
+              "oc": "7.585",
+              "note": "Spec-group confirmed \u00b7 OC total 7.585 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "49",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922378": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 2,00 x 1250 x 2500 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,60",
+            "quantity": 7.585,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 4171.75,
+            "grade": "DC01",
+            "thickness": 2.0,
+            "width": 1250.0,
+            "length": 2500.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.0",
+              "oc": "2.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1250.0",
+              "oc": "1250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "2500.0",
+              "oc": "2500.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "2.56",
+              "oc": "7.585",
+              "note": "Spec-group confirmed \u00b7 OC total 7.585 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "50",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922379": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 2,00 x 1250 x 2500 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,60",
+            "quantity": 7.585,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 4171.75,
+            "grade": "DC01",
+            "thickness": 2.0,
+            "width": 1250.0,
+            "length": 2500.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.0",
+              "oc": "2.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1250.0",
+              "oc": "1250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "2500.0",
+              "oc": "2500.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "2.565",
+              "oc": "7.585",
+              "note": "Spec-group confirmed \u00b7 OC total 7.585 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "50",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922382": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 2,00 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,60",
+            "quantity": 24.935,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 13714.25,
+            "grade": "DC01",
+            "thickness": 2.0,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "mismatch",
+              "odoo": "2.495",
+              "oc": "24.935",
+              "note": ""
+            },
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.0",
+              "oc": "2.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "34",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 5,
+          "comparison_engine": "python",
+          "match_note": "positional fallback \u2014 no code/qty/spec match found"
+        },
+        "VSI-17922383": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 0,88 x 1250 x 2500 mm, Zolltarif-Nr. 72092790, Package Weight in Kg to = 2100",
+            "quantity": 3.03,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 1666.5,
+            "grade": "DC01",
+            "thickness": 0.88,
+            "width": 1250.0,
+            "length": 2500.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "mismatch",
+              "odoo": "2.5",
+              "oc": "3.03",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "mismatch",
+              "odoo": "2.0",
+              "oc": "0.88",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "mismatch",
+              "odoo": "1500.0",
+              "oc": "1250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "mismatch",
+              "odoo": "3000.0",
+              "oc": "2500.0",
+              "note": ""
+            },
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "34",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 2,
+          "total": 10,
+          "mismatches": 8,
+          "comparison_engine": "python",
+          "match_note": "positional fallback \u2014 no code/qty/spec match found"
+        },
+        "VSI-17922384": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 2,00 x 1250 x 2500 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2",
+            "quantity": 1.7,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 935.0,
+            "grade": "DC01",
+            "thickness": 2.0,
+            "width": 1250.0,
+            "length": 2500.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "mismatch",
+              "odoo": "2.5",
+              "oc": "1.7",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "mismatch",
+              "odoo": "1500.0",
+              "oc": "1250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "mismatch",
+              "odoo": "3000.0",
+              "oc": "2500.0",
+              "note": ""
+            },
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.0",
+              "oc": "2.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "34",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 3,
+          "total": 10,
+          "mismatches": 7,
+          "comparison_engine": "python",
+          "match_note": "positional fallback \u2014 no code/qty/spec match found"
+        },
+        "VSI-17922385": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,50 x 1500 x 2100 mm, Zolltarif-Nr. 72092690, Package Weight in Kg to = 2600",
+            "quantity": 7.662,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 4214.1,
+            "grade": "DC01",
+            "thickness": 1.5,
+            "width": 1500.0,
+            "length": 2100.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "mismatch",
+              "odoo": "2.505",
+              "oc": "7.662",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "mismatch",
+              "odoo": "2.0",
+              "oc": "1.5",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "mismatch",
+              "odoo": "3000.0",
+              "oc": "2100.0",
+              "note": ""
+            },
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "34",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 3,
+          "total": 10,
+          "mismatches": 7,
+          "comparison_engine": "python",
+          "match_note": "positional fallback \u2014 no code/qty/spec match found"
+        },
+        "VSI-17922386": {
+          "status": "pending"
+        },
+        "VSI-17922387": {
+          "status": "pending"
+        },
+        "VSI-17922388": {
+          "status": "pending"
+        },
+        "VSI-17922389": {
+          "status": "pending"
+        },
+        "VSI-17922390": {
+          "status": "pending"
+        },
+        "VSI-17922391": {
+          "status": "pending"
+        },
+        "VSI-17922392": {
+          "status": "pending"
+        },
+        "VSI-17922393": {
+          "status": "pending"
+        },
+        "VSI-17922397": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,50 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,60",
+            "quantity": 26.397,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 14518.35,
+            "grade": "DC01",
+            "thickness": 1.5,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.5",
+              "oc": "1.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "2.6",
+              "oc": "26.397",
+              "note": "Spec-group confirmed \u00b7 OC total 26.397 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "47",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922398": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,50 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,60",
+            "quantity": 26.397,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 14518.35,
+            "grade": "DC01",
+            "thickness": 1.5,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.5",
+              "oc": "1.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "2.595",
+              "oc": "26.397",
+              "note": "Spec-group confirmed \u00b7 OC total 26.397 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "47",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922399": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,50 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,60",
+            "quantity": 26.397,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 14518.35,
+            "grade": "DC01",
+            "thickness": 1.5,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.5",
+              "oc": "1.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "1.885",
+              "oc": "26.397",
+              "note": "Spec-group confirmed \u00b7 OC total 26.397 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "34",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922400": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,50 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,60",
+            "quantity": 26.397,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 14518.35,
+            "grade": "DC01",
+            "thickness": 1.5,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.5",
+              "oc": "1.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "2.54",
+              "oc": "26.397",
+              "note": "Spec-group confirmed \u00b7 OC total 26.397 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "45",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922401": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,00 x 1500 x 3000 mm, Zolltarif-Nr. 72092790, Paket Gewicht in To bis = 1",
+            "quantity": 1.0,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 550.0,
+            "grade": "DC01",
+            "thickness": 1.0,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "1.0",
+              "oc": "1.0",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.0",
+              "oc": "1.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "27",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 6,
+          "total": 10,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922402": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,50 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,60",
+            "quantity": 26.397,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 14518.35,
+            "grade": "DC01",
+            "thickness": 1.5,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.5",
+              "oc": "1.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "1.955",
+              "oc": "26.397",
+              "note": "Spec-group confirmed \u00b7 OC total 26.397 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "35",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922404": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,50 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,60",
+            "quantity": 26.397,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 14518.35,
+            "grade": "DC01",
+            "thickness": 1.5,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.5",
+              "oc": "1.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "1.25",
+              "oc": "26.397",
+              "note": "Spec-group confirmed \u00b7 OC total 26.397 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "22",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922405": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,50 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,60",
+            "quantity": 26.397,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 14518.35,
+            "grade": "DC01",
+            "thickness": 1.5,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.5",
+              "oc": "1.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "2.505",
+              "oc": "26.397",
+              "note": "Spec-group confirmed \u00b7 OC total 26.397 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "45",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922406": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,50 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,60",
+            "quantity": 26.397,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 14518.35,
+            "grade": "DC01",
+            "thickness": 1.5,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.5",
+              "oc": "1.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "1.065",
+              "oc": "26.397",
+              "note": "Spec-group confirmed \u00b7 OC total 26.397 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "18",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922407": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,00 x 1250 x 2500 mm, Zolltarif-Nr. 72092790, Paket Gewicht in To bis = 2,50",
+            "quantity": 7.42,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 4081.0,
+            "grade": "DC01",
+            "thickness": 1.0,
+            "width": 1250.0,
+            "length": 2500.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.0",
+              "oc": "1.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1250.0",
+              "oc": "1250.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "2500.0",
+              "oc": "2500.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "2.46",
+              "oc": "7.42",
+              "note": "Spec-group confirmed \u00b7 OC total 7.42 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "97",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922411": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,25 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Package Weight in Kg to = 2500",
+            "quantity": 2.395,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 1317.25,
+            "grade": "DC01",
+            "thickness": 1.25,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "2.395",
+              "oc": "2.395",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.25",
+              "oc": "1.25",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "52",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 6,
+          "total": 10,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922412": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 3,00 x 1000 x 2540 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 1",
+            "quantity": 0.7,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 385.0,
+            "grade": "DC01",
+            "thickness": 3.0,
+            "width": 1000.0,
+            "length": 2540.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "0.7",
+              "oc": "0.7",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "3.0",
+              "oc": "3.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1000.0",
+              "oc": "1000.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "2540.0",
+              "oc": "2540.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "11",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 6,
+          "total": 10,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922413": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 3,00 x 1000 x 2000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 0,50",
+            "quantity": 0.25,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 137.5,
+            "grade": "DC01",
+            "thickness": 3.0,
+            "width": 1000.0,
+            "length": 2000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "0.25",
+              "oc": "0.25",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "3.0",
+              "oc": "3.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1000.0",
+              "oc": "1000.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "2000.0",
+              "oc": "2000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "4",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 6,
+          "total": 10,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922414": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 3,00 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 0,50",
+            "quantity": 0.809,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 444.95,
+            "grade": "DC01",
+            "thickness": 3.0,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.98",
+              "oc": "3.0",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "0.321",
+              "oc": "0.809",
+              "note": "Spec-group confirmed \u00b7 OC total 0.809 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "3",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922421": {
+          "status": "pending"
+        },
+        "VSI-17922423": {
+          "status": "pending"
+        },
+        "VSI-17922431": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,50 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,60",
+            "quantity": 26.397,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 14518.35,
+            "grade": "DC01",
+            "thickness": 1.5,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.5",
+              "oc": "1.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "2.42",
+              "oc": "26.397",
+              "note": "Spec-group confirmed \u00b7 OC total 26.397 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "45",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922433": {
+          "status": "pending"
+        },
+        "VSI-17922437": {
+          "status": "pending"
+        },
+        "VSI-17922438": {
+          "status": "pending"
+        },
+        "VSI-17922439": {
+          "status": "pending"
+        },
+        "VSI-17922441": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 2,50 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,10",
+            "quantity": 3.955,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 2175.25,
+            "grade": "DC01",
+            "thickness": 2.5,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.5",
+              "oc": "2.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "2.085",
+              "oc": "3.955",
+              "note": "Spec-group confirmed \u00b7 OC total 3.955 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "23",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922442": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,50 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,60",
+            "quantity": 26.397,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 14518.35,
+            "grade": "DC01",
+            "thickness": 1.5,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.5",
+              "oc": "1.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "2.15",
+              "oc": "26.397",
+              "note": "Spec-group confirmed \u00b7 OC total 26.397 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "39",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922449": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,50 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,60",
+            "quantity": 26.397,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 14518.35,
+            "grade": "DC01",
+            "thickness": 1.5,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.5",
+              "oc": "1.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "2.515",
+              "oc": "26.397",
+              "note": "Spec-group confirmed \u00b7 OC total 26.397 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "46",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922453": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 2,50 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,10",
+            "quantity": 3.955,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 2175.25,
+            "grade": "DC01",
+            "thickness": 2.5,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.5",
+              "oc": "2.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "1.87",
+              "oc": "3.955",
+              "note": "Spec-group confirmed \u00b7 OC total 3.955 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "20",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        },
+        "VSI-17922454": {
+          "status": "mismatch",
+          "oc_ref": "356896",
+          "oc_date": "2026-07-22",
+          "filename": "A356896.pdf",
+          "date": "2026-07-23",
+          "oc_line": {
+            "vs_article": null,
+            "supplier_article": null,
+            "description": "2a kaltgewalzte Feinbleche in G\u00fcte DC01, 1,50 x 1500 x 3000 mm, Zolltarif-Nr. 72092690, Paket Gewicht in To bis = 2,60",
+            "quantity": 26.397,
+            "unit": "MT",
+            "unit_price": 550.0,
+            "total_price": 14518.35,
+            "grade": "DC01",
+            "thickness": 1.5,
+            "width": 1500.0,
+            "length": 3000.0,
+            "coating": null,
+            "coil_number": null,
+            "delivery_date": "2026-07-28",
+            "extraction_warning": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC01",
+              "oc": "DC01",
+              "note": ""
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "550.0",
+              "oc": "550.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "1.46",
+              "oc": "1.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "1500.0",
+              "oc": "1500.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "match",
+              "odoo": "3000.0",
+              "oc": "3000.0",
+              "note": ""
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Sheets",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "qty",
+              "label": "Quantity",
+              "status": "skip",
+              "odoo": "2.872",
+              "oc": "26.397",
+              "note": "Spec-group confirmed \u00b7 OC total 26.397 MT"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "53",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            }
+          ],
+          "score": 5,
+          "total": 9,
+          "mismatches": 4,
+          "comparison_engine": "python"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Rhenaniastra\u00dfe 66, 68199 Mannheim",
+          "odoo": "Rhenaniastra\u00dfe, 68199, Mannheim, Germany",
+          "warning": false
+        },
+        {
+          "type": "incoterms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Incoterms MISMATCH",
+          "oc": "EXW",
+          "odoo": "[FCA] FREE CARRIER",
+          "warning": true
+        },
+        {
+          "type": "payment_terms",
+          "icon": "\u26a0\ufe0f",
+          "label": "Payment Terms MISMATCH",
+          "oc": "14 Days",
+          "odoo": "Immediate Payment",
+          "warning": true
+        },
+        {
+          "type": "vat",
+          "icon": "\ud83e\uddfe",
+          "label": "VAT",
+          "vat_pct": "19%",
+          "net": 50180.9,
+          "gross": 59715.27,
+          "warning": false
+        }
+      ],
+      "supplier_notes": [
+        "Payment due within 14 days of invoice date net, no discount.",
+        "Supplier expressly objects to any conflicting purchasing conditions of the buyer."
+      ],
+      "processing_runs": [
+        {
+          "filename": "A356896.pdf",
+          "time_s": 33.6,
+          "extraction_tokens": {
+            "input": 9661,
+            "output": 2546
+          },
+          "comparison_tokens": {},
+          "comparison_engine": "python"
+        }
+      ],
+      "slack_ts": "1784791407.669929"
     }
   }
 }
