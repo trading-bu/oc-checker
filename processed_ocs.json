@@ -20,8 +20,10 @@
     "1K1ht5lu9hI_d1tiDnc6Hj6hsJJe0447e",
     "1KjQYCzawbbQb7k0rzreWDrp1GE6iYJtj",
     "1LDKdZWFoW38hG-21iR4Hos4uhg0AVr0J",
+    "1MtqIFBpQ_cEjsEpAterw8yk7ktYaidxD",
     "1NwKAreL41dZg7aTSyIWy0AiP3k2yqxIF",
     "1OCMRmrGPgFwCM2J9Lx3lSEVdRqteQHBU",
+    "1PsJmGbUyZnkXpQlkaIFy1KXtdwnPvqB5",
     "1QCda4exTSKFf8qG_wz4_7oBPwp46lYxN",
     "1Qhzq-E_rGYHEGw0Ra6q3l_qbRfkMCA5v",
     "1S1U1M1IykgoeRbV9FfPtOveyfU9HZ578",
@@ -30,6 +32,7 @@
     "1VwZR8-jRayYczJwwrBxTT2tWivHsAAqF",
     "1XeFz7zZRcASWPHZoH8lSzuwsSKIVJtDK",
     "1_1omIWk55ozaBYhWd35hdAJen73GkigA",
+    "1aaee3iUazQQ_rpoowqVDqzHBoDMcZ9Jf",
     "1aoCHWq9-vQCr7iI-QInyGm2xGwCp6Tfu",
     "1bb-0slxZkXF9z0DtA23AuK6lBfpW8hpq",
     "1cprlidPRtk5Ru0OmR62auiYYx0fUp4cu",
@@ -38,6 +41,7 @@
     "1faRucHz0ygeFyYxzkotLl2cbwOmpbJ5n",
     "1g2Ye0a7UnkOSjaaGKHCxO-H8jOQ3nTRs",
     "1hlJiKvYpZV3OwWbiUSoS1JBtYEWFkHU5",
+    "1iFHVkK0ViJcjY0j5QcwyJQlhvREPjBMt",
     "1k-vAkgKP2oeQcwk0mOzkXPvvrXivt-t7",
     "1kIhoNDDThCiGMXEMG6o8BoqE3D2zM6Wh",
     "1kKBQXTkTkW4sxo3bqjShnjPjG_DGv1sG",
@@ -54,6 +58,7 @@
     "1v843f3D3FiC6elRyTFdfWUGzIGup9DG_",
     "1vC4jVXSsnZbqVpBumIJO6Vg7N6dCHkLn",
     "1vQapJY1HGDrcEEB7ybTImytENdNQjIWW",
+    "1vijsN5e74NobNtVu5bjXyQtTxCK72nmW",
     "1zraCaNIeib-NgaJ-kFKgRqbuIIrGCT9-"
   ],
   "po_oc_log": {
@@ -14897,6 +14902,775 @@
         }
       ],
       "slack_ts": "1784791407.669929"
+    },
+    "P01859": {
+      "so_name": "S01532",
+      "supplier": "Tobias Heimann",
+      "buyer": "Volker Wolff",
+      "initialized": "2026-07-24",
+      "last_updated": "2026-07-24",
+      "line_items": {
+        "VSI-17922758": {
+          "status": "confirmed",
+          "oc_ref": "0140373201",
+          "oc_date": "2026-07-22",
+          "filename": "Copy of VAB01403732012026_07_2213_52_45.pdf",
+          "date": "2026-07-24",
+          "oc_line": {
+            "grade": "DC 04",
+            "thickness": 2.5,
+            "width": 630.0,
+            "quantity": 11.34,
+            "unit_price": 415.0,
+            "form": null,
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC04",
+              "oc": "DC 04",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "11.34",
+              "oc": "11.34",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "415.0",
+              "oc": "415.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.5",
+              "oc": "2.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "630.0",
+              "oc": "630.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "525.0",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            }
+          ],
+          "score": 5,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17922759": {
+          "status": "confirmed",
+          "oc_ref": "0140373301",
+          "oc_date": "2026-07-22",
+          "filename": "Copy of VAB01403733012026_07_2213_52_52.pdf",
+          "date": "2026-07-24",
+          "oc_line": {
+            "grade": "DC 04",
+            "thickness": 2.5,
+            "width": 480.0,
+            "quantity": 7.355,
+            "unit_price": 415.0,
+            "form": null,
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "DC04",
+              "oc": "DC 04",
+              "note": "DC 04 = DC04"
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Cold Rolled",
+              "oc": "Cold Rolled",
+              "note": "OC describes cold-rolled strip per DIN EN 10139"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "7.355",
+              "oc": "7.355",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "415.0",
+              "oc": "415.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.5",
+              "oc": "2.5",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "480.0",
+              "oc": "480.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "535.0",
+              "oc": "\u2014",
+              "note": "OC references execution C 490 but does not explicitly state UTS; not confirmed by OC"
+            }
+          ],
+          "score": 6,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Feldm\u00fchlenstr. 55, 58093 Hagen",
+          "odoo": "Buschm\u00fchlenstr. 24, 58093, Hagen, Germany",
+          "warning": false
+        },
+        {
+          "type": "vat",
+          "icon": "\ud83e\uddfe",
+          "label": "VAT",
+          "vat_pct": "19%",
+          "net": 3050.33,
+          "gross": 3629.89,
+          "warning": false
+        }
+      ],
+      "supplier_notes": [
+        "Pallets are provided on loan and must be returned free of charge.",
+        "Ring inner diameter: approx. 500 mm; ring outer diameter: 1400\u20132000 mm.",
+        "Retention of title applies to all delivered goods until full payment is received.",
+        "Export control notice: re-export only permitted for civilian end use; applicable EU embargo regulations and Dual-Use Regulation 428/2009 must be observed."
+      ],
+      "processing_runs": [
+        {
+          "filename": "Copy of VAB01403733012026_07_2213_52_52.pdf",
+          "time_s": 27.7,
+          "extraction_tokens": {
+            "input": 7101,
+            "output": 488
+          },
+          "comparison_tokens": {
+            "input": 2079,
+            "output": 1052
+          },
+          "comparison_engine": "ai"
+        },
+        {
+          "filename": "Copy of VAB01403732012026_07_2213_52_45.pdf",
+          "time_s": 24.7,
+          "extraction_tokens": {
+            "input": 7101,
+            "output": 450
+          },
+          "comparison_tokens": {
+            "input": 2035,
+            "output": 1033
+          },
+          "comparison_engine": "ai"
+        }
+      ],
+      "slack_ts": "1784882971.971809"
+    },
+    "P01853": {
+      "so_name": "S01528",
+      "supplier": "Tobias Heimann",
+      "buyer": "Markus Flender",
+      "initialized": "2026-07-24",
+      "last_updated": "2026-07-24",
+      "line_items": {
+        "VSI-17922755": {
+          "status": "confirmed",
+          "oc_ref": "0140320601 / 900098",
+          "oc_date": "2026-07-22",
+          "filename": "Copy of VAB01403206012026_07_2213_52_22.pdf",
+          "date": "2026-07-24",
+          "oc_line": {
+            "grade": "75Cr1",
+            "thickness": 0.711,
+            "width": 486.0,
+            "quantity": 8.252,
+            "unit_price": 415.0,
+            "form": null,
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "75Cr1",
+              "oc": "75Cr1",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Cold Drawn / Soft (+LC)",
+              "oc": "Execution LC",
+              "note": "LC confirmed in OC description"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "8.252",
+              "oc": "8.252",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "2",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "415.0",
+              "oc": "415.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.711",
+              "oc": "0.711",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "486.0",
+              "oc": "486.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "577.0",
+              "oc": "\u2014",
+              "note": "OC states max 600 MPa; Odoo UTS 577 MPa is within that limit but not explicitly confirmed"
+            }
+          ],
+          "score": 6,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        },
+        "VSI-17922756": {
+          "status": "confirmed",
+          "oc_ref": "0140320801 / 900098",
+          "oc_date": "2026-07-22",
+          "filename": "Copy of VAB01403208012026_07_2213_52_30.pdf",
+          "date": "2026-07-24",
+          "oc_line": {
+            "grade": "75Cr1",
+            "thickness": 0.711,
+            "width": 546.0,
+            "quantity": 5.124,
+            "unit_price": 415.0,
+            "form": null,
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "75Cr1",
+              "oc": "75Cr1",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "match",
+              "odoo": "Cold Drawn / Soft (+LC)",
+              "oc": "LC",
+              "note": "OC states 'Execution LC'; consistent with Cold Drawn / Soft (+LC)"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "5.124",
+              "oc": "5.124",
+              "note": "exact match"
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "1",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "415.0",
+              "oc": "415.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "0.711",
+              "oc": "0.711",
+              "note": ""
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "546.0",
+              "oc": "546.0",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "skip",
+              "odoo": "565.0",
+              "oc": "600.0",
+              "note": "OC states maximum tensile strength 600 MPa in supplier notes; Odoo UTS 565 MPa is within this limit but OC does not confirm an exact UTS value"
+            }
+          ],
+          "score": 6,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Feldm\u00fchlenstr. 55, 58093 Hagen",
+          "odoo": "Buschm\u00fchlenstr. 24, 58093, Hagen, Germany",
+          "warning": false
+        },
+        {
+          "type": "vat",
+          "icon": "\ud83e\uddfe",
+          "label": "VAT",
+          "vat_pct": "19%",
+          "net": 3424.58,
+          "gross": 4075.25,
+          "warning": false
+        }
+      ],
+      "supplier_notes": [
+        "Cementite formation minimum 95%",
+        "Maximum tensile strength 600 MPa",
+        "Inner coil diameter approximately 500 mm",
+        "Outer coil diameter maximum 1700 mm",
+        "Retention of title on all delivered goods until full payment; all deliveries are treated as a single connected transaction",
+        "Re-export is only permitted for civilian end use; military or contrary use is not allowed"
+      ],
+      "processing_runs": [
+        {
+          "filename": "Copy of VAB01403206012026_07_2213_52_22.pdf",
+          "time_s": 27.6,
+          "extraction_tokens": {
+            "input": 7066,
+            "output": 448
+          },
+          "comparison_tokens": {
+            "input": 2061,
+            "output": 1084
+          },
+          "comparison_engine": "ai"
+        },
+        {
+          "filename": "Copy of VAB01403208012026_07_2213_52_30.pdf",
+          "time_s": 30.3,
+          "extraction_tokens": {
+            "input": 7066,
+            "output": 441
+          },
+          "comparison_tokens": {
+            "input": 2061,
+            "output": 1150
+          },
+          "comparison_engine": "ai"
+        }
+      ],
+      "slack_ts": "1784883001.597089"
+    },
+    "P01855": {
+      "so_name": "S01529",
+      "supplier": "Tobias Heimann",
+      "buyer": "David Villalon",
+      "initialized": "2026-07-24",
+      "last_updated": "2026-07-24",
+      "line_items": {
+        "VSI-17922760": {
+          "status": "confirmed",
+          "oc_ref": "0140330001",
+          "oc_date": "2026-07-22",
+          "filename": "Copy of VAB01403300012026_07_2213_52_38.pdf",
+          "date": "2026-07-24",
+          "oc_line": {
+            "grade": "16MnCr5",
+            "thickness": 2.49,
+            "width": 113.03,
+            "quantity": 22.754,
+            "unit_price": 415.0,
+            "form": null,
+            "coating": null
+          },
+          "fields": [
+            {
+              "key": "grade",
+              "label": "Grade",
+              "status": "match",
+              "odoo": "16MnCr5",
+              "oc": "16MnCr5",
+              "note": ""
+            },
+            {
+              "key": "quality_choice",
+              "label": "Quality Choice",
+              "status": "skip",
+              "odoo": "2nd",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "coating",
+              "label": "Coating",
+              "status": "skip",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": ""
+            },
+            {
+              "key": "finish",
+              "label": "Finish",
+              "status": "skip",
+              "odoo": "Cold Rolled",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "form",
+              "label": "Form",
+              "status": "skip",
+              "odoo": "Slit Coils",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "quantity",
+              "label": "Quantity",
+              "status": "match",
+              "odoo": "22.754",
+              "oc": "22.754",
+              "note": ""
+            },
+            {
+              "key": "no_of_items",
+              "label": "# of Items",
+              "status": "skip",
+              "odoo": "14",
+              "oc": "\u2014",
+              "note": "not confirmed by OC"
+            },
+            {
+              "key": "price",
+              "label": "Unit Price",
+              "status": "match",
+              "odoo": "415.0",
+              "oc": "415.0",
+              "note": ""
+            },
+            {
+              "key": "thickness",
+              "label": "Thickness",
+              "status": "match",
+              "odoo": "2.489",
+              "oc": "2.49",
+              "note": "difference 0.001mm within 0.05mm tolerance"
+            },
+            {
+              "key": "width",
+              "label": "Width",
+              "status": "match",
+              "odoo": "113.03",
+              "oc": "113.03",
+              "note": ""
+            },
+            {
+              "key": "length",
+              "label": "Length",
+              "status": "na",
+              "odoo": "\u2014",
+              "oc": "\u2014",
+              "note": "N/A coil"
+            },
+            {
+              "key": "tensile_strength",
+              "label": "Tensile Strength",
+              "status": "match",
+              "odoo": "407.0",
+              "oc": "407.0",
+              "note": "OC states max 407 MPa"
+            }
+          ],
+          "score": 6,
+          "total": 10,
+          "mismatches": 0,
+          "comparison_engine": "ai"
+        }
+      },
+      "flags": [
+        {
+          "type": "pickup_address",
+          "icon": "\ud83d\udccd",
+          "label": "Pickup Address",
+          "oc": "Feldm\u00fchlenstr. 55, 58093 Hagen",
+          "odoo": "Buschm\u00fchlenstr. 24, 58093, Hagen, Germany",
+          "warning": false
+        },
+        {
+          "type": "vat",
+          "icon": "\ud83e\uddfe",
+          "label": "VAT",
+          "vat_pct": "19%",
+          "net": 9442.91,
+          "gross": null,
+          "warning": false
+        }
+      ],
+      "supplier_notes": [
+        "Prices are exclusive of 19% VAT.",
+        "Retention of title applies to all delivered goods until full payment; all deliveries are considered as one connected transaction.",
+        "Re-export is only permitted for civilian end-use; re-export for other purposes is not allowed; applicable EU embargo regulations and Dual-Use Regulation 428/2009 must be observed.",
+        "General terms and conditions apply as per www.waelzholz.com/agb.",
+        "This document was machine-generated and is valid without a signature."
+      ],
+      "processing_runs": [
+        {
+          "filename": "Copy of VAB01403300012026_07_2213_52_38.pdf",
+          "time_s": 29.0,
+          "extraction_tokens": {
+            "input": 7122,
+            "output": 555
+          },
+          "comparison_tokens": {
+            "input": 2049,
+            "output": 549
+          },
+          "comparison_engine": "ai"
+        }
+      ],
+      "slack_ts": "1784883094.305749"
     }
   }
 }
